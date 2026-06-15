@@ -22,7 +22,7 @@ export function FeaturedPool() {
               <span className="text-sm font-semibold text-accent">Pool of the Month</span>
             </div>
             <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold text-foreground">
-              March 2026 Featured Pool
+              July 2026 Featured Pool
             </h2>
           </div>
           <div className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">

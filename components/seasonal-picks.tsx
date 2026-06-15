@@ -37,7 +37,7 @@ const seasons = [
 ]
 
 export function SeasonalPicks() {
-  const [activeSeason, setActiveSeason] = useState(seasons[0])
+  const [activeSeason, setActiveSeason] = useState(seasons[1])
 
   const seasonPools = activeSeason.poolIds
     .map(id => pools.find(p => p.id === id)!)

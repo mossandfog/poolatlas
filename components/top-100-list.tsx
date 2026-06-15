@@ -56,7 +56,7 @@ export function Top100List() {
           </p>
           <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground/70">
             <RefreshCw className="w-3 h-3" />
-            <span>Last updated: March 2026</span>
+            <span>Last updated: June 2026</span>
           </div>
         </div>
 
