@@ -26,12 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Pool pages (for future individual pool pages)
+  // Individual pool pages
   const poolPages = pools.map((pool) => ({
-    url: `${baseUrl}/pool/${pool.id}`,
+    url: `${baseUrl}/pools/${pool.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.7,
   }))
 
   return [...staticPages, ...poolPages]

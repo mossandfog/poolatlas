@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { MapPin, Star, Users, Baby, Award, ChevronDown, ChevronUp, Filter, ExternalLink, RefreshCw } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -125,10 +126,7 @@ export function Top100List() {
                 expandedPool === pool.id ? 'border-primary shadow-lg' : 'border-border hover:border-primary/50'
               }`}
             >
-              <button
-                className="w-full p-4 flex items-center gap-4 text-left"
-                onClick={() => setExpandedPool(expandedPool === pool.id ? null : pool.id)}
-              >
+              <div className="w-full p-4 flex items-center gap-4 text-left cursor-pointer" onClick={() => setExpandedPool(expandedPool === pool.id ? null : pool.id)}>
                 <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
                   <span className="text-primary-foreground font-bold">#{pool.rank}</span>
                 </div>
@@ -144,7 +142,13 @@ export function Top100List() {
 
                 <div className="flex-grow min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="font-[family-name:var(--font-display)] font-semibold text-foreground truncate">{pool.name}</h3>
+                    <Link
+                      href={`/pools/${pool.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="font-[family-name:var(--font-display)] font-semibold text-foreground truncate hover:text-primary transition-colors"
+                    >
+                      {pool.name}
+                    </Link>
                     {pool.kidFriendly && (
                       <Baby className="w-4 h-4 text-chart-3 shrink-0" />
                     )}
@@ -176,7 +180,7 @@ export function Top100List() {
                     <ChevronDown className="w-5 h-5 text-muted-foreground" />
                   )}
                 </div>
-              </button>
+              </div>
 
               {expandedPool === pool.id && (
                 <div className="px-4 pb-4 pt-0 border-t border-border">
@@ -234,15 +238,23 @@ export function Top100List() {
                         <p className="text-xs text-primary">{pool.sources.join(' • ')}</p>
                       </div>
 
-                      {/* Property Link */}
-                      <div className="pt-3 border-t border-border">
+                      {/* Links */}
+                      <div className="pt-3 border-t border-border space-y-2">
+                        <Link
+                          href={`/pools/${pool.slug}`}
+                          className="block"
+                        >
+                          <Button variant="default" size="sm" className="w-full rounded-full gap-1.5">
+                            View Full Pool Page
+                          </Button>
+                        </Link>
                         <a
                           href={pool.websiteUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block"
                         >
-                          <Button variant="default" size="sm" className="w-full rounded-full gap-1.5">
+                          <Button variant="outline" size="sm" className="w-full rounded-full gap-1.5">
                             <ExternalLink className="w-3.5 h-3.5" />
                             Visit Property Website
                           </Button>

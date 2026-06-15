@@ -16,6 +16,16 @@ export interface Pool {
   kidFriendly: boolean
   websiteUrl: string
   bookingUrl?: string
+  slug: string
+}
+
+export function generateSlug(hotel: string, id: number): string {
+  const base = hotel
+    .toLowerCase()
+    .replace(/['']/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+  return `${base}-${id}`
 }
 
 // Data researched from: Condé Nast Traveler, Travel + Leisure, The Luxury Travel Expert, 
@@ -1890,14 +1900,15 @@ const hotelUrls: Record<string, { websiteUrl: string; bookingUrl?: string }> = {
   "La Co(o)rniche": { websiteUrl: "https://lacoorniche.com", bookingUrl: "https://lacoorniche.com/en/book" },
 }
 
-// Add kidFriendly and websiteUrl to pools
+// Add kidFriendly, websiteUrl, and slug to pools
 const poolsWithExtras = pools.map(pool => {
-  const urls = hotelUrls[pool.hotel] || { 
+  const urls = hotelUrls[pool.hotel] || {
     websiteUrl: pool.websiteUrl || `https://www.google.com/search?q=${encodeURIComponent(pool.hotel + ' official website')}`,
     bookingUrl: pool.bookingUrl
   }
   return {
     ...pool,
+    slug: generateSlug(pool.hotel, pool.id),
     kidFriendly: pool.kidFriendly ?? !pool.features.includes("Adults Only"),
     websiteUrl: pool.websiteUrl || urls.websiteUrl,
     bookingUrl: pool.bookingUrl || urls.bookingUrl

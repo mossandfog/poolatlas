@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { MapPin, Star, Award, Users, Baby, Eye, X, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -204,15 +205,20 @@ export function PoolCard({ pool, featured = false }: PoolCardProps) {
               <p className="text-xs text-primary">{pool.sources.join(' • ')}</p>
             </div>
 
-            {/* Property Link */}
-            <div className="pt-3 border-t border-border">
+            {/* Links */}
+            <div className="pt-3 border-t border-border space-y-2">
+              <Link href={`/pools/${pool.slug}`} className="block">
+                <Button variant="default" size="sm" className="w-full rounded-full gap-1.5">
+                  View Full Pool Page
+                </Button>
+              </Link>
               <a
                 href={pool.websiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
               >
-                <Button variant="default" size="sm" className="w-full rounded-full gap-1.5">
+                <Button variant="outline" size="sm" className="w-full rounded-full gap-1.5">
                   <ExternalLink className="w-3.5 h-3.5" />
                   Visit Property Website
                 </Button>

@@ -52,7 +52,7 @@ export function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          Find your perfect pool paradise. Search 150+ stunning hotel pools ranked by experts and travelers worldwide.
+          Find your perfect pool paradise. Search 109 stunning hotel pools ranked by experts and travelers worldwide.
         </p>
 
         {/* AI Search Bar */}
@@ -80,7 +80,7 @@ export function Hero() {
         <div className="max-w-4xl mx-auto px-4 py-6">
           <div className="flex justify-center gap-6 sm:gap-8 md:gap-16 text-center">
             <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">150+</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">109</p>
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Pools Ranked</p>
             </div>
             <div>
