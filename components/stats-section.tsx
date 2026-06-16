@@ -22,9 +22,9 @@ export function StatsSection() {
     },
     {
       icon: TrendingUp,
-      value: "150+",
+      value: "World's Best",
       label: "Pools Ranked",
-      description: "Updated quarterly"
+      description: "Updated monthly"
     }
   ]
 

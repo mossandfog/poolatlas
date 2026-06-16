@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: 'https://poolatlas.io',
     siteName: 'Pool Atlas',
     title: 'Pool Atlas | Best Hotel Swimming Pools Worldwide',
-    description: 'The definitive ranking of the world\'s most extraordinary hotel swimming pools. Discover 150+ stunning pools across 50+ countries.',
+    description: 'The definitive ranking of the world\'s most extraordinary hotel swimming pools. Discover stunning pools across 50+ countries, curated from the world\'s leading travel publications.',
     images: [
       {
         url: '/images/og-image.jpg',

@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-foreground mb-4">Why We Built This</h2>
           <p className="text-muted-foreground mb-4">
-            Every hotel claims a &quot;stunning pool.&quot; We got tired of the marketing fluff. Pool Atlas ranks 150+ pools across 50+ countries using data from millions of reviews and top travel publications. No pay-to-play. Just honest rankings.
+            Every hotel claims a &quot;stunning pool.&quot; We got tired of the marketing fluff. Pool Atlas ranks the world's best pools across 50+ countries using data from millions of reviews and top travel publications. No pay-to-play. Just honest rankings.
           </p>
         </div>
       </section>

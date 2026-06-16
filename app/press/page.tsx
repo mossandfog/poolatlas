@@ -44,7 +44,7 @@ const pressContacts = [
 
 const keyStats = [
   { label: "Countries Covered", value: "50+", icon: Globe },
-  { label: "Pools Ranked", value: "150+", icon: Award },
+  { label: "Pools Ranked", value: "World's Best", icon: Award },
   { label: "Continents", value: "6", icon: Users },
   { label: "Launch Year", value: "2024", icon: TrendingUp }
 ]
@@ -114,7 +114,7 @@ const factSheet = {
   headquarters: "Portland, Oregon",
   mission: "To help travelers discover the world's most exceptional hotel swimming pools through data-driven rankings and expert curation.",
   methodology: "Rankings are determined by aggregating reviews from major travel platforms, expert assessments from leading publications, guest satisfaction scores, and unique pool features.",
-  coverage: "150+ pools across 50+ countries on 6 continents"
+  coverage: "The world's best pools across 50+ countries on 6 continents"
 }
 
 export default function PressPage() {

@@ -14,7 +14,7 @@ export function Partners() {
     <section className="py-10 px-4 sm:px-6 lg:px-8 border-y border-border">
       <div className="max-w-7xl mx-auto">
         <p className="text-center text-xs text-muted-foreground mb-6 uppercase tracking-wider">
-          Official Partners
+          Hotels in Our Rankings
         </p>
         <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
           {partners.map((partner) => (

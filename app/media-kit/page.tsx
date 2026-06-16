@@ -10,7 +10,7 @@ import { Footer } from "@/components/footer"
 
 export default function MediaKitPage() {
   const stats = [
-    { label: "Pools Ranked", value: "150+", sub: "Updated quarterly" },
+    { label: "Pools Ranked", value: "World's Best", sub: "Updated monthly" },
     { label: "Countries", value: "50+", sub: "6 continents" },
     { label: "Reviews Analyzed", value: "2.4M", sub: "From trusted sources" },
     { label: "Fastest Growing", value: "#1", sub: "Pool guide of its kind" },
@@ -193,7 +193,7 @@ export default function MediaKitPage() {
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               { icon: "🏆", title: "Honest rankings", desc: "We pull from the publications people actually trust — Condé Nast Traveler, Travel + Leisure, Forbes — weight them carefully, and update every quarter." },
-              { icon: "🌍", title: "Genuine global scope", desc: "150+ pools across 50+ countries and 6 continents — from Iceland's geothermal lagoons to Bali's three-tier infinity pools." },
+              { icon: "🌍", title: "Genuine global scope", desc: "The world's best pools across 50+ countries and 6 continents — from Iceland's geothermal lagoons to Bali's three-tier infinity pools." },
               { icon: "🎯", title: "Readers with a trip in mind", desc: "People don't stumble onto Pool Atlas. They come here when they're figuring out where to go next — and the pool is already a factor in the decision." },
               { icon: "✍️", title: "Original editorial", desc: "\"The Deep End\" features, Pool of the Month, Superlatives, and Seasonal Picks go beyond rankings to tell the stories behind the world's most remarkable pools." }
             ].map((item) => (

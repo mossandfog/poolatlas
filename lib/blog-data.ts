@@ -231,7 +231,7 @@ That's a future worth swimming toward.
   {
     slug: "what-makes-world-class-hotel-pool",
     title: "What Makes a World-Class Hotel Pool?",
-    excerpt: "After ranking 150+ pools across 50 countries, we reveal the criteria that separate truly exceptional hotel pools from the merely good.",
+    excerpt: "After ranking pools across 50 countries, we reveal the criteria that separate truly exceptional hotel pools from the merely good.",
     category: "Industry",
     readTime: "12 min read",
     image: "/images/world-class-pool.jpg",

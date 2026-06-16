@@ -123,7 +123,7 @@ export default async function Image() {
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: 48, fontWeight: 700, color: 'white' }}>150+</div>
+              <div style={{ fontSize: 48, fontWeight: 700, color: 'white' }}>World's Best</div>
               <div style={{ fontSize: 18, color: '#94a3b8' }}>Pools Ranked</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
