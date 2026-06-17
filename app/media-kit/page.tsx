@@ -347,7 +347,7 @@ export default function MediaKitPage() {
           <Card className="border-l-4 border-l-primary rounded-l-none">
             <CardContent className="pt-4 pb-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">A note on being new:</strong> Our audience is growing and we won't pretend otherwise. What we can offer right now is a focused, genuinely engaged readership and pricing that's honest about where we are. Every package includes a simple performance report. If you want the numbers before committing, just ask.
+                <strong className="text-foreground">A note on our approach:</strong> We keep our partnership roster intentionally small — a handful of brands per quarter, not a banner farm. What that means for you: full editorial attention, genuinely engaged readers, and placement that doesn't feel like an ad. Every package includes a performance report. If you want to see what's worked for past partners before committing, just ask.
               </p>
             </CardContent>
           </Card>

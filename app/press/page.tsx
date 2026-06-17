@@ -78,9 +78,9 @@ const brandAssets = [
 
 const pressReleases = [
   {
-    date: "March 2026",
-    title: "Pool Atlas Announces Top 100 Hotel Swimming Pools for 2026",
-    excerpt: "The definitive ranking of the world's best hotel pools expands to 100 properties across 50 countries."
+    date: "June 2026",
+    title: "Pool Atlas Summer 2026 Update: Six New Openings Added to Rankings",
+    excerpt: "The world's highest infinity pool, an underground lap pool in Paris, and four more landmark openings join the definitive rankings."
   },
   {
     date: "February 2026",

@@ -110,7 +110,7 @@ const reviews: Review[] = [
     avatar: "/images/pool-11.jpg",
     country: "Canada",
     rating: 5,
-    date: "March 2026",
+    date: "June 2026",
     title: "The Pitons view is unreal",
     content: "Jade Mountain's open-air infinity pool in our sanctuary suite made us feel like we were floating towards the Pitons. No fourth wall means you're completely immersed in the St. Lucian landscape. We watched hummingbirds visit while swimming! Truly the most romantic pool experience possible.",
     helpful: 267,

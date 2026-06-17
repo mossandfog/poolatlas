@@ -4,7 +4,7 @@ import { TrendingUp } from "lucide-react"
 import { pools } from "@/lib/pool-data"
 import { PoolCard } from "@/components/pool-card"
 
-// Simulate trending data - pool IDs that are trending this week
+// Editor's summer picks
 const trendingPoolIds = [3, 7, 12, 5, 18]
 
 export function TrendingPools() {
@@ -21,9 +21,9 @@ export function TrendingPools() {
           </div>
           <div>
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-foreground">
-              Trending This Week
+              Editor&apos;s Summer Picks
             </h2>
-            <p className="text-sm text-muted-foreground">Most searched pools right now</p>
+            <p className="text-sm text-muted-foreground">Our team's favorites for summer 2026</p>
           </div>
         </div>
 

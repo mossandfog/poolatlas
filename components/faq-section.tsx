@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     question: "How often are the rankings updated?",
-    answer: "We update our rankings monthly to reflect new reviews, awards, and changes in the travel industry. Major updates occur quarterly when we reassess all pools based on the latest data from our source publications."
+    answer: "We update our rankings monthly, incorporating new reviews, awards, and notable hotel openings from the world's leading travel publications. New pools are added as they earn recognition — which means the list is always evolving."
   },
   {
     question: "Can I submit a pool to be considered for ranking?",

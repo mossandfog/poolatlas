@@ -18,7 +18,7 @@ const sources = [
   },
   {
     name: "The Rooftop Guide",
-    description: "50 Best Rooftop Pools 2025",
+    description: "50 Best Rooftop Pools 2026",
     icon: Users,
   },
 ]
@@ -63,7 +63,7 @@ export function Methodology() {
         <p className="text-center text-xs text-muted-foreground mt-8 max-w-2xl mx-auto">
           Data compiled from publicly available rankings, reviews, and awards. 
           Ratings reflect aggregated scores from multiple sources. 
-          Visit property websites for official photography and booking. Last updated March 2026.
+          Visit property websites for official photography and booking. Last updated June 2026.
         </p>
       </div>
     </section>
