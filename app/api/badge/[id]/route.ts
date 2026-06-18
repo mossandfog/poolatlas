@@ -43,16 +43,20 @@ function generateBadgeSVG(rank: number, hotelName: string): string {
   <text x="140" y="28" text-anchor="middle" fill="${color}" font-family="Space Grotesk, system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="4" opacity="0.9">POOL ATLAS</text>
 
   <!-- Subtitle -->
-  <text x="140" y="46" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="8.5" letter-spacing="2.5" opacity="0.45">WORLD RANKINGS 2026</text>
+  <text x="140" y="46" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="8.5" letter-spacing="2.5" opacity="0.45">WORLD RANKINGS</text>
 
   <!-- Divider -->
-  <line x1="60" y1="56" x2="220" y2="56" stroke="white" stroke-width="0.5" opacity="0.12"/>
+  <line x1="60" y1="54" x2="220" y2="54" stroke="white" stroke-width="0.5" opacity="0.12"/>
+
+  <!-- Waves icon -->
+  <path d="M 125 60 Q 132.5 55.5 140 60 Q 147.5 64.5 155 60" stroke="${color}" stroke-width="1.3" fill="none" opacity="0.65"/>
+  <path d="M 125 65.5 Q 132.5 61 140 65.5 Q 147.5 70 155 65.5" stroke="${color}" stroke-width="1.3" fill="none" opacity="0.45"/>
 
   <!-- Rank number (large, center) -->
   <text x="140" y="112" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="58" font-weight="700" filter="url(#glow)" opacity="0.95">${rankText}</text>
 
-  <!-- "IN THE WORLD" -->
-  <text x="140" y="131" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="9" letter-spacing="3" opacity="0.5">IN THE WORLD</text>
+  <!-- "HOTEL POOL RANKING" -->
+  <text x="140" y="131" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="9" letter-spacing="1.5" opacity="0.5">HOTEL POOL RANKING</text>
 
   <!-- Tier pill -->
   <rect x="96" y="140" width="88" height="20" rx="10" fill="${glow}"/>
@@ -60,7 +64,7 @@ function generateBadgeSVG(rank: number, hotelName: string): string {
   <text x="140" y="154" text-anchor="middle" fill="${color}" font-family="Space Grotesk, system-ui, sans-serif" font-size="9" font-weight="700" letter-spacing="2">${label}</text>
 
   <!-- Hotel name (small, bottom) -->
-  <text x="140" y="172" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="7.5" opacity="0.35" letter-spacing="0.5">${display}</text>
+  <text x="140" y="172" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="7.5" opacity="0.55" letter-spacing="0.5">${display}</text>
 </svg>`
 }
 

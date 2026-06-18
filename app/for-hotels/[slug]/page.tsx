@@ -46,7 +46,7 @@ export default async function ForHotelsSlugPage({ params }: PageProps) {
 
   const embedCode = `<!-- Pool Atlas Badge -->
 <a href="${poolUrl}" target="_blank" rel="noopener" title="${pool.hotel} — Ranked #${pool.rank} by Pool Atlas">
-  <img src="${badgeUrl}" alt="Ranked #${pool.rank} in the World · Pool Atlas 2026" width="280" height="180" style="display:block;"/>
+  <img src="${badgeUrl}" alt="Ranked #${pool.rank} in the World · Pool Atlas" width="280" height="180" style="display:block;"/>
 </a>`
 
   return (
