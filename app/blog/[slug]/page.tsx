@@ -10,6 +10,31 @@ import { blogPosts, getBlogPost } from "@/lib/blog-data"
 import { ShareButtons } from "@/components/share-buttons"
 import { AdBanner } from "@/components/ad-unit"
 
+// Parse inline markdown: **bold**, *italic*, [text](url)
+function parseInline(text: string): React.ReactNode[] {
+  const parts: React.ReactNode[] = []
+  const re = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*/g
+  let last = 0
+  let m: RegExpExecArray | null
+  let key = 0
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index))
+    if (m[1] && m[2]) {
+      // Link
+      parts.push(<Link key={key++} href={m[2]} className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">{m[1]}</Link>)
+    } else if (m[3]) {
+      // Bold
+      parts.push(<strong key={key++} className="text-foreground font-semibold">{m[3]}</strong>)
+    } else if (m[4]) {
+      // Italic
+      parts.push(<em key={key++}>{m[4]}</em>)
+    }
+    last = m.index + m[0].length
+  }
+  if (last < text.length) parts.push(text.slice(last))
+  return parts
+}
+
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
 }
@@ -115,26 +140,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 }
                 
                 // Handle lists
-                if (trimmed.startsWith('- **')) {
-                  const match = trimmed.match(/- \*\*(.+?)\*\*: (.+)/)
-                  if (match) {
-                    return (
-                      <div key={index} className="flex gap-2 my-2">
-                        <span className="text-primary">•</span>
-                        <p><strong className="text-foreground">{match[1]}</strong>: {match[2]}</p>
-                      </div>
-                    )
-                  }
-                }
                 if (trimmed.startsWith('- ')) {
                   return (
                     <div key={index} className="flex gap-2 my-2">
                       <span className="text-primary">•</span>
-                      <p>{trimmed.slice(2)}</p>
+                      <p>{parseInline(trimmed.slice(2))}</p>
                     </div>
                   )
                 }
-                
+
                 // Handle numbered lists
                 if (/^\d+\. /.test(trimmed)) {
                   const num = trimmed.match(/^(\d+)\. /)?.[1]
@@ -142,31 +156,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   return (
                     <div key={index} className="flex gap-3 my-2">
                       <span className="text-primary font-semibold">{num}.</span>
-                      <p>{text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</p>
+                      <p>{parseInline(text)}</p>
                     </div>
                   )
                 }
-                
+
                 // Handle horizontal rules
                 if (trimmed === '---') {
                   return <hr key={index} className="my-8 border-border" />
                 }
-                
+
                 // Handle italic blocks (tips/notes)
                 if (trimmed.startsWith('*') && trimmed.endsWith('*') && !trimmed.startsWith('**')) {
-                  return <p key={index} className="italic text-muted-foreground border-l-4 border-primary/30 pl-4 my-6">{trimmed.slice(1, -1)}</p>
+                  return <p key={index} className="italic text-muted-foreground border-l-4 border-primary/30 pl-4 my-6">{parseInline(trimmed.slice(1, -1))}</p>
                 }
-                
-                // Handle bold text within paragraphs
-                if (trimmed.startsWith('**') && trimmed.includes('**:')) {
-                  const match = trimmed.match(/\*\*(.+?)\*\*:?\s*(.*)/)
-                  if (match) {
-                    return <p key={index} className="my-4"><strong className="text-foreground">{match[1]}</strong>{match[2] ? `: ${match[2]}` : ''}</p>
-                  }
-                }
-                
-                // Regular paragraphs
-                return <p key={index} className="my-4 text-foreground/90 leading-relaxed">{trimmed}</p>
+
+                // Regular paragraphs (parseInline handles **bold**, *italic*, [links](url))
+                return <p key={index} className="my-4 text-foreground/90 leading-relaxed">{parseInline(trimmed)}</p>
               })}
             </div>
 

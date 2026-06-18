@@ -92,6 +92,9 @@ export function Header() {
             <a href="/press" className="text-sm text-foreground/80 hover:text-primary transition-colors font-semibold">
               Press
             </a>
+            <a href="/for-hotels" className="text-sm text-foreground/80 hover:text-primary transition-colors font-semibold">
+              For Hotels
+            </a>
             <ThemeToggle />
             <button
               onClick={() => setIsDreamListOpen(true)}
@@ -145,6 +148,9 @@ export function Header() {
               </a>
               <a href="/press" className="text-base py-2 text-foreground hover:text-primary transition-colors font-semibold">
                 Press
+              </a>
+              <a href="/for-hotels" className="text-base py-2 text-foreground hover:text-primary transition-colors font-semibold">
+                For Hotels
               </a>
               <div className="flex items-center gap-3 pt-3 mt-2 border-t border-border">
                 <ThemeToggle />

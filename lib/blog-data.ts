@@ -1122,6 +1122,317 @@ If pool quality is a priority for your travels, Aman, Four Seasons, and One&Only
 
 *The best hotel pools are no accident. They're the result of brands that understand water as a design element, service as a differentiator, and swimming as an experience worth investing in.*
     `
+  },
+  {
+    slug: "best-hotel-pools-italy",
+    title: "The Best Hotel Pools in Italy",
+    excerpt: "From Lake Como's glass-calm waters to cliff-edge infinity pools on the Amalfi Coast, Italy offers some of the world's most breathtaking hotel swimming experiences.",
+    category: "Destination",
+    readTime: "10 min read",
+    image: "/images/pools/pool-villa-deste.jpg",
+    publishedAt: "2026-06-10",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Destination"
+    },
+    content: `
+# The Best Hotel Pools in Italy
+
+Italy has always understood the art of *dolce far niente* — the sweetness of doing nothing. And nowhere is that philosophy expressed more perfectly than at a great Italian hotel pool. This is a country where ancient villas open onto mirror-calm lakes, where hillside monasteries command the same views that have inspired painters for centuries, and where a sun lounger beside a limestone pool feels less like a luxury and more like a birthright.
+
+We've combed through Italy's finest hotels to bring you the pools that rise above — in every sense.
+
+## Lake Como: The Gold Standard
+
+When people think of Italian hotel pools, they're often thinking of Lake Como. The northern lake has a gravitational pull on the world's most discerning travelers, and the hotels here have risen to meet that expectation.
+
+**[Villa d'Este](/pools/villa-deste-13)** sets the benchmark. The floating pool barge moored in the hotel's private bay is among the most photographed in Europe — a saltwater pool on the lake itself, framed by mountains and cypress trees. The estate dates to 1568 and the pool has been the centerpiece of its pleasure gardens ever since. Stay in a garden-view room if you can; waking up to that view makes everything else feel inconsequential.
+
+Just up the road, **[Il Sereno](/pools/il-sereno-75)** takes a more contemporary approach. Designed by Patricia Urquiola, the hotel's pool sits at lake level with a glass wall separating it from the water, so swimmers appear to hover between pool and lake. It's architecturally extraordinary — a different mood from Villa d'Este's old-money grandeur, but equally compelling.
+
+For true old-world splendor, **[Grand Hotel Tremezzo](/pools/grand-hotel-tremezzo-51)** delivers. The hotel's 1913 lakefront pool — an open-air pool on a floating platform extending over the water — offers perhaps the most romantic swim in Italy. Book a private hour at sunset and bring someone you love.
+
+## Amalfi Coast: Edge-of-the-World Infinity
+
+The Amalfi Coast isn't subtle. Everything here is vertical — cliffs dropping to turquoise water, terraced lemon groves stacked against the sky, and hotel pools that seem to pour directly into the Mediterranean.
+
+**[Monastero Santa Rosa](/pools/monastero-santa-rosa-hotel-spa-6)** occupies a 17th-century convent perched above the sea between Positano and Amalfi. The infinity pool here is carved from the cliffside itself, and the view — a long sweep of the Sorrentine Peninsula — is simply staggering. The hotel limits pool access to keep things tranquil; go early morning and you'll often have it to yourself.
+
+**[Belmond Hotel Caruso](/pools/belmond-hotel-caruso-7)** in Ravello sits 1,000 feet above sea level, giving its pool a perspective that feels genuinely panoramic rather than just elevated. The views extend past Amalfi and Minori all the way to the horizon. On a clear day in July, it's hard to imagine a better place to exist.
+
+**[Le Sirenuse](/pools/le-sirenuse-105)** in Positano is smaller and more intimate, but the pool's position — above the town's famous cascade of pastel buildings, with Positano and the sea below — is incomparable. The hotel has been run by the Sersale family for over 70 years and it shows: the service here is warm in a way that chain hotels struggle to replicate.
+
+**[Hotel Santa Caterina](/pools/hotel-santa-caterina-65)** in Amalfi town itself takes a different approach. Instead of clinging to cliffs, the hotel descends through gardens to the sea, with a saltwater pool carved into the rocks just above the waterline. Swim here and the Tyrrhenian Sea is inches away.
+
+## Tuscany: Rolling Hills and Stone Pools
+
+Tuscany's pool aesthetic is earthier than the coast — stone-edged pools overlooking vineyards and olive groves, where the surrounding landscape matters as much as the water itself.
+
+**[Castello di Vicarello](/pools/castello-di-vicarello-54)** is a 12th-century fortress converted into a six-suite hideaway in the Maremma. The pool sits within ancient stone walls with views across the undulating countryside — it feels genuinely private, genuinely historic. Fewer than 25 guests at full capacity. Reserve months ahead.
+
+**[Borgo Pignano](/pools/borgo-pignano-83)** near Volterra takes the organic farm concept seriously — the estate produces its own wine, olive oil, and honey — and the pool fits this ethos. Surrounded by Tuscan farmland with the countryside stretching in every direction, it's less about visual drama and more about a deep sense of place.
+
+## Umbria: The Quiet Alternative
+
+While Tuscany draws the crowds, neighboring Umbria remains under-visited, and for pool-seekers, that's a gift.
+
+**[Castello di Reschio](/pools/castello-di-reschio-58)** is the passion project of the Bolza family, who spent decades restoring a medieval hamlet in the Umbrian hills. The main pool is set within the castle's formal garden — cool, shaded, and unhurried. The estate also has a spa, riding stables, and an organic farm. It's the kind of place you check into for a week and consider extending indefinitely.
+
+## Rome: A City Pool Worth Knowing
+
+Urban Rome isn't known for spectacular pools, but **[Rome Cavalieri](/pools/rome-cavalieri-a-waldorf-astoria-hotel-37)** earns its place on this list. Set on Monte Mario above the city, the hotel has three pools and the views over Rome — from St. Peter's to the Apennines — are genuine. It's a city hotel, yes, but the pool terrace feels like an escape.
+
+## Planning Your Italian Pool Trip
+
+**When to go:** Late May through June and September are ideal — temperatures are warm, crowds are thinner than peak summer, and the light is extraordinary. July and August are intense at coastal properties; book well in advance and plan to use the pool early morning or evening.
+
+**Getting the experience right:** Italy's best pool hotels are often booked months ahead, particularly for July and August. Many have minimum stay requirements in peak season. If a specific property matters to you, don't leave it until the last minute.
+
+**The Lake Como logistics:** The lake's fast boat service connects most villages in under 20 minutes, so staying at one property and exploring others is genuinely practical. The SS340 road can be brutally congested in summer — boats beat cars.
+
+Italy's pools aren't just amenities. They're part of a longer tradition of *villeggiatura* — the Italian art of the summer retreat. Find the right one and you'll understand why people return to the same Italian hotel for a decade running.
+
+*Explore all Italian pools ranked on Pool Atlas → [Browse by destination](/)*
+    `
+  },
+  {
+    slug: "best-hotel-pools-bali",
+    title: "The Best Hotel Pools in Bali",
+    excerpt: "Bali has built its reputation on the hotel pool — from ancient rice terrace infinity edges to jungle-canopy plunges. Here are the ones worth planning a trip around.",
+    category: "Destination",
+    readTime: "9 min read",
+    image: "/images/pool-amankila-bali.jpg",
+    publishedAt: "2026-06-05",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Destination"
+    },
+    content: `
+# The Best Hotel Pools in Bali
+
+There's a reason Bali's hotel pools appear on more mood boards than almost anywhere else on earth. It's not just the design — though the design is exceptional — it's the setting. The island's landscape does things that pool architects elsewhere can only simulate: real rice terraces, actual jungle canopy, genuine volcano views. The best Bali pools don't compete with nature. They borrow from it.
+
+## East Bali: Terraced Grandeur
+
+**[Amankila](/pools/amankila-3)** remains the definitive Balinese pool experience. Ranked #3 in the world on Pool Atlas, the hotel's three-tiered infinity pools step down a coconut-palm hillside to a private beach club on the Lombok Strait. The composition — staggered blue rectangles against the hill, the sea stretching to the horizon — is so precisely conceived that photographs barely capture the scale of it. You need to stand at the top pool and look down.
+
+The Aman experience is unhurried by design. No pool attendants hovering, no DJ sets, just the sound of water and the occasional bird. Book the Pool Suite if the budget allows — you'll have your own plunge pool alongside access to the main pools below.
+
+## Ubud: Jungle and Rice Fields
+
+Ubud's pool landscape is different from the coast — greener, more enclosed, with a different kind of drama. The jungle canopy creates shade and sound in equal measure.
+
+**[Capella Ubud](/pools/capella-ubud-67)** takes the concept of blending architecture with landscape to its logical extreme. The camp — and it is a tented camp, in the original meaning — sits within a 22,000-square-meter valley. The main pool is suspended above the river gorge, offering views into the jungle below that feel genuinely wild. It's the most atmospheric pool on the island for guests who want nature rather than infinity-edge Instagram shots.
+
+**[Alila Ubud](/pools/alila-ubud-57)** takes the classic approach: a 25-meter pool at the edge of a rice terrace valley, with the forest dropping away below. The architecture is clean and contemporary, but it's the view that wins — a panoramic sweep of green that shifts color through the day from bright midday jade to deep dusk emerald.
+
+**[Bisma Eight](/pools/bisma-eight-50)** is Ubud's best-value entry in this category. The infinity pool overlooks the Campuhan River valley and Mount Agung on a clear day, and the property is smaller and more intimate than the big-name resorts. Excellent for honeymooners who want seclusion without Aman prices.
+
+## Seminyak and Uluwatu: Clifftop Drama
+
+The Bukit Peninsula, Bali's southernmost tip, offers a completely different pool experience — dramatic limestone cliffs above the Indian Ocean, with pools positioned to maximize the drop.
+
+**[Alila Villas Uluwatu](/pools/alila-villas-uluwatu-74)** may be the most architecturally significant hotel in Bali. Designed by WOHA Architects, the property cascades down the cliff face in a series of interconnected pools, gardens, and open pavilions. The main infinity pool appears to hang over the ocean. The design has won more awards than any other property on the island, and arriving here for the first time has a genuine wow factor.
+
+**[Chapung SeBali](/pools/chapung-sebali-resort-and-spa-66)** in the hills above Ubud offers a quieter alternative — a cliffside pool overlooking a deep tropical valley with Mount Agung in the background. Fewer guests know this property than its more famous neighbors, which is precisely what makes it special.
+
+## The Ritz-Carlton in Rice Fields
+
+**[Mandapa, A Ritz-Carlton Reserve](/pools/mandapa-a-ritz-carlton-reserve-31)** sits in an extraordinary position: within a 16-hectare rice field beside the Ayung River. The hotel's pools are integrated into this working landscape — swimming here, surrounded by active terraces tended by local farmers, is one of the most genuinely immersive experiences in Balinese luxury travel.
+
+The Ritz-Carlton Reserve category means fewer rooms and a higher ratio of staff to guests than a standard luxury hotel. The service shows.
+
+## Bali's Pool Culture: What to Know
+
+**Private pools vs. shared pools:** Bali leads the world in private villa pools — even mid-range properties often include a private pool with each villa. If maximum privacy matters, look for a pool villa rather than a suite with shared pool access. The gap in price is often smaller than you'd expect.
+
+**Best time to visit:** April through June and September through October are the sweet spots. The dry season (May–September) delivers reliable sunshine, but shoulder months before and after offer lower prices and fewer crowds. Ubud is cooler year-round than the coast; if you burn easily, the jungle properties offer more natural shade.
+
+**The Instagram question:** Bali's pools are among the most-photographed in the world. If you want your own peaceful morning swim without phone-in-pool strangers, ask reception about quieter hours. Many properties have informal early-morning windows (7–9am) before the day guests arrive.
+
+Bali has been a byword for luxury travel for three decades now, and the hotel pool scene has only deepened. New properties continue to raise the bar — but the classics earn their reputation every day.
+
+*Browse all Bali and Indonesia pools ranked on Pool Atlas → [See the rankings](/)*
+    `
+  },
+  {
+    slug: "best-hotel-pools-maldives",
+    title: "The Best Hotel Pools in the Maldives (For Every Type of Traveler)",
+    excerpt: "The Maldives invented the overwater bungalow. But its hotel pools — infinity edges merging with lagoon, rooftop decks above the reef — deserve equal attention.",
+    category: "Destination",
+    readTime: "8 min read",
+    image: "/images/pool-one-only-maldives.jpg",
+    publishedAt: "2026-06-01",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Destination"
+    },
+    content: `
+# The Best Hotel Pools in the Maldives
+
+At first glance, the Maldives doesn't need a hotel pool. The Indian Ocean is right there — warm, clear, and populated by more marine life than most aquariums. So why are the pools here among the most extraordinary on earth?
+
+Because the best Maldivian pools don't compete with the ocean. They frame it, float on it, or dissolve into it so completely that you're not sure where one ends and the other begins. They're not alternatives to swimming in the sea — they're a different kind of conversation with it.
+
+## For Honeymooners: Intimacy Above the Lagoon
+
+**[Huvafen Fushi](/pools/huvafen-fushi-12)** pioneered the underwater spa concept and has never stopped pushing boundaries. The island's pools sit at the edge of a house reef with extraordinary visibility — snorkel off the jetty and you're immediately in deep water with reef sharks and Napoleon wrasse. The pool provides a calmer counterpoint: heated, horizonless, facing west for the sunsets.
+
+The property is best suited to couples. The architecture is restrained and modern — nothing fussy — and the spa is ranked among the best in the Indian Ocean.
+
+**[Joali](/pools/joali-81)** takes a different approach: the resort is built around an art collection that transforms it into something closer to a museum-resort hybrid. Local and international artists have contributed installations throughout the island, and the main pool area is framed by one of the property's most dramatic works. For guests who want culture alongside the turquoise water, Joali is unmatched in the Maldives.
+
+**[Alila Kothaifaru](/pools/alila-kothaifaru-maldives-82)** is among the newest properties on this list, and it's positioned at a slightly lower price point than the ultra-luxe competition without sacrificing the things that matter. The main infinity pool sits at water level, the reef is 200 meters away, and the design is elegant without being fussy. An excellent choice for first-time Maldives visitors who don't want to spend at absolute top-tier levels.
+
+## For the Full Experience: One&Only Reethi Rah
+
+**[One&Only Reethi Rah](/pools/one-only-reethi-rah-92)** occupies one of the largest islands in the North Malé Atoll — a 109-hectare landmass with six kilometers of beach. The main pool sits beside the restaurant and bar complex, looking out over the lagoon. But the property's real draw is scale: a boat, two speedboats, tennis courts, a gym, and more beach than you could cover in a week. The pool here is part of a broader resort ecosystem.
+
+Book the Water Pool Villa for the full experience: a private plunge pool that cantilevers over the lagoon, with glass panels below the waterline so you can watch the reef below. Breakfast is delivered by boat.
+
+## The Practical Side of Maldives Pools
+
+**Seaplane vs. speedboat:** The most remote resorts require seaplane transfers — spectacular, but timed to daylight hours and weather-dependent. Speedboat resorts (closer to the capital, Malé) allow more flexibility and cost considerably less. Most pool-focused resorts are accessible by both; check transfer options before booking.
+
+**Water villa vs. beach villa:** Both categories can include private pools. Water villas tend to have better direct ocean access; beach villas often have more garden privacy. If you're choosing primarily for the pool experience, a beach pool villa at a property like Huvafen Fushi or Alila Kothaifaru gives you seclusion, shade, and beauty without the premium for overwater positioning.
+
+**When to visit:** November through April offers the calmest seas and most reliable sunshine. The south-west monsoon (May–October) brings occasional rough weather, but also lower prices and a different, more dramatic atmosphere. Most resorts operate year-round; the pools are always warm.
+
+The Maldives pool scene has matured significantly over the past decade. Where once a simple chlorinated rectangle was standard, properties now compete on infinity edges, tidal pools, and underwater vistas. It's an extraordinary luxury problem to have.
+
+*See all Maldives pools ranked on Pool Atlas → [Browse the list](/)*
+    `
+  },
+  {
+    slug: "best-hotel-pools-thailand",
+    title: "The Best Hotel Pools in Thailand",
+    excerpt: "From Chiang Mai's temple-framed hilltop pools to Phuket's jaw-dropping Andaman panoramas, Thailand's hotel pool scene is as varied as the country itself.",
+    category: "Destination",
+    readTime: "9 min read",
+    image: "/images/pool-six-senses-zighy.jpg",
+    publishedAt: "2026-05-28",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Destination"
+    },
+    content: `
+# The Best Hotel Pools in Thailand
+
+Thailand has been receiving luxury travelers for long enough to know exactly what they want — and the country's hotel pools reflect that understanding. They're varied in a way that matches Thailand's own geographic range: jungle pools in the north, beach-facing infinity edges in the south, island retreats with views that pin you in place. Here's where to swim.
+
+## Chiang Mai: Northern Thailand's Cultural Capital
+
+Chiang Mai's pool scene is defined by a lush, tropical intimacy that's entirely different from the beach resorts of the south. Pools here are framed by jungle, rice fields, and — on a clear day — the mountains that run north into Myanmar.
+
+**[Four Seasons Resort Chiang Mai](/pools/four-seasons-resort-chiang-mai-14)** occupies a working rice paddy estate in the Mae Rim Valley, 30 minutes north of the city. The main pool sits at the edge of the terraces, which are actively farmed by local families under the resort's Farmer Experience program. Watching water buffalo work the fields from a heated pool is a uniquely Thai luxury experience — a window into agricultural life that feels authentic rather than staged.
+
+**[137 Pillars Suites & Residences](/pools/137-pillars-suites-residences-30)** takes a different tack: a boutique heritage property in the heart of the city, with a rooftop pool offering views over Chiang Mai's old town and the temples below. Smaller and more urban than the Four Seasons, but exceptionally well-executed and significantly more affordable.
+
+## Phuket: Andaman Drama
+
+Phuket's west coast commands the Andaman Sea, and the hotels that take full advantage of this orientation create some of the most dramatic pool-and-sea compositions in Southeast Asia.
+
+**[Amanpuri](/pools/amanpuri-78)** was Aman's first property, opened in 1988, and it still sets the standard for the Phuket luxury pool experience. Forty pavilions spread across a coconut grove above the sea, each with access to the main 25-meter pool, which faces the Andaman over a staircase of stepped terraces. The design is rooted in Thai temple architecture — clean sightlines, calm proportions, water as a meditative element rather than a social one. Nearly four decades on, it remains the best pool hotel in Phuket.
+
+## Koh Samui: Gulf of Thailand
+
+The Gulf side of southern Thailand gets less attention than Phuket but delivers equally spectacular water. Koh Samui's hills and headlands create natural platforms for elevated pool experiences.
+
+**[Four Seasons Resort Koh Samui](/pools/four-seasons-resort-koh-samui-77)** occupies a steep hillside above the Gulf. The pool pavilions are built into the gradient, so each villa's private pool appears to hang over the bay below. The resort's main pool mirrors the private ones — a long infinity edge pointing directly at Koh Phangan and the evening sky. Sunsets here rank among the best in Thailand.
+
+## Koh Yao Noi: The Off-Grid Choice
+
+Between Phuket and Krabi, Koh Yao Noi is a small island that has largely resisted mass tourism development. The few luxury properties here benefit from genuine seclusion — and extraordinary views of Phang Nga Bay.
+
+**[Six Senses Yao Noi](/pools/six-senses-yao-noi-72)** has perhaps the finest setting in all of Thai luxury hospitality. The resort climbs a hillside above the bay, and the main pool is positioned to frame Phang Nga's limestone karsts — those extraordinary rock formations that rise vertically from the water in shapes that look digitally enhanced but are entirely real. Swimming here with the karsts arrayed before you at golden hour is an experience that doesn't require any other justification for the trip.
+
+Six Senses properties emphasize sustainability and wellness throughout, so the pool experience here comes with the wider ethos: organic spa treatments, farm-to-table food, minimal single-use plastics. For environmentally-conscious luxury travelers, Six Senses Yao Noi represents the direction the industry needs to go.
+
+## Hua Hin: The Wellness Destination
+
+Thailand's wellness resort scene centers on **[Chiva Som](/pools/chiva-som-94)** in Hua Hin, a two-hour drive south of Bangkok. The original Thai destination spa has been operating since 1995, and its pools form the backbone of the retreat experience — freshwater pools, saltwater pools, hydrotherapy pools, and a private beach pool. Guests come for multi-day programs combining spa treatments, nutrition counseling, and fitness sessions.
+
+The pool design here is less about Instagram drama and more about genuine therapeutic intent. Temperature-controlled water, mineral additions for skin health, landscaped privacy. It's a different kind of pool experience — quieter, more internal — and it has its passionate devotees.
+
+## Thailand Pool Planning
+
+**Getting around:** Thailand's pool destinations are spread widely. Chiang Mai is a two-hour flight from Bangkok; Phuket is a similar distance south. Island resorts require speedboat transfers after landing. Allow more time than you think you'll need — transfers on smaller islands can be weather-dependent.
+
+**High season:** November through April covers the dry season for most of Thailand (the Gulf Coast and Koh Samui follow a different pattern, with their peak December through August). Book high-season hotels at major pool properties well in advance — the best villas and pool suites go early.
+
+**The private pool calculation:** Thailand's villa-and-pool-suite model means private pools are widely available at lower prices than in Europe or the Caribbean. At properties like 137 Pillars, a pool suite costs a fraction of what it would at a comparable European property. Build this into your planning: the upgrade from a standard room to a pool-access room is often worth the incremental cost.
+
+Thailand's pool culture is sophisticated enough now that any serious luxury traveler is spoiled for choice. The challenge isn't finding a great pool — it's choosing which one.
+
+*See all Thailand pools ranked on Pool Atlas → [Browse the rankings](/)*
+    `
+  },
+  {
+    slug: "best-hotel-pools-caribbean",
+    title: "The Best Hotel Pools in the Caribbean",
+    excerpt: "The Caribbean invented the resort pool — but the best ones here go far beyond the expected. Private infinity edges, freshwater mountain plunges, and pools that blur into the sea.",
+    category: "Destination",
+    readTime: "9 min read",
+    image: "/images/pool-jade-mountain.jpg",
+    publishedAt: "2026-05-20",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Destination"
+    },
+    content: `
+# The Best Hotel Pools in the Caribbean
+
+The Caribbean invented the modern resort pool. Decades before infinity edges became design vocabulary and private plunge pools a standard expectation, the islands were developing the grammar of tropical luxury — turquoise water, white sun decks, rum punch at 11am. But the region has moved far beyond that original template. Today, the Caribbean's best hotel pools are architecturally ambitious, deliberately private, and in some cases genuinely unforgettable.
+
+## Saint Lucia: The Piton Standard
+
+**[Jade Mountain](/pools/jade-mountain-11)** set a benchmark when it opened that few Caribbean hotels have matched. Each of the hotel's 29 "sanctuaries" is an open-sided suite with its own private infinity pool positioned to face directly at the Pitons — Saint Lucia's extraordinary twin volcanic peaks. There is no fourth wall. The suite opens completely to the view, making the pool feel less like an amenity and more like a vantage point.
+
+The pools here are large for a private suite — some are 15 feet long — and they're heated to a consistent 90°F. The design is the work of Nick Troubetzkoy, whose approach to merging architecture with landscape has made Jade Mountain one of the most awarded hotel designs in the Western Hemisphere.
+
+**[Boucan by Hotel Chocolat](/pools/boucan-by-hotel-chocolat-100)** in the hills above Soufrière takes a more intimate approach. The boutique property sits within an active cacao plantation, and the pool overlooks the working estate rather than the sea. It's a reminder that Saint Lucia's beauty extends beyond its coastline — this is one of the most atmospheric agricultural landscapes in the Caribbean.
+
+## Anguilla: Understated Elegance
+
+Anguilla's beaches — wide, flat, white — are the finest in the Eastern Caribbean, and the island's hotels have built around them accordingly.
+
+**[Belmond Cap Juluca](/pools/belmond-cap-juluca-34)** commands Maundays Bay, one of the island's longest stretches of white sand. The hotel's Moorish-influenced architecture creates a series of pool courtyards that face both the beach and the bay — a design that provides privacy without sacrificing the view. The service here is among the most attentive in the Caribbean; the staff-to-guest ratio at Belmond properties is noticeably high.
+
+## Antigua: Secluded Coves
+
+Antigua's 365 beaches (one for every day of the year, as the island's tourism board will happily tell you) include some genuinely secluded coves that a handful of small hotels have built around.
+
+**[Hermitage Bay](/pools/hermitage-bay-26)** sits in a small bay on the island's west coast, accessible by a private road. The all-suite, all-inclusive property has a main pool at beach level and individual cottage plunge pools — a combination that gives guests both social space and privacy. The beach here is effectively private, which is increasingly rare in the Caribbean.
+
+## Dominica: The Nature Island
+
+Dominica's nickname — the Nature Island — signals what this mountainous volcanic island offers: genuine wilderness, hot springs, and an undeveloped interior that attracts a different kind of traveler.
+
+**[Secret Bay](/pools/secret-bay-33)** builds on this identity. Each of the property's villas has its own infinity pool cantilevered above the sea, and the design integrates with the forest rather than clearing it. The effect is unusual — you're swimming in a pool but simultaneously enclosed by jungle. A freshwater swimming hole is accessible via a short trail from the property. For travelers who want genuine natural immersion alongside luxury amenities, Dominica and Secret Bay offer something genuinely different.
+
+## Puerto Rico: The American Gateway
+
+Puerto Rico's geographic position — a U.S. territory, direct flights from the east coast, no passport required for American travelers — makes it one of the Caribbean's most accessible luxury destinations.
+
+**[Dorado Beach, A Rosewood Resort](/pools/dorado-beach-a-rosewood-resort-28)** occupies the site of a former Rockefeller estate along the island's north coast. The complex includes four pools, with the main one set within the resort's beachfront garden. The property has a history that adds depth to the experience — the Su Casa restaurant, the original plantation house, the centuries-old trees — but the pools are the daily anchor of any stay here.
+
+## The Caribbean Pool Calendar
+
+**Hurricane season:** The official Atlantic hurricane season runs June 1 through November 30, with peak activity in August and September. Most Caribbean luxury hotels stay open through this period, offering significantly reduced rates and a quieter experience. Major storms are relatively rare and hotels have sophisticated protocols, but travel insurance is strongly recommended.
+
+**High season:** December through April delivers the most reliable weather across most of the Caribbean. Christmas and New Year weeks book out a year or more in advance at top-tier properties. February and March offer excellent weather with somewhat less extreme demand.
+
+**Island differences:** The Caribbean isn't climatically uniform. Aruba, Bonaire, and Curaçao sit south of the hurricane belt and receive less rainfall year-round. The Windward Islands (Saint Lucia, Dominica) are lusher and wetter. Anguilla and Antigua are drier. Build island-specific climate into your planning rather than applying a general Caribbean calendar.
+
+The Caribbean pool experience has matured considerably over the past decade. The best properties now offer something more specific and considered than the generic "luxury resort" aesthetic that dominated earlier eras. Find the right one and you'll wonder why you ever went anywhere else.
+
+*Browse all Caribbean pools ranked on Pool Atlas → [See the full rankings](/)*
+    `
   }
 ]
 
