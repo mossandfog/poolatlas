@@ -39,11 +39,17 @@ function generateBadgeSVG(rank: number, hotelName: string): string {
   <path d="M 20 155 Q 50 148 80 155 Q 110 162 140 155 Q 170 148 200 155 Q 230 162 260 155" stroke="${color}" stroke-width="1" fill="none" opacity="0.15"/>
   <path d="M 20 163 Q 50 156 80 163 Q 110 170 140 163 Q 170 156 200 163 Q 230 170 260 163" stroke="${color}" stroke-width="1" fill="none" opacity="0.10"/>
 
-  <!-- POOL ATLAS wordmark -->
-  <text x="140" y="28" text-anchor="middle" fill="${color}" font-family="Space Grotesk, system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="4" opacity="0.9">POOL ATLAS</text>
+  <!-- Logo icon: circle + waves (fixed brand teal, always consistent) -->
+  <circle cx="95" cy="27" r="9" fill="#17BCC8"/>
+  <path d="M 89 24.5 Q 92 22 95 24.5 Q 98 27 101 24.5" stroke="white" stroke-width="1.3" fill="none" opacity="0.95"/>
+  <path d="M 89 27.5 Q 92 25 95 27.5 Q 98 30 101 27.5" stroke="white" stroke-width="1.3" fill="none" opacity="0.95"/>
+  <path d="M 89 30.5 Q 92 28 95 30.5 Q 98 33 101 30.5" stroke="white" stroke-width="1.3" fill="none" opacity="0.95"/>
+
+  <!-- POOL ATLAS wordmark (shifted right to balance logo circle) -->
+  <text x="152" y="31" text-anchor="middle" fill="${color}" font-family="Space Grotesk, system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="4" opacity="0.9">POOL ATLAS</text>
 
   <!-- Subtitle -->
-  <text x="140" y="46" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="8.5" letter-spacing="2.5" opacity="0.45">WORLD RANKINGS</text>
+  <text x="140" y="47" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="8.5" letter-spacing="2.5" opacity="0.45">WORLD RANKINGS</text>
 
   <!-- Divider -->
   <line x1="60" y1="54" x2="220" y2="54" stroke="white" stroke-width="0.5" opacity="0.12"/>
