@@ -49,10 +49,10 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Rankings</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#top-100" className="hover:text-primary transition-colors py-1 inline-block">Top 100 Pools</a></li>
-              <li><a href="#featured" className="hover:text-primary transition-colors py-1 inline-block">Pool of the Month</a></li>
-              <li><a href="#map" className="hover:text-primary transition-colors py-1 inline-block">By Region</a></li>
-              <li><a href="#explore" className="hover:text-primary transition-colors py-1 inline-block">By Award</a></li>
+              <li><a href="/#top-100" className="hover:text-primary transition-colors py-1 inline-block">Top 100 Pools</a></li>
+              <li><a href="/#featured" className="hover:text-primary transition-colors py-1 inline-block">Pool of the Month</a></li>
+              <li><a href="/#map" className="hover:text-primary transition-colors py-1 inline-block">By Region</a></li>
+              <li><a href="/#explore" className="hover:text-primary transition-colors py-1 inline-block">By Award</a></li>
             </ul>
           </div>
 
@@ -61,8 +61,8 @@ export function Footer() {
             <h4 className="font-semibold text-foreground mb-4">Explore</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><a href="/blog" className="hover:text-primary transition-colors py-1 inline-block">The Deep End Blog</a></li>
-              <li><a href="#map" className="hover:text-primary transition-colors py-1 inline-block">World Map</a></li>
-              <li><a href="#featured" className="hover:text-primary transition-colors py-1 inline-block">Pool of the Month</a></li>
+              <li><a href="/#map" className="hover:text-primary transition-colors py-1 inline-block">World Map</a></li>
+              <li><a href="/#featured" className="hover:text-primary transition-colors py-1 inline-block">Pool of the Month</a></li>
               <li><a href="/badges" className="hover:text-primary transition-colors py-1 inline-block">Hotel Badges</a></li>
             </ul>
           </div>
