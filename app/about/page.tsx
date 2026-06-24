@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Target, Eye, Heart, CheckCircle, ArrowRight, Mail } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -28,6 +29,18 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      {/* Full-width hero image */}
+      <div className="relative w-full h-[50vh] min-h-[320px] overflow-hidden">
+        <Image
+          src="/images/about-hero.jpg"
+          alt="Guest relaxing in an infinity pool overlooking the ocean"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+      </div>
 
       {/* Story - Condensed */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">
