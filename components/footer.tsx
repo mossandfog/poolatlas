@@ -92,6 +92,13 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Product Hunt Badge */}
+        <div className="flex justify-center mb-8">
+          <a href="https://www.producthunt.com/products/pool-atlas?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-pool-atlas" target="_blank" rel="noopener noreferrer">
+            <img alt="Pool Atlas - Dive into the world's most amazing swimming pools! | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1179502&theme=light&t=1782334572347" />
+          </a>
+        </div>
+
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
