@@ -452,33 +452,6 @@ export default function PressPage() {
             </TabsContent>
           </Tabs>
 
-          {/* Recent Coverage */}
-          <Card className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="font-[family-name:var(--font-display)] text-xl">Recent Coverage</CardTitle>
-              <CardDescription>Pool Atlas in the news</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {[
-                  { pub: "Condé Nast Traveler", title: "The Best Hotel Pools According to Pool Atlas", date: "Mar 2026" },
-                  { pub: "Travel + Leisure", title: "How Pool Atlas is Changing Hotel Rankings", date: "Feb 2026" },
-                  { pub: "Forbes", title: "The Startup Making Waves in Luxury Travel", date: "Jan 2026" }
-                ].map((item, idx) => (
-                  <div 
-                    key={idx}
-                    className="p-4 rounded-lg border border-border bg-muted/30"
-                  >
-                    <p className="text-xs text-muted-foreground mb-1">{item.pub} • {item.date}</p>
-                    <p className="font-medium text-foreground">{item.title}</p>
-                    <span className="text-xs text-muted-foreground mt-2 block">
-                      Coming soon
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
 
