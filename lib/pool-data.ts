@@ -31,7 +31,7 @@ export function generateSlug(hotel: string, id: number): string {
 // Data researched from: Condé Nast Traveler, Travel + Leisure, The Luxury Travel Expert, 
 // The Rooftop Guide, TripAdvisor Travelers' Choice, and other authoritative travel publications.
 
-export const pools: Pool[] = [
+const _poolsData = [
   {
     id: 1,
     rank: 1,
@@ -212,7 +212,7 @@ export const pools: Pool[] = [
     location: "Gordes, Provence",
     country: "France",
     region: "Europe",
-    image: "/images/pool-como-castello.jpg",
+    image: "/images/pools/pool-airelles-gordes.jpg",
     rating: 9.3,
     reviewCount: 876,
     features: ["100-Foot Length", "Olive Groves", "Mountain View", "Historic Setting"],
@@ -228,7 +228,7 @@ export const pools: Pool[] = [
     location: "North Malé Atoll",
     country: "Maldives",
     region: "Asia",
-    image: "/images/pool-one-only-maldives.jpg",
+    image: "/images/pools/pool-huvafen-fushi.jpg",
     rating: 9.3,
     reviewCount: 1345,
     features: ["Infinity Edge", "Ocean View", "Fiber-Optic Lighting", "Day Beds"],
@@ -308,7 +308,7 @@ export const pools: Pool[] = [
     location: "Marrakech",
     country: "Morocco",
     region: "Africa",
-    image: "/images/pool-alila-oman.jpg",
+    image: "/images/pools/pool-mandarin-oriental-marrakech.jpg",
     rating: 9.1,
     reviewCount: 2345,
     features: ["Gigantic Pool", "Private Villas", "Decorative Ponds", "Garden Setting"],
@@ -340,7 +340,7 @@ export const pools: Pool[] = [
     location: "Siem Reap",
     country: "Cambodia",
     region: "Asia",
-    image: "/images/pool-hanging-gardens-bali.jpg",
+    image: "/images/pools/pool-zannier-phum-baitang.jpg",
     rating: 9.1,
     reviewCount: 1234,
     features: ["Infinity Edge", "Rice Paddy Setting", "Near UNESCO Site", "Sunset Views"],
@@ -388,7 +388,7 @@ export const pools: Pool[] = [
     location: "Serengeti National Park",
     country: "Tanzania",
     region: "Africa",
-    image: "/images/pool-singita-lebombo.jpg",
+    image: "/images/pools/pool-four-seasons-serengeti.jpg",
     rating: 9.0,
     reviewCount: 890,
     features: ["Wildlife Watering Hole", "Safari View", "Infinity Edge", "Elevated Platform"],
@@ -404,7 +404,7 @@ export const pools: Pool[] = [
     location: "Lhasa, Tibet",
     country: "China",
     region: "Asia",
-    image: "/images/pool-six-senses-zighy.jpg",
+    image: "/images/pools/pool-st-regis-lhasa.jpg",
     rating: 9.0,
     reviewCount: 678,
     features: ["Indoor", "Gold-Lined", "Therapeutic Salt Water", "Mountain View"],
@@ -436,7 +436,7 @@ export const pools: Pool[] = [
     location: "Uluru-Kata Tjuta National Park",
     country: "Australia",
     region: "Oceania",
-    image: "/images/pool-amangiri-utah.jpg",
+    image: "/images/pools/pool-longitude-131.jpg",
     rating: 8.9,
     reviewCount: 456,
     features: ["Desert Camp", "Uluru View", "Private Plunge", "Luxury Pavilion"],
@@ -1901,6 +1901,12 @@ export const pools: Pool[] = [
     bookingUrl: "https://www.rosewoodhotels.com/en/the-chancery-rosewood"
   }
 ]
+
+// Compute slugs for all pools so pool.slug is always available
+export const pools = _poolsData.map(p => ({
+  ...p,
+  slug: generateSlug(p.hotel, p.id)
+}))
 
 // Hotel website URLs lookup - add real URLs for hotel outreach
 const hotelUrls: Record<string, { websiteUrl: string; bookingUrl?: string }> = {
