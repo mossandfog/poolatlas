@@ -32,6 +32,8 @@ export function Header() {
         top: elementPosition - offset,
         behavior: "smooth"
       })
+    } else {
+      window.location.href = `/#${id}`
     }
     setIsMenuOpen(false)
   }
@@ -73,14 +75,14 @@ export function Header() {
 
           <nav className="hidden md:flex items-center gap-8">
             <a 
-              href="#top-100" 
+              href="/#top-100" 
               onClick={(e) => scrollToSection(e, "top-100")}
               className="text-sm text-foreground/80 hover:text-primary transition-colors font-semibold"
             >
               Rankings
             </a>
             <a 
-              href="#explore" 
+              href="/#explore" 
               onClick={(e) => scrollToSection(e, "explore")}
               className="text-sm text-foreground/80 hover:text-primary transition-colors font-semibold"
             >
@@ -130,14 +132,14 @@ export function Header() {
           <nav className="md:hidden py-4 border-t border-border bg-card">
             <div className="flex flex-col gap-3">
               <a 
-                href="#top-100" 
+                href="/#top-100" 
                 onClick={(e) => scrollToSection(e, "top-100")}
                 className="text-base py-2 text-foreground hover:text-primary transition-colors font-semibold"
               >
                 Rankings
               </a>
               <a 
-                href="#explore" 
+                href="/#explore" 
                 onClick={(e) => scrollToSection(e, "explore")}
                 className="text-base py-2 text-foreground hover:text-primary transition-colors font-semibold"
               >
