@@ -13,7 +13,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
@@ -21,7 +21,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const pool = pools.find((p) => p.slug === params.slug)
+  const { slug } = await params
+  const pool = pools.find((p) => p.slug === slug)
   if (!pool) return {}
   return {
     title: `${pool.name} at ${pool.hotel} | Pool Atlas`,
@@ -34,8 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-export default function PoolPage({ params }: Props) {
-  const pool = pools.find((p) => p.slug === params.slug)
+export default async function PoolPage({ params }: Props) {
+  const { slug } = await params
+  const pool = pools.find((p) => p.slug === slug)
   if (!pool) notFound()
 
   const nearbyPools = pools
