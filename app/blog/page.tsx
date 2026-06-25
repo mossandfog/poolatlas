@@ -1,23 +1,47 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Clock, ArrowRight, User } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { ArrowRight, Check } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { blogPosts, categories } from "@/lib/blog-data"
 import { BlogFilters } from "@/components/blog-filters"
 
-export const metadata = {
-  title: "The Deep End | Pool Atlas Blog",
-  description: "Stories, secrets, and science behind the world's most remarkable hotel pools. Expert guides and destination features for pool lovers."
-}
-
 export default function BlogPage() {
+  const [email, setEmail] = useState("")
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+    setLoading(true)
+    setError("")
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError("Something went wrong. Please try again.")
+      }
+    } catch {
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <main className="min-h-screen bg-background">
       <Header />
-      
+
       <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -45,12 +69,30 @@ export default function BlogPage() {
             <p className="text-muted-foreground mb-6 max-w-md mx-auto">
               Get the latest pool guides and destination features delivered to your inbox.
             </p>
-            <Link href="/#newsletter">
-              <Button className="rounded-full">
-                Subscribe to Newsletter
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
+            {submitted ? (
+              <div className="flex items-center justify-center gap-2 text-primary">
+                <Check className="w-5 h-5" />
+                <span className="font-medium">You're in! Watch your inbox.</span>
+              </div>
+            ) : (
+              <>
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                  <Input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 rounded-full px-6 h-12 bg-card border-border"
+                    required
+                  />
+                  <Button type="submit" size="lg" className="rounded-full h-12 px-6" disabled={loading}>
+                    {loading ? "Subscribing…" : "Subscribe"}
+                    {!loading && <ArrowRight className="w-4 h-4 ml-2" />}
+                  </Button>
+                </form>
+                {error && <p className="text-sm text-destructive mt-3">{error}</p>}
+              </>
+            )}
           </div>
         </div>
       </div>
