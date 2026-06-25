@@ -8,11 +8,29 @@ import { ArrowRight, Check } from "lucide-react"
 export function Newsletter() {
   const [email, setEmail] = useState("")
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) {
-      setSubmitted(true)
+    if (!email) return
+    setLoading(true)
+    setError("")
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError("Something went wrong. Please try again.")
+      }
+    } catch {
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -35,20 +53,23 @@ export function Newsletter() {
             <span className="font-medium">Thank you for subscribing!</span>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 rounded-full px-6 h-12 bg-card border-border"
-              required
-            />
-            <Button type="submit" size="lg" className="rounded-full h-12 px-6 shadow-md">
-              Subscribe
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </form>
+          <>
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 rounded-full px-6 h-12 bg-card border-border"
+                required
+              />
+              <Button type="submit" size="lg" className="rounded-full h-12 px-6 shadow-md" disabled={loading}>
+                {loading ? "Subscribing…" : "Subscribe"}
+                {!loading && <ArrowRight className="w-4 h-4 ml-2" />}
+              </Button>
+            </form>
+            {error && <p className="text-sm text-destructive mt-3">{error}</p>}
+          </>
         )}
       </div>
     </section>
