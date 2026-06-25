@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pool Atlas Badge Snippets</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f2f8f9;
+      color: #0a1628;
+      padding: 40px 20px;
+    }
+    header {
+      max-width: 860px;
+      margin: 0 auto 36px;
+      text-align: center;
+    }
+    header h1 { font-size: 24px; color: #0a1628; margin-bottom: 6px; }
+    header p  { font-size: 14px; color: #666; line-height: 1.6; }
+
+    .instructions {
+      max-width: 860px;
+      margin: 0 auto 32px;
+      background: white;
+      border-radius: 12px;
+      padding: 20px 24px;
+      border-left: 4px solid #17BCC8;
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.7;
+    }
+    .instructions strong { color: #0a1628; }
+
+    .grid {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .badge-col {
+      flex-shrink: 0;
+    }
+    .badge-col img {
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      width: 168px;
+      height: 108px;
+    }
+
+    .info-col {
+      flex: 1;
+      min-width: 0;
+    }
+    .rank-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #17BCC8;
+      margin-bottom: 3px;
+    }
+    .hotel-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0a1628;
+      margin-bottom: 2px;
+    }
+    .pool-name {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .snippet-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #999;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .snippet-box {
+      background: #f5feff;
+      border: 1px solid #d0eef0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 11px;
+      color: #0a5560;
+      white-space: pre-wrap;
+      word-break: break-all;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .copy-btn {
+      display: inline-block;
+      padding: 7px 18px;
+      background: #17BCC8;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: background 0.15s;
+    }
+    .copy-btn:hover    { background: #14a8b3; }
+    .copy-btn.copied   { background: #22c55e; }
+
+    .badge-link {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 12px;
+      color: #17BCC8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .badge-link:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .card { flex-direction: column; }
+      .badge-col img { width: 140px; height: 90px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pool Atlas — Badge Email Snippets</h1>
+  <p>One-click copy for embedding each hotel's ranked badge in your outreach email.</p>
+</header>
+
+<div class="instructions">
+  <strong>How to embed a badge in your email (Zoho):</strong> Click "Copy HTML" next to any hotel. In Zoho Compose, switch to HTML/Source mode (the <code>&lt;/&gt;</code> icon in the toolbar), paste the snippet where you want the badge to appear, then switch back to Normal view. The badge will display as a clickable image that links to the hotel's Pool Atlas page.
+</div>
+
+<div class="grid" id="grid"></div>
+
+<script>
+  const hotels = [
+    { rank: 1,  hotel: "Grace Santorini",                  pool: "Caldera Infinity Pool",      id: 1,  slug: "grace-santorini-1" },
+    { rank: 2,  hotel: "Marina Bay Sands",                 pool: "SkyPark Infinity Pool",      id: 2,  slug: "marina-bay-sands-2" },
+    { rank: 3,  hotel: "Amankila",                         pool: "Three-Tier Infinity Pool",   id: 3,  slug: "amankila-3" },
+    { rank: 4,  hotel: "Hotel du Cap-Eden-Roc",            pool: "Cliffside Infinity Pool",    id: 4,  slug: "hotel-du-cap-eden-roc-4" },
+    { rank: 5,  hotel: "Amangiri",                         pool: "Desert Escarpment Pool",     id: 5,  slug: "amangiri-5" },
+    { rank: 6,  hotel: "Monastero Santa Rosa Hotel & Spa", pool: "Amalfi Infinity Pool",       id: 6,  slug: "monastero-santa-rosa-hotel-spa-6" },
+    { rank: 7,  hotel: "Belmond Hotel Caruso",             pool: "Ravello Sky Pool",           id: 7,  slug: "belmond-hotel-caruso-7" },
+    { rank: 8,  hotel: "The Oberoi Udaivilas",             pool: "Lake Pichola Pool",          id: 8,  slug: "the-oberoi-udaivilas-8" },
+    { rank: 9,  hotel: "The Retreat at Blue Lagoon",       pool: "Geothermal Lagoon Pool",     id: 9,  slug: "the-retreat-at-blue-lagoon-9" },
+    { rank: 10, hotel: "Aman Tokyo",                       pool: "Tokyo Skyline Pool",         id: 10, slug: "aman-tokyo-10" },
+  ];
+
+  const BASE = "https://poolatlas.io";
+
+  const grid = document.getElementById("grid");
+
+  hotels.forEach(h => {
+    const badgeUrl   = `${BASE}/api/badge/${h.id}`;
+    const pageUrl    = `${BASE}/for-hotels/${h.slug}`;
+    const alt        = `Ranked #${h.rank} in the World - Pool Atlas`;
+
+    const snippet =
+`<a href="${pageUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-block; text-decoration:none;">
+  <img src="${badgeUrl}" width="280" height="180" alt="${alt}" style="display:block; border:0;" />
+</a>`;
+
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="badge-col">
+        <img src="${badgeUrl}" alt="${alt}" loading="lazy" />
+      </div>
+      <div class="info-col">
+        <div class="rank-label">Rank #${h.rank}</div>
+        <div class="hotel-name">${h.hotel}</div>
+        <div class="pool-name">${h.pool}</div>
+        <div class="snippet-label">Email embed HTML</div>
+        <div class="snippet-box">${escapeHtml(snippet)}</div>
+        <button class="copy-btn" data-snippet="${escapeAttr(snippet)}">Copy HTML</button>
+        <a class="badge-link" href="${pageUrl}" target="_blank">View listing &rarr;</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+
+  document.getElementById("grid").addEventListener("click", e => {
+    const btn = e.target.closest(".copy-btn");
+    if (!btn) return;
+    const snippet = btn.dataset.snippet;
+    navigator.clipboard.writeText(snippet).then(() => {
+      btn.textContent = "Copied!";
+      btn.classList.add("copied");
+      setTimeout(() => {
+        btn.textContent = "Copy HTML";
+        btn.classList.remove("copied");
+      }, 2500);
+    });
+  });
+
+  function escapeHtml(s) {
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+  function escapeAttr(s) {
+    return s.replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+</script>
+
+</body>
+</html>
