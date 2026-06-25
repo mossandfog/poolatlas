@@ -83,31 +83,13 @@ const pressReleases = [
     excerpt: "The world's highest infinity pool, an underground lap pool in Paris, and four more landmark openings join the definitive rankings."
   },
   {
-    date: "February 2026",
-    title: "Pool Atlas Partners with Leading Travel Publications",
-    excerpt: "New data partnerships with Condé Nast Traveler, Travel + Leisure, and more."
-  },
-  {
     date: "January 2026",
     title: "Pool Atlas Launches Interactive World Map Feature",
     excerpt: "Travelers can now explore pools by location with our new interactive global map."
   }
 ]
 
-const pullQuotes = [
-  {
-    quote: "Pool Atlas has become the definitive authority on hotel swimming pools worldwide.",
-    attribution: "Travel + Leisure"
-  },
-  {
-    quote: "The rankings that luxury travelers trust when choosing their next pool destination.",
-    attribution: "Condé Nast Traveler"
-  },
-  {
-    quote: "An indispensable resource for pool enthusiasts and travel planners alike.",
-    attribution: "Forbes Travel"
-  }
-]
+const pullQuotes: { quote: string; attribution: string }[] = []
 
 const factSheet = {
   founded: "2024",
@@ -219,12 +201,18 @@ export default function PressPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    {pullQuotes.map((item, idx) => (
+                    {pullQuotes.length > 0 ? pullQuotes.map((item, idx) => (
                       <div key={idx} className="border-l-4 border-primary pl-4">
                         <p className="italic text-foreground mb-2">"{item.quote}"</p>
                         <p className="text-sm text-muted-foreground">— {item.attribution}</p>
                       </div>
-                    ))}
+                    )) : (
+                      <div className="text-center py-8 text-muted-foreground">
+                        <Quote className="w-8 h-8 mx-auto mb-3 opacity-30" />
+                        <p className="text-sm">Coverage quotes will appear here as they come in.</p>
+                        <p className="text-xs mt-1">Reach out to <span className="text-primary">hello@poolatlas.io</span> for press inquiries.</p>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               </div>
@@ -238,11 +226,11 @@ export default function PressPage() {
                 <CardContent>
                   <div className="p-4 bg-muted/30 rounded-lg border border-border">
                     <p className="text-foreground leading-relaxed">
-                      <strong>Pool Atlas</strong> is the world's leading authority on hotel swimming pools, 
-                      providing comprehensive rankings based on aggregated reviews from major travel platforms, 
-                      expert assessments from publications including Condé Nast Traveler and Travel + Leisure, 
-                      and proprietary evaluation criteria. Founded in 2024 in Portland, Oregon, Pool Atlas helps travelers 
-                      discover extraordinary aquatic experiences at hotels and resorts across 50+ countries. 
+                      <strong>Pool Atlas</strong> is the definitive guide to the world's most extraordinary hotel swimming pools,
+                      providing comprehensive rankings based on aggregated guest reviews,
+                      on-site research, and proprietary evaluation criteria covering pool design, views,
+                      exclusivity, and overall experience. Founded in 2024 in Portland, Oregon, Pool Atlas helps travelers
+                      discover extraordinary aquatic experiences at hotels and resorts across 50+ countries.
                       For more information, visit <span className="text-primary">poolatlas.io</span>.
                     </p>
                   </div>
