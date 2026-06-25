@@ -182,10 +182,12 @@ export default function PressPage() {
                       <p className="text-sm text-muted-foreground">Methodology</p>
                       <p className="font-medium text-foreground">{factSheet.methodology}</p>
                     </div>
-                    <Button variant="outline" className="w-full mt-4 rounded-full">
-                      <Download className="w-4 h-4 mr-2" />
-                      Download Fact Sheet (PDF)
-                    </Button>
+                    <a href="/PoolAtlas-FactSheet.pdf" download className="block w-full mt-4">
+                      <Button variant="outline" className="w-full rounded-full">
+                        <Download className="w-4 h-4 mr-2" />
+                        Download Fact Sheet (PDF)
+                      </Button>
+                    </a>
                   </CardContent>
                 </Card>
 
@@ -276,10 +278,12 @@ export default function PressPage() {
                       <p className="text-sm text-muted-foreground mb-3">
                         Get all logos, brand guidelines, fact sheet, and high-resolution images in one ZIP file.
                       </p>
+                    <a href="/PoolAtlas-PressKit.zip" download>
                       <Button className="rounded-full">
                         <Download className="w-4 h-4 mr-2" />
-                        Download Press Kit (ZIP, 12MB)
+                        Download Press Kit (ZIP)
                       </Button>
+                    </a>
                     </div>
                   </div>
                 </CardContent>
