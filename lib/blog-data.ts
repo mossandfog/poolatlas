@@ -1124,6 +1124,73 @@ If pool quality is a priority for your travels, Aman, Four Seasons, and One&Only
     `
   },
   {
+    slug: "best-hotel-pools-greece",
+    title: "The Best Hotel Pools in Greece",
+    excerpt: "From Santorini's caldera-edge infinity pools to a rooftop above the Acropolis and a private villa pool in Crete, Greece delivers some of the world's most dramatic swimming experiences.",
+    category: "Destination",
+    readTime: "10 min read",
+    image: "/images/pool-grace-santorini.jpg",
+    publishedAt: "2026-07-08",
+    featured: true,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Destination"
+    },
+    content: `
+# The Best Hotel Pools in Greece
+
+Greece does not do things by halves. The light here is legendary for a reason — sharp, white, and relentless, it turns every surface into a statement and every pool into a mirror for the sky. This is a country where the sea is never far, where history sits at the surface of everything, and where the right hotel pool doesn't just offer a swim but a particular, irreplaceable view of the world.
+
+We've ranked every major Greek pool on Pool Atlas. These are the ones that rise to the very top.
+
+## Santorini: The Caldera Edge
+
+No destination on earth has produced more iconic pool photographs than Santorini, and the reason is simple: the caldera. The collapsed volcanic crater — now filled with the Aegean — creates a natural amphitheater of water and cliff, and the hotels that line its rim have spent decades learning how to make the most of it.
+
+**[Grace Santorini](/pools/grace-santorini-1)** holds the top spot in our global rankings, and it earns it. The hotel's infinity pool is positioned at the very edge of the caldera, and the effect — a thin line of water appearing to spill directly into the sea 300 meters below — is as precise and calculated as a magic trick. The pool itself is long and lean, designed for a particular kind of lap swim with a view that makes focus impossible. Grace has fewer than 20 rooms, which means the pool is rarely crowded. The cocktail hour here, as the sun descends behind the Thirassia island and the caldera turns copper, is one of travel's genuinely unrepeatable experiences.
+
+**[Erosantorini](/pools/erosantorini-84)** offers a different interpretation of the same landscape. The hotel's tiered pool configuration steps down the caldera cliff in three levels, each with progressively more dramatic exposure to the view. It's a more social property than Grace — the pool deck has energy — but the design intelligence is real. The tiers create natural privacy pockets within what is effectively an open, shared space.
+
+**[Andronis Boutique Hotel](/pools/andronis-boutique-hotel-27)** carves its pool directly into the volcanic rock of Oia, the village at Santorini's northern tip. The cave aesthetic — rough pumice walls, candlelit niches, water the color of the sky at noon — is genuinely distinctive. It feels less like a hotel pool and more like something the island itself produced. Oia catches the sunset from a slightly different angle than Fira and Imerovigli; the light here in the early evening is extraordinary.
+
+## Mykonos: Cycladic Cool
+
+Mykonos has spent the last decade becoming the Mediterranean's most energetic luxury destination, and its pool scene has followed. The best properties here are not quiet — they are deliberately, gloriously not quiet — but they understand design.
+
+**[Cali Mykonos](/pools/cali-mykonos-61)** is the island's most architecturally considered pool hotel. The property perches above Agios Ioannis Bay with a pool terrace that commands sweeping views across to the island of Delos — the mythological birthplace of Apollo. The Cycladic white-on-white aesthetic is handled without cliché here: everything is considered, nothing is superfluous. For guests who want Mykonos energy without the full Super Paradise chaos, this is the move.
+
+## Crete: Scale and Privacy
+
+Where Santorini offers volcanic drama and Mykonos offers social energy, Crete offers something rarer in the Greek island context: space. The island is large enough to absorb visitors without showing it, and the best hotels here offer a sense of private possession that the smaller islands can't match.
+
+**[Daios Cove Luxury Resort](/pools/daios-cove-luxury-resort-52)** on the island's northeastern coast takes the private pool villa concept seriously. Each of the property's pool villas has its own plunge pool terraced into the hillside above the private bay, and the resort's main pool extends along the waterfront on a platform above the sea. It's a sprawling property — walk everywhere or take the resort's boat shuttle — and the scale works in its favor. This is a week-long holiday hotel, not a two-night stay.
+
+## Athens: The Urban Surprise
+
+Most people don't think of Athens as a pool destination. They should.
+
+**[The Dolli at Athens](/pools/the-dolli-at-athens-59)** changes the conversation entirely. The rooftop pool sits directly across from the Acropolis, and swimming here — with the Parthenon framed in your sightline — is one of those travel experiences that doesn't feel quite real while you're having it. The hotel occupies a neoclassical building in the Syntagma district and the rooftop has been designed to maximize the view without obstruction. Go at dusk when the Acropolis is lit and the city spreads out below in every direction.
+
+## The Greek Difference
+
+What makes Greek pools distinct from their Mediterranean counterparts in Italy or Spain is the relationship with the sea itself. In Italy, the sea is backdrop. In Greece, it's everywhere — the horizon, the smell of the air, the source of the light. The best Greek hotel pools don't compete with that; they acknowledge it and point you toward it.
+
+## Planning Your Greek Pool Trip
+
+**When to go:** Late May through June and September are the ideal windows — hot enough for swimming, thin enough in crowds to actually enjoy the pools without reservations for sun loungers. July and August are peak in every sense: peak heat, peak people, peak prices. If you're going in high summer, book well ahead and plan to swim early.
+
+**Santorini logistics:** The caldera-rim hotels in Oia and Imerovigli can only be reached on foot or by ATV on the clifftop paths — no cars. Most top hotels will arrange luggage porterage and donkey or cable car transfers from the port. Factor this into your planning, especially if you're arriving by ferry.
+
+**Island hopping and pools:** If you're combining islands, Santorini to Mykonos is the classic pairing — frequent ferry connections and a logical contrast in mood. Adding Crete extends the trip but rewards it significantly; the island is different enough in character to feel like a separate country.
+
+**The room vs. pool question:** Many Greek island hotels sell "caldera view rooms" with private plunge pools at a premium. Whether it's worth it depends on how much of your day you'll actually spend there. If you plan to leave the hotel and explore, the shared pool is usually spectacular enough. If you want to spend two days barely moving, the private plunge pool changes everything.
+
+Greece rewards the unhurried. Find a pool with the right view, order something cold, and stay longer than you planned.
+
+*Explore all Greek pools ranked on Pool Atlas → [Browse by destination](/)*
+    `
+  },
+  {
     slug: "best-hotel-pools-italy",
     title: "The Best Hotel Pools in Italy",
     excerpt: "From Lake Como's glass-calm waters to cliff-edge infinity pools on the Amalfi Coast, Italy offers some of the world's most breathtaking hotel swimming experiences.",
