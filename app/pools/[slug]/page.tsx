@@ -11,6 +11,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { NewsletterInline } from "@/components/newsletter-inline"
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -283,6 +284,9 @@ export default async function PoolPage({ params }: Props) {
                     </a>
                   )}
                 </div>
+
+                {/* Newsletter */}
+                <NewsletterInline />
 
                 {/* Back link */}
                 <Link

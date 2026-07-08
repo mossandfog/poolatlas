@@ -1500,6 +1500,194 @@ The Caribbean pool experience has matured considerably over the past decade. The
 
 *Browse all Caribbean pools ranked on Pool Atlas → [See the full rankings](/)*
     `
+  },
+  {
+    slug: "hotel-pools-worth-flying-for",
+    title: "Hotel Pools Worth Flying For",
+    excerpt: "Some pools are nice. These are worth building your entire trip around. A curated list of the pools so extraordinary that the hotel exists to frame them.",
+    category: "Guide",
+    readTime: "9 min read",
+    image: "/images/pool-grace-santorini.jpg",
+    publishedAt: "2026-07-05",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Travel"
+    },
+    content: `
+# Hotel Pools Worth Flying For
+
+Most hotel pools are fine. They're where you cool off between beach sessions and sip something cold. But a small number of pools in the world are different. They're the reason you chose the hotel. The reason you chose the destination. The reason you went at all.
+
+These are those pools.
+
+## Grace Hotel, Santorini — The One Everyone's Seen
+
+You've seen this pool in a photograph. The electric-blue rectangle suspended over the caldera, framed by white stone and the arc of the volcano rim, with the Aegean stretching to the horizon. It's the defining image of Greek luxury travel, and somehow it still delivers in person.
+
+Grace Santorini sits at the quieter northern end of Imerovigli, which means your caldera view is less crowded than in Oia. The pool is heated, kept pristine, and staffed impeccably. But what you come for is the light. In the morning it's silver. At midday it's almost painful, white-blue and hard. And at sunset it turns the water gold and the volcanic rock dark purple, and you understand why people cry here.
+
+**Best time to swim:** 7–9am before other guests are up, or immediately after sunset when the evening cools and most people have left for dinner.
+
+**Worth knowing:** The pool is small — plan on a maximum of eight people at once feeling right. Request a sunbed the night before.
+
+## Soori Bali — Where Architecture Becomes Ritual
+
+Bali has many beautiful pools, but Soori is in a category of its own. The resort hugs a black-sand beach on Bali's west coast — a coastline most tourists never reach — and every one of its 48 villas has a private pool.
+
+The pools are made of dark volcanic stone and they're extraordinary. Long and narrow, designed for lap swimming, sitting flush with the level of the surrounding plinths so the water appears to float. The black stone turns the water a deep jade color in low light. At golden hour, when the surf pounds the beach and the sky goes vermillion, you're swimming in something that looks more like a painting than a pool.
+
+**Worth knowing:** The beach at Soori isn't swimmable — strong surf and undertow — which actually makes the pools more important and more appreciated.
+
+## Amangiri, Utah — Desert Swimming at the Edge of the World
+
+The American Southwest doesn't scream "swimming destination," which is exactly why Amangiri works. The resort is built around and into a massive rock formation in Canyon Point, Utah. The main pool wraps the rock — you literally swim around geology.
+
+The water is heated to the exact temperature that makes you reluctant to get out, which is important because the desert air is often cool and the contrast is part of the experience. The surrounding mesa-and-canyon landscape is unlike anything in luxury travel. There's nothing else like it.
+
+**Best time to swim:** Late afternoon into evening. The light on the canyon walls shifts constantly and the pool deck is spectacular at dusk.
+
+**Worth knowing:** Book six to twelve months out. This property is perpetually full and the waiting list is real.
+
+## Jade Mountain, St. Lucia — The Room Is the Pool
+
+Most hotels put the pool in a courtyard and put rooms around it. Jade Mountain inverts this logic. Every "sanctuary" here is an open-sided room — three walls, no fourth wall — with its own private infinity pool, positioned directly facing the twin Piton peaks.
+
+You lie in bed and see the Pitons. You stand in your pool and see the Pitons. The pools range from large to enormous, all vanishing into the dense jungle valley below. There's no common pool. The room is the pool. The pool is the room.
+
+**Worth knowing:** This is one of the most architecturally distinctive properties in the Caribbean. Nick Troubetzkoy designed every room himself. The construction alone is worth studying.
+
+## Six Senses Laamu, Maldives — The Overwater Pool That Makes Sense
+
+Overwater bungalows are a Maldives cliché, but Six Senses Laamu earns the format. The atoll is genuinely remote — a 45-minute seaplane flight from Male — and the house reef running alongside the water villas is among the most vibrant in the Maldives.
+
+Your private pool sits directly above the lagoon on a cantilevered platform. The water at Laamu is a specific turquoise that changes throughout the day — almost white at noon, deep teal at dusk. You can look directly down from your pool into the coral below. Reef sharks cruise underneath at dawn.
+
+**Best time to swim:** Sunrise, when the reef fish are most active and the colors most extraordinary.
+
+## Marina Bay Sands, Singapore — The Icon That Earns It
+
+Every pool list ends up here, and every pool list should. The rooftop infinity pool at Marina Bay Sands is 57 floors above Singapore, is the length of three and a half Olympic pools, and cantilevers 67 meters over the edge of the building. The engineering is astonishing. The views are genuinely world-class.
+
+It's crowded. It's famous. It's worth it anyway.
+
+**Worth knowing:** The pool is for hotel guests only. The SkyPark Observation Deck is publicly accessible but pool access is strictly for registered guests. If you're visiting Singapore and don't stay here, you don't get in.
+
+## The Ritz-Carlton, Bali — Clifftop Layering
+
+Jimbaran Bay in Bali is better known for its seafood restaurants on the beach, but the Ritz-Carlton here takes the clifftop position and does something architecturally ambitious with it. The pools cascade in tiers down the cliff face toward the Indian Ocean, each level connected by water features and pathways, with the sea horizon visible from every level.
+
+It's not a single pool — it's a pool landscape. The effect is theatrical in the best way: you can see the surf break on the rocks far below, hear it, feel the sea spray when the wind shifts. Swimming becomes an immersive experience.
+
+---
+
+*These pools are listed on Pool Atlas with full details, ratings, and rankings. Find your next destination → [Explore the Top 100](/)*
+    `
+  },
+  {
+    slug: "how-infinity-pools-are-built",
+    title: "Behind the Design: How Infinity Pools Are Built",
+    excerpt: "The science, engineering, and sleight of hand behind the world's most photogenic pools. It turns out 'vanishing' is harder than it looks.",
+    category: "Industry",
+    readTime: "8 min read",
+    image: "/images/pool-jade-mountain.jpg",
+    publishedAt: "2026-07-02",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Design"
+    },
+    content: `
+# Behind the Design: How Infinity Pools Are Built
+
+An infinity pool looks like a miracle — water that simply ends, dissolving into the view beyond. The illusion is so complete that first-time swimmers often hesitate at the edge, uncertain of where solid ends and empty begins.
+
+It's not magic. It's engineering. And the story of how these pools work is more fascinating than the Instagram photo suggests.
+
+## The Optical Illusion, Explained
+
+An infinity pool — also called a negative edge, vanishing edge, or zero-edge pool — creates the appearance of water extending to the horizon by hiding the far edge of the pool below the water's surface.
+
+The pool is designed so that the water level sits precisely at or slightly above the top of the "vanishing wall." Water flows continuously over this wall into a catch basin (a hidden secondary pool or trough below), where it's pumped back into the main pool. The water flow is constant. The edge is always wet. And from the right angle — which the architect has carefully calculated — you see nothing but water meeting sky.
+
+The entire effect depends on a single critical measurement: the height of the vanishing wall relative to the water surface. Too high, and the wall is visible. Too low, and the flow is uncontrolled. Designers typically aim for the water level to sit 3-5 millimeters above the wall's lip — a margin smaller than your pinky fingernail, maintained consistently across the entire length of the edge.
+
+## The Engineering Behind "Simple"
+
+That constant, even flow sounds straightforward. It isn't.
+
+### Leveling
+
+For the overflow to be even across the entire vanishing edge, the top of the wall must be perfectly level. Not close to level. Level within fractions of a millimeter across potentially dozens of meters of pool edge.
+
+Any settling, subsidence, or construction imprecision shows up immediately as uneven flow — a trickle in one spot, a waterfall in another. High-end infinity pools are monitored continuously and edge heights are corrected periodically as the structure settles over time. Some premium installations include adjustable weir plates — thin stainless steel strips that can be fine-tuned after construction to maintain perfect levelness.
+
+### The Catch Basin
+
+Every vanishing edge pool has a secondary body of water: the catch basin or balance tank that collects the overflow. This tank must be large enough to handle the pool's entire water volume when people get in (which raises the level and increases overflow) and when people get out (which drops it).
+
+The catch basin is typically hidden directly below or adjacent to the vanishing edge, invisible from the main viewing angle. At Marina Bay Sands, with its 375-foot-long pool, the catch basin is substantial engineering in its own right.
+
+Water is pumped from the catch basin back to the main pool continuously. The pumping system must be sized precisely — too slow and the main pool drops; too fast and it overflows onto the deck.
+
+### Wind
+
+An often-overlooked challenge is wind. Wind creates surface ripples and pushes water toward or away from the vanishing edge unevenly. A strong crosswind on a long infinity edge will cause significantly more overflow on the windward side.
+
+Pool designers study prevailing wind patterns at each site and often orient the vanishing edge perpendicular to the dominant wind direction. Wind breaks — walls, landscaping, architectural features — are frequently integrated into the design, though they must be positioned carefully to avoid disrupting the view that makes the pool worth building.
+
+### Thermal Expansion
+
+Water volume changes with temperature. A pool that's perfectly balanced at 30°C will behave differently when it cools overnight. The catch basin must accommodate this variation without the system running dry or overflowing.
+
+For heated pools in cold climates, thermal management adds another layer of complexity. The pool water, catch basin water, and equipment are all at different temperatures during heating and cooling cycles.
+
+## Location Changes Everything
+
+The same pool design behaves differently depending on where it's built.
+
+**Clifftop pools** — like Grace Santorini or the Ritz-Carlton Bali — are the classic infinity configuration. The catch basin is built into the cliff structure below the vanishing edge. Construction requires careful structural integration with the geology, and access for maintenance can be challenging.
+
+**Rooftop pools** — like Marina Bay Sands or the 1 Hotel Brooklyn Bridge — add structural engineering requirements. The water weight is enormous (roughly 1,000 kilograms per cubic meter), and the building below must accommodate it. Waterproofing is critical — a rooftop pool leak can cause catastrophic damage to floors below.
+
+**Overwater pools** — increasingly common in the Maldives and other tropical destinations — sit on platforms above lagoons. The structural engineering is marine-grade. Catch basins typically pump directly into filtration systems rather than into the ocean. Saltwater environments accelerate corrosion, so materials specifications are demanding.
+
+## What It Costs
+
+Building an infinity pool is expensive. A residential infinity pool in a good climate runs $80,000–$200,000 for a reasonably sized installation. High-end hotel infinity pools — large format, complex geometry, premium materials — frequently run $1–5 million before landscaping.
+
+The cost drivers are:
+- **Precision construction**: The tolerances required for a perfect vanishing edge mean specialized contractors and extended installation time
+- **Materials**: The vanishing wall and catch basin are often clad in high-end tile, dark-colored to make the water appear deeper and to disappear visually
+- **Pumping equipment**: Commercial-grade, redundant systems with carefully calculated flow rates
+- **Ongoing maintenance**: Edge adjustment, equipment servicing, and water chemistry management are more complex than standard pools
+
+## The Color of the Water
+
+One design choice that significantly affects the infinity pool experience: tile color.
+
+Dark tiles — deep blue, black, charcoal — make the water appear deeper and darker, creating a more dramatic vanishing effect. The water surface reflects the sky more purely because the pool bottom is not visible through it.
+
+Light tiles — white, pale blue, turquoise — create clearer, more transparent water where you can see the bottom. The visual experience is more "Caribbean vacation" than "dramatic architectural infinity." Both are valid; they create different experiences.
+
+The best designers choose tile color based on the specific view the pool is meant to frame. A pool overlooking a blue ocean might use dark tiles to deepen the color contrast. A pool surrounded by green jungle might use tiles that create turquoise water that stands apart from the foliage.
+
+## What Makes a Great Infinity Pool
+
+After analyzing hundreds of pools across Pool Atlas, patterns emerge in what separates the memorable from the merely photogenic:
+
+The best infinity pools have a **clear sightline** — nothing between the vanishing edge and the view it's meant to frame. Every architectural element, landscape decision, and detail of pool placement serves that view.
+
+They're built with **precise orientation**. The sun path matters. The prime viewing time — sunset, sunrise, or full-day — is built into the pool's positioning, not an accident.
+
+And they understand that **the pool is a frame, not the subject**. The greatest infinity pools are designed in service of something beyond themselves: a caldera, a mountain range, a cityscape, an ocean. The pool's job is to give you the best possible seat for that view.
+
+When those elements align, you get the pools on Pool Atlas's top-100 list. When they don't, you get an expensive feature in a hotel brochure that looks better in photographs than in person.
+
+---
+
+*Discover the world's top-ranked infinity pools on Pool Atlas → [See the full rankings](/)*
+    `
   }
 ]
 

@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer"
 import { blogPosts, getBlogPost } from "@/lib/blog-data"
 import { ShareButtons } from "@/components/share-buttons"
 import { AdBanner } from "@/components/ad-unit"
+import { NewsletterInline } from "@/components/newsletter-inline"
 
 // Parse inline markdown: **bold**, *italic*, [text](url)
 function parseInline(text: string): React.ReactNode[] {
@@ -175,6 +176,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 return <p key={index} className="my-4 text-foreground/90 leading-relaxed">{parseInline(trimmed)}</p>
               })}
             </div>
+
+            {/* Newsletter CTA */}
+            <NewsletterInline />
 
             {/* Share / CTA */}
             <div className="border-t border-border pt-8 mb-16">
