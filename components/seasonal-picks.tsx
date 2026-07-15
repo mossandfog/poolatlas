@@ -17,8 +17,8 @@ const seasons = [
     name: "Summer",
     icon: Sun,
     color: "bg-amber-100 text-amber-600",
-    poolIds: [2, 3, 6],
-    description: "Peak season, vibrant energy"
+    poolIds: [1, 43, 22],
+    description: "Mediterranean peak, Ibiza sun, Africa dry season"
   },
   {
     name: "Fall",

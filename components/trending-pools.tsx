@@ -4,8 +4,9 @@ import { TrendingUp } from "lucide-react"
 import { pools } from "@/lib/pool-data"
 import { PoolCard } from "@/components/pool-card"
 
-// Editor's summer picks
-const trendingPoolIds = [3, 7, 12, 5, 18]
+// July 2026 editor picks: Mediterranean peak season + Africa dry season + one wild card
+// #1 Grace Santorini, #6 Monastero Santa Rosa (Amalfi), #43 Aguas de Ibiza, #22 Four Seasons Serengeti, #62 Cap Rocat (Mallorca)
+const trendingPoolIds = [1, 6, 43, 22, 62]
 
 export function TrendingPools() {
   const trendingPools = trendingPoolIds
@@ -21,9 +22,9 @@ export function TrendingPools() {
           </div>
           <div>
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-foreground">
-              Editor&apos;s Summer Picks
+              Editor&apos;s July Picks
             </h2>
-            <p className="text-sm text-muted-foreground">Our team's favorites for summer 2026</p>
+            <p className="text-sm text-muted-foreground">Mediterranean peak season, Africa dry season — now</p>
           </div>
         </div>
 
