@@ -1688,6 +1688,238 @@ When those elements align, you get the pools on Pool Atlas's top-100 list. When 
 
 *Discover the world's top-ranked infinity pools on Pool Atlas → [See the full rankings](/)*
     `
+  },
+  {
+    slug: "best-hotel-pools-africa",
+    title: "The Best Hotel Pools in Africa",
+    excerpt: "From a pool overlooking an elephant watering hole in the Serengeti to cascading plunges in the Namibian desert and a heated infinity edge above six volcanoes in Rwanda — Africa has pools that exist nowhere else on earth.",
+    category: "Destination",
+    readTime: "10 min read",
+    image: "/images/pools/pool-four-seasons-serengeti.jpg",
+    publishedAt: "2026-07-14",
+    featured: true,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Destination"
+    },
+    content: `
+# The Best Hotel Pools in Africa
+
+There's a specific image that doesn't exist anywhere else in the world: you're floating in a heated infinity pool, a gin and tonic on the ledge beside you, watching a family of elephants work their way toward a watering hole a hundred meters away. The sun is an hour from setting and the Serengeti is turning gold.
+
+That image is real. It's the pool at the Four Seasons Safari Lodge in Tanzania, and it's ranked #22 on Pool Atlas. But it's one of more than a dozen African pools that deliver something genuinely impossible to replicate elsewhere — not just beautiful pools, but pools that exist in impossible contexts. A volcanic crater in Rwanda. An ancient salt pan in Botswana. A cliff edge above the Mediterranean in Morocco.
+
+This is the Africa pool guide. It is nothing like any other pool guide you've read.
+
+## The Safari Lodge Category: Pools as Wildlife Viewing Platforms
+
+The concept that defines African luxury pool travel doesn't exist anywhere else: the pool as a front-row seat to wildlife. Several of the continent's finest lodges have oriented their pools not toward a view of the landscape in general, but toward specific wildlife corridors where the animals reliably pass.
+
+### Four Seasons Safari Lodge Serengeti — Tanzania
+
+**[Ranked #22 on Pool Atlas](/pools/four-seasons-safari-lodge-serengeti-22)**
+
+The pool at the Four Seasons Serengeti does what it says: it looks down on a working animal watering hole. Not a decorative one, not a manmade feature — an actual watering point on the ancient migration routes of the Serengeti ecosystem. Elephants, cape buffalo, wildebeest, zebra, and smaller mammals come here regularly. Dawn and dusk are the most active times.
+
+The pool itself is a long infinity edge facing the watering hole, elevated enough that you can see across the bush to the animals approaching long before they arrive. The lodge is built within the central Serengeti, which means the Great Migration passes through the broader ecosystem seasonally.
+
+**Best time to visit:** July–October for the Great Migration crossing the Mara River. December–March for calving season in the southern Serengeti.
+
+### Singita Sweni Lodge — South Africa
+
+**[Ranked #64 on Pool Atlas](/pools/singita-sweni-lodge-64)**
+
+Singita is arguably the finest safari brand in Africa, and Sweni — their most intimate lodge, just six suites on the banks of the Sweni River in Kruger National Park — shows why. Each suite has its own private infinity pool positioned directly above the river, where hippos and crocodiles cruise beneath you and leopards drink at night.
+
+The design is aggressively African in the best sense: natural materials, vivid color, a sense of place that feels like a very design-conscious billionaire's private camp. The pools are small and personal — this is not a place for pool parties. It's a place for floating quietly while a lion drinks fifty meters away.
+
+### Royal Malewane — South Africa
+
+**[Ranked #117 on Pool Atlas](/pools/royal-malewane-117)**
+
+In the Thornybush Game Reserve adjacent to Kruger, Royal Malewane has long been considered one of the most opulent addresses in African safari travel. The Africa House — a private eight-guest villa — has a spectacular shared pool overlooking the bush. Individual suite pools are private and intimate. The Big Five roam freely through the reserve, and the nocturnal sounds from a late-night swim are something you don't forget.
+
+## Desert: The Namibian Plunge Pool Tradition
+
+Namibia does something interesting with pools: it makes them cold. In a desert where daytime temperatures routinely exceed 40°C, a chilled plunge pool isn't a luxury — it's a survival mechanism. The design tradition that has emerged is distinctive and perfectly calibrated to context.
+
+### andBeyond Sossusvlei Desert Lodge — Namibia
+
+**[Ranked #35 on Pool Atlas](/pools/andbeyond-sossusvlei-desert-lodge-35)**
+
+Sossusvlei is one of the most surreal landscapes on earth: ancient red dunes rising 300 meters above a dead white clay pan, in a desert so old that the dunes have been there for millions of years. AndBeyond's lodge here is built directly into the desert, with each villa featuring its own chilled plunge pool and a private "butler hatch" through which your attendant passes cold towels and ice cream without requiring you to move.
+
+The pools are deliberately cold — a counterpoint to the desert heat — and they face east toward the dunes and the mountains beyond. Watching the dunes shift color at sunset from the pool, from peach to deep red to purple, is one of the finest hour-long experiences in African travel.
+
+### Omaanda by Zannier Hotels — Namibia
+
+**[Ranked #87 on Pool Atlas](/pools/omaanda-by-zannier-hotels-87)**
+
+While Sossusvlei offers red dune drama, Omaanda occupies a different Namibian landscape: the savannah near Windhoek, in a private nature reserve that looks out toward the Khomas Hochland mountain range. The infinity pool here is quieter and more contemplative — zebra and oryx wander through the reserve, the mountains turn blue in the late afternoon, and the soundscape is just wind and birdsong.
+
+The lodge's design draws from the circular forms of traditional Owambo architecture, making this one of the most culturally grounded pools on the continent.
+
+## Crater and Volcano: East Africa's Dramatic Edges
+
+### Bisate Lodge — Rwanda
+
+**[Ranked #116 on Pool Atlas](/pools/bisate-lodge-116)**
+
+This is the most extraordinary pool in Africa from a pure context standpoint. Bisate Lodge sits on the rim of an eroded volcanic cone in Rwanda's Volcanoes National Park, surrounded by Afro-alpine vegetation that looks more like the Andes than the Africa of postcards. Six volcanoes are visible from the pool on a clear day — including the Virunga massif, home to approximately half the world's remaining mountain gorillas.
+
+The pool itself is small, heated, and positioned at the crater rim. Guests typically spend their mornings at 5am trekking into the forest to observe gorillas at close quarters, and their afternoons here, floating in heated water at 2,600 meters elevation with volcanoes on every horizon.
+
+It's one of the most unusual pool experiences on earth, and it's in Rwanda — a country most travelers don't think of when planning a pool holiday.
+
+## Urban Africa: City Pools Worth Crossing a Continent For
+
+### The Silo Hotel — Cape Town, South Africa
+
+**[Ranked #38 on Pool Atlas](/pools/the-silo-hotel-38)**
+
+The Silo occupies the grain elevator above the Zeitz MOCAA museum in Cape Town's V&A Waterfront — a Heatherwick Studio transformation of industrial heritage into one of Africa's finest hotels. The rooftop pool is on the 11th floor, framed by the building's distinctive "bubble" windows, looking out over Table Mountain, the harbor, the ocean, and the city simultaneously.
+
+Cape Town from a rooftop pool is a specific visual experience: the flat-topped mountain in one direction, the Atlantic in another, the harbor cranes and the working port in between. The Silo gives you the best possible seat for all of it.
+
+**Best pool time:** Late afternoon for the light on Table Mountain. The mountain turns deep purple at dusk from the pool terrace.
+
+## The Oasis: Morocco's Garden Tradition
+
+### Mandarin Oriental Marrakech — Morocco
+
+**[Ranked #17 on Pool Atlas](/pools/mandarin-oriental-marrakech-17)**
+
+Morocco's pool tradition is rooted in the ancient riad — the inward-facing courtyard garden that provides shade and coolness within the city. The Mandarin Oriental Marrakech takes this principle and scales it up: 600 trees on a 20-hectare estate, a pool so large it's flanked by two additional ornamental ponds, all within 10 minutes of the Jemaa el-Fnaa.
+
+This is not a wild landscape or a wildlife experience — it's an oasis in the classical sense, and it's one of the most effective hotel pool experiences in North Africa. The combination of Moroccan garden design, the fragrance of orange blossom, and the distant sounds of the medina creates something that a beachside infinity pool simply cannot match.
+
+## Jack's Camp — Botswana
+
+**[Ranked #36 on Pool Atlas](/pools/jacks-camp-36)**
+
+Jack's Camp sits at the edge of the Makgadikgadi salt pans — one of the largest salt flats on earth, a blinding white expanse that extends to every horizon during the dry season. During the wet season (November–April), the pans flood and become home to one of Africa's largest flamingo migrations. Either way, the landscape is otherworldly.
+
+The camp itself is a 1940s expedition aesthetic made luxury: hand-painted canvas tents, Persian rugs, vintage cocktail equipment. Private plunge pools were added in 2020 to each tent, positioned to look out over the pans. Sitting in the plunge pool at sunset with the salt flat going pink and the call of zebra in the distance is a very specific and unforgettable experience.
+
+## When to Visit Africa's Best Pools
+
+Africa is a continent of wildly varied climates, and the "best time" question depends entirely on where you're going.
+
+**East Africa (Tanzania, Rwanda):** The long dry season, July–October, is the classic time for wildlife viewing and the most reliable weather. The pools are heated, so cool mornings aren't a deterrent. Avoid the long rains (April–May).
+
+**Southern Africa (South Africa, Botswana, Namibia):** May–September is the dry winter, when vegetation thins and wildlife concentrates around water — meaning more animals visible from those lodge pools. It's also cooler, so the heated pools are actively appreciated. Namibia's desert is intense year-round but the summer heat (Nov–Feb) is extreme.
+
+**Morocco:** Spring (March–May) and autumn (September–November) are ideal — warm enough for the pool, cool enough to enjoy Marrakech's medina. Midsummer heat in Marrakech can exceed 40°C.
+
+---
+
+*Browse all of Pool Atlas's African and Middle Eastern pools → [See the rankings](/)*
+    `
+  },
+  {
+    slug: "best-hotel-pools-spain",
+    title: "The Best Hotel Pools in Spain",
+    excerpt: "From Ibiza's clifftop cascade pools and Mallorca's mountain-framed infinity edges to a rooftop above Barcelona — Spain's pools are as varied as its landscapes, and in summer they're the best in Europe.",
+    category: "Destination",
+    readTime: "9 min read",
+    image: "/images/pools/pool-cap-rocat-spain.jpg",
+    publishedAt: "2026-07-12",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Destination"
+    },
+    content: `
+# The Best Hotel Pools in Spain
+
+Spain in July is an exercise in finding shade and cold water. The country handles this beautifully: a culture built around the siesta, the evening paseo, and the hotel pool as the center of the day rather than an afterthought to it.
+
+What makes Spanish pools distinctive — particularly in Ibiza and Mallorca, where the finest are concentrated — is the landscape they work with. Dramatic limestone cliffs, the deep blue of the Balearic Sea, terraced mountains that turn purple at dusk. The best pools here don't just face a view. They participate in it.
+
+It's July. These are the pools that matter right now.
+
+## Ibiza: Beyond the Clubs
+
+Ibiza's reputation as a party island is accurate and also incomplete. The north and west of the island — away from the clubs of San Antonio and the jets at Dalt Vila — is one of the most dramatically beautiful coastal landscapes in the Mediterranean. Wild cliffs, hidden coves, pine forest running to the sea. The finest pool hotels here use this landscape rather than compete with it.
+
+### Hacienda Na Xamena — North Ibiza
+
+**[Ranked #118 on Pool Atlas](/pools/hacienda-na-xamena-118)**
+
+This is Spain's most dramatic pool experience, and it isn't close. Built into 180-metre limestone cliffs above a completely private bay in the remote north of the island, Hacienda Na Xamena's famous cascade pools step down the cliff face in four terraced tiers. Each has a vanishing edge. The lowest sits approximately 500 feet above the Mediterranean, which unfolds to the horizon without a boat or building in sight.
+
+The hotel was built in the 1970s by a Catalan architect who fell in love with the site and spent years persuading the Ibizan authorities to let him build here. The location has never been more powerful. At sunset, sitting in the heated upper pool watching the shadow of the cliff move across the sea below, is one of the defining pool experiences in Europe.
+
+**What to know:** The road to Na Xamena is winding and takes longer than the map suggests. Budget extra time. The pools are for hotel guests only. The spa, which is built into the cliff itself, is extraordinary.
+
+### Aguas de Ibiza Grand Luxe Hotel — Santa Eulalia
+
+**[Ranked #43 on Pool Atlas](/pools/aguas-de-ibiza-grand-luxe-hotel-43)**
+
+At the quieter, more family-oriented eastern end of the island, Aguas de Ibiza takes a different approach: the rooftop infinity pool faces Santa Eulalia's working port and the sweep of the bay. The hotel is aggressively eco-conscious — certified carbon neutral, with a philosophy that filters through the design, the menu, and the pool experience.
+
+The view from this pool is active and social rather than dramatic and isolating. Fishing boats coming in, the town spread across the hillside, the sea glittering toward the mainland. It's a different kind of Ibiza to Na Xamena, and a very good one.
+
+### Nobu Hotel Ibiza Bay — Talamanca Bay
+
+**[Ranked #56 on Pool Atlas](/pools/nobu-hotel-ibiza-bay-56)**
+
+On Talamanca Bay — the more sheltered, calmer water north of Ibiza Town — the Nobu Hotel is where the island's design-conscious crowd congregates. The pool is a social space: music plays, the bar does serious work, and the pool deck is as much about being seen as it is about swimming.
+
+The pool itself faces the bay with Ibiza Town's old walls visible in the distance. It's an exceptionally well-designed space — the Nobu aesthetic of Japanese-influenced minimalism applied to Mediterranean sun-worship — and the restaurant quality extends to the pool food and drink.
+
+## Mallorca: The Mountain Island
+
+Mallorca has two distinct pool personalities: the resort coast (package holidays, large hotel pools, mass tourism) and the interior and northwest, where a completely different Mallorca operates — ancient olive trees, stone fincas, winding mountain roads, and some of the most beautiful small hotel pools in Spain.
+
+### Cap Rocat — Bay of Palma
+
+**[Ranked #62 on Pool Atlas](/pools/cap-rocat-62)**
+
+A former 19th-century military fortress on the cliffs above the Bay of Palma, converted into one of the most distinctive hotels in the Mediterranean. The battlements and lookout towers have become rooms and terraces; the ammunition vaults are now the restaurant. The pool sits within the fortifications with walls rising around it and the Bay of Palma extending to the horizon.
+
+Swimming in Cap Rocat feels like swimming in history — the stone walls are genuinely ancient, the views are genuinely dramatic, and the sense of having discovered something secret is genuinely earned. This is a harder-to-find address than the famous Mallorcan estates, which is part of its appeal.
+
+### Belmond La Residencia — Deià
+
+**[Ranked #119 on Pool Atlas](/pools/belmond-la-residencia-119)**
+
+Deià is the village that Robert Graves chose to spend most of his life, drawn by what he described as the most beautiful place he had ever seen. Belmond La Residencia is built around two 16th-century manor houses on the hillside above the village, with the Serra de Tramuntana — a UNESCO World Heritage Site — rising directly behind it.
+
+The pool here is not trying to be dramatic. It's surrounded by hundred-year-old olive trees, terraced gardens, and mountain views. Princess Diana swam here. Richard Branson has stayed. The appeal is not a vanishing edge or a rooftop perspective — it's a pool that feels like it belongs completely to its place, and a place that happens to be among the most beautiful in Spain.
+
+**Best time:** Late afternoon, when the mountains behind the hotel cast long shadows and the light on the valley below goes golden. Dinner at El Olivo afterwards.
+
+### Jumeirah Port Soller Hotel & Spa — Port Soller
+
+**[Ranked #120 on Pool Atlas](/pools/jumeirah-port-soller-hotel-spa-120)**
+
+Port Soller is Mallorca's most picturesque harbor — a near-perfect horseshoe bay backed by orange groves and the Tramuntana mountains, accessed from Palma by a spectacular mountain road and a vintage tram that runs down to the beach. The Jumeirah sits on the cliff above the bay with what may be the finest dual-aspect view in Mallorca: the mountains directly behind you, the bay and open Mediterranean in front.
+
+The infinity pool is at the cliff edge, positioned so the water line vanishes into the sea horizon. On a clear day you can see Menorca. The tram threading through the orange trees below makes this one of the most cinematically beautiful pool settings in Spain.
+
+## Beyond the Balearics
+
+### Hard Rock Hotel Tenerife — Canary Islands
+
+**[Ranked #103 on Pool Atlas](/pools/hard-rock-hotel-tenerife-103)**
+
+The Canary Islands belong to Spain but sit off the coast of Morocco — geographically Africa, climatically perfect year-round. The Hard Rock Tenerife is adjacent to Siam Park, consistently voted the world's best water park, and its own pool complex is an entertainment destination in its own right: the Tower of Power waterslide, multiple pools, live music, and the energetic atmosphere of a resort built for maximum enjoyment.
+
+This is not the quiet, contemplative pool experience of the other entries. It's the opposite: total commitment to fun. For families, or anyone who finds the reverent hush of a luxury infinity pool slightly exhausting, it's the best pool option in Spain.
+
+## Practical Notes for Spanish Pool Travel
+
+**Ibiza timing:** The pool hotels fill in July and August and it's genuinely hard to get a room without booking months ahead. June and September offer almost identical weather with significantly less competition. The shoulder months also mean slightly more reasonable rates and a less frantic energy.
+
+**Mallorca's northwest:** The mountain road from Palma to Sóller is dramatic, beautiful, and closed to coaches — which keeps the northwest comparatively uncommercialized. Rent a car. The drive is part of the experience.
+
+**Sun direction:** In Ibiza's north, pools generally face southwest for afternoon and evening sun. Cap Rocat and the Jumeirah face southeast — best morning light. Belmond La Residencia pools get afternoon mountain shadow early — arrive at noon for maximum sun time.
+
+---
+
+*Explore all of Pool Atlas's ranked Spanish pools → [See the rankings](/)*
+    `
   }
 ]
 
