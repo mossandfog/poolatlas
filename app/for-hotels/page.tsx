@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Award, Code2, Share2, Search, ChevronRight } from "lucide-react"
+import { Award, Code2, Share2, Search, ChevronRight, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
@@ -62,26 +62,35 @@ export default function ForHotelsPage() {
             What a Pool Atlas ranking means for your property
           </h2>
           <div className="grid sm:grid-cols-3 gap-6">
-            <div className="bg-card rounded-2xl border border-border p-6">
+            <div className="bg-card rounded-2xl border border-border p-6 flex flex-col">
               <div className="w-10 h-10 bg-primary/15 rounded-xl flex items-center justify-center mb-4">
                 <Award className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-[family-name:var(--font-display)] font-semibold text-foreground mb-2">Embeddable badge</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">A professionally designed badge showing your world ranking — ready to embed on your website, booking pages, and press kit.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">A professionally designed badge showing your world ranking — ready to embed on your website, booking pages, and press kit.</p>
+              <a href="#find-hotel" className="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-4 hover:underline underline-offset-2">
+                Get your badge <ChevronRight className="w-3.5 h-3.5" />
+              </a>
             </div>
-            <div className="bg-card rounded-2xl border border-border p-6">
+            <div className="bg-card rounded-2xl border border-border p-6 flex flex-col">
               <div className="w-10 h-10 bg-primary/15 rounded-xl flex items-center justify-center mb-4">
                 <Share2 className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-[family-name:var(--font-display)] font-semibold text-foreground mb-2">Dedicated pool page</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">Every ranked pool gets its own page on Pool Atlas with your ranking, features, and a direct link to book at your property.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">Every ranked pool gets its own page on Pool Atlas with your ranking, features, and a direct link to book at your property.</p>
+              <Link href="/pools/grace-santorini-1" target="_blank" className="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-4 hover:underline underline-offset-2">
+                See an example <ExternalLink className="w-3.5 h-3.5" />
+              </Link>
             </div>
-            <div className="bg-card rounded-2xl border border-border p-6">
+            <div className="bg-card rounded-2xl border border-border p-6 flex flex-col">
               <div className="w-10 h-10 bg-primary/15 rounded-xl flex items-center justify-center mb-4">
                 <Code2 className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-[family-name:var(--font-display)] font-semibold text-foreground mb-2">Third-party credibility</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">Pool Atlas rankings are editorial and independent — no payment for placement. That makes the recognition genuinely meaningful to guests.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">Pool Atlas rankings are editorial and independent — no payment for placement. That makes the recognition genuinely meaningful to guests.</p>
+              <Link href="/press" className="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-4 hover:underline underline-offset-2">
+                Our press coverage <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </div>
         </div>

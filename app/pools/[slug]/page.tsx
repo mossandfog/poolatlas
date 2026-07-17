@@ -12,6 +12,8 @@ import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { NewsletterInline } from "@/components/newsletter-inline"
+import { PoolDreamListButton } from "@/components/pool-dream-list-button"
+import { PoolShareButton } from "@/components/pool-share-button"
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -119,6 +121,25 @@ export default async function PoolPage({ params }: Props) {
           </div>
         </div>
 
+        {/* Hotel claim banner */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 pt-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 sm:p-5 bg-primary/5 border border-primary/20 rounded-2xl">
+            <div className="w-9 h-9 rounded-xl bg-primary/15 flex items-center justify-center shrink-0">
+              <Award className="w-5 h-5 text-primary" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-foreground">Are you the {pool.hotel} team?</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Claim your official Pool Atlas badge and embed it on your website or press kit.</p>
+            </div>
+            <Link href={`/for-hotels/${pool.slug}`} className="shrink-0 w-full sm:w-auto">
+              <Button variant="outline" size="sm" className="rounded-full gap-2 w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10">
+                Claim your badge
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+
         {/* Main content */}
         <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12">
           <div className="grid lg:grid-cols-3 gap-10">
@@ -206,18 +227,24 @@ export default async function PoolPage({ params }: Props) {
                 </div>
               )}
 
-              {/* Sources */}
-              <div className="pt-2">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
-                  As featured in
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {pool.sources.map((source) => (
-                    <Badge key={source} variant="secondary" className="rounded-full text-xs px-3 py-1">
-                      {source}
-                    </Badge>
-                  ))}
+              {/* Sources + Share */}
+              <div className="pt-2 flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">
+                    As featured in
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {pool.sources.map((source) => (
+                      <Badge key={source} variant="secondary" className="rounded-full text-xs px-3 py-1">
+                        {source}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
+                <PoolShareButton
+                  title={`${pool.name} at ${pool.hotel} — Ranked #${pool.rank} | Pool Atlas`}
+                  url={`https://poolatlas.io/pools/${pool.slug}`}
+                />
               </div>
             </div>
 
@@ -283,6 +310,7 @@ export default async function PoolPage({ params }: Props) {
                       </Button>
                     </a>
                   )}
+                  <PoolDreamListButton poolId={pool.id} />
                 </div>
 
                 {/* Newsletter */}

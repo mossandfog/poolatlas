@@ -65,11 +65,11 @@ export default function BadgesPage() {
   ).slice(0, 10)
 
   const generateEmbedCode = (pool: typeof pools[0], style: typeof badgeStyles[0], size: typeof badgeSizes[0]) => {
-    const badgeUrl = `https://poolatlas.io/badge/${pool.id}?style=${style.id}&size=${size.id}`
-    const linkUrl = `https://poolatlas.io/pool/${pool.id}`
-    
+    const badgeUrl = `https://poolatlas.io/api/badge/${pool.id}`
+    const linkUrl = `https://poolatlas.io/pools/${pool.slug}`
+
     return `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer" title="${pool.hotel} - Ranked #${pool.rank} on Pool Atlas">
-  <img src="${badgeUrl}" alt="Pool Atlas Ranked #${pool.rank}" width="${size.width}" height="${size.height}" />
+  <img src="${badgeUrl}" alt="Pool Atlas Ranked #${pool.rank}" width="${size.width}" height="${size.height}" style="display:block;" />
 </a>`
   }
 
@@ -284,13 +284,13 @@ export default function BadgesPage() {
                           <p className="text-xs text-muted-foreground mb-1">Direct Image URL</p>
                           <div className="relative">
                             <pre className="p-4 bg-muted/50 rounded-lg text-xs overflow-x-auto border border-border">
-                              <code>{`https://poolatlas.io/badge/${selectedPool.id}?style=${selectedStyle.id}&size=${selectedSize.id}`}</code>
+                              <code>{`https://poolatlas.io/api/badge/${selectedPool.id}`}</code>
                             </pre>
                             <Button
                               size="sm"
                               variant="secondary"
                               className="absolute top-2 right-2"
-                              onClick={() => copyToClipboard(`https://poolatlas.io/badge/${selectedPool.id}?style=${selectedStyle.id}&size=${selectedSize.id}`, 'url')}
+                              onClick={() => copyToClipboard(`https://poolatlas.io/api/badge/${selectedPool.id}`, 'url')}
                             >
                               {copiedCode === 'url' ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                             </Button>

@@ -56,9 +56,28 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     }
   }
 
+  const imageUrl = post.image.startsWith("/images/pools/")
+    ? `https://poolatlas.io${post.image}`
+    : `https://poolatlas.io${post.image}`
+
   return {
     title: `${post.title} | The Deep End`,
     description: post.excerpt,
+    openGraph: {
+      type: "article",
+      url: `https://poolatlas.io/blog/${post.slug}`,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime: post.publishedAt,
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: post.title }],
+      siteName: "Pool Atlas",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [imageUrl],
+    },
   }
 }
 
