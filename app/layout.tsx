@@ -18,7 +18,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Pool Atlas | Best Hotel Swimming Pools Worldwide',
   description: 'Discover and explore the most stunning hotel swimming pools across the globe. Curated rankings of luxury infinity pools, rooftop oases, and tropical retreats.',
-  generator: 'v0.app',
   other: {
     'websitelaunches-verification': 'd88d50454f7b69ceb9a4a741c6c2f1ef',
   },

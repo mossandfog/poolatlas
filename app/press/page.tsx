@@ -43,10 +43,10 @@ const pressContacts = [
 ]
 
 const keyStats = [
+  { label: "Pools Ranked", value: "120", icon: Award },
   { label: "Countries Covered", value: "50+", icon: Globe },
-  { label: "Pools Ranked", value: "World's Best", icon: Award },
   { label: "Continents", value: "6", icon: Users },
-  { label: "Launch Year", value: "2024", icon: TrendingUp }
+  { label: "Editorial Sources", value: "6", icon: TrendingUp }
 ]
 
 const brandAssets = [

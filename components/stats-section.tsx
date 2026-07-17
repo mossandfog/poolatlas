@@ -1,30 +1,30 @@
-import { TrendingUp, Rocket, Globe, Star } from "lucide-react"
+import { Waves, Globe, BookOpen, Award } from "lucide-react"
 
 export function StatsSection() {
   const stats = [
     {
+      icon: Waves,
+      value: "120",
+      label: "Pools Ranked",
+      description: "Editorially selected worldwide"
+    },
+    {
       icon: Globe,
       value: "50+",
       label: "Countries",
-      description: "Pools ranked globally"
+      description: "Across 6 continents"
     },
     {
-      icon: Star,
-      value: "2.4M",
-      label: "Reviews Analyzed",
-      description: "From trusted sources"
+      icon: BookOpen,
+      value: "6",
+      label: "Publications",
+      description: "Sourced & cross-referenced"
     },
     {
-      icon: Rocket,
-      value: "#1",
-      label: "Fastest Growing",
-      description: "Pool guide of its kind"
-    },
-    {
-      icon: TrendingUp,
-      value: "World's Best",
-      label: "Pools Ranked",
-      description: "Updated monthly"
+      icon: Award,
+      value: "100%",
+      label: "Independent",
+      description: "No pay-to-play rankings"
     }
   ]
 

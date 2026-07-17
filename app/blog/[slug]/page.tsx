@@ -94,10 +94,44 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const otherPosts = blogPosts.filter(p => p.slug !== slug && p.category !== post.category)
   const relatedPosts = [...sameCategoryPosts, ...otherPosts].slice(0, 2)
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: `https://poolatlas.io${post.image}`,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    url: `https://poolatlas.io/blog/${post.slug}`,
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+      jobTitle: post.author.role,
+      url: "https://poolatlas.io/about",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Pool Atlas",
+      url: "https://poolatlas.io",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://poolatlas.io/images/poolatlas-logotype.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://poolatlas.io/blog/${post.slug}`,
+    },
+  }
+
   return (
     <main className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Header />
-      
+
       <article className="pt-24 pb-16">
         {/* Hero Image */}
         <div className="relative h-[40vh] sm:h-[50vh] mb-8">
