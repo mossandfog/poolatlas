@@ -1920,6 +1920,129 @@ This is not the quiet, contemplative pool experience of the other entries. It's 
 
 *Explore all of Pool Atlas's ranked Spanish pools → [See the rankings](/)*
     `
+  },
+  {
+    slug: "pool-colors-materials-2026",
+    title: "Dark Water Rising: The Pool Colors and Materials Defining Luxury in 2026",
+    excerpt: "White plaster is out. Charcoal, graphite, and deep obsidian are in. We explore the finish and material trends reshaping the world's most beautiful pools — and what they tell us about where luxury design is heading.",
+    category: "Industry",
+    readTime: "9 min read",
+    image: "/images/pool-amankila-bali.jpg",
+    publishedAt: "2026-07-21",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Design"
+    },
+    content: `
+# Dark Water Rising: The Pool Colors and Materials Defining Luxury in 2026
+
+There is a moment — you'll know it if you've experienced it — when you walk to the edge of a pool and realize the water is not the color you expected.
+
+Not the bright aquamarine of a holiday hotel. Not the milky Caribbean turquoise. Something darker. Something that makes the water look bottomless and alive, like you're peering into a lagoon that hasn't quite decided where it ends.
+
+This is the defining pool aesthetic of 2026: dark, deliberate, and deeply theatrical. And behind it lies a quiet revolution in the materials, finishes, and design philosophy that the hospitality industry's leading properties are adopting one ink-dark basin at a time.
+
+## The Death of White Plaster
+
+For most of the 20th century, the default hotel pool was white. White plaster bottom, white tile trim, bright blue water that read cheerful and clean in a photograph. It worked. It still works — about as well as a white hotel room works. Which is to say: adequately, uninspiringly, forgettably.
+
+White plaster reflects almost all visible light, producing that familiar turquoise shimmer. It's photogenic in bright sun, but it also reveals every scratch, every stain, and every chemical imbalance. It ages poorly, typically requiring resurfacing every seven to ten years, and it looks essentially the same everywhere in the world — which is the property designer's equivalent of a creative failure.
+
+The shift away from white has been building for years, but 2026 marks the moment it has become the clear preference of the world's most ambitious hospitality projects.
+
+"We no longer have clients asking for white," one prominent resort designer told us earlier this year. "They come in with references. And every reference is dark."
+
+## What Dark Finishes Actually Do to Water
+
+Before getting into the materials themselves, it's worth understanding the physics — because the effect of a dark pool finish isn't just aesthetic. It's optical.
+
+When light enters a body of water and hits a white or pale surface beneath, it bounces back toward the surface and scatters, creating the luminous turquoise effect we associate with traditional pools. The water appears lit from within.
+
+Dark finishes — charcoal plaster, black aggregate, deep blue pebble, gunmetal mosaic tile — absorb rather than reflect. The light that enters doesn't come back. The water appears to have no bottom. It reads as a different substance entirely: denser, cooler, more ambiguous.
+
+In daylight, this creates the mirror effect: the pool surface becomes a perfect reflection of sky, clouds, and landscape. At dusk and after dark, with underwater LED lighting playing against a dark surround, the result is genuinely otherworldly. The water seems to glow from within rather than above.
+
+There's also a thermal benefit. Dark surfaces absorb solar radiation, passively warming the water by several degrees — a meaningful efficiency gain for outdoor pools in temperate climates.
+
+## The Materials Leading the Movement
+
+### Dark Aggregate and Pebble Finishes
+
+The finish most associated with the current trend is exposed aggregate — a concrete base with natural stone pebbles, glass beads, or quartz crystals mixed in and polished to the surface. In dark colorways (midnight blue, charcoal, black river stone), pebble finishes produce water that appears to shift between deep green and deep blue depending on the light angle and time of day.
+
+Beyond aesthetics, the practical case for pebble finishes over standard plaster is compelling. They're significantly more durable — lifespan of fifteen to twenty-five years versus seven to ten for white plaster — and the texture provides natural slip resistance. The surface also hides the micro-scratches and surface variations that make aging plaster look shabby.
+
+[Amankila in Bali](/pools/amankila-3), with its legendary three-tier cascading pools overlooking the Lombok Strait, has long been an exemplar of the dark aggregate aesthetic. The pools appear to be carved from shadow, their surfaces catching the light differently across the day in a way that makes them endlessly watchable. This is not accidental; it is the entire point.
+
+### Artisanal Mosaic Tile
+
+If aggregate is the workhorse material of the dark pool movement, mosaic tile is its jewel.
+
+Custom glass and stone mosaic has been used in pools for over a century — the Romans understood that small tile pieces, carefully chosen and laid, could transform a body of water into something ceremonial. What's changed in 2026 is the ambition: designers are now commissioning bespoke mosaic programs that treat the pool floor as a canvas, with gradations of color, hand-drawn patterns, and material combinations that take months to specify and install.
+
+The [St. Regis Lhasa](/pools/st-regis-lhasa-23) offers perhaps the most extraordinary contemporary example in Pool Atlas's rankings: the Golden Energy Pool, lined with thousands of individual gold-plated tiles, creates a therapeutic salt-water basin that transforms light into ceremony. Every swimmer becomes momentarily royal.
+
+[The Berkeley in London](/pools/the-berkeley-71) takes the mosaic tradition in the opposite direction — iridescent white and gold mosaic laid in a rooftop pool with a retractable roof, creating an effect that is more gallery installation than hotel amenity. At Pool Atlas, we've ranked it among the finest urban pools in the world, partly for this reason.
+
+The current generation of mosaic commissions is pushing further: gradient colorways that shift from obsidian at the deep end to midnight blue at the shallow; custom patterns inspired by local craft traditions (Moroccan zellige, Balinese batik, Provençal encaustic); glass bead mixes that sparkle rather than shine, creating a water surface that looks less like a swimming pool and more like a night sky reflected in a lake.
+
+### Natural Stone: Travertine, Limestone, and Volcanic Rock
+
+The revolution isn't confined to what's under the water. What surrounds the pool has undergone an equally dramatic rethink.
+
+The standard hotel pool deck was, for decades, sealed concrete or generic stone pavers. The trend now — particularly among properties with strong design identities — is toward large-format natural stone laid without grout lines: travertine, limestone, granite, and in volcanic destinations, locally sourced basalt or lava stone.
+
+The appeal is immediate. Natural stone reads as expensive and particular in a way that concrete never quite manages. It also ages beautifully, developing patina rather than degrading. And it anchors the pool to its place — travertine in a Tuscan pool, basalt in an Icelandic one, fossil limestone in a Jordanian riad — in a way that generic materials cannot.
+
+[Borgo Pignano in Tuscany](/pools/borgo-pignano-83) demonstrates this principle at its most poetic: their infinity pool is carved directly from an ancient limestone quarry, making the material not a design choice but an archaeological discovery. The pool and its surroundings are made of the same stone, because they literally are.
+
+In Portugal, [Albatroz Beach & Yacht Club](/pools/albatroz-beach-yacht-club-98) takes the logic further still: their pool isn't a constructed thing at all, but a natural formation in volcanic rock continuously filled by the Atlantic Ocean. The material is geology. The color is the sea.
+
+### Expanded Metal and Industrial Influences
+
+Less expected, but increasingly visible at design-forward boutique properties: pools made from or edged with weathering steel, brushed stainless, or oxidized copper. These are not materials typically associated with water, and that dissonance is precisely the point.
+
+In Berlin, [Hotel Oderberger](/pools/hotel-oderberger-89) houses its grand pool within an 1898 bathhouse designed by Ludwig Hoffmann — the architect of the Pergamon Museum. The existing materials (vaulted brick, decorative ironwork, aged tile) have become the design, requiring nothing to be added and nothing to be changed. The pool is spectacular because someone decided to leave it alone.
+
+## The Psychology Behind the Shift
+
+What's driving the turn to darkness, heaviness, and material honesty in pool design? A few forces are converging.
+
+**Instagram saturation.** A generation of aquamarine infinity pools photographed millions of times has normalized the image so thoroughly that it's become invisible. Properties seeking genuine visual differentiation can't achieve it with blue water and white tile. They need something that reads differently on a screen, which means something that reads differently in real life.
+
+**The wellness pivot.** Pools are no longer marketed primarily as recreational amenities. At the leading properties, they're positioned as therapeutic environments — places of sensory immersion and deliberate escape. Dark, contained water resonates with this framing in a way that bright, cheerful water doesn't. You don't enter a Japanese onsen expecting to feel playful. You enter expecting to feel changed.
+
+**Material honesty as luxury.** The most significant shift in luxury goods over the past decade has been away from superficial glamour toward substance and provenance. The same values that make natural leather and handmade furniture feel more valuable than their synthetic equivalents now apply to pools. Guests who can afford anything increasingly choose materials with stories — the quarry, the craftsman, the centuries of use.
+
+## Five Pools to Watch
+
+The following Pool Atlas rankings exemplify these trends at their highest expression:
+
+**[Grace Santorini](/pools/grace-santorini-1) (#1)** — The Caldera infinity pool sits in a dark volcanic landscape and uses its materials to rhyme with it. The pool's dark finish makes the Aegean horizon appear to extend directly into the water.
+
+**[Alila Villas Uluwatu](/pools/alila-villas-uluwatu-74) (#74)** — The 50-meter clifftop pool on Bali's Bukit Peninsula uses a dark aggregate finish that transforms the Indian Ocean horizon into a single plane of deep blue.
+
+**[Cap Rocat Mallorca](/pools/cap-rocat-62) (#62)** — A former military fortress where the pools are carved from the fortification itself, in the same weathered sandstone as the walls. The material is the architecture; the architecture is the history.
+
+**[Amanruya](/pools/amanruya-53) (#53)** — On Bodrum's Göltürkbükü coast, the pools use dark stone finishes against bone-white architecture to create contrast that makes both elements more dramatic.
+
+**[Albatroz Beach & Yacht Club](/pools/albatroz-beach-yacht-club-98) (#98)** — The volcanic rock pool in Madeira is perhaps the purest expression of the trend: material, geography, and water merged into something that couldn't exist anywhere else.
+
+## What Comes Next
+
+The current trend cycle in pool design has, historically, run about a decade. Dark finishes were rare in 2016; they're the dominant preference in 2026. What comes after?
+
+The early signals suggest a turn toward the biological: moss-edged natural pools, living stone walls fed by pool runoff, aquatic plant filtration systems that blur the line between swimming pool and pond. Properties in the Austrian Alps and the Swiss countryside are already building this way. The aesthetic is more demanding, the maintenance more complex, and the sensory experience — swimming among living plants in chemically minimal water — is fundamentally unlike anything that came before it.
+
+In ten years, we may look at the dark aggregate pool the way we now look at white plaster: accomplished, beautiful in its time, and quietly overtaken by something more alive.
+
+For now, the dark pools are ascendant. They look extraordinary, they hold their beauty, and they photograph like they cost more than they do. For the hospitality industry, that combination is irresistible.
+
+---
+
+*Explore the full Pool Atlas rankings → [View all 120 pools](/)*
+    `
   }
 ]
 

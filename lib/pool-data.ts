@@ -138,7 +138,10 @@ const _poolsData = [
     features: ["Cliffside", "Freshwater", "Garden Terraces", "Tyrrhenian Sea View"],
     description: "Carved into the rock-base cliff and surrounded by four levels of lush gardens, this freshwater infinity pool overlooks the clear blue Tyrrhenian Sea and stunning Amalfi coastline.",
     sources: ["Condé Nast Traveler"],
-    awards: ["CNT Readers' Choice 2018-2025"]
+    awards: ["CNT Readers' Choice 2018-2025"],
+    kidFriendly: false,
+    websiteUrl: "https://www.monasterosantarosa.com",
+    bookingUrl: "https://www.monasterosantarosa.com/book-a-room"
   },
   {
     id: 7,
@@ -154,7 +157,10 @@ const _poolsData = [
     features: ["Infinity Edge", "Mediterranean View", "Historic Palace", "Terraced Gardens"],
     description: "Seemingly suspended between sky and sea at an 11th-century palace, this infinity pool offers breathtaking views of the Mediterranean from its perch in the terraced gardens.",
     sources: ["The Luxury Travel Expert", "Travel + Leisure"],
-    awards: ["Most Instagrammed Pool in Europe"]
+    awards: ["Most Instagrammed Pool in Europe"],
+    kidFriendly: false,
+    websiteUrl: "https://www.belmond.com/hotels/europe/italy/ravello/belmond-hotel-caruso",
+    bookingUrl: "https://www.belmond.com/hotels/europe/italy/ravello/belmond-hotel-caruso/book"
   },
   {
     id: 8,
@@ -170,7 +176,10 @@ const _poolsData = [
     features: ["Palace Architecture", "Lake View", "88-Foot Pool", "Royal Heritage"],
     description: "An 88-foot architectural wonder overlooking lush gardens and Lake Pichola, set on 50 acres of the 200-year-old hunting grounds of the Maharana of Mewar.",
     sources: ["Condé Nast Traveler", "The Luxury Travel Expert"],
-    awards: ["CNT Readers' Choice 2017-2025", "CNT Gold List 2023"]
+    awards: ["CNT Readers' Choice 2017-2025", "CNT Gold List 2023"],
+    kidFriendly: false,
+    websiteUrl: "https://www.oberoihotels.com/hotels-in-udaipur-udaivillas/",
+    bookingUrl: "https://www.oberoihotels.com/hotels-in-udaipur-udaivillas/rooms-suites/"
   },
   {
     id: 9,
@@ -186,7 +195,10 @@ const _poolsData = [
     features: ["Geothermal", "Private Lagoon", "Spa", "Volcanic Setting"],
     description: "A private, intimate lagoon fed by geothermal seawater from the same wellspring as the famous Blue Lagoon, offering therapeutic bathing without the crowds.",
     sources: ["Condé Nast Traveler"],
-    awards: ["CNT Readers' Choice 2019, 2021"]
+    awards: ["CNT Readers' Choice 2019, 2021"],
+    kidFriendly: false,
+    websiteUrl: "https://www.bluelagoon.com/blue-lagoon-retreat",
+    bookingUrl: "https://www.bluelagoon.com/blue-lagoon-retreat/packages"
   },
   {
     id: 10,
@@ -202,7 +214,10 @@ const _poolsData = [
     features: ["Indoor", "100-Foot Length", "Panoramic Views", "Stone Atrium"],
     description: "A 100-foot heated indoor pool in a vaulted stone atrium high above Tokyo's skyline, part of the renowned Aman Spa with stunning panoramic city views.",
     sources: ["Condé Nast Traveler"],
-    awards: ["CNT Gold List 2022", "CNT Readers' Choice 2018-2025"]
+    awards: ["CNT Gold List 2022", "CNT Readers' Choice 2018-2025"],
+    kidFriendly: false,
+    websiteUrl: "https://www.aman.com/resorts/aman-tokyo",
+    bookingUrl: "https://www.aman.com/resorts/aman-tokyo/rooms"
   },
   {
     id: 11,
@@ -218,7 +233,10 @@ const _poolsData = [
     features: ["100-Foot Length", "Olive Groves", "Mountain View", "Historic Setting"],
     description: "Surrounded by ancient olive trees and dry stone walls, this luxurious 100-foot pool offers sweeping views of neighboring Provençal villages and surrounding mountains.",
     sources: ["Condé Nast Traveler"],
-    awards: ["CNT Gold List 2020", "CNT Hot List 2016"]
+    awards: ["CNT Gold List 2020", "CNT Hot List 2016"],
+    kidFriendly: false,
+    websiteUrl: "https://www.airelles.com/destination/gordes",
+    bookingUrl: "https://www.airelles.com/destination/gordes/rooms"
   },
   {
     id: 12,
@@ -234,7 +252,10 @@ const _poolsData = [
     features: ["Infinity Edge", "Ocean View", "Fiber-Optic Lighting", "Day Beds"],
     description: "A large lagoon-like infinity-edged pool that bleeds into the horizon of the Indian Ocean, surrounded by four-poster day beds and romantically lit with fiber-optic lights at night.",
     sources: ["The Luxury Travel Expert"],
-    awards: ["#3 Most Beautiful Pool in the World"]
+    awards: ["#3 Most Beautiful Pool in the World"],
+    kidFriendly: false,
+    websiteUrl: "https://www.huvafenfushi.com",
+    bookingUrl: "https://www.huvafenfushi.com/offers"
   },
   {
     id: 13,
@@ -250,7 +271,10 @@ const _poolsData = [
     features: ["Floating Pool", "Lake View", "Historic", "Built-in Jacuzzi"],
     description: "A unique pool floating directly on Lake Como with stunning Alpine views, at a former 16th-century residence of European aristocrats converted into a resort in 1873.",
     sources: ["The Luxury Travel Expert"],
-    awards: ["#7 Most Beautiful Pool in the World"]
+    awards: ["#7 Most Beautiful Pool in the World"],
+    kidFriendly: false,
+    websiteUrl: "https://www.villadeste.com",
+    bookingUrl: "https://www.villadeste.com/en/rooms-suites"
   },
   {
     id: 14,
@@ -468,7 +492,7 @@ const _poolsData = [
     location: "Oia, Santorini",
     country: "Greece",
     region: "Europe",
-    image: "/images/pool-perivolas-santorini.jpg",
+    image: "/images/pools/pool-andronis-boutique-oia.jpg",
     rating: 8.9,
     reviewCount: 2345,
     features: ["Cave Pool", "Caldera View", "Cliffside", "Private Plunge"],
@@ -692,7 +716,7 @@ const _poolsData = [
     location: "Como",
     country: "Italy",
     region: "Europe",
-    image: "/images/pool-como-castello.jpg",
+    image: "/images/pools/pool-hilton-lake-como.jpg",
     rating: 8.6,
     reviewCount: 2890,
     features: ["Rooftop", "Lake View", "Year-Round Heated", "Panoramic"],
@@ -852,7 +876,7 @@ const _poolsData = [
     location: "Lake Como",
     country: "Italy",
     region: "Europe",
-    image: "/images/pool-como-castello.jpg",
+    image: "/images/pools/pool-grand-hotel-tremezzo.jpg",
     rating: 9.3,
     reviewCount: 3456,
     features: ["Floating Pool", "Lake View", "Art Nouveau", "Historic"],
@@ -1057,10 +1081,10 @@ const _poolsData = [
     rank: 64,
     name: "Singita Sweni Lodge Pool",
     hotel: "Singita Sweni Lodge",
-    location: "Kruger National Park",
+location: "Kruger National Park",
     country: "South Africa",
     region: "Africa",
-    image: "/images/pool-singita-lebombo.jpg",
+    image: "/images/pools/pool-singita-sweni-lodge.jpg",
     rating: 9.3,
     reviewCount: 456,
     features: ["Safari", "Private Infinity", "River View", "Design-Forward"],
@@ -1076,7 +1100,7 @@ const _poolsData = [
     location: "Amalfi",
     country: "Italy",
     region: "Europe",
-    image: "/images/pool-le-sirenuse.jpg",
+    image: "/images/pools/pool-santa-caterina-amalfi.jpg",
     rating: 9.0,
     reviewCount: 2345,
     features: ["Cliffside", "Glass Elevator", "Slim Aarons", "Grande Dame"],
@@ -1252,7 +1276,7 @@ const _poolsData = [
     location: "Muscat",
     country: "Oman",
     region: "Middle East",
-    image: "/images/pool-six-senses-zighy.jpg",
+    image: "/images/pools/pool-chedi-muscat.jpg",
     rating: 9.1,
     reviewCount: 4567,
     features: ["21-Acre Oasis", "Three Pools", "Desert Setting", "Temperature-Controlled"],
@@ -1588,7 +1612,7 @@ const _poolsData = [
     location: "Cotswolds",
     country: "UK",
     region: "Europe",
-    image: "/images/pool-coworth-park.jpg",
+    image: "/images/pools/pool-cowley-manor.jpg",
     rating: 8.9,
     reviewCount: 2345,
     features: ["Indoor & Outdoor", "1970s Aesthetic", "Experimental Group", "Countryside"],
@@ -1636,7 +1660,7 @@ const _poolsData = [
     location: "Soufrière",
     country: "Saint Lucia",
     region: "Americas",
-    image: "/images/pool-jade-mountain.jpg",
+    image: "/images/pools/pool-boucan-st-lucia.jpg",
     rating: 8.9,
     reviewCount: 567,
     features: ["Piton Views", "Cocoa Groves", "Rainforest", "Chocolate Martinis"],

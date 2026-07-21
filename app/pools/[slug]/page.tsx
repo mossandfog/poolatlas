@@ -7,6 +7,7 @@ import {
   ArrowLeft, CheckCircle2, Waves, ChevronRight
 } from "lucide-react"
 import { pools } from "@/lib/pool-data"
+import { getBookingUrl } from "@/lib/affiliate"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
@@ -46,6 +47,8 @@ export default async function PoolPage({ params }: Props) {
   const nearbyPools = pools
     .filter((p) => p.region === pool.region && p.id !== pool.id)
     .slice(0, 3)
+
+  const affiliateBookingUrl = getBookingUrl(pool)
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -303,13 +306,20 @@ export default async function PoolPage({ params }: Props) {
                       Visit Official Website
                     </Button>
                   </a>
-                  {pool.bookingUrl && (
+                  {/* Affiliate booking link — earns commission when travelers book */}
+                  {affiliateBookingUrl ? (
+                    <a href={affiliateBookingUrl} target="_blank" rel="noopener noreferrer sponsored">
+                      <Button variant="outline" className="w-full rounded-full gap-2" size="lg">
+                        Check Rates on Booking.com
+                      </Button>
+                    </a>
+                  ) : pool.bookingUrl ? (
                     <a href={pool.bookingUrl} target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" className="w-full rounded-full gap-2" size="lg">
                         Check Availability
                       </Button>
                     </a>
-                  )}
+                  ) : null}
                   <PoolDreamListButton poolId={pool.id} />
                 </div>
 
