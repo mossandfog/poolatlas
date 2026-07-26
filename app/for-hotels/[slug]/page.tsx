@@ -31,7 +31,7 @@ function getTier(rank: number) {
   if (rank <= 10)  return { label: "Top 10 in the World",  color: "text-yellow-500",  bg: "bg-yellow-500/10",  border: "border-yellow-500/30" }
   if (rank <= 25)  return { label: "Top 25 in the World",  color: "text-slate-300",   bg: "bg-slate-300/10",   border: "border-slate-300/30" }
   if (rank <= 50)  return { label: "Top 50 in the World",  color: "text-orange-400",  bg: "bg-orange-400/10",  border: "border-orange-400/30" }
-  return             { label: "Top 100 in the World", color: "text-primary",     bg: "bg-primary/10",     border: "border-primary/30"  }
+  return             { label: "World's Best Hotel Pools", color: "text-primary",     bg: "bg-primary/10",     border: "border-primary/30"  }
 }
 
 export default async function ForHotelsSlugPage({ params }: PageProps) {

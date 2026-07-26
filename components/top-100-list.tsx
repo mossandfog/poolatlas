@@ -48,7 +48,7 @@ export function Top100List() {
             <span className="text-primary text-sm font-semibold">Complete Rankings</span>
           </div>
           <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Top 100 Hotel Pools Worldwide
+            The World&apos;s Best Hotel Pools
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-3">
             The definitive list of the world&apos;s most exceptional hotel swimming pools, 

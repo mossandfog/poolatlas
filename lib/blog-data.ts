@@ -516,7 +516,7 @@ Many hotels report that while the maintenance is different, the overall workload
 
 ## What the Luxury Market Is Doing
 
-Our research into the top 100 hotel pools reveals clear trends.
+Our research into the world's finest hotel pools reveals clear trends.
 
 ### Current Adoption Rates
 
@@ -1581,7 +1581,7 @@ It's not a single pool — it's a pool landscape. The effect is theatrical in th
 
 ---
 
-*These pools are listed on Pool Atlas with full details, ratings, and rankings. Find your next destination → [Explore the Top 100](/)*
+*These pools are listed on Pool Atlas with full details, ratings, and rankings. Find your next destination → [Explore the World's Best Pools](/)*
     `
   },
   {
@@ -1682,11 +1682,11 @@ They're built with **precise orientation**. The sun path matters. The prime view
 
 And they understand that **the pool is a frame, not the subject**. The greatest infinity pools are designed in service of something beyond themselves: a caldera, a mountain range, a cityscape, an ocean. The pool's job is to give you the best possible seat for that view.
 
-When those elements align, you get the pools on Pool Atlas's top-100 list. When they don't, you get an expensive feature in a hotel brochure that looks better in photographs than in person.
+When those elements align, you get the pools on Pool Atlas's world rankings. When they don't, you get an expensive feature in a hotel brochure that looks better in photographs than in person.
 
 ---
 
-*Discover the world's top-ranked infinity pools on Pool Atlas → [See the full rankings](/)*
+*Discover the world's finest infinity pools on Pool Atlas → [See the full rankings](/)*
     `
   },
   {

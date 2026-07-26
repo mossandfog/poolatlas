@@ -49,7 +49,7 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Rankings</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="/#top-100" className="hover:text-primary transition-colors py-1 inline-block">Top 100 Pools</a></li>
+              <li><a href="/#top-100" className="hover:text-primary transition-colors py-1 inline-block">World's Best Pools</a></li>
               <li><a href="/#featured" className="hover:text-primary transition-colors py-1 inline-block">Pool of the Month</a></li>
               <li><a href="/#map" className="hover:text-primary transition-colors py-1 inline-block">By Region</a></li>
               <li><a href="/#explore" className="hover:text-primary transition-colors py-1 inline-block">By Award</a></li>

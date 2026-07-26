@@ -101,7 +101,7 @@ export default function Home() {
         <ComparePools />
       </Suspense>
       
-      {/* Full Top 100 List */}
+      {/* Full Rankings List */}
       <Suspense fallback={<SectionLoader />}>
         <Top100List />
       </Suspense>

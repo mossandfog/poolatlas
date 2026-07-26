@@ -16,7 +16,7 @@ function getTierLabel(rank: number) {
   if (rank <= 10)  return { label: "Top 10",  className: "bg-yellow-500/15 text-yellow-500 border-yellow-500/30" }
   if (rank <= 25)  return { label: "Top 25",  className: "bg-slate-300/15 text-slate-300 border-slate-300/30" }
   if (rank <= 50)  return { label: "Top 50",  className: "bg-orange-400/15 text-orange-400 border-orange-400/30" }
-  return             { label: "Top 100", className: "bg-primary/15 text-primary border-primary/30" }
+  return             { label: "World's Best", className: "bg-primary/15 text-primary border-primary/30" }
 }
 
 export default function ForHotelsPage() {
