@@ -524,7 +524,7 @@ const _poolsData = [
     location: "Canyon Point, Utah",
     country: "USA",
     region: "Americas",
-    image: "/images/pool-amangiri-utah.jpg",
+    image: "/images/pools/pool-amangiri-camp-sarika.webp",
     rating: 8.9,
     reviewCount: 234,
     features: ["Tented Pavilion", "Desert Mesa", "Private Plunge", "Ultra-Exclusive"],
@@ -2275,11 +2275,13 @@ export const features = [
   "Adults Only",
   "Spa",
   "Indoor/Outdoor",
+  "Indoor",
   "Historic",
   "Desert Setting",
   "Jungle View",
   "City Skyline",
   "Lake View",
+  "Cliff-Top",
   "Waterslide",
   "Kid Friendly"
 ]

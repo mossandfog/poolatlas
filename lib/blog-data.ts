@@ -2041,7 +2041,108 @@ For now, the dark pools are ascendant. They look extraordinary, they hold their 
 
 ---
 
-*Explore the full Pool Atlas rankings → [View all 120 pools](/)*
+*Explore the full Pool Atlas rankings → [View all 125 pools](/)*
+    `
+  },
+  {
+    slug: "hotel-pool-design-trends-2026",
+    title: "What 82 Strangers Revealed About the Future of Hotel Pools",
+    excerpt: "A Reddit thread asking about the world's most extraordinary hotel pools attracted thousands of views and 82 responses — and the patterns that emerged say a great deal about where hotel pool design is heading.",
+    category: "Industry",
+    readTime: "10 min read",
+    image: "/images/pools/pool-banyan-tree-alula.jpg",
+    publishedAt: "2026-07-25",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Design & Industry"
+    },
+    content: `
+# What 82 Strangers Revealed About the Future of Hotel Pools
+
+In late July 2026, we posted a single question to Reddit: *What's the most extraordinary hotel pool you've ever swum in?*
+
+By the time the thread closed, it had attracted thousands of views and 82 responses from travellers spanning six continents — a level of engagement that surprised even us. Pools, it turns out, are deeply felt. People remember them the way they remember meals, or sunsets, or the specific quality of light in a place they'll carry with them for the rest of their lives.
+
+But beyond the nostalgia, something analytically interesting emerged from the thread: a surprisingly consistent pattern in what people found most remarkable. Almost nobody mentioned the size of the pool. Almost nobody mentioned the water temperature, the towel service, or the number of swim lanes. What they mentioned, again and again, was *specificity of place* — pools that could only exist in one location on earth, that felt designed for that particular ridge, that canyon, that rooftop.
+
+This is, it turns out, exactly where the hospitality industry's most ambitious designers are heading.
+
+## The Investment Reality
+
+Before the trends, the numbers. Building a world-class hotel pool today — one that genuinely earns the *extraordinary* designation — costs between $2 million and $20 million, depending on location, engineering complexity, and level of finish. A rooftop infinity pool in a Tokyo skyscraper and a desert rock pool in Saudi Arabia occupy the same price tier but require entirely different engineering logic.
+
+Hotel groups are investing in pools not primarily as amenities, but as *marketing assets*. Research from hospitality consultancies consistently shows that distinctive pools drive direct booking rates, social media reach, and average nightly rates at a disproportionate rate relative to their construction cost. The ROI calculation increasingly favors extraordinary over adequate.
+
+"The question we're asking now isn't 'can we afford to build an exceptional pool?'" one senior development executive at a major luxury group told us. "It's 'can we afford not to?'"
+
+## Trend 1: Pools That Belong to Their Landscape
+
+The most-mentioned pools in our Reddit thread shared a single quality: they felt inevitable. Not designed *for* a place, but *grown from* it.
+
+Amankila's three-tier cascade in Bali, modelled on the stepped water palaces of Ujung. Amangiri in Utah, where dark water sits among sandstone as if the rock had always meant to hold it there. The Singita Sweni Lodge in Kruger, where a pool faces a dry riverbed that elephants cross at dusk.
+
+What unites these pools is a design philosophy that refuses to impose. The landscape comes first; the pool is its consequence.
+
+This approach is expensive. It requires custom engineering, site-specific materials, and design briefs that often run for years before a shovel touches the ground. But the properties that invest in it produce experiences that guests carry with them for decades.
+
+The Banyan Tree AlUla, which we recently added to Pool Atlas's listings, exemplifies where this is heading. Its Rock Pool sits at the base of a 2,000-year-old Nabataean sandstone canyon in Saudi Arabia's AlUla region — a setting so specific to its geology that it couldn't be replicated elsewhere at any price. The investment to build it was significant; the impossibility of replication is, itself, the point.
+
+## Trend 2: The Rooftop Urban Arms Race
+
+The second pattern that emerged from our thread: cities. Specifically, city pools that turn the skyline into the amenity.
+
+The Park Hyatt Tokyo's Pool on the Park — now on Pool Atlas at #123 — has attracted devoted fans for more than two decades, ever since Sofia Coppola's camera lingered on its 47th-floor windows in *Lost in Translation*. Multiple respondents mentioned it unprompted. One described swimming there during a typhoon warning, watching waves of rain move across the city below, as one of the defining experiences of their travels.
+
+Bangkok, Singapore, Tokyo: the thread read like a rooftop atlas of urban Asia. And the pattern reflects investment reality — major hotel groups building in dense urban centres know that the pool is often the only way to offer the spatial generosity and natural beauty that luxury travellers expect when the surrounding streets offer neither.
+
+The engineering challenge of rooftop pools — cantilever loads, wind exposure, waterproofing above occupied floors — makes them among the most expensive pool types per square metre. The Okura Prestige Bangkok, which we added at #124, has maintained its rooftop pool at the standard that newer competitors struggle to match: quiet, Japanese in its restraint, with a view over the city that doesn't try to shout.
+
+## Trend 3: Desert and Extreme Environment Pools
+
+Perhaps the most telling signal from our thread: pools in arid, extreme, or unexpected environments generated some of the most passionate responses.
+
+Amangiri in Utah. Amanoi in Vietnam's Núi Chúa National Park. Banyan Tree AlUla in Saudi Arabia. These are not pools designed for convenience — they require guests to travel far, pay significantly, and often contend with heat, altitude, or remoteness that makes a cool plunge feel almost existentially necessary.
+
+The hospitality industry is noticing. Saudi Arabia's Vision 2030 tourism investment has produced a wave of luxury pool projects in desert environments that are setting new standards for what's architecturally possible in harsh climates. Water in these settings carries symbolic weight that no Maldives overwater villa can quite replicate: it represents relief, abundance, and the triumph of human ingenuity over inhospitable earth.
+
+Amanoi — which we added to Pool Atlas at #121 following the thread — is a masterclass in this approach. Set in a protected national park on Vietnam's least-visited coastline, its infinity pool faces a bay that fewer than 1,000 tourists see each year. Scarcity, it turns out, is a design material too.
+
+## Trend 4: The Architectural Statement Pool
+
+A distinct but related category: pools designed not to disappear into the landscape, but to *announce* themselves architecturally.
+
+The Reddit thread contained several mentions of The Joule Dallas and Marina Bay Sands — pools defined by their structural distinctiveness rather than their natural setting. These are pools you photograph from below as much as from within.
+
+What they share is an architectural confidence that treats the pool as a building component rather than an addition. At Marina Bay Sands, the infinity edge is part of the building's silhouette. At The Joule — now Pool Atlas #122 — the cantilevered glass-bottom pool is visible from the street to pedestrians who never set foot in the hotel. It's a pool that earns its place in the city's visual culture simply by existing.
+
+Architectural firms are increasingly being commissioned for pool design at the same time as the buildings that contain them, rather than as an afterthought. The result: pools that exist at the intersection of engineering, sculpture, and hospitality, and that generate earned media coverage years after they open.
+
+## Trend 5: Wellness Convergence
+
+One thing consistently absent from the thread: mentions of lap swimming. No one described an extraordinary pool in terms of its athletic utility.
+
+What came up instead: the quality of stillness. The sensation of water that felt unlike water anywhere else. The particular experience of floating in a particular kind of light.
+
+The luxury hospitality industry is responding with an integration of pool and spa design that would have seemed unusual fifteen years ago. Properties like Chiva-Som in Thailand and Six Senses across their portfolio are designing water environments where the line between pool, hydrotherapy circuit, and contemplative outdoor space is deliberately blurred. The investment is in *atmosphere* rather than amenity.
+
+The Reddit thread's language bore this out. People described these pools not as facilities they used, but as states they entered.
+
+## What the Data Tells Us
+
+The pools that drew the most passionate responses in our thread — and generated tens of thousands of views from readers who had never swum in any of them — shared a quality that the hospitality industry's most experienced designers identify as increasingly central to their work: *irreplaceability*.
+
+Not the largest, the highest, or the most technically sophisticated. The ones that could exist nowhere else on earth.
+
+The investment thesis that flows from this is straightforward, even if executing it is not: the pools worth building in 2026 are the ones that twenty years from now, someone will describe to a stranger on Reddit — with the specific, luminous detail of a memory they've carried since the day they swam there.
+
+Pool Atlas exists to document those places. We now list 125 of them. Five came directly from the thread that sparked this piece.
+
+If you know of others, we're listening.
+
+---
+
+*Browse all 125 pools on Pool Atlas → [View the full rankings](/)*
     `
   }
 ]
