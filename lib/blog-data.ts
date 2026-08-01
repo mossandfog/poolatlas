@@ -2144,6 +2144,89 @@ If you know of others, we're listening.
 
 *Browse all 125 pools on Pool Atlas → [View the full rankings](/)*
     `
+  },
+  {
+    slug: "infinity-pools-vs-lagoon-pools",
+    title: "Two Ways to Build a Perfect Pool: The Infinity Edge and the Living Lagoon",
+    excerpt: "Hotel pool design has converged on two distinct philosophies — one about visual drama, one about immersive nature. Understanding the difference helps explain why some pools stay with you for decades.",
+    category: "Guide",
+    readTime: "9 min read",
+    image: "/images/pools/pool-amankila-bali.jpg",
+    publishedAt: "2026-08-01",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Design & Architecture"
+    },
+    content: `
+# Two Ways to Build a Perfect Pool: The Infinity Edge and the Living Lagoon
+
+There is a question that good hotel pool designers spend years learning to answer: should the pool announce itself, or should it disappear?
+
+Two dominant philosophies have emerged in response. The infinity edge pool is built around visual drama — an edge engineered to vanish into a horizon, making the water appear continuous with whatever lies beyond it. The lagoon pool operates on an entirely different logic: organic edges, naturalistic depth, a relationship with the surrounding landscape that feels discovered rather than constructed.
+
+Both produce extraordinary experiences. But they do so through opposite means, and understanding the difference changes how you choose where to swim — and what you remember about it years later.
+
+## The Infinity Edge: Borrowed Horizon
+
+The concept is deceptively simple. By lowering one edge of the pool to the same level as the water surface, an infinity pool creates the optical illusion that the pool extends to the horizon. The water doesn't stop — it spills over into a catch basin and recirculates, but from the swimmer's perspective, it connects to whatever is beyond.
+
+What makes this work is not the engineering (which is fairly straightforward) but the selection of the horizon itself. The best infinity pools choose their vanishing point with the same deliberateness that a portrait photographer chooses a background. The pool is the foreground; everything beyond is the subject.
+
+**[Grace Santorini](/pools/grace-santorini-1)** does this with the Caldera — the ancient volcanic crater that defines the island's silhouette. At the water's surface, the pool and the caldera appear to share a single plane. The effect is not that you're swimming in a pool overlooking the caldera; it's that you're swimming *in* the caldera.
+
+**[Belmond Hotel Caruso](/pools/belmond-hotel-caruso-7)** in Ravello applies the same logic to the Amalfi Coast. The pool sits at the edge of an 11th-century palace, and its vanishing edge spills toward a panorama of coastline that drops 300 meters to the sea. The horizon here is not ocean but air and geometry — terraced lemon groves, medieval villages, and the particular quality of Mediterranean light in the afternoon.
+
+**[Alila Villas Uluwatu](/pools/alila-villas-uluwatu-74)** pushes the format to its physical limits: a 50-metre pool perched on the southernmost cliffs of Bali, 50 metres above the Indian Ocean. The swell is visible from the water. On the right day, the spray reaches the deck. This is an infinity pool that has chosen confrontation as its mode — not serenity.
+
+**[Hacienda Na Xamena](/pools/hacienda-na-xamena-118)** in Ibiza takes a different variation: not a single infinity edge but a cascade of pools descending down 180-metre cliffs, each one spilling into the next, ultimately disappearing into a private bay. It is less a pool than a water feature at landscape scale.
+
+The recent additions to Pool Atlas include some of the most compelling examples of the form. **[Amanoi](/pools/amanoi-121)** in Vietnam's Núi Chúa National Park has an infinity pool that faces a bay so remote that Aman built the resort specifically to justify access to it. The horizon here is also a conservation argument: the water's edge aligns with a marine protected area that guests can observe but not enter. Distance, in this case, is the amenity.
+
+### What the Infinity Edge Asks of You
+
+There is something slightly performative about an infinity pool, which is not a criticism. They are designed to be seen in, to be photographed from specific angles, to produce a particular visual experience that aligns with how the host property wants to be remembered. The best examples earn this. The weaker ones feel like the edge was added as a feature rather than as a response to the site.
+
+The key question to ask of any infinity pool: what has it borrowed the horizon from? The answer tells you whether the design was site-specific or simply fashionable.
+
+## The Lagoon Pool: Landscape as Water
+
+The lagoon-style pool operates from the opposite premise. Rather than directing the eye outward, it creates a self-contained world. Edges are irregular. Depths vary. The shape is determined by the environment it inhabits rather than by the view it frames.
+
+The archetype exists, quite literally, at **[The Retreat at Blue Lagoon](/pools/the-retreat-at-blue-lagoon-9)** in Iceland — a private geothermal lagoon fed by the same volcanic wellspring as the famous public pool nearby. The water is naturally opaque blue-grey from dissolved silica, warm year-round regardless of air temperature, and edged in raw lava rock. No engineer designed this aesthetic; the geology did. The Retreat built around it.
+
+This is the essential logic of lagoon pool design: working with a pre-existing natural quality rather than imposing a designed quality onto a neutral space.
+
+**[Amankila](/pools/amankila-3)**'s three-tier infinity pool in Bali occupies an interesting position between both categories. Its cascading terraces reference the water palaces of traditional Balinese architecture — pools as ritual landscape rather than recreational amenity. The three levels descend toward the Lombok Strait, each with its own character and temperature. It reads as a lagoon system that happens to have infinity edges, which is perhaps the most sophisticated resolution of the two philosophies.
+
+**[Huvafen Fushi](/pools/huvafen-fushi-12)** in the Maldives takes the lagoon concept in a different direction. Its pool is positioned at the edge of the coral reef platform, and its water colour shifts with the depth of the ocean beyond — pale turquoise above sand, deepening to indigo where the reef drops. The pool does not have to pretend to be connected to the ocean; structurally, it nearly is.
+
+**[Villa d'Este](/pools/villa-d-este-13)** on Lake Como dispenses with the pretence altogether: its pool floats directly on the lake, a pontoon structure moored against the 16th-century hotel facade. Swimming in it, you are surrounded by lake water on all sides, separated by a few inches of fibreglass. The lagoon is not simulated; you are in it.
+
+**[Grand Hotel Tremezzo](/pools/grand-hotel-tremezzo-51)**, also on Lake Como, operates similarly — a floating pool platform with views directly to Bellagio across the water. It has been there since 1910, which makes it one of the oldest examples of lagoon-integrated hotel pool design in existence, predating the trend by about a century.
+
+### What the Lagoon Pool Asks of You
+
+Lagoon pools tend to reward slower attention. The experience compounds over time — the slight variation in temperature as you move through different zones, the way the light changes the surface colour, the transition from shallow to deep. They are environments to inhabit rather than views to consume.
+
+The design challenge is correspondingly harder. An infinity edge is a precise technical effect that can be specified and built. A lagoon that feels genuinely natural requires either an exceptional site or an exceptionally patient designer willing to spend years getting the organic geometry right.
+
+## Choosing Your Philosophy
+
+Both formats appear throughout Pool Atlas's rankings because both, at their best, produce unforgettable experiences. The distinction matters mainly when you're deciding what kind of experience you're looking for.
+
+If you want a moment — a photograph, a specific view at a specific time of day, the feeling of swimming on the edge of something — the infinity pools deliver. Grace Santorini at sunset. Alila Uluwatu during a swell. Amanoi at dawn before the bay fills with light.
+
+If you want to sink into a place — to lose track of time, to feel absorbed by an environment rather than positioned in front of one — the lagoon pools are the better choice. Blue Lagoon in snow. Villa d'Este in June. Huvafen Fushi at the point where the reef meets the open ocean.
+
+The most interesting pools find ways to do both. Amankila's terraces let you move between the immersive and the panoramic. The best designers understand that these are not competing approaches but complementary ones — and that the richest pool experiences draw from both.
+
+Pool Atlas ranks both categories across 125 properties worldwide. Whatever your preference, the list is a good place to start.
+
+---
+
+*Explore the full rankings by feature type → [Filter by Infinity Edge or Ocean View](/)*
+    `
   }
 ]
 
