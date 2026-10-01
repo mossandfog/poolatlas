@@ -1,16 +1,17 @@
 import { Waves, Globe, BookOpen, Award } from "lucide-react"
+import { siteStats } from "@/lib/editorial-calendar"
 
 export function StatsSection() {
   const stats = [
     {
       icon: Waves,
-      value: "120",
+      value: String(siteStats.poolCount),
       label: "Pools Ranked",
       description: "Editorially selected worldwide"
     },
     {
       icon: Globe,
-      value: "50+",
+      value: String(siteStats.countryCount),
       label: "Countries",
       description: "Across 6 continents"
     },

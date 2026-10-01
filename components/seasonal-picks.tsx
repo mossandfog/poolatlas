@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Sun, Snowflake, Leaf, Flower } from "lucide-react"
 import { pools } from "@/lib/pool-data"
 import { PoolCard } from "@/components/pool-card"
+import type { Season } from "@/lib/editorial-calendar"
 
 const seasons = [
   {
@@ -24,20 +25,22 @@ const seasons = [
     name: "Fall",
     icon: Leaf,
     color: "bg-orange-100 text-orange-600",
-    poolIds: [5, 7, 12],
-    description: "Mild temps, stunning colors"
+    poolIds: [5, 125, 117],
+    description: "Desert season opens and safari reaches its late dry season, when wildlife gathers at the water"
   },
   {
     name: "Winter",
     icon: Snowflake,
     color: "bg-blue-100 text-blue-600",
-    poolIds: [9, 10, 15],
-    description: "Heated pools, snowy views"
+    poolIds: [9, 10, 71],
+    description: "Geothermal water, heated indoor pools, and a roof that opens when the sun does"
   }
 ]
 
-export function SeasonalPicks() {
-  const [activeSeason, setActiveSeason] = useState(seasons[1])
+export function SeasonalPicks({ initialSeason, year }: { initialSeason: Season; year: number }) {
+  const [activeSeason, setActiveSeason] = useState(
+    seasons.find(s => s.name === initialSeason) ?? seasons[0]
+  )
 
   const seasonPools = activeSeason.poolIds
     .map(id => pools.find(p => p.id === id)!)
@@ -50,7 +53,7 @@ export function SeasonalPicks() {
           <div>
             <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-3 ${activeSeason.color}`}>
               <activeSeason.icon className="w-4 h-4" />
-              <span className="text-sm font-semibold">{activeSeason.name} 2026</span>
+              <span className="text-sm font-semibold">{activeSeason.name} {year}</span>
             </div>
             <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold text-foreground">
               Best Pools to Visit This Season

@@ -21,7 +21,8 @@ export const categories = [
   "Family",
   "City",
   "Adventure",
-  "Destination"
+  "Destination",
+  "Pool Care"
 ] as const
 
 export const blogPosts: BlogPost[] = [
@@ -1458,7 +1459,7 @@ The Caribbean invented the modern resort pool. Decades before infinity edges bec
 
 ## Saint Lucia: The Piton Standard
 
-**[Jade Mountain](/pools/jade-mountain-11)** set a benchmark when it opened that few Caribbean hotels have matched. Each of the hotel's 29 "sanctuaries" is an open-sided suite with its own private infinity pool positioned to face directly at the Pitons — Saint Lucia's extraordinary twin volcanic peaks. There is no fourth wall. The suite opens completely to the view, making the pool feel less like an amenity and more like a vantage point.
+**Jade Mountain** set a benchmark when it opened that few Caribbean hotels have matched. Each of the hotel's 29 "sanctuaries" is an open-sided suite with its own private infinity pool positioned to face directly at the Pitons — Saint Lucia's extraordinary twin volcanic peaks. There is no fourth wall. The suite opens completely to the view, making the pool feel less like an amenity and more like a vantage point.
 
 The pools here are large for a private suite — some are 15 feet long — and they're heated to a consistent 90°F. The design is the work of Nick Troubetzkoy, whose approach to merging architecture with landscape has made Jade Mountain one of the most awarded hotel designs in the Western Hemisphere.
 
@@ -1486,7 +1487,7 @@ Dominica's nickname — the Nature Island — signals what this mountainous volc
 
 Puerto Rico's geographic position — a U.S. territory, direct flights from the east coast, no passport required for American travelers — makes it one of the Caribbean's most accessible luxury destinations.
 
-**[Dorado Beach, A Rosewood Resort](/pools/dorado-beach-a-rosewood-resort-28)** occupies the site of a former Rockefeller estate along the island's north coast. The complex includes four pools, with the main one set within the resort's beachfront garden. The property has a history that adds depth to the experience — the Su Casa restaurant, the original plantation house, the centuries-old trees — but the pools are the daily anchor of any stay here.
+**[Dorado Beach, A Ritz-Carlton Reserve](/pools/dorado-beach-a-ritz-carlton-reserve-28)** occupies the site of a former Rockefeller estate along the island's north coast. The complex includes four pools, with the main one set within the resort's beachfront garden. The property has a history that adds depth to the experience — the Su Casa restaurant, the original plantation house, the centuries-old trees — but the pools are the daily anchor of any stay here.
 
 ## The Caribbean Pool Calendar
 
@@ -1819,7 +1820,7 @@ Africa is a continent of wildly varied climates, and the "best time" question de
   {
     slug: "best-hotel-pools-spain",
     title: "The Best Hotel Pools in Spain",
-    excerpt: "From Ibiza's clifftop cascade pools and Mallorca's mountain-framed infinity edges to a rooftop above Barcelona — Spain's pools are as varied as its landscapes, and in summer they're the best in Europe.",
+    excerpt: "From Ibiza's clifftop cascade pools and Mallorca's mountain-framed infinity edges to a rooftop above Barcelona — Spain's pools are as varied as its landscapes, and from June through October they're among the best in Europe.",
     category: "Destination",
     readTime: "9 min read",
     image: "/images/pools/pool-cap-rocat-spain.jpg",
@@ -1832,11 +1833,11 @@ Africa is a continent of wildly varied climates, and the "best time" question de
     content: `
 # The Best Hotel Pools in Spain
 
-Spain in July is an exercise in finding shade and cold water. The country handles this beautifully: a culture built around the siesta, the evening paseo, and the hotel pool as the center of the day rather than an afterthought to it.
+Spanish summers are an exercise in finding shade and cold water, and the country handles this beautifully: a culture built around the siesta, the evening paseo, and the hotel pool as the center of the day rather than an afterthought to it.
 
 What makes Spanish pools distinctive — particularly in Ibiza and Mallorca, where the finest are concentrated — is the landscape they work with. Dramatic limestone cliffs, the deep blue of the Balearic Sea, terraced mountains that turn purple at dusk. The best pools here don't just face a view. They participate in it.
 
-It's July. These are the pools that matter right now.
+These are the pools that matter, whether you go in high summer or slip into the warm shoulder months of September and October.
 
 ## Ibiza: Beyond the Clubs
 
@@ -2041,7 +2042,7 @@ For now, the dark pools are ascendant. They look extraordinary, they hold their 
 
 ---
 
-*Explore the full Pool Atlas rankings → [View all 125 pools](/)*
+*Explore the full Pool Atlas rankings → [View every pool](/)*
     `
   },
   {
@@ -2136,13 +2137,13 @@ Not the largest, the highest, or the most technically sophisticated. The ones th
 
 The investment thesis that flows from this is straightforward, even if executing it is not: the pools worth building in 2026 are the ones that twenty years from now, someone will describe to a stranger on Reddit — with the specific, luminous detail of a memory they've carried since the day they swam there.
 
-Pool Atlas exists to document those places. We now list 125 of them. Five came directly from the thread that sparked this piece.
+Pool Atlas exists to document those places. We now list well over a hundred of them. Five came directly from the thread that sparked this piece.
 
 If you know of others, we're listening.
 
 ---
 
-*Browse all 125 pools on Pool Atlas → [View the full rankings](/)*
+*Browse every pool on Pool Atlas → [View the full rankings](/)*
     `
   },
   {
@@ -2201,7 +2202,7 @@ This is the essential logic of lagoon pool design: working with a pre-existing n
 
 **[Huvafen Fushi](/pools/huvafen-fushi-12)** in the Maldives takes the lagoon concept in a different direction. Its pool is positioned at the edge of the coral reef platform, and its water colour shifts with the depth of the ocean beyond — pale turquoise above sand, deepening to indigo where the reef drops. The pool does not have to pretend to be connected to the ocean; structurally, it nearly is.
 
-**[Villa d'Este](/pools/villa-d-este-13)** on Lake Como dispenses with the pretence altogether: its pool floats directly on the lake, a pontoon structure moored against the 16th-century hotel facade. Swimming in it, you are surrounded by lake water on all sides, separated by a few inches of fibreglass. The lagoon is not simulated; you are in it.
+**[Villa d'Este](/pools/villa-deste-13)** on Lake Como dispenses with the pretence altogether: its pool floats directly on the lake, a pontoon structure moored against the 16th-century hotel facade. Swimming in it, you are surrounded by lake water on all sides, separated by a few inches of fibreglass. The lagoon is not simulated; you are in it.
 
 **[Grand Hotel Tremezzo](/pools/grand-hotel-tremezzo-51)**, also on Lake Como, operates similarly — a floating pool platform with views directly to Bellagio across the water. It has been there since 1910, which makes it one of the oldest examples of lagoon-integrated hotel pool design in existence, predating the trend by about a century.
 
@@ -2221,11 +2222,279 @@ If you want to sink into a place — to lose track of time, to feel absorbed by 
 
 The most interesting pools find ways to do both. Amankila's terraces let you move between the immersive and the panoramic. The best designers understand that these are not competing approaches but complementary ones — and that the richest pool experiences draw from both.
 
-Pool Atlas ranks both categories across 125 properties worldwide. Whatever your preference, the list is a good place to start.
+Pool Atlas ranks both categories across more than a hundred properties worldwide. Whatever your preference, the list is a good place to start.
 
 ---
 
 *Explore the full rankings by feature type → [Filter by Infinity Edge or Ocean View](/)*
+    `
+  },
+  {
+    slug: "where-to-swim-this-winter",
+    title: "Where to Swim This Winter: How to Book a Warm-Water Escape",
+    excerpt: "The pool season doesn't end in October. It moves. Here is where the water stays warm from November through March, when to book it, and how to get there without the trip turning into work.",
+    category: "Guide",
+    readTime: "10 min read",
+    image: "/images/pools/pool-chedi-muscat.jpg",
+    publishedAt: "2026-10-01",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Travel Planning"
+    },
+    content: `
+# Where to Swim This Winter: How to Book a Warm-Water Escape
+
+Somewhere around the first cold week of October, a lot of people quietly put the idea of a pool away until May. We think that's a mistake! The pool season doesn't end in the fall. It migrates. The Mediterranean empties out, and the Arabian Gulf, the Andaman Sea and the Caribbean take over as the places where the water is warm, the light is long and a lounger is the most reasonable place to spend an afternoon.
+
+This is our guide to following that migration: where the best hotel pools are between November and March, when to book them, and how to make the getting-there part of the trip something you look forward to. For the flying half of the plan, we've teamed up with our friends at [The Window Seat](https://pickthewindowseat.com), a travel magazine from the same family as Pool Atlas, whose whole philosophy is that the journey deserves as much thought as the destination.
+
+## The Winter Pool Map
+
+Think of it as four warm belts, each with its own best months.
+
+### Arabia and the Gulf: November to March
+
+When summer temperatures on the Arabian Peninsula become punishing, almost nobody swims outdoors at midday. By November that flips. Days settle into the high twenties Celsius, evenings turn cool enough for a sweater, and the region's pools become what they were designed to be.
+
+**[The Chedi Muscat](/pools/the-chedi-muscat-76)** is the calmest version of this: a 21-acre garden on the Gulf of Oman with three pools, including a long, dark-tiled reflecting pool that might be the most photographed in the region. **[Alila Jabal Akhdar](/pools/alila-jabal-akhdar-106)** sits two hours inland and two kilometers up, on the rim of a canyon; in winter, its heated infinity pool steams a little in the morning air.
+
+For drama over calm, **[Banyan Tree AlUla](/pools/banyan-tree-alula-125)** places its pools among the sandstone outcrops of the Ashar Valley, and **[Ciel Dubai Marina](/pools/ciel-dubai-marina-110)** puts you on a rooftop at a height that still feels slightly unreasonable. Both are at their best in December and January, when the air is clear and the sunsets are long.
+
+### The Andaman Sea and the Maldives: December to April
+
+Thailand's Andaman coast and the Maldives share a rhythm set by the monsoons. The northeast monsoon brings dry, settled weather to both from roughly December through April, which is why these months are high season and why the water is famously glassy.
+
+**[Amanpuri](/pools/amanpuri-78)** in Phuket is the classic: a black-tiled pool flanked by pavilions that has barely changed since it opened, which is the whole appeal. A short boat ride away, **[Six Senses Yao Noi](/pools/six-senses-yao-noi-72)** looks out across the limestone karsts of Phang Nga Bay. In the Maldives, **[Huvafen Fushi](/pools/huvafen-fushi-12)** and **[One&Only Reethi Rah](/pools/one-only-reethi-rah-92)** both make the most of the clearest water of the year.
+
+### The Caribbean: December to April
+
+The Atlantic hurricane season officially closes on November 30, and the Caribbean's dry season follows close behind. December through April brings trade winds, lower humidity and very little rain.
+
+**[Rock House](/pools/rock-house-18)** in Turks and Caicos sits on a limestone ledge above water so clear it looks shallow when it isn't. **[Belmond Cap Juluca](/pools/belmond-cap-juluca-34)** on Anguilla is a white-sand curve with private plunge pools, and **[Hermitage Bay](/pools/hermitage-bay-26)** on Antigua has some of the most private beach pool villas in the islands.
+
+### The Southern Summer: December to February
+
+When it's winter in the north, it's summer in the south. **[Posada del Faro](/pools/posada-del-faro-107)** in José Ignacio, Uruguay, is at its liveliest from late December through January, when the town fills with Buenos Aires families and the light lasts well into the evening. In Cape Town, **[The Silo Hotel](/pools/the-silo-hotel-38)** has a rooftop pool with Table Mountain on one side and the harbor on the other, and the southern summer is the best time to use it.
+
+## And If You'd Rather Stay Cold
+
+Not every winter pool trip needs a tan line. Some of the most memorable swims we know happen in cold places, in warm water.
+
+**[The Retreat at Blue Lagoon](/pools/the-retreat-at-blue-lagoon-9)** in Iceland has a private geothermal lagoon that stays near body temperature all year, under a sky that becomes northern lights territory through the dark months. **[Aman Tokyo](/pools/aman-tokyo-10)** and **[Park Hyatt Tokyo](/pools/park-hyatt-tokyo-123)** have indoor pools high above the city, and an early-winter trip lines up neatly with Kyoto's late foliage; The Window Seat's [Japan fall foliage forecast](https://pickthewindowseat.com/2026/09/10/japan-fall-foliage-forecast-2026-kyoto-peaks-in-december/) has the color timing. In London, **[The Berkeley](/pools/the-berkeley-71)** has a rooftop pool under a retractable roof, which in December is mostly a very good reason to be inside, looking up.
+
+## When to Book
+
+Winter pool trips reward planning more than summer ones do, because so much of the demand is squeezed into a handful of holiday weeks.
+
+- **Holiday weeks go first.** Christmas through New Year's is the most requested stretch of the year at almost every property on this list. If those dates matter, book now. Many resorts set minimum stays over the holidays, so read the fine print before you plan around a long weekend.
+- **Look at the edges of the season.** The first two weeks of December and the weeks right after New Year's are often noticeably quieter, with the same weather. Early November in the Gulf and late April in the Caribbean work the same way.
+- **February fills up too.** School breaks in Europe and North America make mid-February busier than you'd expect. If you're flexible, early March is usually calmer.
+- **Ask for the pool, not the room.** At villa resorts, a room with a private plunge pool can cost less than you think during shoulder weeks. It's always worth asking what the upgrade looks like on your specific dates.
+- **Check the pool's own season.** Some pools close for maintenance or heat only part of the year, especially in the Mediterranean and the mountains. A short email to the hotel before you book saves a disappointing first morning.
+
+## Getting There: Notes From The Window Seat
+
+A good pool trip starts at the airport, not the lounger. The Window Seat's team writes about flying the way we write about pools, with an eye for the details that turn a commute into part of the experience.
+
+- **Pick your side.** Flying into Malé, Muscat or the Caribbean at the right time of day is half the arrival. Their guide to [which side of the plane to sit on](https://pickthewindowseat.com/2026/09/17/which-side-of-the-plane-should-you-sit-on/) explains how to choose a seat for the view.
+- **Don't overplan the days.** The point of a pool trip is to let an afternoon disappear. Their essay on [why the itinerary made your last trip feel like work](https://pickthewindowseat.com/2026/09/22/against-the-itinerary/) is the best argument we've read for leaving room.
+- **Pack for the flight, not just the beach.** Long-haul winter flights are long. Their guide to [the best airplane snacks and the security rules behind them](https://pickthewindowseat.com/2026/10/01/best-airplane-snacks/) is genuinely useful.
+
+## The Short Version
+
+If you want guaranteed warmth with very little travel planning, go to the Gulf in November or March. If you want the clearest water of the year, go to the Maldives or the Andaman coast in January or February. If you want the Caribbean at its best, aim for the first half of December or anywhere from mid-January on. And if you want something you'll still be talking about in ten years, go somewhere cold and get into very warm water.
+
+---
+
+*Browse every pool by region and feature → [Explore the rankings](/)*
+    `
+  },
+  {
+    slug: "how-to-close-a-pool-for-winter",
+    title: "How to Close Your Pool for Winter, the Way the Best Hotels Do It",
+    excerpt: "Closing a pool properly takes an afternoon and saves a spring of trouble. A clear, step-by-step guide to winterizing, plus what resort pool teams in cold climates do differently.",
+    category: "Pool Care",
+    readTime: "9 min read",
+    image: "/images/pools/pool-il-sereno-lake-como.jpg",
+    publishedAt: "2026-10-01",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Pool Care"
+    },
+    content: `
+# How to Close Your Pool for Winter, the Way the Best Hotels Do It
+
+Every fall, hotels on Lake Como, in the Alps and along the northern Mediterranean put their pools to sleep. They do it the same way every year, with checklists, because a pool that's closed carelessly in October is an expensive repair in April.
+
+You can do the same at home. Closing a pool properly takes an afternoon, a few supplies and a little patience. Here is how, in order, with notes on what professional pool teams do that most homeowners skip.
+
+A quick note before we start: every pool is a little different. Your equipment's manuals and your local pool store know your setup better than any general guide, so treat what follows as the framework and check the specifics for your system.
+
+## When to Close
+
+The usual rule of thumb is to wait until the water stays below about 65°F (18°C). Below that, algae growth slows dramatically, and your chemicals have an easier job all winter. Close too early, while the water is still warm, and you're more likely to open a green pool in spring.
+
+If you live somewhere it rarely freezes, you may not need to close at all. Skip to the section on warm climates at the end.
+
+## What You'll Need
+
+- A water test kit or test strips
+- Shock (chlorine-based, or non-chlorine if you prefer)
+- Winter algaecide, or a winterizing chemical kit
+- A pool brush, skimmer net and vacuum
+- Winterizing plugs for your return lines and skimmer, and a skimmer ice guard (often called a Gizmo)
+- A shop vacuum or air blower, if you're in a freezing climate
+- Pool antifreeze (non-toxic propylene glycol made for pools, never automotive antifreeze)
+- Your winter cover, and water bags or an air pillow if your cover calls for them
+
+## Step by Step
+
+### 1. Clean the pool thoroughly
+
+Skim, brush the walls and floor, and vacuum. Anything organic you leave behind (leaves, pollen, insects) becomes food for algae over the winter. Resort teams treat this as the most important step, because it's the one that decides what the water looks like in spring.
+
+### 2. Balance the water
+
+About a week before you close, test and adjust. Typical targets:
+
+- **pH:** 7.2 to 7.6
+- **Total alkalinity:** 80 to 120 ppm
+- **Calcium hardness:** 200 to 400 ppm (plaster and concrete pools usually sit toward the higher end)
+
+Balanced water protects your surfaces and equipment from corrosion and scaling while the pool sits still for months.
+
+### 3. Shock it
+
+Shock the pool a few days before you close and run the pump so it circulates. Let chlorine levels fall back toward normal before you add winter algaecide, since very high chlorine can weaken some algaecides.
+
+### 4. Lower the water level
+
+How far depends on your cover and climate. With a mesh safety cover in a freezing climate, water is commonly lowered a few inches to below the skimmer mouth so ice can't crack it. With a solid cover, many manufacturers recommend keeping the level higher, just below the skimmer or tile line, because the water helps support the cover. Vinyl liner pools shouldn't be drained low, since the liner can shrink and pull away from the walls. Follow your cover manufacturer's guidance here.
+
+### 5. Clear the lines (in freezing climates)
+
+This is the step that prevents cracked pipes. Use a blower or shop vacuum to push water out of the return lines, skimmer lines and any cleaner or spa lines, then plug each one as the air bubbles through. Many pool owners add pool antifreeze to the lines afterward for extra protection. If this is your first time, it's worth paying a pool service to do it once and watching how they work.
+
+### 6. Winterize the equipment
+
+Drain the pump, filter and heater completely. Open the drain plugs and leave them out (store them somewhere you'll find them in spring, like a labeled bag tied to the pump). Clean or backwash the filter, and if you have a cartridge filter, take the cartridges out, clean them and store them dry. Turn off power to the equipment at the breaker.
+
+### 7. Add winter chemicals
+
+Add winter algaecide or your winterizing kit according to the label, with the pump still running briefly if your lines are not yet cleared, or poured around the perimeter if they are.
+
+### 8. Remove accessories
+
+Take out ladders, handrails, diving board hardware if your manufacturer recommends it, cleaners and floats. Clean them and store them dry.
+
+### 9. Cover it
+
+Fit the cover snugly. Above-ground pools usually need an air pillow under the cover to absorb ice expansion and shed water. In-ground solid covers are often held down with water bags. Through the winter, keep standing water and leaves off the top of a solid cover with a cover pump, because the weight can damage the cover and the pool.
+
+## What Hotels Do Differently
+
+Resort pool teams in seasonal climates tend to add a few habits that are worth borrowing.
+
+- **They log everything.** The water readings at closing, the chemicals added, the date the lines were cleared. In spring, that log tells them what to expect.
+- **They check in all winter.** A quick look every couple of weeks catches a sagging cover or a torn water bag before it becomes a problem.
+- **They photograph the equipment.** A few phone photos of the plumbing and valve positions before closing make reopening much easier.
+- **They schedule the opening now.** Pool services book up fast in spring. Putting your opening on the calendar while you close is the easiest way to get the date you want.
+
+## If You Live Somewhere Warm
+
+In places where freezing is rare, many owners keep their pools open year-round and simply adjust. Run the pump for fewer hours, since cooler water needs less filtration, keep chemistry balanced, and keep the pool skimmed as the trees drop their leaves. If your system has a freeze protection setting, make sure it's on, so the pump runs during the occasional cold night. A solar or thermal cover can extend comfortable swimming by weeks.
+
+## The Payoff
+
+A pool that's closed with care opens with clear water, working equipment and no surprises. Which leaves you free to spend the winter thinking about warmer water somewhere else! When you're ready, our guide to [where to swim this winter](/blog/where-to-swim-this-winter) is a good place to start.
+
+---
+
+*Looking for a pool you don't have to close? → [Explore the rankings](/)*
+    `
+  },
+  {
+    slug: "fall-pool-maintenance-checklist",
+    title: "Fall Pool Maintenance: A Checklist for Leaves, Cooler Water and Shorter Days",
+    excerpt: "Fall is the hardest season on a pool that stays open, and the most important one for a pool that's about to close. A practical checklist for September through November.",
+    category: "Pool Care",
+    readTime: "7 min read",
+    image: "/images/pools/pool-castello-reschio-tuscany.jpg",
+    publishedAt: "2026-10-01",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Pool Care"
+    },
+    content: `
+# Fall Pool Maintenance: A Checklist for Leaves, Cooler Water and Shorter Days
+
+Fall is a strange season for a pool. The water is often still warm enough to swim, the light is lovely, and the trees are slowly emptying themselves into the deep end. It is also the season that decides what spring looks like.
+
+Whether you're keeping your pool open into November or getting ready to close it, here is what to watch, week by week.
+
+## The Big Fall Challenges
+
+### Leaves and debris
+
+Falling leaves are the main fall problem. They clog skimmers and pump baskets, and once they sink, they break down into organic matter that feeds algae and stains plaster. Tannins from oak and maple leaves in particular can leave brown marks that take real work to remove.
+
+**What to do:** Skim daily during peak leaf drop if you can, and empty skimmer and pump baskets more often than you do in summer. A leaf net or leaf cover stretched over the pool on heavy days saves hours. Don't let leaves sit on the floor; a leaf rake or leaf vacuum makes quick work of them.
+
+### Cooler water, different chemistry
+
+As the water cools, chlorine lasts longer and algae grows more slowly, so most pools need a bit less sanitizer than in July. That said, fall storms, leaves and late-season swim parties can swing chemistry quickly. Keep testing at least weekly.
+
+**Targets to hold:** pH 7.2 to 7.6, total alkalinity 80 to 120 ppm, and free chlorine in the range your pool store recommends for your system (often 1 to 3 ppm).
+
+### Shorter pump runs
+
+Cooler water needs less filtration. Many owners shorten pump run times through the fall, which saves energy. Don't cut too far, though: with leaves in the mix, circulation still matters. If your pump has variable speed, running longer at a lower speed is usually the most efficient choice.
+
+### Heating, if you're extending the season
+
+A heat pump works well into fall, but it gets less efficient as the air cools. A solar or thermal cover at night holds a surprising amount of heat and cuts evaporation. If you have a gas heater, check it before the first cold snap, not during it.
+
+## The Fall Checklist
+
+### Early fall (September)
+
+- Test water weekly and rebalance as temperatures drop
+- Clean or backwash the filter after the end of the summer swim season
+- Inspect the cover you'll use for winter, and order replacements or water bags now, before stores run low
+- Trim back overhanging branches if you can, to reduce leaf drop
+- Check the heater and the cover reel if you plan to swim into October
+
+### Mid fall (October)
+
+- Skim daily during heavy leaf drop and empty baskets often
+- Brush walls and steps weekly to stop algae before it starts
+- Shorten pump run times as the water cools
+- Use a leaf net on windy days
+- Book your closing service if you use one (fall calendars fill up)
+
+### Late fall (November)
+
+- If you're closing, follow our step-by-step guide to [closing a pool for winter](/blog/how-to-close-a-pool-for-winter)
+- If you're staying open, confirm freeze protection is on, and keep up with leaves and testing
+- Do a final deep clean before cold weather sets in
+- Store pool toys, floats and furniture cushions dry
+
+## A Hotel Habit Worth Borrowing
+
+The best-run hotel pools we know treat fall as a hand-off, not an ending. Before the weather turns, the team writes down the state of everything: water readings, any equipment that sounded odd in August, the parts that need replacing. In spring, that note is the first thing they read.
+
+It takes five minutes, and it's the difference between remembering "something was wrong with the pump" and knowing exactly what to fix.
+
+## And For the Rest of Us
+
+If you don't own a pool and simply love good ones, fall is a wonderful time to travel to them. The Mediterranean stays warm into October with a fraction of the summer crowds, and desert pools like **[Amangiri](/pools/amangiri-5)** and **[Banyan Tree AlUla](/pools/banyan-tree-alula-125)** are entering their best months! Our guide to [where to swim this winter](/blog/where-to-swim-this-winter) picks up where the season leaves off.
+
+---
+
+*Find a pool that suits the season → [Explore the rankings](/)*
     `
   }
 ]

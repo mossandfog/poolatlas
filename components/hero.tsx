@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { ChevronDown, Waves } from "lucide-react"
 import { PoolSearch } from "@/components/pool-search"
+import { siteStats } from "@/lib/editorial-calendar"
 
 export function Hero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -35,7 +36,7 @@ export function Hero() {
         >
           <Waves className="w-4 h-4 text-white" />
           <span className="text-white text-sm font-medium">
-            Powered by Travel + Leisure, Conde Nast Traveler & More
+            Cross-referenced with Travel + Leisure, Condé Nast Traveler &amp; more
           </span>
         </div>
         
@@ -52,7 +53,7 @@ export function Hero() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          Find your perfect pool paradise. Search 114 stunning hotel pools ranked by experts and travelers worldwide.
+          Find your perfect pool paradise. Search {siteStats.poolCount} hotel pools, ranked by experts and travelers worldwide.
         </p>
 
         {/* AI Search Bar */}
@@ -80,11 +81,11 @@ export function Hero() {
         <div className="max-w-4xl mx-auto px-4 py-6">
           <div className="flex justify-center gap-6 sm:gap-8 md:gap-16 text-center">
             <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">114</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">{siteStats.poolCount}</p>
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Pools Ranked</p>
             </div>
             <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">50+</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">{siteStats.countryCount}</p>
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Countries</p>
             </div>
             <div>
@@ -92,7 +93,7 @@ export function Hero() {
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Continents</p>
             </div>
             <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">9.5</p>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">{siteStats.avgRating}</p>
               <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Avg Rating</p>
             </div>
           </div>

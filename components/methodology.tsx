@@ -1,4 +1,5 @@
 import { Award, BookOpen, Globe, Users } from "lucide-react"
+import { RANKINGS_REVIEWED } from "@/lib/editorial-calendar"
 
 const sources = [
   {
@@ -63,7 +64,7 @@ export function Methodology() {
         <p className="text-center text-xs text-muted-foreground mt-8 max-w-2xl mx-auto">
           Data compiled from publicly available rankings, reviews, and awards. 
           Ratings reflect aggregated scores from multiple sources. 
-          Visit property websites for official photography and booking. Last updated June 2026.
+          Visit property websites for official photography and booking. Rankings reviewed {RANKINGS_REVIEWED}.
         </p>
       </div>
     </section>

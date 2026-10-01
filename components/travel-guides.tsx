@@ -3,11 +3,15 @@ import Link from "next/link"
 import { ArrowRight, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { blogPosts, getFeaturedPost } from "@/lib/blog-data"
+import { blogPosts } from "@/lib/blog-data"
 
 export function TravelGuides() {
-  const featuredPost = getFeaturedPost()
-  const otherPosts = blogPosts.filter(post => !post.featured).slice(0, 3)
+  // Newest post leads; the next three follow, so the homepage always shows fresh writing
+  const newest = [...blogPosts].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  )
+  const featuredPost = newest[0]
+  const otherPosts = newest.slice(1, 4)
 
   return (
     <section id="blog" className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
@@ -53,7 +57,7 @@ export function TravelGuides() {
                   <Clock className="w-4 h-4" />
                   <span>{featuredPost.readTime}</span>
                 </div>
-                <span>{new Date(featuredPost.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                <span>{new Date(featuredPost.publishedAt).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}</span>
               </div>
             </Link>
           )}

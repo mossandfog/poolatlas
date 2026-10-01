@@ -32,6 +32,10 @@ import { PoolHistory } from "@/components/pool-history"
 import { SponsorCTA } from "@/components/sponsor-cta"
 import { JumpNav } from "@/components/jump-nav"
 import { AdBanner } from "@/components/ad-unit"
+import { getCurrentEdition } from "@/lib/editorial-calendar"
+
+// Re-render hourly so monthly picks flip on their own without a deploy
+export const revalidate = 3600
 
 function SectionLoader() {
   return (
@@ -42,6 +46,8 @@ function SectionLoader() {
 }
 
 export default function Home() {
+  const edition = getCurrentEdition()
+
   return (
     <main className="min-h-screen bg-background">
       {/* Sticky Header */}
@@ -68,7 +74,7 @@ export default function Home() {
       <IntroCard />
       
       {/* Featured Pool of the Month */}
-      <FeaturedPool />
+      <FeaturedPool edition={edition} />
       
       {/* Interactive World Map - Pool Locations */}
       <Suspense fallback={<SectionLoader />}>
@@ -82,7 +88,7 @@ export default function Home() {
       
       {/* Below the fold content wrapped in Suspense */}
       <Suspense fallback={<SectionLoader />}>
-        <TrendingPools />
+        <TrendingPools edition={edition} />
       </Suspense>
       
       <Suspense fallback={<SectionLoader />}>
@@ -90,7 +96,7 @@ export default function Home() {
       </Suspense>
       
       <Suspense fallback={<SectionLoader />}>
-        <SeasonalPicks />
+        <SeasonalPicks initialSeason={edition.season} year={edition.year} />
       </Suspense>
       
       <Suspense fallback={<SectionLoader />}>

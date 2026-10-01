@@ -7,6 +7,7 @@ import { MapPin, Star, Users, Baby, Award, ChevronDown, ChevronUp, Filter, Exter
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { pools, regions, countries, continents, features as allFeatures } from "@/lib/pool-data"
+import { RANKINGS_REVIEWED } from "@/lib/editorial-calendar"
 import {
   Select,
   SelectContent,
@@ -56,7 +57,7 @@ export function Top100List() {
           </p>
           <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground/70">
             <RefreshCw className="w-3 h-3" />
-            <span>Last updated: June 2026</span>
+            <span>Rankings reviewed {RANKINGS_REVIEWED}</span>
           </div>
         </div>
 

@@ -6,11 +6,12 @@ import { Star, MapPin, Award, Calendar, ArrowRight, Sparkles, ExternalLink, User
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { pools } from "@/lib/pool-data"
+import type { Edition } from "@/lib/editorial-calendar"
 
-export function FeaturedPool() {
+export function FeaturedPool({ edition }: { edition: Edition }) {
   const [isExpanded, setIsExpanded] = useState(false)
-  // Feature the #1 ranked pool
-  const featuredPool = pools[0]
+  // Pool of the Month comes from the editorial calendar (lib/editorial-calendar.ts)
+  const featuredPool = pools.find(p => p.id === edition.featuredId) ?? pools[0]
   
   return (
     <section id="featured" className="py-16 px-4 sm:px-6 lg:px-8 bg-primary/5">
@@ -22,8 +23,9 @@ export function FeaturedPool() {
               <span className="text-sm font-semibold text-accent">Pool of the Month</span>
             </div>
             <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold text-foreground">
-              July 2026 Featured Pool
+              {edition.label} Featured Pool
             </h2>
+            <p className="mt-2 text-muted-foreground max-w-2xl">{edition.featuredWhy}</p>
           </div>
           <div className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">
             <Calendar className="w-4 h-4" />
@@ -42,7 +44,7 @@ export function FeaturedPool() {
             />
             <div className="absolute top-4 left-4 flex items-center gap-2">
               <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                <span className="text-primary-foreground font-bold text-xl">#1</span>
+                <span className="text-primary-foreground font-bold text-xl">#{featuredPool.rank}</span>
               </div>
               {featuredPool.awards && featuredPool.awards.length > 0 && (
                 <div className="flex items-center gap-1 bg-accent text-accent-foreground rounded-full px-3 py-1.5 shadow-lg">
@@ -204,7 +206,7 @@ export function FeaturedPool() {
                   Plan Your Visit
                 </h5>
                 <p className="text-sm text-muted-foreground">
-                  Experience the world&apos;s #1 rated hotel pool. Check availability and rates for your preferred dates.
+                  Ranked #{featuredPool.rank} in the world. Check availability and rates for your dates.
                 </p>
                 <div className="pt-2">
                   <a
