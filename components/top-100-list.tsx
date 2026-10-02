@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Star, Users, Baby, Award, ChevronDown, ChevronUp, Filter, ExternalLink, RefreshCw } from "lucide-react"
+import { Star, Baby, Award, ChevronDown, ChevronUp, ExternalLink } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { pools, regions, countries, continents, features as allFeatures } from "@/lib/pool-data"
@@ -42,32 +42,28 @@ export function Top100List() {
   const hasMorePools = filteredPools.length > INITIAL_DISPLAY_COUNT
 
   return (
-    <section id="top-100" className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section id="rankings" className="scroll-mt-20 py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary/40">
+      {/* Old links pointed at #top-100; keep them landing here */}
+      <span id="top-100" className="block relative -top-20" aria-hidden="true" />
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
-            <span className="text-primary text-sm font-semibold">Complete Rankings</span>
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold tracking-[-0.025em] text-foreground">
+              The rankings
+            </h2>
+            <p className="mt-2 text-muted-foreground max-w-xl">
+              Every pool, ranked against the travel press and guest reviews. Reviewed {RANKINGS_REVIEWED}.
+            </p>
           </div>
-          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            The World&apos;s Best Hotel Pools
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-3">
-            The definitive list of the world&apos;s most exceptional hotel swimming pools, 
-            aggregated from leading travel publications and guest reviews.
-          </p>
-          <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground/70">
-            <RefreshCw className="w-3 h-3" />
-            <span>Rankings reviewed {RANKINGS_REVIEWED}</span>
-          </div>
+          <Link href="/about#how-we-rank" className="text-sm font-medium text-primary hover:underline underline-offset-4">
+            How we rank
+          </Link>
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap items-center gap-3 mb-8 p-4 bg-card rounded-2xl border border-border">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <Filter className="w-4 h-4" />
-            <span className="font-medium">Filters:</span>
-          </div>
-          
+        <div className="flex flex-wrap items-center gap-2 mb-6">
+          <span className="sr-only">Filter the rankings</span>
+
           <Select value={selectedRegion} onValueChange={(v) => { setSelectedRegion(v); setSelectedCountry("All Countries"); }}>
             <SelectTrigger className="w-[150px] rounded-full">
               <SelectValue placeholder="Region" />
@@ -110,68 +106,65 @@ export function Top100List() {
             onClick={() => setKidFriendlyOnly(!kidFriendlyOnly)}
           >
             <Baby className="w-4 h-4" />
-            Kid Friendly
+            Good for kids
           </Button>
 
-          <div className="ml-auto text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">{filteredPools.length}</span> pools
+          <div className="ml-auto text-sm text-muted-foreground tabular-nums" aria-live="polite">
+            {filteredPools.length} {filteredPools.length === 1 ? "pool" : "pools"}
           </div>
         </div>
 
         {/* List */}
-        <div className="space-y-3">
+        <ol className="bg-card rounded-2xl border border-border divide-y divide-border overflow-hidden">
           {displayedPools.map((pool) => (
-            <div 
+            <li
               key={pool.id}
-              className={`bg-card rounded-2xl border transition-all duration-300 overflow-hidden ${
-                expandedPool === pool.id ? 'border-primary shadow-lg' : 'border-border hover:border-primary/50'
-              }`}
+              className={`transition-colors ${expandedPool === pool.id ? 'bg-secondary/40' : ''}`}
             >
-              <div className="w-full p-4 flex items-center gap-4 text-left cursor-pointer" onClick={() => setExpandedPool(expandedPool === pool.id ? null : pool.id)}>
-                <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0">
-                  <span className="text-primary-foreground font-bold">#{pool.rank}</span>
-                </div>
+              <div
+                role="button"
+                tabIndex={0}
+                aria-expanded={expandedPool === pool.id}
+                className="w-full px-3 py-3 sm:px-5 sm:py-4 flex items-center gap-2.5 sm:gap-5 text-left cursor-pointer hover:bg-secondary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
+                onClick={() => setExpandedPool(expandedPool === pool.id ? null : pool.id)}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setExpandedPool(expandedPool === pool.id ? null : pool.id) } }}
+              >
+                <span
+                  className={`w-7 sm:w-12 shrink-0 text-right font-[family-name:var(--font-display)] text-xl sm:text-2xl font-semibold tabular-nums tracking-tight ${
+                    pool.rank <= 3 ? 'text-primary' : 'text-foreground/35'
+                  }`}
+                >
+                  {pool.rank}
+                </span>
 
-                <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0">
+                <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden shrink-0 bg-muted">
                   <Image
                     src={pool.image}
                     alt={pool.name}
                     fill
+                    sizes="64px"
                     className="object-cover"
                   />
                 </div>
 
                 <div className="flex-grow min-w-0">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <Link
-                      href={`/pools/${pool.slug}`}
-                      onClick={(e) => e.stopPropagation()}
-                      className="font-[family-name:var(--font-display)] font-semibold text-foreground truncate hover:text-primary transition-colors"
-                    >
-                      {pool.name}
-                    </Link>
+                  <Link
+                    href={`/pools/${pool.slug}`}
+                    onClick={(e) => e.stopPropagation()}
+                    className="font-[family-name:var(--font-display)] font-semibold leading-snug text-foreground line-clamp-2 hover:text-primary transition-colors"
+                  >
+                    {pool.name}
                     {pool.kidFriendly && (
-                      <Baby className="w-4 h-4 text-chart-3 shrink-0" />
+                      <Baby className="inline-block w-3.5 h-3.5 ml-1.5 -mt-0.5 text-chart-3" aria-label="Good for kids" />
                     )}
-                  </div>
+                  </Link>
                   <p className="text-sm text-muted-foreground truncate">{pool.hotel}</p>
-                  <div className="flex items-center gap-1 text-xs text-muted-foreground mt-1">
-                    <MapPin className="w-3 h-3" />
-                    <span>{pool.country}</span>
-                    <span className="mx-1">•</span>
-                    <span>{pool.region}</span>
-                  </div>
+                  <p className="text-xs text-muted-foreground mt-0.5 truncate">{pool.location}, {pool.country}</p>
                 </div>
 
-                <div className="hidden sm:flex items-center gap-4 shrink-0">
-                  <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-accent text-accent" />
-                    <span className="font-semibold text-foreground">{pool.rating}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-muted-foreground">
-                    <Users className="w-4 h-4" />
-                    <span className="text-sm">{pool.reviewCount.toLocaleString()}</span>
-                  </div>
+                <div className="flex items-center gap-1 shrink-0 tabular-nums">
+                  <Star className="w-4 h-4 fill-accent text-accent" aria-hidden="true" />
+                  <span className="font-semibold text-foreground">{pool.rating.toFixed(1)}</span>
                 </div>
 
                 <div className="shrink-0">
@@ -184,33 +177,17 @@ export function Top100List() {
               </div>
 
               {expandedPool === pool.id && (
-                <div className="px-4 pb-4 pt-0 border-t border-border">
+                <div className="px-4 sm:pl-[10.75rem] sm:pr-5 pb-5 pt-0">
                   <div className="pt-4 grid sm:grid-cols-2 gap-4">
                     <div>
-                      <p className="text-sm text-foreground/80 leading-relaxed mb-4">
+                      <p className="text-sm text-foreground/80 leading-relaxed">
                         {pool.description}
                       </p>
-                      
-                      <div className="flex items-center gap-2 text-sm mb-3">
-                        <MapPin className="w-4 h-4 text-primary" />
-                        <span className="text-muted-foreground">{pool.location}, {pool.country}</span>
-                      </div>
-
-                      <div className="flex sm:hidden items-center gap-4 mb-3">
-                        <div className="flex items-center gap-1">
-                          <Star className="w-4 h-4 fill-accent text-accent" />
-                          <span className="font-semibold">{pool.rating}</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-muted-foreground">
-                          <Users className="w-4 h-4" />
-                          <span className="text-sm">{pool.reviewCount.toLocaleString()}</span>
-                        </div>
-                      </div>
                     </div>
 
                     <div className="space-y-3">
                       <div>
-                        <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Features</h4>
+                        <h4 className="text-sm font-medium text-foreground mb-2">Features</h4>
                         <div className="flex flex-wrap gap-1.5">
                           {pool.features.map((feature) => (
                             <Badge key={feature} variant="secondary" className="text-xs rounded-full">
@@ -222,7 +199,7 @@ export function Top100List() {
 
                       {pool.awards && pool.awards.length > 0 && (
                         <div>
-                          <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Awards</h4>
+                          <h4 className="text-sm font-medium text-foreground mb-2">Awards</h4>
                           <div className="flex flex-wrap gap-1.5">
                             {pool.awards.map((award) => (
                               <div key={award} className="flex items-center gap-1 bg-accent/20 rounded-full px-2 py-1">
@@ -235,8 +212,8 @@ export function Top100List() {
                       )}
 
                       <div>
-                        <h4 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-1">Sources</h4>
-                        <p className="text-xs text-primary">{pool.sources.join(' • ')}</p>
+                        <h4 className="text-sm font-medium text-foreground mb-1">Sources</h4>
+                        <p className="text-sm text-muted-foreground">{pool.sources.join(', ')}</p>
                       </div>
 
                       {/* Links */}
@@ -246,7 +223,7 @@ export function Top100List() {
                           className="block"
                         >
                           <Button variant="default" size="sm" className="w-full rounded-full gap-1.5">
-                            View Full Pool Page
+                            See the pool
                           </Button>
                         </Link>
                         <a
@@ -257,7 +234,7 @@ export function Top100List() {
                         >
                           <Button variant="outline" size="sm" className="w-full rounded-full gap-1.5">
                             <ExternalLink className="w-3.5 h-3.5" />
-                            Visit Property Website
+                            Visit the hotel
                           </Button>
                         </a>
                       </div>
@@ -265,9 +242,9 @@ export function Top100List() {
                   </div>
                 </div>
               )}
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
 
         {/* Explore More Button */}
         {hasMorePools && !showAll && (
@@ -283,7 +260,7 @@ export function Top100List() {
                 onClick={() => setShowAll(true)}
               >
                 <ChevronDown className="w-4 h-4" />
-                Explore {filteredPools.length - INITIAL_DISPLAY_COUNT} More Pools
+                Show {filteredPools.length - INITIAL_DISPLAY_COUNT} more pools
               </Button>
             </div>
           </div>
@@ -298,7 +275,7 @@ export function Top100List() {
               onClick={() => setShowAll(false)}
             >
               <ChevronUp className="w-4 h-4" />
-              Show Less
+              Show fewer
             </Button>
           </div>
         )}
@@ -316,7 +293,7 @@ export function Top100List() {
                 setKidFriendlyOnly(false)
               }}
             >
-              Clear Filters
+              Clear filters
             </Button>
           </div>
         )}

@@ -52,7 +52,7 @@ const destinations = [
 
 export function PopularDestinations() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section id="destinations" className="scroll-mt-20 py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-10">
           <div>

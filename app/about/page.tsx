@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { FAQSection } from "@/components/faq-section"
 
 export const metadata: Metadata = {
   title: "About Us | Pool Atlas",
@@ -77,7 +78,7 @@ export default function AboutPage() {
       </section>
 
       {/* Methodology - Compact */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
+      <section id="how-we-rank" className="scroll-mt-20 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-foreground mb-4">How We Rank</h2>
@@ -116,6 +117,9 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
+
+      {/* Questions travelers ask most (moved here from the homepage) */}
+      <FAQSection />
 
       {/* Contact - Compact */}
       <section className="py-12 px-4 sm:px-6 lg:px-8">

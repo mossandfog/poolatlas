@@ -103,7 +103,7 @@ export function PoolSuperlatives() {
   const [selectedSuperlative, setSelectedSuperlative] = useState<typeof superlatives[0] | null>(null)
 
   return (
-    <section className="py-16 sm:py-24 bg-muted/30">
+    <section id="superlatives" className="scroll-mt-20 py-16 sm:py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">

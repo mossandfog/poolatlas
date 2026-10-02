@@ -190,7 +190,7 @@ export default async function SharedDreamListPage({ params }: { params: Promise<
               <p className="text-muted-foreground mb-4">
                 Save your favorite pools and share them with friends.
               </p>
-              <Link href="/#top-100">
+              <Link href="/#rankings">
                 <Button className="rounded-full">
                   Explore All Pools
                 </Button>

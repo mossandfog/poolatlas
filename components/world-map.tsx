@@ -88,7 +88,7 @@ export function WorldMap() {
   }
 
   return (
-    <section id="map" className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section id="map" className="scroll-mt-20 py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <Badge variant="secondary" className="mb-4">Explore the Globe</Badge>

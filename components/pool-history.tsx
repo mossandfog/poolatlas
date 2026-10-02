@@ -36,7 +36,7 @@ const historyTimeline = [
 
 export function PoolHistory() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary border-y border-border">
+    <section id="history" className="scroll-mt-20 py-20 px-4 sm:px-6 lg:px-8 bg-secondary border-y border-border">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

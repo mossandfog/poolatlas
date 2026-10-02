@@ -51,7 +51,7 @@ export function AdUnit({ slot = "auto", format = "horizontal", className = "" }:
 // Wrapper component for consistent styling
 export function AdBanner({ className = "" }: { className?: string }) {
   return (
-    <div className={`w-full py-6 ${className}`}>
+    <div className={`ad-slot w-full py-6 ${className}`}>
       <div className="max-w-4xl mx-auto px-4">
         <div className="rounded-xl overflow-hidden bg-secondary/30 border border-border/50">
           <AdUnit format="horizontal" />

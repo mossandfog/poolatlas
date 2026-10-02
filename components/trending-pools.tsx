@@ -1,34 +1,35 @@
-"use client"
-
-import { TrendingUp } from "lucide-react"
+import Link from "next/link"
 import { pools } from "@/lib/pool-data"
 import { PoolCard } from "@/components/pool-card"
 import type { Edition } from "@/lib/editorial-calendar"
 
 // Picks rotate monthly from lib/editorial-calendar.ts
 export function TrendingPools({ edition }: { edition: Edition }) {
-  const trendingPools = edition.pickIds
+  const picks = edition.pickIds
     .map(id => pools.find(p => p.id === id))
     .filter((p): p is (typeof pools)[number] => Boolean(p))
 
   return (
-    <section id="trending" className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center">
-            <TrendingUp className="w-5 h-5 text-primary" />
-          </div>
-          <div>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-foreground">
-              Editor&apos;s {edition.monthName} Picks
-            </h2>
-            <p className="text-sm text-muted-foreground">{edition.picksWhy}</p>
-          </div>
+    <section id="picks" className="scroll-mt-20 pb-20 md:pb-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold tracking-[-0.025em] text-foreground">
+            Where to swim in {edition.monthName}
+          </h2>
+          <p className="mt-2 text-muted-foreground max-w-xl">{edition.picksWhy}. Chosen by our editors for this month.</p>
         </div>
+        <Link href="/explore#seasonal" className="text-sm font-medium text-primary hover:underline underline-offset-4">
+          Picks for every season
+        </Link>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {trendingPools.map((pool) => (
-            <PoolCard key={pool.id} pool={pool} />
+      {/* Swipe row on phones, five across on desktop */}
+      <div className="mt-8 max-w-7xl mx-auto">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-4 px-4 pb-2 sm:px-6 lg:px-8 lg:grid lg:grid-cols-5 lg:gap-6 lg:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {picks.map((pool) => (
+            <div key={pool.id} className="w-[72%] shrink-0 snap-start sm:w-[40%] lg:w-auto">
+              <PoolCard pool={pool} />
+            </div>
           ))}
         </div>
       </div>

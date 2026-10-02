@@ -92,7 +92,7 @@ export default async function PoolPage({ params }: Props) {
           {/* Back link */}
           <div className="absolute top-6 left-4 sm:left-8">
             <Link
-              href="/#top-100"
+              href="/#rankings"
               className="inline-flex items-center gap-2 px-4 py-2 bg-background/80 backdrop-blur-sm rounded-full text-sm font-medium text-foreground hover:bg-background transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -328,7 +328,7 @@ export default async function PoolPage({ params }: Props) {
 
                 {/* Back link */}
                 <Link
-                  href="/#top-100"
+                  href="/#rankings"
                   className="flex items-center justify-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                 >
                   <ArrowLeft className="w-4 h-4" />
@@ -352,7 +352,7 @@ export default async function PoolPage({ params }: Props) {
                   </h2>
                 </div>
                 <Link
-                  href="/#top-100"
+                  href="/#rankings"
                   className="hidden sm:flex items-center gap-1 text-sm text-primary hover:text-primary/80 font-medium"
                 >
                   See all rankings <ChevronRight className="w-4 h-4" />

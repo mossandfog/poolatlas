@@ -1,101 +1,72 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Clock } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { blogPosts } from "@/lib/blog-data"
+
+const fmt = (iso: string) =>
+  new Date(iso).toLocaleDateString("en-US", { timeZone: "UTC", month: "long", day: "numeric", year: "numeric" })
 
 export function TravelGuides() {
   // Newest post leads; the next three follow, so the homepage always shows fresh writing
   const newest = [...blogPosts].sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
   )
-  const featuredPost = newest[0]
-  const otherPosts = newest.slice(1, 4)
+  const lead = newest[0]
+  const rest = newest.slice(1, 4)
 
   return (
-    <section id="blog" className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-10">
+    <section id="blog" className="scroll-mt-20 py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <Badge variant="secondary" className="mb-2">The Deep End</Badge>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold text-foreground mb-2">
-              Pool Travel Guides
+            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold tracking-[-0.025em] text-foreground">
+              The Deep End
             </h2>
-            <p className="text-muted-foreground">Expert advice for planning your perfect pool getaway</p>
+            <p className="mt-2 text-muted-foreground">Guides, design stories and the occasional strong opinion about pools.</p>
           </div>
-          <Link href="/blog">
-            <Button variant="outline" className="hidden sm:flex rounded-full">
-              View All Guides
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+          <Link href="/blog" className="text-sm font-medium text-primary hover:underline underline-offset-4">
+            All stories
           </Link>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Featured Guide */}
-          {featuredPost && (
-            <Link href={`/blog/${featuredPost.slug}`} className="group">
-              <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-4">
+        <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-12">
+          {lead && (
+            <Link href={`/blog/${lead.slug}`} className="group lg:col-span-7 block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-xl">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-xl bg-muted">
                 <Image
-                  src={featuredPost.image}
-                  alt={featuredPost.title}
+                  src={lead.image}
+                  alt=""
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(min-width: 1024px) 56vw, 100vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <Badge className="mb-2">{featuredPost.category}</Badge>
-                  <h3 className="font-[family-name:var(--font-display)] text-xl sm:text-2xl font-bold text-foreground">
-                    {featuredPost.title}
-                  </h3>
-                </div>
               </div>
-              <p className="text-muted-foreground mb-3">{featuredPost.excerpt}</p>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1">
-                  <Clock className="w-4 h-4" />
-                  <span>{featuredPost.readTime}</span>
-                </div>
-                <span>{new Date(featuredPost.publishedAt).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', year: 'numeric' })}</span>
-              </div>
+              <p className="mt-5 text-sm text-primary font-medium">{lead.category}</p>
+              <h3 className="mt-2 font-[family-name:var(--font-display)] text-2xl md:text-3xl font-semibold tracking-[-0.02em] leading-tight text-foreground group-hover:text-primary transition-colors text-balance">
+                {lead.title}
+              </h3>
+              <p className="mt-3 text-muted-foreground leading-relaxed max-w-[60ch]">{lead.excerpt}</p>
+              <p className="mt-3 text-sm text-muted-foreground">{fmt(lead.publishedAt)}, {lead.readTime}</p>
             </Link>
           )}
 
-          {/* Other Guides */}
-          <div className="space-y-4">
-            {otherPosts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="group flex gap-4 p-4 bg-card rounded-2xl border border-border hover:border-primary/50 transition-colors">
-                <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden flex-shrink-0">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <Badge variant="secondary" className="mb-2">{post.category}</Badge>
-                  <h3 className="font-[family-name:var(--font-display)] font-semibold text-foreground mb-1 line-clamp-2 group-hover:text-primary transition-colors">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-2 hidden sm:block">{post.excerpt}</p>
-                  <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
-                    <span>{post.readTime}</span>
+          <ul className="lg:col-span-5 divide-y divide-border border-y border-border self-start">
+            {rest.map((post) => (
+              <li key={post.slug}>
+                <Link href={`/blog/${post.slug}`} className="group flex gap-4 py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-lg">
+                  <div className="relative w-24 h-24 sm:w-28 sm:h-28 shrink-0 overflow-hidden rounded-lg bg-muted">
+                    <Image src={post.image} alt="" fill sizes="112px" className="object-cover" />
                   </div>
-                </div>
-              </Link>
+                  <div className="min-w-0">
+                    <p className="text-sm text-primary font-medium">{post.category}</p>
+                    <h3 className="mt-1 font-[family-name:var(--font-display)] text-lg font-semibold leading-snug text-foreground group-hover:text-primary transition-colors line-clamp-3">
+                      {post.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{post.readTime}</p>
+                  </div>
+                </Link>
+              </li>
             ))}
-          </div>
-        </div>
-
-        <div className="mt-8 sm:hidden">
-          <Link href="/blog">
-            <Button variant="outline" className="w-full rounded-full">
-              View All Guides
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
-          </Link>
+          </ul>
         </div>
       </div>
     </section>

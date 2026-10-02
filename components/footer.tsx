@@ -49,10 +49,10 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Rankings</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="/#top-100" className="hover:text-primary transition-colors py-1 inline-block">World's Best Pools</a></li>
+              <li><a href="/#rankings" className="hover:text-primary transition-colors py-1 inline-block">The rankings</a></li>
               <li><a href="/#featured" className="hover:text-primary transition-colors py-1 inline-block">Pool of the Month</a></li>
-              <li><a href="/#map" className="hover:text-primary transition-colors py-1 inline-block">By Region</a></li>
-              <li><a href="/#explore" className="hover:text-primary transition-colors py-1 inline-block">By Award</a></li>
+              <li><a href="/explore#destinations" className="hover:text-primary transition-colors py-1 inline-block">By destination</a></li>
+              <li><a href="/explore#awards" className="hover:text-primary transition-colors py-1 inline-block">By award</a></li>
             </ul>
           </div>
 
@@ -60,10 +60,10 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Explore</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="/blog" className="hover:text-primary transition-colors py-1 inline-block">The Deep End Blog</a></li>
-              <li><a href="/#map" className="hover:text-primary transition-colors py-1 inline-block">World Map</a></li>
-              <li><a href="/#featured" className="hover:text-primary transition-colors py-1 inline-block">Pool of the Month</a></li>
-              <li><a href="/badges" className="hover:text-primary transition-colors py-1 inline-block">Hotel Badges</a></li>
+              <li><a href="/blog" className="hover:text-primary transition-colors py-1 inline-block">The Deep End</a></li>
+              <li><a href="/explore#map" className="hover:text-primary transition-colors py-1 inline-block">World map</a></li>
+              <li><a href="/explore#seasonal" className="hover:text-primary transition-colors py-1 inline-block">By season</a></li>
+              <li><a href="/explore#compare" className="hover:text-primary transition-colors py-1 inline-block">Compare pools</a></li>
             </ul>
           </div>
 
@@ -71,9 +71,11 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Company</h4>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="/about" className="hover:text-primary transition-colors py-1 inline-block">About Us</a></li>
+              <li><a href="/about" className="hover:text-primary transition-colors py-1 inline-block">About</a></li>
+              <li><a href="/for-hotels" className="hover:text-primary transition-colors py-1 inline-block">For hotels</a></li>
+              <li><a href="/badges" className="hover:text-primary transition-colors py-1 inline-block">Hotel badges</a></li>
               <li><a href="/press" className="hover:text-primary transition-colors py-1 inline-block">Press</a></li>
-              <li><a href="/media-kit" className="hover:text-primary transition-colors py-1 inline-block">Media Kit</a></li>
+              <li><a href="/media-kit" className="hover:text-primary transition-colors py-1 inline-block">Media kit</a></li>
               <li><a href="mailto:hello@poolatlas.io" className="hover:text-primary transition-colors py-1 inline-block">Partnerships</a></li>
             </ul>
           </div>

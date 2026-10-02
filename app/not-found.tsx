@@ -35,7 +35,7 @@ export default function NotFound() {
             </Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="rounded-full">
-            <Link href="/#top-100">
+            <Link href="/#rankings">
               View Rankings
             </Link>
           </Button>

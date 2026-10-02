@@ -10,28 +10,24 @@ const seasons = [
   {
     name: "Spring",
     icon: Flower,
-    color: "bg-pink-100 text-pink-600",
     poolIds: [1, 4, 8],
     description: "Perfect weather, fewer crowds"
   },
   {
     name: "Summer",
     icon: Sun,
-    color: "bg-amber-100 text-amber-600",
     poolIds: [1, 43, 22],
     description: "Mediterranean peak, Ibiza sun, Africa dry season"
   },
   {
     name: "Fall",
     icon: Leaf,
-    color: "bg-orange-100 text-orange-600",
     poolIds: [5, 125, 117],
     description: "Desert season opens and safari reaches its late dry season, when wildlife gathers at the water"
   },
   {
     name: "Winter",
     icon: Snowflake,
-    color: "bg-blue-100 text-blue-600",
     poolIds: [9, 10, 71],
     description: "Geothermal water, heated indoor pools, and a roof that opens when the sun does"
   }
@@ -47,17 +43,14 @@ export function SeasonalPicks({ initialSeason, year }: { initialSeason: Season; 
     .filter(Boolean)
 
   return (
-    <section id="seasonal" className="py-16 px-4 sm:px-6 lg:px-8">
+    <section id="seasonal" className="scroll-mt-20 py-16 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-3 ${activeSeason.color}`}>
-              <activeSeason.icon className="w-4 h-4" />
-              <span className="text-sm font-semibold">{activeSeason.name} {year}</span>
-            </div>
-            <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold text-foreground">
-              Best Pools to Visit This Season
+            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold tracking-[-0.025em] text-foreground">
+              Pools for every season
             </h2>
+            <p className="mt-2 text-muted-foreground">Showing {activeSeason.name.toLowerCase()} {year}. {activeSeason.description}.</p>
           </div>
         </div>
 
@@ -67,10 +60,11 @@ export function SeasonalPicks({ initialSeason, year }: { initialSeason: Season; 
             <button
               key={season.name}
               onClick={() => setActiveSeason(season)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${
-                season.name === activeSeason.name 
-                  ? season.color
-                  : 'bg-secondary text-muted-foreground hover:bg-secondary/80'
+              aria-pressed={season.name === activeSeason.name}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                season.name === activeSeason.name
+                  ? 'bg-foreground text-background'
+                  : 'bg-secondary text-muted-foreground hover:text-foreground'
               }`}
             >
               <season.icon className="w-4 h-4" />
@@ -80,15 +74,13 @@ export function SeasonalPicks({ initialSeason, year }: { initialSeason: Season; 
         </div>
 
         {/* Pool recommendations for selected season */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-3 gap-6">
           {seasonPools.map((pool) => (
-            <PoolCard key={pool.id} pool={pool} />
+            <PoolCard key={pool.id} pool={pool} sizes="(min-width: 640px) 30vw, 100vw" />
           ))}
         </div>
         
-        <p className="text-center text-sm text-muted-foreground mt-6">
-          Why {activeSeason.name.toLowerCase()}? {activeSeason.description}
-        </p>
+
       </div>
     </section>
   )

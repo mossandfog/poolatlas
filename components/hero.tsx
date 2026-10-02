@@ -1,102 +1,63 @@
-"use client"
-
-import { useEffect, useState } from "react"
 import Image from "next/image"
-import { ChevronDown, Waves } from "lucide-react"
+import Link from "next/link"
+import { ArrowDown } from "lucide-react"
 import { PoolSearch } from "@/components/pool-search"
-import { siteStats } from "@/lib/editorial-calendar"
+import { pools } from "@/lib/pool-data"
+import { siteStats, RANKINGS_REVIEWED, type Edition } from "@/lib/editorial-calendar"
 
-export function Hero() {
-  const [isVisible, setIsVisible] = useState(false)
-  
-  useEffect(() => {
-    // Trigger animation after mount
-    const timer = setTimeout(() => setIsVisible(true), 100)
-    return () => clearTimeout(timer)
-  }, [])
+// The cover: this month's Pool of the Month, shown at full strength beside the headline.
+export function Hero({ edition }: { edition: Edition }) {
+  const cover = pools.find(p => p.id === edition.featuredId) ?? pools[0]
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-pool.jpg"
-          alt="Stunning infinity pool overlooking the ocean"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-      </div>
-
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto py-20">
-        <div 
-          className={`inline-flex items-center gap-2 px-4 py-2 bg-black rounded-full mb-6 transition-all duration-700 shadow-lg ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          <Waves className="w-4 h-4 text-white" />
-          <span className="text-white text-sm font-medium">
-            Cross-referenced with Travel + Leisure, Condé Nast Traveler &amp; more
-          </span>
-        </div>
-        
-        <h1 
-          className={`font-[family-name:var(--font-display)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 text-balance leading-tight transition-all duration-700 delay-150 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          Discover the World&apos;s <span className="text-primary">Best Pools</span>
-        </h1>
-        
-        <p 
-          className={`text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 text-pretty transition-all duration-700 delay-300 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          Find your perfect pool paradise. Search {siteStats.poolCount} hotel pools, ranked by experts and travelers worldwide.
-        </p>
-
-        {/* AI Search Bar */}
-        <div 
-          className={`mb-12 transition-all duration-700 delay-450 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          <PoolSearch />
-        </div>
-
-        <a 
-          href="#top-100" 
-          className={`inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-700 delay-500 font-medium ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
-        >
-          Browse All Rankings
-          <ChevronDown className="w-4 h-4 animate-bounce" />
-        </a>
-      </div>
-
-      {/* Stats */}
-      <div className="absolute bottom-0 left-0 right-0 bg-card/80 backdrop-blur-md border-t border-border">
-        <div className="max-w-4xl mx-auto px-4 py-6">
-          <div className="flex justify-center gap-6 sm:gap-8 md:gap-16 text-center">
-            <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">{siteStats.poolCount}</p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Pools Ranked</p>
-            </div>
-            <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">{siteStats.countryCount}</p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Countries</p>
-            </div>
-            <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">6</p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Continents</p>
-            </div>
-            <div>
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">{siteStats.avgRating}</p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Avg Rating</p>
-            </div>
+    <section className="relative bg-background">
+      <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:min-h-[min(86vh,860px)]">
+        {/* Cover photo: first on mobile, bleeds off the right edge on desktop */}
+        <figure className="relative lg:order-2 m-0">
+          <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:absolute lg:inset-x-0 lg:top-0 lg:bottom-14 overflow-hidden bg-muted pa-cover-in">
+            <Image
+              src={cover.image}
+              alt={`${cover.name} at ${cover.hotel}, ${cover.location}`}
+              fill
+              priority
+              sizes="(min-width: 1024px) 56vw, 100vw"
+              className="object-cover"
+            />
           </div>
+          <figcaption className="px-4 sm:px-6 lg:px-6 lg:absolute lg:inset-x-0 lg:bottom-0 lg:h-14 lg:flex lg:items-center">
+            <Link
+              href="#featured"
+              className="group mt-3 lg:mt-0 block text-sm leading-relaxed text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <span className="text-foreground font-medium">On the cover:</span>{" "}
+              {cover.name}, {cover.hotel}. Pool of the Month for {edition.monthName}.{" "}
+              <span className="text-primary whitespace-nowrap group-hover:underline underline-offset-4">Read why</span>
+            </Link>
+          </figcaption>
+        </figure>
+
+        {/* Headline and search */}
+        <div className="relative lg:order-1 flex flex-col justify-center px-4 sm:px-6 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-12 pt-8 pb-14 lg:py-20">
+          <h1 className="pa-headline-in font-[family-name:var(--font-display)] font-semibold text-foreground text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] tracking-[-0.035em] text-balance max-w-[12ch]">
+            The world&apos;s best hotel pools, ranked.
+          </h1>
+
+          <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-[34rem] text-pretty">
+            {siteStats.poolCount} pools in {siteStats.countryCount} countries, chosen by our editors and
+            checked against the travel press. Rankings reviewed {RANKINGS_REVIEWED}.
+          </p>
+
+          <div className="mt-8 max-w-xl [&>div]:mx-0 [&>div]:max-w-none">
+            <PoolSearch />
+          </div>
+
+          <a
+            href="#rankings"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors self-start"
+          >
+            <ArrowDown className="w-4 h-4" />
+            Browse all {siteStats.poolCount} pools
+          </a>
         </div>
       </div>
     </section>

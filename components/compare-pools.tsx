@@ -17,7 +17,7 @@ export function ComparePools() {
   const allFeatures = [...new Set([...(pool1?.features || []), ...(pool2?.features || [])])]
 
   return (
-    <section id="compare" className="py-16 px-4 sm:px-6 lg:px-8">
+    <section id="compare" className="scroll-mt-20 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/20 rounded-full mb-3">

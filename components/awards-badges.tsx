@@ -82,7 +82,7 @@ export function AwardsBadges() {
   const filteredPools = activeAward ? pools.filter(activeAward.filter).slice(0, 6) : []
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section id="awards" className="scroll-mt-20 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl font-bold text-foreground mb-3">

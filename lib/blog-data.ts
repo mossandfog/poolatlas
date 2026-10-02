@@ -2152,7 +2152,7 @@ If you know of others, we're listening.
     excerpt: "Hotel pool design has converged on two distinct philosophies — one about visual drama, one about immersive nature. Understanding the difference helps explain why some pools stay with you for decades.",
     category: "Guide",
     readTime: "9 min read",
-    image: "/images/pools/pool-amankila-bali.jpg",
+    image: "/images/pool-amankila-bali.jpg",
     publishedAt: "2026-08-01",
     featured: false,
     author: {

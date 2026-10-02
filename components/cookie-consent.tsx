@@ -59,33 +59,24 @@ export function CookieConsent() {
   if (!showBanner) return null
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-sm z-50 animate-in slide-in-from-bottom-4 duration-300">
-      <div className="bg-card border border-border rounded-xl shadow-lg overflow-hidden">
+    <div className="fixed bottom-3 left-3 right-3 sm:left-auto sm:right-4 sm:bottom-4 sm:max-w-md z-50 animate-in slide-in-from-bottom-4 duration-300">
+      <div className="bg-card/95 backdrop-blur border border-border rounded-2xl shadow-lg overflow-hidden">
         {!showSettings ? (
-          // Compact Banner
-          <div className="p-4">
-            <div className="flex items-center gap-3 mb-3">
-              <Cookie className="w-4 h-4 text-primary flex-shrink-0" />
-              <p className="text-sm text-muted-foreground">
-                We use cookies to improve your experience.{" "}
-                <Link href="/privacy" className="text-primary hover:underline">Learn more</Link>
-              </p>
-              <button 
-                onClick={rejectAll}
-                className="text-muted-foreground hover:text-foreground transition-colors ml-auto flex-shrink-0"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-            <div className="flex gap-2">
-              <Button size="sm" onClick={acceptAll} className="rounded-full flex-1 h-9 text-xs shadow-sm">
-                Accept All
-              </Button>
-              <Button size="sm" variant="outline" onClick={() => setShowSettings(true)} className="rounded-full h-9 text-xs gap-1">
-                <Settings className="w-3 h-3" />
-                Settings
-              </Button>
-            </div>
+          // One slim row, so it never covers the search on phones
+          <div className="flex items-center gap-2 py-2 pl-4 pr-2">
+            <p className="text-xs sm:text-sm text-muted-foreground mr-auto leading-snug">
+              We use cookies for analytics and ads.{" "}
+              <Link href="/privacy" className="text-primary hover:underline">Privacy</Link>
+            </p>
+            <Button size="sm" variant="ghost" onClick={() => setShowSettings(true)} className="rounded-full h-8 px-3 text-xs shrink-0">
+              Settings
+            </Button>
+            <Button size="sm" variant="ghost" onClick={rejectAll} className="rounded-full h-8 px-3 text-xs shrink-0">
+              Decline
+            </Button>
+            <Button size="sm" onClick={acceptAll} className="rounded-full h-8 px-4 text-xs shrink-0">
+              Accept
+            </Button>
           </div>
         ) : (
             // Compact Settings Panel
