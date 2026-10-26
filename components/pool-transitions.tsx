@@ -22,9 +22,11 @@ function waitForCover(path: string): Promise<HTMLElement | null> {
       const arrived = location.pathname === path && cover
       if (arrived && (cover.complete || performance.now() - start > MAX_WAIT * 0.6)) return resolve(cover)
       if (performance.now() - start > MAX_WAIT) return resolve(arrived ? cover : null)
-      requestAnimationFrame(check)
+      setTimeout(check, 16)
     }
-    requestAnimationFrame(check)
+    // A timer, not requestAnimationFrame: the browser pauses frames while it
+    // holds the old page on screen during a view transition.
+    setTimeout(check, 16)
   })
 }
 
