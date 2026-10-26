@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Heart } from "lucide-react"
 import { useDreamList } from "@/lib/dream-list-context"
 import { cn } from "@/lib/utils"
@@ -14,6 +15,7 @@ export function DiamondButton({ poolId, className, size = "md" }: DiamondButtonP
   const { isInDreamList, addToDreamList, removeFromDreamList } = useDreamList()
   
   const isActive = isInDreamList(poolId)
+  const [saved, setSaved] = useState(false)
   
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation() // Prevent card expansion when clicking diamond
@@ -21,6 +23,7 @@ export function DiamondButton({ poolId, className, size = "md" }: DiamondButtonP
       removeFromDreamList(poolId)
     } else {
       addToDreamList(poolId)
+      setSaved(true)
     }
   }
 
@@ -33,8 +36,10 @@ export function DiamondButton({ poolId, className, size = "md" }: DiamondButtonP
   return (
     <button
       onClick={handleClick}
+      data-saved={saved || undefined}
+      onAnimationEnd={() => setSaved(false)}
       className={cn(
-        "rounded-full flex items-center justify-center transition-all duration-300 shadow-md",
+        "pa-ripple rounded-full flex items-center justify-center transition-all duration-300 shadow-md",
         isActive 
           ? "bg-gradient-to-br from-rose-500 to-pink-500 scale-110" 
           : "bg-background/80 backdrop-blur-sm hover:bg-background hover:scale-105",

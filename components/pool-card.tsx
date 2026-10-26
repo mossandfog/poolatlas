@@ -18,7 +18,7 @@ export function PoolCard({ pool, sizes = "(min-width: 1024px) 20vw, (min-width: 
         href={`/pools/${pool.slug}`}
         className="block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
       >
-        <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-muted">
+        <div data-pool-photo className="relative aspect-[4/5] overflow-hidden rounded-xl bg-muted">
           <Image
             src={pool.image}
             alt={`${pool.name} at ${pool.hotel}`}

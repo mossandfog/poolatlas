@@ -81,7 +81,7 @@ export function BlogFilters() {
       </div>
 
       {/* Post Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="pa-surface grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredPosts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`}>
             <article className="group h-full flex flex-col bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/50 transition-colors">

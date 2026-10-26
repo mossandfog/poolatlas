@@ -10,7 +10,11 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    // Static, pre-sized photos; see lib/image-loader.ts and scripts/image-sizes.py
+    loader: 'custom',
+    loaderFile: './lib/image-loader.ts',
+    deviceSizes: [640, 828, 1080, 1440, 1920],
+    imageSizes: [256, 384],
   },
   turbopack: {
     root: __dirname,

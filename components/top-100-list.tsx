@@ -115,10 +115,11 @@ export function Top100List() {
         </div>
 
         {/* List */}
-        <ol className="bg-card rounded-2xl border border-border divide-y divide-border overflow-hidden">
+        <ol className="pa-surface bg-card rounded-2xl border border-border divide-y divide-border overflow-clip">
           {displayedPools.map((pool) => (
             <li
               key={pool.id}
+              data-pool-card
               className={`transition-colors ${expandedPool === pool.id ? 'bg-secondary/40' : ''}`}
             >
               <div
@@ -137,7 +138,7 @@ export function Top100List() {
                   {pool.rank}
                 </span>
 
-                <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden shrink-0 bg-muted">
+                <div data-pool-photo className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-lg overflow-hidden shrink-0 bg-muted">
                   <Image
                     src={pool.image}
                     alt={pool.name}

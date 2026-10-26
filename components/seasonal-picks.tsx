@@ -74,7 +74,7 @@ export function SeasonalPicks({ initialSeason, year }: { initialSeason: Season; 
         </div>
 
         {/* Pool recommendations for selected season */}
-        <div className="grid sm:grid-cols-3 gap-6">
+        <div className="pa-surface grid sm:grid-cols-3 gap-6">
           {seasonPools.map((pool) => (
             <PoolCard key={pool.id} pool={pool} sizes="(min-width: 640px) 30vw, 100vw" />
           ))}

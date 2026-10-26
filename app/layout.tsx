@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import { DreamListProvider } from '@/lib/dream-list-context'
+import { PoolTransitions } from '@/components/pool-transitions'
 import './globals.css'
 
 const spaceGrotesk = Space_Grotesk({ 
@@ -108,6 +109,7 @@ export default function RootLayout({
       <body className={`${spaceGrotesk.variable} ${inter.variable} font-sans antialiased`}>
         <DreamListProvider>
           {children}
+          <PoolTransitions />
           <Script
             src="https://www.googletagmanager.com/gtag/js?id=G-W7BH3WYNK7"
             strategy="afterInteractive"

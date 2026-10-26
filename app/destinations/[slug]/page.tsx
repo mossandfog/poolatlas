@@ -126,7 +126,7 @@ export default async function DestinationPage({ params }: Props) {
                   </h2>
                   <p className="mt-3 text-muted-foreground leading-relaxed max-w-md">{c.intro}</p>
                 </div>
-                <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                <div className="pa-surface grid grid-cols-2 gap-4 sm:gap-6">
                   {chapterPools.map((p) => (
                     <div key={p.id}>
                       <PoolCard pool={p} sizes="(min-width: 1024px) 28vw, 45vw" />
@@ -140,7 +140,7 @@ export default async function DestinationPage({ params }: Props) {
         })
       ) : (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="pa-surface grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {ranked.map((p) => (
               <PoolCard key={p.id} pool={p} sizes="(min-width: 1024px) 22vw, (min-width: 768px) 30vw, 45vw" />
             ))}

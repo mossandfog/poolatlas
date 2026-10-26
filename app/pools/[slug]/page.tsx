@@ -85,9 +85,11 @@ export default async function PoolPage({ params }: Props) {
         {/* Hero */}
         <div className="relative h-[55vh] min-h-[400px] w-full overflow-hidden">
           <Image
+            data-pool-cover
             src={pool.image}
             alt={`${pool.name} at ${pool.hotel}`}
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -367,13 +369,14 @@ export default async function PoolPage({ params }: Props) {
                 </Link>
               </div>
 
-              <div className="grid sm:grid-cols-3 gap-5">
+              <div className="pa-surface grid sm:grid-cols-3 gap-5">
                 {nearbyPools.map((nearby) => (
                   <Link key={nearby.id} href={`/pools/${nearby.slug}`}>
                     <div className="group bg-card rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 overflow-hidden">
-                      <div className="relative aspect-[4/3] overflow-hidden">
+                      <div data-pool-photo className="relative aspect-[4/3] overflow-hidden">
                         <Image
                           src={nearby.image}
+                          sizes="(min-width: 640px) 30vw, 100vw"
                           alt={nearby.name}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"

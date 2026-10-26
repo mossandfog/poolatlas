@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useDreamList } from "@/lib/dream-list-context"
@@ -7,6 +8,7 @@ import { useDreamList } from "@/lib/dream-list-context"
 export function PoolDreamListButton({ poolId }: { poolId: number }) {
   const { addToDreamList, removeFromDreamList, isInDreamList } = useDreamList()
   const inList = isInDreamList(poolId)
+  const [popped, setPopped] = useState(false)
 
   return (
     <Button
@@ -17,9 +19,16 @@ export function PoolDreamListButton({ poolId }: { poolId: number }) {
           : "hover:border-rose-400 hover:text-rose-500"
       }`}
       size="lg"
-      onClick={() => (inList ? removeFromDreamList(poolId) : addToDreamList(poolId))}
+      onClick={() => {
+        if (inList) return removeFromDreamList(poolId)
+        addToDreamList(poolId)
+        setPopped(true)
+      }}
     >
-      <Heart className={`w-4 h-4 transition-all ${inList ? "fill-rose-500 text-rose-500" : ""}`} />
+      <Heart
+        onAnimationEnd={() => setPopped(false)}
+        className={`w-4 h-4 transition-all ${inList ? "fill-rose-500 text-rose-500" : ""} ${popped ? "pa-pop" : ""}`}
+      />
       {inList ? "Saved to Dream List" : "Add to Dream List"}
     </Button>
   )

@@ -39,6 +39,7 @@ export function DreamListProvider({ children }: { children: ReactNode }) {
   }, [dreamList, isHydrated])
 
   const addToDreamList = (poolId: number) => {
+    if (typeof window !== "undefined") window.dispatchEvent(new Event("pa:saved"))
     setDreamList((prev) => {
       if (prev.includes(poolId)) return prev
       return [...prev, poolId]

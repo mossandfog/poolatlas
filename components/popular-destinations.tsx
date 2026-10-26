@@ -17,7 +17,7 @@ export function PopularDestinations() {
           <p className="text-muted-foreground">Where the pools are worth planning a trip around</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="pa-surface grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {ordered.map((d, index) => {
             const count = poolsFor(d).length
             const big = index === 0

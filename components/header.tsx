@@ -18,8 +18,13 @@ export function Header() {
   const pathname = usePathname()
   const { dreamList } = useDreamList()
 
+  const [bob, setBob] = useState(0)
+
   useEffect(() => {
     setIsMounted(true)
+    const onSaved = () => setBob((n) => n + 1)
+    window.addEventListener("pa:saved", onSaved)
+    return () => window.removeEventListener("pa:saved", onSaved)
   }, [])
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -39,7 +44,7 @@ export function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card shadow-md border-b border-border">
+    <header className="site-header fixed top-0 left-0 right-0 z-50 bg-card shadow-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a 
@@ -105,7 +110,7 @@ export function Header() {
             >
               <Heart className="w-5 h-5 text-foreground/70 hover:text-rose-500 transition-colors" />
               {dreamList.length > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-[10px] font-bold text-white flex items-center justify-center">
+                <span key={bob} className={`${bob ? "pa-bob " : ""}absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-[10px] font-bold text-white flex items-center justify-center`}>
                   {dreamList.length > 9 ? '9+' : dreamList.length}
                 </span>
               )}
@@ -166,7 +171,7 @@ export function Header() {
                 >
                   <Heart className="w-5 h-5 text-foreground/70" />
                   {dreamList.length > 0 && (
-                    <span className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-[10px] font-bold text-white flex items-center justify-center">
+                    <span key={bob} className={`${bob ? "pa-bob " : ""}absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-gradient-to-br from-rose-500 to-pink-500 text-[10px] font-bold text-white flex items-center justify-center`}>
                       {dreamList.length > 9 ? '9+' : dreamList.length}
                     </span>
                   )}
