@@ -89,14 +89,14 @@ export const editorialCalendar: Record<number, MonthPlan> = {
   10: {
     featuredId: 9, // The Retreat at Blue Lagoon, Iceland
     featuredWhy: "Geothermal water stays near body temperature while the northern lights season gets going overhead.",
-    pickIds: [110, 76, 8, 19, 86],
-    picksWhy: "Warm water in cold places, and the Gulf and Rajasthan at their most comfortable",
+    pickIds: [130, 126, 110, 76, 8],
+    picksWhy: "Thanksgiving-weekend warmth in Los Cabos and Waikiki, and the Gulf and Rajasthan at their most comfortable",
   },
   11: {
-    featuredId: 26, // Hermitage Bay, Antigua
-    featuredWhy: "December opens the Caribbean winter season, and a beach pool villa is the best escape from it.",
-    pickIds: [10, 71, 89, 18, 107],
-    picksWhy: "Heated indoor pools for city holidays, and Caribbean sun for everything else",
+    featuredId: 129, // Four Seasons Resort Maui at Wailea
+    featuredWhy: "The humpbacks return to the Wailea coast in December, and the adults-only Serenity Pool is the best seat in the house.",
+    pickIds: [127, 128, 132, 26, 10],
+    picksWhy: "Whale season in Hawaii, the Caribbean at its clearest, a Queensland summer, and a heated indoor pool for a city Christmas",
   },
 }
 
@@ -150,6 +150,15 @@ export const siteStats = (() => {
     avgRating: avg.toFixed(1),
   }
 })()
+
+/**
+ * The line above the homepage headline. Point it at whatever is newest this season.
+ * Set to null to hide it.
+ */
+export const SEASON_NOTE: { label: string; href: string } | null = {
+  label: "New: the Hawaii guide, island by island",
+  href: "/destinations/hawaii",
+}
 
 /** When the rankings were last reviewed. Update this on each editorial pass. */
 export const RANKINGS_REVIEWED = "October 2026"

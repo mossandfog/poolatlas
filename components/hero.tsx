@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowDown } from "lucide-react"
 import { PoolSearch } from "@/components/pool-search"
 import { pools } from "@/lib/pool-data"
-import { siteStats, RANKINGS_REVIEWED, type Edition } from "@/lib/editorial-calendar"
+import { siteStats, RANKINGS_REVIEWED, SEASON_NOTE, type Edition } from "@/lib/editorial-calendar"
 
 // The cover: this month's Pool of the Month, shown at full strength beside the headline.
 export function Hero({ edition }: { edition: Edition }) {
@@ -38,6 +38,17 @@ export function Hero({ edition }: { edition: Edition }) {
 
         {/* Headline and search */}
         <div className="relative lg:order-1 flex flex-col justify-center px-4 sm:px-6 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-12 pt-8 pb-14 lg:py-20">
+          <p className="pa-headline-in mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+            <span className="inline-flex items-center gap-2 font-medium uppercase tracking-[0.14em] text-foreground/80">
+              <span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-accent" />
+              {edition.season} {edition.year}
+            </span>
+            {SEASON_NOTE && (
+              <Link href={SEASON_NOTE.href} className="text-muted-foreground hover:text-foreground underline-offset-4 hover:underline transition-colors">
+                {SEASON_NOTE.label} &rarr;
+              </Link>
+            )}
+          </p>
           <h1 className="pa-headline-in font-[family-name:var(--font-display)] font-semibold text-foreground text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] tracking-[-0.035em] text-balance max-w-[12ch]">
             The world&apos;s best hotel pools, ranked.
           </h1>

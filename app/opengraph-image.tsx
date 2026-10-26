@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import { siteStats } from '@/lib/editorial-calendar'
 
 export const runtime = 'edge'
 
@@ -123,16 +124,16 @@ export default async function Image() {
             }}
           >
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: 48, fontWeight: 700, color: 'white' }}>World's Best</div>
-              <div style={{ fontSize: 18, color: '#94a3b8' }}>Pools Ranked</div>
+              <div style={{ fontSize: 48, fontWeight: 700, color: 'white' }}>Monthly</div>
+              <div style={{ fontSize: 18, color: '#94a3b8' }}>Editorial Review</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: 48, fontWeight: 700, color: 'white' }}>50+</div>
+              <div style={{ fontSize: 48, fontWeight: 700, color: 'white' }}>{String(siteStats.countryCount)}</div>
               <div style={{ fontSize: 18, color: '#94a3b8' }}>Countries</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: 48, fontWeight: 700, color: 'white' }}>2.4M</div>
-              <div style={{ fontSize: 18, color: '#94a3b8' }}>Reviews Analyzed</div>
+              <div style={{ fontSize: 48, fontWeight: 700, color: 'white' }}>{String(siteStats.poolCount)}</div>
+              <div style={{ fontSize: 18, color: '#94a3b8' }}>Pools Ranked</div>
             </div>
           </div>
         </div>

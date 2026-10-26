@@ -1,5 +1,6 @@
 import { pools } from "@/lib/pool-data"
 import { blogPosts } from "@/lib/blog-data"
+import { destinations } from "@/lib/destinations"
 import { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -61,5 +62,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: post.featured ? 0.9 : 0.8,
   }))
 
-  return [...staticPages, ...poolPages, ...blogPages]
+  // Destination guides
+  const destinationPages = destinations.map((d) => ({
+    url: `${baseUrl}/destinations/${d.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: d.featured ? 0.9 : 0.8,
+  }))
+
+  return [...staticPages, ...destinationPages, ...poolPages, ...blogPages]
 }

@@ -97,9 +97,9 @@ export function ComparePools() {
 
             {/* Reviews */}
             <div className="grid grid-cols-3 text-center">
-              <div className="p-4 font-semibold text-foreground">{pool1?.reviewCount.toLocaleString()}</div>
+              <div className="p-4 font-semibold text-foreground">{pool1?.reviewCount ? pool1.reviewCount.toLocaleString() : "Editors' pick"}</div>
               <div className="p-4 bg-secondary/30 text-sm font-semibold text-muted-foreground">Reviews</div>
-              <div className="p-4 font-semibold text-foreground">{pool2?.reviewCount.toLocaleString()}</div>
+              <div className="p-4 font-semibold text-foreground">{pool2?.reviewCount ? pool2.reviewCount.toLocaleString() : "Editors' pick"}</div>
             </div>
 
             {/* Location */}

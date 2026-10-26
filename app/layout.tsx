@@ -17,7 +17,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Pool Atlas | Best Hotel Swimming Pools Worldwide',
-  description: 'Discover and explore the most stunning hotel swimming pools across the globe. Curated rankings of luxury infinity pools, rooftop oases, and tropical retreats.',
+  description: 'The world\'s best hotel swimming pools, ranked by our editors and checked against the travel press. Infinity edges, rooftops, desert pools and tropical retreats in nearly 50 countries.',
   other: {
     'websitelaunches-verification': 'd88d50454f7b69ceb9a4a741c6c2f1ef',
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     url: 'https://poolatlas.io',
     siteName: 'Pool Atlas',
     title: 'Pool Atlas | Best Hotel Swimming Pools Worldwide',
-    description: 'The definitive ranking of the world\'s most extraordinary hotel swimming pools. Discover stunning pools across 50+ countries, curated from the world\'s leading travel publications.',
+    description: 'The definitive ranking of the world\'s most extraordinary hotel swimming pools. Pools in nearly 50 countries, checked against the world\'s leading travel publications.',
     images: [
       {
         url: '/images/og-image.jpg',
@@ -86,8 +86,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Season tint: sets data-season on <html> before paint, from Pacific time, so the palette turns with the editorial calendar and never goes stale */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var m=+new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',month:'numeric'}).format(new Date())-1;document.documentElement.dataset.season=m>=2&&m<=4?'spring':m>=5&&m<=7?'summer':m>=8&&m<=10?'fall':'winter'}catch(e){}`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

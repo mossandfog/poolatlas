@@ -44,7 +44,7 @@ const pressContacts = [
 
 const keyStats = [
   { label: "Pools Ranked", value: "120", icon: Award },
-  { label: "Countries Covered", value: "50+", icon: Globe },
+  { label: "Countries Covered", value: "48", icon: Globe },
   { label: "Continents", value: "6", icon: Users },
   { label: "Editorial Sources", value: "6", icon: TrendingUp }
 ]
@@ -96,7 +96,7 @@ const factSheet = {
   headquarters: "Portland, Oregon",
   mission: "To help travelers discover the world's most exceptional hotel swimming pools through data-driven rankings and expert curation.",
   methodology: "Rankings are determined by aggregating reviews from major travel platforms, expert assessments from leading publications, guest satisfaction scores, and unique pool features.",
-  coverage: "The world's best pools across 50+ countries on 6 continents"
+  coverage: "The world's best pools across nearly 50 countries on 6 continents"
 }
 
 export default function PressPage() {
@@ -232,7 +232,7 @@ export default function PressPage() {
                       providing comprehensive rankings based on aggregated guest reviews,
                       on-site research, and proprietary evaluation criteria covering pool design, views,
                       exclusivity, and overall experience. Founded in 2024 in Portland, Oregon, Pool Atlas helps travelers
-                      discover extraordinary aquatic experiences at hotels and resorts across 50+ countries.
+                      discover extraordinary aquatic experiences at hotels and resorts in nearly 50 countries.
                       For more information, visit <span className="text-primary">poolatlas.io</span>.
                     </p>
                   </div>

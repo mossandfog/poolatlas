@@ -60,12 +60,16 @@ export default async function PoolPage({ params }: Props) {
       addressLocality: pool.location,
       addressCountry: pool.country,
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: pool.rating,
-      ratingCount: pool.reviewCount,
-      bestRating: 10,
-    },
+    ...(pool.reviewCount
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: pool.rating,
+            ratingCount: pool.reviewCount,
+            bestRating: 10,
+          },
+        }
+      : {}),
     url: pool.websiteUrl,
   }
 
@@ -163,10 +167,12 @@ export default async function PoolPage({ params }: Props) {
                   <span className="font-bold text-foreground">{pool.rating}</span>
                   <span className="text-muted-foreground text-sm">/ 10</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-muted-foreground">
-                  <Users className="w-4 h-4" />
-                  <span className="text-sm">{pool.reviewCount.toLocaleString()} reviews</span>
-                </div>
+                {pool.reviewCount ? (
+                  <div className="flex items-center gap-1.5 text-muted-foreground">
+                    <Users className="w-4 h-4" />
+                    <span className="text-sm">{pool.reviewCount.toLocaleString()} reviews</span>
+                  </div>
+                ) : null}
                 {pool.kidFriendly ? (
                   <div className="flex items-center gap-1.5 text-sm font-medium text-chart-3">
                     <Baby className="w-4 h-4" />
@@ -267,7 +273,9 @@ export default async function PoolPage({ params }: Props) {
                     <span className="text-muted-foreground">/ 10</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Based on {pool.reviewCount.toLocaleString()} expert &amp; traveler reviews
+                    {pool.reviewCount
+                      ? <>Based on {pool.reviewCount.toLocaleString()} expert &amp; traveler reviews</>
+                      : <>Pool Atlas editors&apos; score</>}
                   </p>
                 </div>
 

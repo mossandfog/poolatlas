@@ -96,7 +96,7 @@ export function WorldMap() {
             Pool Locations Worldwide
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Discover the world&apos;s most stunning hotel pools across 6 continents. Click any region to explore.
+            The world&apos;s best hotel pools across six continents. Click any region to explore.
           </p>
         </div>
 

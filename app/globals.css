@@ -145,3 +145,29 @@
 /* Collapse ad slots AdSense leaves unfilled, so they never leave an empty box */
 ins.adsbygoogle[data-ad-status="unfilled"] { display: none !important; }
 .ad-slot:has(ins.adsbygoogle[data-ad-status="unfilled"]) { display: none; }
+
+/* Seasons. html[data-season] is set in layout.tsx from the date, so these turn on their own.
+   Teal stays the brand color; only the warm accent and the light-mode paper shift. */
+html[data-season="fall"] {
+  --accent: oklch(0.70 0.155 42);
+  --chart-2: oklch(0.70 0.155 42);
+}
+html[data-season="fall"]:not(.dark) {
+  --background: oklch(0.982 0.007 75);
+  --secondary: oklch(0.952 0.02 68);
+  --muted: oklch(0.955 0.012 70);
+  --border: oklch(0.90 0.014 70);
+  --sidebar: oklch(0.97 0.012 70);
+}
+html.dark[data-season="fall"] {
+  --accent: oklch(0.76 0.135 48);
+  --chart-2: oklch(0.76 0.135 48);
+}
+html[data-season="winter"]:not(.dark) {
+  --background: oklch(0.984 0.005 235);
+  --secondary: oklch(0.952 0.018 225);
+}
+html[data-season="winter"] {
+  --accent: oklch(0.78 0.12 75);
+  --chart-2: oklch(0.78 0.12 75);
+}

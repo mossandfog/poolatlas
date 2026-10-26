@@ -32,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "From solar heating to natural filtration, the world's best hotels are proving that eco-conscious pools can be just as luxurious as traditional ones.",
     category: "Industry",
     readTime: "11 min read",
-    image: "/images/sustainable-pool.jpg",
+    image: "/images/pools/pool-andbeyond-sossusvlei-plunge.jpg",
     publishedAt: "2026-03-28",
     featured: true,
     author: {
@@ -235,7 +235,7 @@ That's a future worth swimming toward.
     excerpt: "After ranking pools across 50 countries, we reveal the criteria that separate truly exceptional hotel pools from the merely good.",
     category: "Industry",
     readTime: "12 min read",
-    image: "/images/world-class-pool.jpg",
+    image: "/images/pools/pool-hotel-du-cap-eden-roc.jpg",
     publishedAt: "2026-03-25",
     featured: true,
     author: {
@@ -245,7 +245,7 @@ That's a future worth swimming toward.
     content: `
 # What Makes a World-Class Hotel Pool?
 
-After evaluating over 150 hotel pools across 50+ countries, we've developed a refined understanding of what separates a truly world-class pool from one that's simply pleasant. It's not just about size or views—though those matter. The difference lies in a constellation of factors that, when aligned, create an experience guests remember for years.
+After evaluating well over a hundred hotel pools in nearly 50 countries, we've developed a refined understanding of what separates a truly world-class pool from one that's simply pleasant. It's not just about size or views—though those matter. The difference lies in a constellation of factors that, when aligned, create an experience guests remember for years.
 
 Here's what we've learned.
 
@@ -431,7 +431,7 @@ When we say a pool is world-class, we mean it has demonstrated excellence across
     excerpt: "From chemical composition to guest experience, we dive deep into the great pool debate and explore where the luxury hotel industry is heading.",
     category: "Industry",
     readTime: "10 min read",
-    image: "/images/saltwater-pool.jpg",
+    image: "/images/pools/pool-four-seasons-hualalai-kings-pond.jpg",
     publishedAt: "2026-03-20",
     featured: true,
     author: {
@@ -643,7 +643,7 @@ The future of hotel swimming is almost certainly saltwater, with increasing natu
     excerpt: "Everything you need to know about finding and enjoying the world's most stunning infinity pools, from design secrets to the best times to visit.",
     category: "Guide",
     readTime: "8 min read",
-    image: "/images/pool-1.jpg",
+    image: "/images/pools/pool-monastero-santa-rosa.jpg",
     publishedAt: "2026-03-01",
     featured: true,
     author: {
@@ -719,7 +719,7 @@ As travelers increasingly seek Instagram-worthy experiences, expect to see even 
     excerpt: "Our curated selection of kid-friendly hotel pools that combine safety with fun for the whole family.",
     category: "Family",
     readTime: "6 min read",
-    image: "/images/pool-2.jpg",
+    image: "/images/pools/pool-grand-wailea-maui.jpg",
     publishedAt: "2026-02-15",
     featured: false,
     author: {
@@ -742,11 +742,11 @@ Beyond the obvious safety considerations like shallow areas and lifeguards, trul
 
 ## Top Family Pool Destinations
 
-### Four Seasons Resort Maui at Wailea
+### Four Seasons Resort Hualalai, Hawaii Island
 
-This Hawaiian paradise features a family pool with a waterslide, shallow wading areas, and an adjacent kids' club. Parents can relax knowing lifeguards are always on duty, while children enjoy the gentle waves of the activity pool.
+[King's Pond](/pools/four-seasons-resort-hualalai-127) is a 1.8-million-gallon swimmable aquarium carved from lava rock, home to more than a thousand tropical fish and spotted eagle rays. Kids snorkel alongside them, then join the marine naturalists for feedings and touch-tank sessions at the Kumu Kai Marine Center.
 
-**What we love**: The resort offers complimentary sunscreen stations and flotation devices for all ages.
+**What we love**: It turns a swim into a biology lesson nobody complains about.
 
 ### Atlantis Paradise Island, Bahamas
 
@@ -756,7 +756,7 @@ With over 20 swimming areas, including the famous Mayan Temple waterslides and a
 
 ### Grand Wailea, Maui
 
-The pool complex here is legendary. Nine interconnected pools feature slides, waterfalls, caves, and a lazy river. The dedicated children's pool has a sandy beach entry and fountain features.
+The [Wailea Canyon Activity Pool](/pools/grand-wailea-a-waldorf-astoria-resort-133) is legendary: nine pools on six levels joined by a river, with seven waterslides, six waterfalls, caves, a rope swing, a water elevator and a sand-bottomed baby beach for the littlest swimmers.
 
 **What we love**: Activity pools are separate from quiet pools, so families and couples can coexist peacefully.
 
@@ -805,7 +805,7 @@ For family pool trips, consider:
     excerpt: "Discover the most breathtaking urban rooftop pools where skylines meet swimming.",
     category: "City",
     readTime: "7 min read",
-    image: "/images/pool-3.jpg",
+    image: "/images/pools/pool-marina-bay-sands-skypark.jpg",
     publishedAt: "2026-02-01",
     featured: false,
     author: {
@@ -885,7 +885,7 @@ As cities grow denser and more vertical, expect to see even more creative roofto
     excerpt: "Secret pool destinations that only seasoned travelers know about.",
     category: "Adventure",
     readTime: "7 min read",
-    image: "/images/pool-5.jpg",
+    image: "/images/pools/pool-belmond-caruso-ravello.jpg",
     publishedAt: "2026-01-15",
     featured: false,
     author: {
@@ -973,7 +973,7 @@ There's a tension in travel writing between sharing discoveries and preserving t
     excerpt: "A deep dive into the hotel chains and luxury brands consistently delivering world-class pool experiences.",
     category: "Guide",
     readTime: "9 min read",
-    image: "/images/pool-4.jpg",
+    image: "/images/pools/pool-amanoi-central-pavilion.jpg",
     publishedAt: "2026-03-10",
     featured: false,
     author: {
@@ -1130,7 +1130,7 @@ If pool quality is a priority for your travels, Aman, Four Seasons, and One&Only
     excerpt: "From Santorini's caldera-edge infinity pools to a rooftop above the Acropolis and a private villa pool in Crete, Greece delivers some of the world's most dramatic swimming experiences.",
     category: "Destination",
     readTime: "10 min read",
-    image: "/images/pool-grace-santorini.jpg",
+    image: "/images/pools/pool-grace-santorini-caldera.jpg",
     publishedAt: "2026-07-08",
     featured: true,
     author: {
@@ -1270,7 +1270,7 @@ Italy's pools aren't just amenities. They're part of a longer tradition of *vill
     excerpt: "Bali has built its reputation on the hotel pool — from ancient rice terrace infinity edges to jungle-canopy plunges. Here are the ones worth planning a trip around.",
     category: "Destination",
     readTime: "9 min read",
-    image: "/images/pool-amankila-bali.jpg",
+    image: "/images/pools/pool-mandapa-villa-ubud.jpg",
     publishedAt: "2026-06-05",
     featured: false,
     author: {
@@ -1331,7 +1331,7 @@ Bali has been a byword for luxury travel for three decades now, and the hotel po
     excerpt: "The Maldives invented the overwater bungalow. But its hotel pools — infinity edges merging with lagoon, rooftop decks above the reef — deserve equal attention.",
     category: "Destination",
     readTime: "8 min read",
-    image: "/images/pool-one-only-maldives.jpg",
+    image: "/images/pools/pool-huvafen-fushi.jpg",
     publishedAt: "2026-06-01",
     featured: false,
     author: {
@@ -1380,7 +1380,7 @@ The Maldives pool scene has matured significantly over the past decade. Where on
     excerpt: "From Chiang Mai's temple-framed hilltop pools to Phuket's jaw-dropping Andaman panoramas, Thailand's hotel pool scene is as varied as the country itself.",
     category: "Destination",
     readTime: "9 min read",
-    image: "/images/pool-six-senses-zighy.jpg",
+    image: "/images/pools/pool-137-pillars-bangkok-rooftop.jpg",
     publishedAt: "2026-05-28",
     featured: false,
     author: {
@@ -1445,7 +1445,7 @@ Thailand's pool culture is sophisticated enough now that any serious luxury trav
     excerpt: "The Caribbean invented the resort pool — but the best ones here go far beyond the expected. Private infinity edges, freshwater mountain plunges, and pools that blur into the sea.",
     category: "Destination",
     readTime: "9 min read",
-    image: "/images/pool-jade-mountain.jpg",
+    image: "/images/pools/pool-cap-juluca-villa-anguilla.jpg",
     publishedAt: "2026-05-20",
     featured: false,
     author: {
@@ -1508,7 +1508,7 @@ The Caribbean pool experience has matured considerably over the past decade. The
     excerpt: "Some pools are nice. These are worth building your entire trip around. A curated list of the pools so extraordinary that the hotel exists to frame them.",
     category: "Guide",
     readTime: "9 min read",
-    image: "/images/pool-grace-santorini.jpg",
+    image: "/images/pools/pool-amangiri-main.jpg",
     publishedAt: "2026-07-05",
     featured: false,
     author: {
@@ -1591,7 +1591,7 @@ It's not a single pool — it's a pool landscape. The effect is theatrical in th
     excerpt: "The science, engineering, and sleight of hand behind the world's most photogenic pools. It turns out 'vanishing' is harder than it looks.",
     category: "Industry",
     readTime: "8 min read",
-    image: "/images/pool-jade-mountain.jpg",
+    image: "/images/pools/pool-address-beach-resort-77th-floor.jpg",
     publishedAt: "2026-07-02",
     featured: false,
     author: {
@@ -1928,7 +1928,7 @@ This is not the quiet, contemplative pool experience of the other entries. It's 
     excerpt: "White plaster is out. Charcoal, graphite, and deep obsidian are in. We explore the finish and material trends reshaping the world's most beautiful pools — and what they tell us about where luxury design is heading.",
     category: "Industry",
     readTime: "9 min read",
-    image: "/images/pool-amankila-bali.jpg",
+    image: "/images/pools/pool-le-sirenuse-positano.jpg",
     publishedAt: "2026-07-21",
     featured: false,
     author: {
@@ -2152,7 +2152,7 @@ If you know of others, we're listening.
     excerpt: "Hotel pool design has converged on two distinct philosophies — one about visual drama, one about immersive nature. Understanding the difference helps explain why some pools stay with you for decades.",
     category: "Guide",
     readTime: "9 min read",
-    image: "/images/pool-amankila-bali.jpg",
+    image: "/images/pools/pool-retreat-blue-lagoon.jpg",
     publishedAt: "2026-08-01",
     featured: false,
     author: {
@@ -2495,6 +2495,285 @@ If you don't own a pool and simply love good ones, fall is a wonderful time to t
 ---
 
 *Find a pool that suits the season → [Explore the rankings](/)*
+    `
+  },
+  {
+    slug: "best-hotel-pools-hawaii",
+    title: "The Best Hotel Pools in Hawaii, Island by Island",
+    excerpt: "An orchid laid in a million pieces of glass, a lava-rock aquarium full of eagle rays, and infinity edges lined up with the whale channel. Our guide to Hawaii's best hotel pools on five islands.",
+    category: "Destination",
+    readTime: "9 min read",
+    image: "/images/pools/pool-halekulani-waikiki.jpg",
+    publishedAt: "2026-10-26",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Destinations"
+    },
+    content: `
+# The Best Hotel Pools in Hawaii, Island by Island
+
+Here's the strange thing about a pool in Hawaii: it has the hardest act in the world to follow. The Pacific is right there, warm all year, clear enough to watch turtles from the shore. So the islands' great hotel pools don't try to compete with the ocean. They frame it, borrow its rock and its fish, or fill themselves with it outright.
+
+That makes Hawaii one of the most interesting pool destinations we rank. This fall we added six Hawaiian pools to the [Pool Atlas rankings](/#rankings), spread across five islands, and built a full [Hawaii destination guide](/destinations/hawaii) around them. Here's the short tour.
+
+## Oahu: An Orchid in Waikiki
+
+Waikiki is a city beach. It's lively and lovely and about as calm as a stadium concourse, which is exactly why the pool at **[Halekulani](/pools/halekulani-126)** matters so much. Look down before you get in. The floor of the oval pool carries a giant cattleya orchid made from roughly 1.2 million pieces of glass tile, and on a bright morning it seems to float a few inches below the surface.
+
+The pool is heated, about 82 feet long and set just back from the sand, with Diamond Head off to one side and a slow parade of surfers beyond the reef. It's the classic Honolulu hotel pool, and it has aged better than almost any of its neighbors. We rank it #31 in the world.
+
+## Maui: The Whale Channel and the Water Park
+
+South Maui's Wailea coast is dry, sunny and pointed straight at the channel where humpback whales spend the winter. It's also home to the two most different pools on our list.
+
+**[Four Seasons Resort Maui at Wailea](/pools/four-seasons-resort-maui-at-wailea-129)** keeps its adults-only Serenity Pool raised above the rest of the resort, so the infinity edge lines up with open Pacific, Lanai and the West Maui Mountains. It's for guests 21 and over, six cabanas line the terrace, and from December to April you can watch whales breach without leaving the water.
+
+A short walk down the coast, **[Grand Wailea](/pools/grand-wailea-a-waldorf-astoria-resort-133)** went the other direction entirely. Its Wailea Canyon Activity Pool runs 2,000 feet through nine pools on six levels, with seven waterslides, six waterfalls, caves, a rope swing, a sand-bottomed baby beach and a water elevator that lifts swimmers back to the top. The Lava Tube Slide drops three stories in about fourteen seconds. If you're traveling with kids, this is the pool they'll describe to their friends for years. (Parents get the adults-only Hibiscus Serenity Pool, which has its own giant flower in glass mosaic.)
+
+A note on Maui: West Maui is still rebuilding after the August 2023 fire in Lahaina. Visitors are part of the island's recovery, and it's worth traveling thoughtfully, following local guidance and spending with local businesses.
+
+## Lanai: The Quiet Island
+
+Lanai sits nine miles off Maui and feels much farther. There are no traffic lights and very few distractions, which makes **[Four Seasons Resort Lanai](/pools/four-seasons-resort-lanai-134)** one of the most restful pool stays in the islands. The palm-shaded Oasis Pool is a lagoon of lava rock and waterfalls, kept at 84 degrees and open around the clock, a few steps from Hulopoe Beach, where spinner dolphins are regular visitors. Up a path, the adults-only pool tucks into lava rock grottoes draped in bougainvillea.
+
+## Hawaii Island: Swimming With Eagle Rays
+
+The Big Island's Kona-Kohala coast is black lava running down to turquoise water, and **[Four Seasons Resort Hualalai](/pools/four-seasons-resort-hualalai-127)** has built the most memorable pool in the state into it. King's Pond is a 1.8-million-gallon swimmable aquarium carved from lava rock and filled with saltwater, home to more than a thousand tropical fish and spotted eagle rays you can snorkel beside.
+
+The resort's marine naturalists run feedings and touch-tank sessions from the Kumu Kai Marine Center, and there's an infinity pool on the deck above for anyone who prefers to watch from dry(ish) land. It's one of eight pools at Hualalai. It's also the one your kids will refuse to leave, and frankly, so will you!
+
+## Kauai: The Cliff Above Hanalei
+
+Kauai's North Shore is the dramatic Hawaii of postcards: sheer green ridges, waterfalls and big winter surf. The former St. Regis Princeville reopened in 2023 as **[1 Hotel Hanalei Bay](/pools/1-hotel-hanalei-bay-131)**, and its adults-only infinity pool is the reason to book. It floats on a terrace above the bay, with shaded wooden cabanas along one side and a jacuzzi alongside. When the winter swell makes the beaches rough, there's no better place to watch it.
+
+## When to Go
+
+- **December to April** is whale season. Humpbacks are in Hawaiian waters from about November through April and most numerous from January to March, according to NOAA's Hawaiian Islands Humpback Whale National Marine Sanctuary. Wailea and Lanai are front-row seats.
+- **The holidays** are the most expensive weeks of the year, with long minimum stays at many resorts. The first two weeks of December are much quieter, with the same warm water. Our guide to [Christmas and New Year's at the pool](/blog/christmas-new-years-at-the-pool) covers how to book them.
+- **April, May, September and October** are the shoulder months: fewer people, better rates and calm summer seas on the north shores.
+
+## How to Choose
+
+If you want one great pool and a city around it, go to Halekulani. If you want whales from an infinity edge, go to Wailea. If you're bringing kids, Grand Wailea or Hualalai will make you a hero. And if you want to do absolutely nothing in beautiful water, Lanai is waiting.
+
+---
+
+*Every pool, mapped island by island → [The Pool Atlas Hawaii guide](/destinations/hawaii)*
+    `
+  },
+  {
+    slug: "thanksgiving-pool-trips-2026",
+    title: "A Thanksgiving Pool Trip: Three Warm Escapes You Can Still Book",
+    excerpt: "Thanksgiving falls on November 26 this year. If you'd rather spend the long weekend in warm water than in a traffic jam, here are three short-haul pool trips that still work, and how to time the flights.",
+    category: "Guide",
+    readTime: "7 min read",
+    image: "/images/pools/pool-one-only-palmilla-los-cabos.jpg",
+    publishedAt: "2026-10-26",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Travel Planning"
+    },
+    content: `
+# A Thanksgiving Pool Trip: Three Warm Escapes You Can Still Book
+
+Thanksgiving lands on Thursday, November 26 this year, which gives a lot of people a four-day weekend just as the weather turns gray and the days get short. You could spend it the usual way. Or you could spend it floating.
+
+A Thanksgiving pool trip has a few things going for it. Late November sits between the end of hurricane season (it officially closes on November 30 in both the Atlantic and the eastern Pacific) and the start of the Christmas rush, so the warm places are settled and not yet at their most expensive. The trick is keeping the trip short enough to be worth it, which means staying within a few hours of home.
+
+Here are the three warm-water escapes we'd book from the US right now.
+
+## 1. Los Cabos: The West Coast's Easy Answer
+
+From much of the western US, Los Cabos is a short, direct flight, and late November is one of its best months: warm, dry and still a few weeks ahead of the holiday crowds.
+
+**[One&Only Palmilla](/pools/one-only-palmilla-130)** is the classic. It has been receiving guests where the Baja desert meets the sea since the 1950s, and its two oceanfront infinity pools split neatly into one for families and one for adults. Order dinner at Agua, the restaurant and pool bar beside the water, and watch the infinity edge and the ocean go pink at the same time.
+
+For something livelier and easier on the budget, the rooftop infinity pool at **[Corazón Cabo](/pools/coraz-n-cabo-resort-spa-46)** sits above Medano Beach in Cabo San Lucas, nine floors up.
+
+**Best for:** West Coast travelers, couples, anyone who wants a real break on a four-day weekend.
+
+## 2. Hawaii: Worth the Extra Day
+
+Hawaii is a longer flight from most of the mainland, so we'd only do it over Thanksgiving if you can stretch the weekend to five or six nights. If you can, it's spectacular. The water is warm, the first humpback whales usually start arriving in November, and the islands are noticeably calmer than they'll be in late December.
+
+Our new [Hawaii guide](/destinations/hawaii) ranks six pools across five islands. For a Thanksgiving trip we'd pick **[Halekulani](/pools/halekulani-126)** in Waikiki, for the orchid-mosaic pool and the easy flights into Honolulu, or **[Four Seasons Resort Hualalai](/pools/four-seasons-resort-hualalai-127)** on the Big Island, where King's Pond lets you snorkel with eagle rays in a lava-rock aquarium. It's a family Thanksgiving nobody will forget!
+
+**Best for:** families who can take the whole week, and anyone flying from the West Coast.
+
+## 3. Puerto Rico: The Caribbean Without a Passport
+
+For US travelers, Puerto Rico is the Caribbean with no passport required, and San Juan has some of the best flight connections in the region. That makes it the most practical warm escape from the East Coast and the Midwest over a short holiday.
+
+**[Dorado Beach, A Ritz-Carlton Reserve](/pools/dorado-beach-a-ritz-carlton-reserve-28)** sits on a former Rockefeller estate west of San Juan, with private plunge pools and a long history of famous guests. Late November is still early in the Caribbean's dry season, so the island is green, the crowds are light and rates are often better than they'll be in a month.
+
+**Best for:** East Coast travelers, a long weekend with no passport fuss.
+
+## Timing the Flights
+
+The flying is the part that can ruin a Thanksgiving trip, so it's worth planning carefully.
+
+- **Fly on the day itself.** Thanksgiving morning is usually one of the calmest days of the week at the airport, because almost everyone who's traveling has already left. Arrive in time for a late lunch by the pool.
+- **Avoid the Sunday after.** In recent years the Sunday after Thanksgiving has been one of the busiest flying days of the year. If you can come home on Monday or Tuesday, do it.
+- **Book now.** With a month to go, fares for the holiday week tend to rise rather than fall. Lock in the flights first, then the room.
+- **Use the time zones.** Flying west buys you an afternoon. A Thursday morning departure from the East Coast gets you to Cabo or Honolulu with daylight to spare.
+
+## Don't Forget Dinner
+
+Most resorts that are busy over Thanksgiving put on some kind of holiday menu, and many book up early. When you reserve the room, ask the concierge what's planned for Thursday night and book a table at the same time. A turkey dinner eaten in a swimsuit cover-up is a very good tradition to start.
+
+## The Short Version
+
+If you're on the West Coast, go to Los Cabos. If you're in the east, go to Puerto Rico. If you can take the whole week, go to Hawaii. And whichever you pick, fly out Thursday morning and come home on Monday.
+
+For a longer winter trip, our guide to [where to swim this winter](/blog/where-to-swim-this-winter) maps the warm water from November through March.
+
+---
+
+*Find a pool for the long weekend → [Explore the rankings](/#rankings)*
+    `
+  },
+  {
+    slug: "christmas-new-years-at-the-pool",
+    title: "Christmas and New Year's at the Pool: How to Book the Hardest Two Weeks of the Year",
+    excerpt: "The stretch from Christmas to New Year's is the most requested fortnight at almost every great resort. Here's how to get in: minimum stays, gala dinners, the split-stay trick, and where to go for summer in December.",
+    category: "Guide",
+    readTime: "8 min read",
+    image: "/images/pools/pool-amanyara-turks-caicos.jpg",
+    publishedAt: "2026-10-26",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Travel Planning"
+    },
+    content: `
+# Christmas and New Year's at the Pool: How to Book the Hardest Two Weeks of the Year
+
+Ask any reservations manager at a beach resort which dates they dread, and they'll say the same two words: the holidays. From roughly December 20 to January 3, demand at the world's best pool hotels runs far ahead of supply. Rates climb to their peak, rules get stricter, and the good rooms go to the people who planned in the spring.
+
+That doesn't mean you can't still get a great holiday pool trip this year. It means you have to book it differently. This year Christmas falls on a Friday and New Year's Day on the following Friday, which shapes how the weeks fill. Here's what we've learned.
+
+## Understand the Rules Before You Fall in Love
+
+Holiday bookings come with fine print that doesn't exist the rest of the year. Read it before you get attached to a villa.
+
+- **Minimum stays.** Many top resorts require a minimum stay over Christmas and New Year's, often a full week and sometimes longer. A three-night stay over the 31st is rarely possible at the places on our list.
+- **Fixed arrival days.** Some villa resorts only accept arrivals on certain days of the week over the holidays. If your flights don't match, ask before you book either.
+- **Compulsory gala dinners.** Especially at island resorts in the Indian Ocean and Asia, a Christmas Eve or New Year's Eve gala dinner is often added to every booking, priced per person. It's usually a good party. It's also worth knowing about before you see the bill.
+- **Tighter cancellation terms.** Festive bookings commonly carry stricter deposits and non-refundable windows than the rest of the year. Travel insurance earns its keep here.
+
+## The Split-Stay Trick
+
+When a resort is full for the whole fortnight, it's often only full on certain nights. Asking for Christmas or New Year's rather than both can open doors. Two shorter stays at two different hotels can also be easier to book than one long one, and more fun to take.
+
+A few combinations we like:
+
+- **Maui and Lanai.** Spend Christmas at **[Four Seasons Resort Maui at Wailea](/pools/four-seasons-resort-maui-at-wailea-129)**, watching for the first whales from the adults-only Serenity Pool, then cross to the quiet of **[Four Seasons Resort Lanai](/pools/four-seasons-resort-lanai-134)** for New Year's.
+- **Two sides of Turks and Caicos.** Book **[Rock House](/pools/rock-house-18)** on its limestone ledge near Grace Bay, then move out to the wild northwest of Providenciales at **[Amanyara](/pools/amanyara-128)**, where a long dark infinity pool meets an empty horizon.
+- **Desert to sea.** Start in Los Cabos at **[One&Only Palmilla](/pools/one-only-palmilla-130)** and finish somewhere cold and steaming, like **[The Retreat at Blue Lagoon](/pools/the-retreat-at-blue-lagoon-9)** in Iceland, for the most dramatic New Year's swim on our list.
+
+## Where to Find Summer in December
+
+If you want a real summer holiday at Christmas, go south of the equator, where December is the start of high summer.
+
+**[InterContinental Hayman Great Barrier Reef](/pools/intercontinental-hayman-great-barrier-reef-132)** in Queensland's Whitsundays has what it bills as the largest pool in Australia, about seven Olympic pools' worth of water, with suites in the Pool Wing that swim straight out from the balcony. Queensland's summer is also stinger season in the sea, which makes a giant pool even more appealing. **[Qualia](/pools/qualia-70)**, on nearby Hamilton Island, is the grown-up alternative.
+
+Farther south, **[The Silo Hotel](/pools/the-silo-hotel-38)** in Cape Town and **[Posada del Faro](/pools/posada-del-faro-107)** in José Ignacio, Uruguay, are both at their best in late December, with long evenings and the whole town on holiday.
+
+## How to Book It
+
+- **Start with flights.** Holiday seats sell out before rooms do on many routes. Find flights that fit the minimum-stay rules, then book the hotel.
+- **Fly on Christmas Day.** Airports are often at their calmest on December 25 itself. If you don't mind opening presents early, it's one of the easiest travel days of the season.
+- **Call, don't click.** For holiday dates, a phone call or an email to the reservations team often turns up cancellations and unlisted availability that booking engines miss.
+- **Reserve the extras early.** Cabanas, daybeds and kids' club spots are limited and can fill up over the holidays. Book them when you book the room.
+- **Watch the waitlist.** Holiday plans change a lot in November. Ask to be waitlisted for your dream dates even if you book something else as a backup.
+
+## If You Can't Get In
+
+The edges of the season are your friend. The first two weeks of December and the second week of January have the same weather as the holidays at a fraction of the price, with no gala dinner on the bill. Our guide to [where to swim this winter](/blog/where-to-swim-this-winter) maps the best warm water from November through March, and our [Hawaii guide](/destinations/hawaii) covers the islands, which are at their best in exactly this stretch.
+
+And if you're traveling with kids over the break, we've rounded up the [best family pools for winter break](/blog/winter-break-family-pools), from a lava-rock aquarium to a 2,000-foot water canyon.
+
+---
+
+*Find your holiday pool → [Explore the rankings](/#rankings)*
+    `
+  },
+  {
+    slug: "winter-break-family-pools",
+    title: "Winter Break Pools Your Kids Will Never Want to Leave",
+    excerpt: "Eagle rays in a lava-rock aquarium, a 2,000-foot water canyon, a pool the size of seven Olympic pools. Five family pools worth the flight over the school holidays.",
+    category: "Family",
+    readTime: "7 min read",
+    image: "/images/pools/pool-grand-wailea-maui.jpg",
+    publishedAt: "2026-10-26",
+    featured: false,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Family Travel"
+    },
+    content: `
+# Winter Break Pools Your Kids Will Never Want to Leave
+
+Every parent knows the math of a winter-break trip. The flights cost more, the days are short, and the whole thing lives or dies on whether the kids are happy. Get the pool right and everything else gets easier: the mornings plan themselves, the afternoons disappear, and everyone sleeps.
+
+These are the five family pools we'd fly for over the school holidays. Each one is ranked in the [Pool Atlas rankings](/#rankings), and each one is somewhere warm in December and January.
+
+## 1. King's Pond, Hawaii Island
+
+**[Four Seasons Resort Hualalai](/pools/four-seasons-resort-hualalai-127)**
+
+Most hotel pools have a lifeguard. This one has a marine biologist. King's Pond is a 1.8-million-gallon saltwater pool carved from lava rock on the Kona coast and stocked with more than a thousand tropical fish, including spotted eagle rays that glide past snorkelers. Naturalists from the resort's Kumu Kai Marine Center run feedings and touch-tank sessions, so a swim turns into a biology class nobody complains about.
+
+**Best for:** curious kids, first-time snorkelers and parents who'd like a nap on the deck above.
+
+## 2. The Wailea Canyon Activity Pool, Maui
+
+**[Grand Wailea](/pools/grand-wailea-a-waldorf-astoria-resort-133)**
+
+If King's Pond is the museum, this is the theme park. Nine pools on six levels, connected by a river, with seven waterslides, six waterfalls, caves, a rope swing, a sand-bottomed baby beach and a water elevator that lifts swimmers back to the top so they can do it all again. Older kids will head straight for the Lava Tube Slide, a three-story drop that takes about fourteen seconds (riders need to be taller than 48 inches).
+
+And whales! Winter break is humpback season on Maui, so keep an eye on the horizon between slides.
+
+**Best for:** big families, mixed ages, kids who measure a vacation in waterslides.
+
+## 3. Hayman Pool, Australia
+
+**[InterContinental Hayman Great Barrier Reef](/pools/intercontinental-hayman-great-barrier-reef-132)**
+
+December is summer in the Whitsundays, and Hayman Island has a pool built for it: around 6.5 million liters of water, roughly seven Olympic pools' worth, billed as the largest pool in Australia. A ring of freshwater surrounds a saltwater center, so there's always a quiet corner and a busy one. It's a long trip from the northern hemisphere, but for a winter break that turns into a summer holiday, nothing on our list beats it.
+
+**Best for:** families with a couple of weeks to spare, and anyone who wants to swap snow for sunscreen.
+
+## 4. Aquaventure, Dubai
+
+**[Atlantis The Palm](/pools/atlantis-the-palm-101)**
+
+Dubai's winter is the city's swimming season: warm days, cool evenings and none of the summer heat that keeps people indoors. Atlantis The Palm puts guests next to Aquaventure, its huge water park, home to the near-vertical Leap of Faith slide that drops through a lagoon full of sharks (behind glass, we promise). For families flying from Europe, it's one of the shortest routes to guaranteed warm water in January.
+
+**Best for:** teenagers, thrill-seekers and families flying from Europe.
+
+## 5. The Orchid Pool, Honolulu
+
+**[Halekulani](/pools/halekulani-126)**
+
+Not every family pool needs a slide. Halekulani's heated oval pool, with its giant orchid laid in about 1.2 million pieces of glass tile on the floor, is a calm, beautiful place to swim with younger children, a few steps from the gentle water of Waikiki. Waikiki's easy flights and short transfers matter a lot more with a toddler in tow.
+
+**Best for:** little kids, multigenerational trips and grandparents who like a proper lunch.
+
+## How to Plan It
+
+- **Book the extras with the room.** Cabanas, daybeds and kids' club places are limited over the holidays. Reserve them when you book.
+- **Check the age rules.** Slides, snorkeling programs and some pools have height or age limits. A quick email before you fly saves tears at the gate.
+- **Mind the minimum stays.** Many resorts set long minimum stays over Christmas and New Year's. Our guide to [booking Christmas and New Year's at the pool](/blog/christmas-new-years-at-the-pool) explains how to work around them.
+- **Go early or late.** The weeks just before Christmas and just after New Year's have the same weather and far fewer families, if your school calendar allows it.
+
+For more ideas year-round, see our guide to the [best pools for families](/blog/best-pools-for-families), or browse the full [Hawaii guide](/destinations/hawaii).
+
+---
+
+*Filter the rankings for pools that are good for kids → [Explore the rankings](/#rankings)*
     `
   }
 ]
