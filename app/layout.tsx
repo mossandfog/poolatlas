@@ -114,6 +114,20 @@ export default function RootLayout({
               gtag('config', 'G-W7BH3WYNK7');
             `}
           </Script>
+          {/* Stay22: turns hotel links into affiliate links (poolatlas.io script) */}
+          <Script id="stay22-lma" strategy="afterInteractive">
+            {`
+              (function (s, t, a, y, twenty, two) {
+                s.Stay22 = s.Stay22 || {};
+                s.Stay22.params = { lmaID: '6adf8a4d2099d2edfdd59a17' };
+                twenty = t.createElement(a);
+                two = t.getElementsByTagName(a)[0];
+                twenty.async = 1;
+                twenty.src = y;
+                two.parentNode.insertBefore(twenty, two);
+              })(window, document, 'script', 'https://lma.stay22.com/letmeallez.js');
+            `}
+          </Script>
           <Analytics />
         </DreamListProvider>
       </body>
