@@ -10,6 +10,30 @@ import { blogPosts, getBlogPost } from "@/lib/blog-data"
 import { ShareButtons } from "@/components/share-buttons"
 import { AdBanner } from "@/components/ad-unit"
 import { NewsletterInline } from "@/components/newsletter-inline"
+import { BookPoolsBox } from "@/components/book-pools-box"
+import { pools as allPools } from "@/lib/pool-data"
+
+// Pools a post links to (/pools/slug), in reading order, for the booking box
+function poolsInPost(content: string) {
+  const seen = new Set<string>()
+  const found: typeof allPools = []
+  for (const m of content.matchAll(/\(\/pools\/([a-z0-9-]+)\)/g)) {
+    if (seen.has(m[1])) continue
+    seen.add(m[1])
+    const pool = allPools.find((p) => p.slug === m[1])
+    if (pool) found.push(pool)
+  }
+  // Roundups that name hotels in their headings ("### Grand Wailea, Maui") instead of linking them
+  for (const m of content.matchAll(/^###\s+(.+)$/gm)) {
+    const heading = m[1].trim().toLowerCase()
+    const pool = allPools.find((p) => p.hotel.length > 5 && heading.startsWith(p.hotel.toLowerCase()))
+    if (pool && !seen.has(pool.slug)) {
+      seen.add(pool.slug)
+      found.push(pool)
+    }
+  }
+  return found.slice(0, 12)
+}
 
 // Parse inline markdown: **bold**, *italic*, [text](url)
 function parseInline(text: string): React.ReactNode[] {
@@ -25,7 +49,7 @@ function parseInline(text: string): React.ReactNode[] {
       parts.push(<Link key={key++} href={m[2]} className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">{m[1]}</Link>)
     } else if (m[3]) {
       // Bold
-      parts.push(<strong key={key++} className="text-foreground font-semibold">{m[3]}</strong>)
+      parts.push(<strong key={key++} className="text-foreground font-semibold">{parseInline(m[3])}</strong>)
     } else if (m[4]) {
       // Italic
       parts.push(<em key={key++}>{m[4]}</em>)
@@ -229,6 +253,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 return <p key={index} className="my-4 text-foreground/90 leading-relaxed">{parseInline(trimmed)}</p>
               })}
             </div>
+
+            {/* Book the pools this post talks about */}
+            <BookPoolsBox pools={poolsInPost(post.content)} adults={post.bookingAdults} />
 
             {/* Newsletter CTA */}
             <NewsletterInline />

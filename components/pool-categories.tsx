@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { Waves, Building2, Zap, TreePalm, Snowflake, Heart, Baby, Sparkles, Star, MapPin, X, ChevronRight } from "lucide-react"
 import { pools } from "@/lib/pool-data"
+import { honeymoonPoolIds } from "@/lib/honeymoon"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
@@ -56,11 +58,12 @@ const categories = [
   {
     id: "romantic",
     name: "Romantic Escapes",
-    description: "Perfect pools for couples",
+    description: "Honeymoon pools picked for two",
+    guide: "/honeymoon",
     icon: Heart,
     color: "bg-rose-500/10 text-rose-600 border-rose-500/20",
     activeColor: "bg-rose-500 text-white",
-    filter: (pool: typeof pools[0]) => pool.highlights?.toLowerCase().includes("romantic") || pool.highlights?.toLowerCase().includes("intimate") || pool.highlights?.toLowerCase().includes("honeymoon") || pool.country === "Maldives" || pool.country === "Greece"
+    filter: (pool: typeof pools[0]) => honeymoonPoolIds.includes(pool.id)
   },
   {
     id: "family",
@@ -202,7 +205,16 @@ export function PoolCategories() {
                   ))}
                 </div>
 
-                {pools.filter(activeCategory.filter).length > 6 && (
+                {"guide" in activeCategory && activeCategory.guide ? (
+                  <div className="mt-6 text-center">
+                    <Link href={activeCategory.guide}>
+                      <Button variant="outline" className="rounded-full gap-2">
+                        See all {pools.filter(activeCategory.filter).length} honeymoon pools
+                        <ChevronRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
+                  </div>
+                ) : pools.filter(activeCategory.filter).length > 6 && (
                   <div className="mt-6 text-center">
                     <Button 
                       variant="outline" 

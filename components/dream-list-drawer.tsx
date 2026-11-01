@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { X, MapPin, Star, Heart, Trash2, Share2, ExternalLink, Link2, Copy, Check } from "lucide-react"
+import { X, MapPin, Star, Heart, Trash2, Share2, CalendarCheck, Link2, Copy, Check } from "lucide-react"
+import { getBookingUrl, BOOKING_REL } from "@/lib/affiliate"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useDreamList } from "@/lib/dream-list-context"
@@ -139,13 +140,14 @@ export function DreamListDrawer({ isOpen, onClose }: DreamListDrawerProps) {
                   
                   <div className="flex flex-col gap-1">
                     <a
-                      href={pool.websiteUrl}
+                      href={getBookingUrl(pool, "dream_list")}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel={BOOKING_REL}
                       className="w-8 h-8 rounded-full bg-primary/10 hover:bg-primary/20 flex items-center justify-center transition-colors"
-                      title="Visit property"
+                      title={`Check dates at ${pool.hotel}`}
+                      aria-label={`Check dates at ${pool.hotel}`}
                     >
-                      <ExternalLink className="w-3.5 h-3.5 text-primary" />
+                      <CalendarCheck className="w-3.5 h-3.5 text-primary" />
                     </a>
                     <button
                       onClick={() => removeFromDreamList(pool.id)}

@@ -1,13 +1,14 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
-import { MapPin, Star, ExternalLink, Heart, ArrowLeft, Copy, Check } from "lucide-react"
+import { MapPin, Star, ExternalLink, Heart, ArrowLeft, Copy, Check, CalendarCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { pools } from "@/lib/pool-data"
 import { ShareableDreamListActions } from "./actions"
+import { getBookingUrl, BOOKING_REL } from "@/lib/affiliate"
 
 // Decode the shareable ID back to pool IDs
 function decodeShareId(id: string): number[] {
@@ -169,15 +170,26 @@ export default async function SharedDreamListPage({ params }: { params: Promise<
                     {pool.description}
                   </p>
 
-                  <a
-                    href={pool.websiteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                  >
-                    Visit Property
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                    <a
+                      href={getBookingUrl(pool, "dream_share")}
+                      target="_blank"
+                      rel={BOOKING_REL}
+                      className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+                    >
+                      <CalendarCheck className="w-4 h-4" />
+                      Check dates
+                    </a>
+                    <a
+                      href={pool.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      Official site
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}

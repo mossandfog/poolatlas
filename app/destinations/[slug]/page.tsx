@@ -12,6 +12,8 @@ import { destinations, getDestination, poolsFor, coverImage } from "@/lib/destin
 import { pools } from "@/lib/pool-data"
 import { blogPosts } from "@/lib/blog-data"
 import { RANKINGS_REVIEWED } from "@/lib/editorial-calendar"
+import { getDestinationSearchUrl, getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
+import { StaysMap } from "@/components/stays-map"
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -125,11 +127,20 @@ export default async function DestinationPage({ params }: Props) {
                     {c.name}
                   </h2>
                   <p className="mt-3 text-muted-foreground leading-relaxed max-w-md">{c.intro}</p>
+                  <a
+                    href={getDestinationSearchUrl(`${c.name}, ${d.name}`, "dest_chapter")}
+                    target="_blank"
+                    rel={BOOKING_REL}
+                    className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary/30 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/10 transition-colors"
+                  >
+                    Find stays on {c.name}
+                    <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                  </a>
                 </div>
                 <div className="pa-surface grid grid-cols-2 gap-4 sm:gap-6">
                   {chapterPools.map((p) => (
                     <div key={p.id}>
-                      <PoolCard pool={p} sizes="(min-width: 1024px) 28vw, 45vw" />
+                      <PoolCard pool={p} sizes="(min-width: 1024px) 28vw, 45vw" booking="dest_chapter" />
                       <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-4">{p.description}</p>
                     </div>
                   ))}
@@ -142,11 +153,20 @@ export default async function DestinationPage({ params }: Props) {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
           <div className="pa-surface grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {ranked.map((p) => (
-              <PoolCard key={p.id} pool={p} sizes="(min-width: 1024px) 22vw, (min-width: 768px) 30vw, 45vw" />
+              <PoolCard key={p.id} pool={p} sizes="(min-width: 1024px) 22vw, (min-width: 768px) 30vw, 45vw" booking="dest_chapter" />
             ))}
           </div>
         </section>
       )}
+
+      {/* Where to stay */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <StaysMap
+          src={getStaysMapSrc({ address: d.name }, { placement: "dest_map", tag: `dest_${d.slug}`, venue: d.name })}
+          title={`Where to stay in ${d.name}`}
+          intro={`Every pool above belongs to a hotel you can book. For more choice and every budget, the map shows what's open across ${d.name} for your dates.`}
+        />
+      </div>
 
       {/* Related reading */}
       {related.length > 0 && (

@@ -4,10 +4,12 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import {
   MapPin, Star, Award, Users, Baby, ExternalLink,
-  ArrowLeft, CheckCircle2, Waves, ChevronRight
+  ArrowLeft, CheckCircle2, Waves, ChevronRight, CalendarCheck
 } from "lucide-react"
 import { pools } from "@/lib/pool-data"
-import { getBookingUrl } from "@/lib/affiliate"
+import { getBookingUrl, getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
+import { poolCoordinates } from "@/lib/pool-coordinates"
+import { StaysMap } from "@/components/stays-map"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
@@ -48,7 +50,9 @@ export default async function PoolPage({ params }: Props) {
     .filter((p) => p.region === pool.region && p.id !== pool.id)
     .slice(0, 3)
 
-  const affiliateBookingUrl = getBookingUrl(pool)
+  const bookingUrl = getBookingUrl(pool, "pool_cta")
+  const mobileBookingUrl = getBookingUrl(pool, "pool_mobile_bar")
+  const coords = poolCoordinates[pool.id]
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -188,6 +192,23 @@ export default async function PoolPage({ params }: Props) {
                 )}
               </div>
 
+              {/* Book (phones and tablets; the sidebar handles desktop) */}
+              <a
+                href={mobileBookingUrl}
+                target="_blank"
+                rel={BOOKING_REL}
+                className="lg:hidden flex items-center gap-3 rounded-2xl bg-primary p-4 text-primary-foreground shadow-sm active:opacity-90"
+              >
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold">Swim here yourself</span>
+                  <span className="block text-xs opacity-85 truncate">Rooms at {pool.hotel}</span>
+                </span>
+                <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold text-foreground">
+                  <CalendarCheck className="w-4 h-4 text-primary" aria-hidden="true" />
+                  Check dates
+                </span>
+              </a>
+
               {/* About */}
               <div>
                 <h2 className="font-[family-name:var(--font-display)] text-xl font-bold text-foreground mb-4">
@@ -236,6 +257,16 @@ export default async function PoolPage({ params }: Props) {
                     ))}
                   </div>
                 </div>
+              )}
+
+              {/* Places to stay nearby */}
+              {coords && (
+                <StaysMap
+                  id="stay-nearby"
+                  src={getStaysMapSrc(coords, { placement: "pool_nearby_map", tag: `pool_${pool.slug}`, venue: pool.hotel })}
+                  title={`Where to stay near ${pool.hotel}`}
+                  intro={`Book ${pool.hotel} itself, or compare other stays around ${pool.location} on the map. Handy when the dream pool is booked up, or a base nearby suits the trip better.`}
+                />
               )}
 
               {/* Sources + Share */}
@@ -308,29 +339,24 @@ export default async function PoolPage({ params }: Props) {
                   </div>
                 </div>
 
-                {/* CTA */}
+                {/* CTA: booking first (it can earn), the hotel's own site second */}
                 <div className="space-y-3">
-                  <a href={pool.websiteUrl} target="_blank" rel="noopener noreferrer">
+                  <a href={bookingUrl} target="_blank" rel={BOOKING_REL} className="block">
                     <Button className="w-full rounded-full gap-2" size="lg">
-                      <ExternalLink className="w-4 h-4" />
-                      Visit Official Website
+                      <CalendarCheck className="w-4 h-4" />
+                      Check dates &amp; rates
                     </Button>
                   </a>
-                  {/* Affiliate booking link — earns commission when travelers book */}
-                  {affiliateBookingUrl ? (
-                    <a href={affiliateBookingUrl} target="_blank" rel="noopener noreferrer sponsored">
-                      <Button variant="outline" className="w-full rounded-full gap-2" size="lg">
-                        Check Rates on Booking.com
-                      </Button>
-                    </a>
-                  ) : pool.bookingUrl ? (
-                    <a href={pool.bookingUrl} target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="w-full rounded-full gap-2" size="lg">
-                        Check Availability
-                      </Button>
-                    </a>
-                  ) : null}
+                  <a href={pool.websiteUrl} target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full rounded-full gap-2" size="lg">
+                      <ExternalLink className="w-4 h-4" />
+                      Visit official website
+                    </Button>
+                  </a>
                   <PoolDreamListButton poolId={pool.id} />
+                  <p className="text-[11px] leading-snug text-muted-foreground text-center px-2">
+                    We may earn a commission when you book, at no cost to you.{coords ? <> <a href="#stay-nearby" className="underline underline-offset-2 hover:text-foreground">See stays nearby</a></> : null}
+                  </p>
                 </div>
 
                 {/* Newsletter */}

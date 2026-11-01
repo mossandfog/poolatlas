@@ -1,17 +1,22 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Star } from "lucide-react"
+import { Star, CalendarCheck } from "lucide-react"
 import type { Pool } from "@/lib/pool-data"
 import { DiamondButton } from "@/components/diamond-button"
+import { getBookingUrl, BOOKING_REL, type Placement } from "@/lib/affiliate"
 
 interface PoolCardProps {
   pool: Pool
   /** Optional sizes hint for the image, e.g. when a row shows five across */
   sizes?: string
+  /** When set, adds a small "Check dates" booking link under the card, tagged with this placement */
+  booking?: Placement
+  /** Travelers to pre-fill on the booking site, e.g. 2 for couples */
+  adults?: number
 }
 
 // A photograph first, then the facts. The whole card opens the pool's page.
-export function PoolCard({ pool, sizes = "(min-width: 1024px) 20vw, (min-width: 640px) 45vw, 80vw" }: PoolCardProps) {
+export function PoolCard({ pool, sizes = "(min-width: 1024px) 20vw, (min-width: 640px) 45vw, 80vw", booking, adults }: PoolCardProps) {
   return (
     <article className="group relative">
       <Link
@@ -46,6 +51,18 @@ export function PoolCard({ pool, sizes = "(min-width: 1024px) 20vw, (min-width: 
           </p>
         </div>
       </Link>
+
+      {booking ? (
+        <a
+          href={getBookingUrl(pool, booking, { adults })}
+          target="_blank"
+          rel={BOOKING_REL}
+          className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 underline-offset-4 hover:underline"
+        >
+          <CalendarCheck className="w-3.5 h-3.5" aria-hidden="true" />
+          Check dates
+        </a>
+      ) : null}
 
       <div className="absolute top-2 right-2">
         <DiamondButton poolId={pool.id} size="sm" />

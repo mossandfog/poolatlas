@@ -63,6 +63,7 @@ export function Footer() {
               <li><a href="/blog" className="hover:text-primary transition-colors py-1 inline-block">The Deep End</a></li>
               <li><a href="/explore#map" className="hover:text-primary transition-colors py-1 inline-block">World map</a></li>
               <li><a href="/explore#seasonal" className="hover:text-primary transition-colors py-1 inline-block">By season</a></li>
+              <li><a href="/honeymoon" className="hover:text-primary transition-colors py-1 inline-block">Honeymoon pools</a></li>
               <li><a href="/explore#compare" className="hover:text-primary transition-colors py-1 inline-block">Compare pools</a></li>
             </ul>
           </div>

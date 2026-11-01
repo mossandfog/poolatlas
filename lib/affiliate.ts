@@ -1,101 +1,90 @@
 /**
- * Affiliate link utilities for Pool Atlas
+ * Booking links for Pool Atlas, all through Stay22 (affiliate id "mossandfog").
  *
- * SETUP:
- * 1. Sign up at https://www.booking.com/affiliate-program/index.html
- * 2. Get your AID (affiliate ID number, e.g. 1234567)
- * 3. Add NEXT_PUBLIC_BOOKING_AID=1234567 to Vercel Environment Variables
- *    (Settings → Environment Variables → add for Production + Preview)
+ * Why Stay22 and not the hotel's own site: a click to a hotel website can never
+ * earn, while a Stay22 link sends the reader to the best-converting booking site
+ * for where they are (Booking.com, Expedia, Hotels.com, Vrbo...) and credits us.
  *
- * Commission: ~3–4% of booking value, 30-day cookie, paid by Booking.com
+ * Every link carries campaign labels so the Stay22 hub shows which placement
+ * and which pool earned: "poolatlas", the placement (pa_pool_cta, pa_blog_box...)
+ * and the pool (pool_<slug>). Stay22 splits campaigns on "-", so use "_".
+ *
+ * Replaces the old Booking.com deep-link table, whose ids had drifted out of
+ * step with lib/pool-data.ts (Oct 2026).
  */
+import { poolCoordinates } from "@/lib/pool-coordinates"
 
-// Read AID from environment — set this in Vercel dashboard once you have it
-const AID = process.env.NEXT_PUBLIC_BOOKING_AID || ""
+export const STAY22_AID = "mossandfog"
 
-/**
- * Known Booking.com property slugs for direct deep-links.
- * Format: "country-code/property-slug"
- * Add more as you confirm each hotel's Booking.com URL.
- */
-const BOOKING_SLUGS: Record<number, string> = {
-  1:  "gr/grace-santorini-imerovigli",
-  2:  "sg/marina-bay-sands",
-  3:  "id/amankila-manggis",
-  4:  "fr/hotel-du-cap-eden-roc-antibes",
-  5:  "mv/st-regis-maldives-vommuli-resort",
-  6:  "tz/four-seasons-ngorongoro-serengeti",
-  7:  "cl/san-alfonso-del-mar-algarrobo",
-  8:  "it/belmond-hotel-caruso-ravello",
-  9:  "vn/intercontinental-danang",
-  10: "jp/aman-tokyo",
-  11: "au/hayman-island-by-intercontinental",
-  12: "id/como-uma-ubud",
-  13: "mw/pumulani-lodge",
-  14: "mq/cap-jaluca",
-  15: "mx/rosewood-mayakoba-playa-del-carmen",
-  16: "es/w-barcelona",
-  17: "th/amanpuri-resort",
-  18: "us/four-seasons-biltmore-santa-barbara",
-  19: "id/bulgari-resort-bali",
-  20: "mx/las-ventanas-al-paraiso-san-jose-del-cabo",
-  22: "ke/four-seasons-safari-lodge-serengeti",
-  23: "cn/st-regis-lhasa",
-  24: "cr/nayara-tented-camp",
-  25: "au/longitude-131-ayers-rock",
-  27: "gr/andronis-boutique-hotel-oia",
-  28: "pr/dorado-beach-ritz-carlton-reserve",
-  29: "us/amangiri-canyon-point",
-  30: "th/137-pillars-suites-residences-bangkok",
-  32: "mx/waldorf-astoria-riviera-maya",
-  33: "dm/secret-bay",
-  34: "ai/belmond-cap-juluca",
-  35: "na/andbeyond-sossusvlei-desert-lodge",
-  37: "it/hotel-de-russie-rome",
-  38: "za/the-silo-hotel-cape-town",
-  39: "gb/shangri-la-the-shard-london",
-  40: "cn/w-hong-kong",
-}
+/** Where on the site a link lives. Shows up as a campaign in the Stay22 hub. */
+export type Placement =
+  | "pool_cta"
+  | "pool_mobile_bar"
+  | "pool_nearby_map"
+  | "blog_box"
+  | "dest_chapter"
+  | "dest_map"
+  | "dream_list"
+  | "dream_share"
+  | "honeymoon_card"
+  | "honeymoon_area"
+  | "honeymoon_map"
 
-/**
- * Returns a Booking.com affiliate URL for a pool.
- * Uses a direct property deep-link if known, otherwise a name+location search.
- * Returns null if no AID is configured (fallback to direct hotel URL in the UI).
- */
-export function getBookingUrl(pool: {
-  id: number
-  hotel: string
-  location: string
-  country: string
-}): string | null {
-  if (!AID) return null
+const label = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")
 
-  const slug = BOOKING_SLUGS[pool.id]
+type PoolLike = { id: number; slug: string; hotel: string; location: string; country: string }
 
-  if (slug) {
-    return `https://www.booking.com/hotel/${slug}.html?aid=${AID}&label=poolatlas&lang=en-us&selected_currency=USD`
+/** A link that opens booking for this exact hotel. */
+export function getBookingUrl(pool: PoolLike, placement: Placement = "pool_cta", opts: { adults?: number } = {}): string {
+  const p = new URLSearchParams()
+  p.set("aid", STAY22_AID)
+  p.set("hotelname", pool.hotel)
+  p.set("address", `${pool.hotel}, ${pool.location}, ${pool.country}`)
+  const c = poolCoordinates[pool.id]
+  if (c) {
+    p.set("lat", String(c.lat))
+    p.set("lng", String(c.lng))
   }
-
-  // Search-based fallback — works well, Booking.com finds the exact hotel
-  const query = `${pool.hotel}, ${pool.location}, ${pool.country}`
-  const params = new URLSearchParams({
-    ss: query,
-    aid: AID,
-    label: "poolatlas",
-    lang: "en-us",
-    selected_currency: "USD",
-  })
-  return `https://www.booking.com/searchresults.html?${params.toString()}`
+  if (opts.adults) p.set("adults", String(opts.adults))
+  p.append("campaign", "poolatlas")
+  p.append("campaign", `pa_${placement}`)
+  p.append("campaign", `pool_${label(pool.slug)}`)
+  return `https://www.stay22.com/allez/roam?${p.toString()}`
 }
 
-/**
- * Destination search affiliate link — use on region/country pages.
- */
-export function getDestinationSearchUrl(destination: string): string {
-  const params: Record<string, string> = { ss: destination, lang: "en-us" }
-  if (AID) {
-    params.aid = AID
-    params.label = "poolatlas"
+/** A link that opens a stays search for a whole place, e.g. "Maui, Hawaii". */
+export function getDestinationSearchUrl(place: string, placement: Placement = "dest_chapter", opts: { adults?: number } = {}): string {
+  const p = new URLSearchParams()
+  p.set("aid", STAY22_AID)
+  p.set("address", place)
+  if (opts.adults) p.set("adults", String(opts.adults))
+  p.append("campaign", "poolatlas")
+  p.append("campaign", `pa_${placement}`)
+  p.append("campaign", `place_${label(place)}`)
+  return `https://www.stay22.com/allez/roam?${p.toString()}`
+}
+
+/** iframe src for a Stay22 map of places to stay around a point or a place. */
+export function getStaysMapSrc(
+  where: { lat: number; lng: number } | { address: string },
+  opts: { placement: Placement; tag: string; venue?: string; adults?: number },
+): string {
+  const p = new URLSearchParams()
+  p.set("aid", STAY22_AID)
+  if ("lat" in where) {
+    p.set("lat", String(where.lat))
+    p.set("lng", String(where.lng))
+  } else {
+    p.set("address", where.address)
   }
-  return `https://www.booking.com/searchresults.html?${new URLSearchParams(params).toString()}`
+  if (opts.venue) p.set("venue", opts.venue)
+  p.set("unitsystem", "imperial")
+  if (opts.adults) p.set("adults", String(opts.adults))
+  p.append("campaign", "poolatlas")
+  p.append("campaign", `pa_${opts.placement}`)
+  p.append("campaign", label(opts.tag))
+  return `https://www.stay22.com/embed/gm?${p.toString()}`
 }
+
+/** rel for outbound booking links (matches the house rule: nofollow, no "sponsored"). */
+export const BOOKING_REL = "nofollow noopener"

@@ -8,6 +8,8 @@ export interface BlogPost {
   image: string
   publishedAt: string
   featured: boolean
+  /** Travelers to pre-fill on this post's booking links, e.g. 2 for couples */
+  bookingAdults?: number
   author: {
     name: string
     role: string
@@ -2774,6 +2776,83 @@ For more ideas year-round, see our guide to the [best pools for families](/blog/
 ---
 
 *Filter the rankings for pools that are good for kids → [Explore the rankings](/#rankings)*
+    `
+  },
+  {
+    slug: "best-hotel-pools-for-honeymoons",
+    title: "The Best Hotel Pools for a Honeymoon, From Santorini to the Serengeti",
+    excerpt: "On a honeymoon the pool is where most of the waking hours go. These are the hotel pools we would book for two: caldera sunsets, Amalfi cliffs, Maldives lagoons, private plunge pools and a waterhole full of elephants.",
+    category: "Guide",
+    readTime: "7 min read",
+    image: "/images/pools/pool-le-sirenuse-positano.jpg",
+    publishedAt: "2026-11-01",
+    featured: false,
+    bookingAdults: 2,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Travel Planning"
+    },
+    content: `
+A honeymoon is the one trip that doesn't need a schedule. Long breakfasts, a book you never finish, a swim at the hour when everyone else has gone to change for dinner. That is why the pool matters more than usual. On a lot of these trips, it's where most of the waking hours go.
+
+So we went back through our rankings and pulled the pools we would book for two, sorted by the kind of honeymoon you're planning. The full set, with the best months for each, lives on our new [Honeymoon Pools](/honeymoon) page.
+
+## What Makes a Pool Right for Two
+
+Size doesn't matter much. Quiet does. The best honeymoon pools have a view that does the talking, somewhere to be after dark, and either an adults-only rule or a pool you don't have to share. Everything below clears at least two of those.
+
+## The Classic: Santorini
+
+**[Grace Santorini](/pools/grace-santorini-1)** is the number one pool in our rankings, and it happens to be adults only. It's the largest infinity pool on the island, set high above the caldera in Imerovigli and looking straight across to the volcanic islands. Around sunset the whole terrace goes quiet. That's the moment you came for.
+
+Down the ridge in Oia, **[Andronis Boutique Hotel](/pools/andronis-boutique-hotel-27)** went a different way and carved its pools into the rock face itself. Swimming here feels less like a hotel and more like the cliff kept a little water for you.
+
+Go in June or September, when the sea is warm and the crowds have started to thin. Our guide to the [best hotel pools in Greece](/blog/best-hotel-pools-greece) has more of the islands.
+
+## The Glamorous One: The Amalfi Coast
+
+**[Belmond Hotel Caruso](/pools/belmond-hotel-caruso-7)** sits in an 11th-century palace in Ravello, high above the coast, and its infinity pool seems to hang between the terraced gardens and the sea. It's the pool people picture when they picture an Italian honeymoon.
+
+Along the coast in Positano, **[Le Sirenuse](/pools/le-sirenuse-105)** has the other famous view: Positano's houses climbing the hill on one side, yachts in the bay below, and a luminous green pool in between. It was refreshed in 2024, and it has never looked better.
+
+Both are seasonal hotels, open roughly from spring to fall, so check your dates before you fall in love. More in our [Italy guide](/blog/best-hotel-pools-italy).
+
+## The Far Away One: The Maldives
+
+**[Huvafen Fushi](/pools/huvafen-fushi-12)** built a long, lagoon-like infinity pool that bleeds into the Indian Ocean, lined it with four-poster day beds and lit it with fiber optics for the evenings. We can't think of a better place to be on the third night of a honeymoon!
+
+The dry season runs from December to April. Our [Maldives guide](/blog/best-hotel-pools-maldives) covers the overwater villas too.
+
+## A Pool of Your Own
+
+Some couples would rather not share the water at all. At **[Daios Cove](/pools/daios-cove-luxury-resort-52)** on Crete, the villas and suites have private pools facing the Aegean, and you can lounge for hours without seeing another soul.
+
+**[Amanoi](/pools/amanoi-121)** is the quietest Aman we know of, on Vietnam's wild south-central coast inside a national park. Its pool floats above Vinh Hy Bay with nothing but ocean ahead, and the pavilions step down the hill around it. The first half of the year is the drier stretch on this coast.
+
+## The Wild One: Safari
+
+For a honeymoon with elephants in it, **[Royal Malewane](/pools/royal-malewane-117)** gives every suite its own pool over the African bush, next to Kruger. Elephants and buffalo wander past while you swim. In the Serengeti, the **[Four Seasons Safari Lodge](/pools/four-seasons-safari-lodge-serengeti-22)** built its infinity pool above a waterhole where elephants stop for a morning drink.
+
+June to October is the dry season in both places, when the animals stay close to water.
+
+## The Easy One: Hawaii, Without the Kids
+
+If a long-haul flight sounds like a bad way to start married life, Hawaii has two adults-only pools worth the trip. The Serenity Pool at the **[Four Seasons Resort Maui](/pools/four-seasons-resort-maui-at-wailea-129)** is for guests 21 and over, raised above the rest of the resort so its edge lines up with nothing but the Pacific. Humpback whales winter in the channel from December to April, and you can watch them from the water.
+
+On Kauai, **[1 Hotel Hanalei Bay](/pools/1-hotel-hanalei-bay-131)** has a 21-and-over infinity pool on a terrace above the bay, with cabanas along one side and the green ridges of the North Shore filling the rest of the frame. For more of the islands, see our [Hawaii guide](/destinations/hawaii).
+
+## Booking It
+
+- **Say it's your honeymoon.** When you book and again at check-in. It costs nothing.
+- **Read the pool rules.** Adults-only can mean all day, or only certain hours. Check before you count on a quiet deck.
+- **Pick villa pool or main pool.** Private means privacy. The famous pool is usually where the view is. If you can't choose, split the stay.
+- **Book a flexible rate.** Wedding plans move, and a refundable rate buys a lot of calm.
+
+Every booking link below is set for two travelers, so the prices you see are the ones you'd pay.
+
+---
+
+*See all the honeymoon pools, sorted by kind of trip, with the best months for each → [Honeymoon Pools](/honeymoon)*
     `
   }
 ]
