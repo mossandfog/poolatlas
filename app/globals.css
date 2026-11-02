@@ -251,3 +251,23 @@ html[data-season="winter"] {
   --accent: oklch(0.78 0.12 75);
   --chart-2: oklch(0.78 0.12 75);
 }
+/* Spring: blossom pink on a fresh, faintly green paper */
+html[data-season="spring"] {
+  --accent: oklch(0.80 0.10 355);
+  --chart-2: oklch(0.80 0.10 355);
+}
+html[data-season="spring"]:not(.dark) {
+  --background: oklch(0.985 0.006 150);
+  --secondary: oklch(0.955 0.018 150);
+  --muted: oklch(0.958 0.01 150);
+}
+/* Summer: watermelon coral on sunlit paper */
+html[data-season="summer"] {
+  --accent: oklch(0.75 0.15 28);
+  --chart-2: oklch(0.75 0.15 28);
+}
+html[data-season="summer"]:not(.dark) {
+  --background: oklch(0.987 0.008 92);
+  --secondary: oklch(0.957 0.026 88);
+  --muted: oklch(0.96 0.014 90);
+}

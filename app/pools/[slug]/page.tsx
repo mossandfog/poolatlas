@@ -4,8 +4,9 @@ import Link from "next/link"
 import type { Metadata } from "next"
 import {
   MapPin, Star, Award, Users, Baby, ExternalLink,
-  ArrowLeft, CheckCircle2, Waves, ChevronRight, CalendarCheck
+  ArrowLeft, CheckCircle2, Waves, ChevronRight, CalendarCheck, CalendarDays, Moon
 } from "lucide-react"
+import { bestTimeLabel, isInSeason, isClosed, closureFor, reopeningStay, monthName } from "@/lib/seasons"
 import { pools } from "@/lib/pool-data"
 import { getBookingUrl, getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
 import { poolCoordinates } from "@/lib/pool-coordinates"
@@ -21,6 +22,9 @@ import { PoolShareButton } from "@/components/pool-share-button"
 interface Props {
   params: Promise<{ slug: string }>
 }
+
+// Re-render daily so "In season now" and seasonal-closure notices follow the calendar
+export const revalidate = 86400
 
 export async function generateStaticParams() {
   return pools.map((pool) => ({ slug: pool.slug }))
@@ -50,8 +54,23 @@ export default async function PoolPage({ params }: Props) {
     .filter((p) => p.region === pool.region && p.id !== pool.id)
     .slice(0, 3)
 
-  const bookingUrl = getBookingUrl(pool, "pool_cta")
-  const mobileBookingUrl = getBookingUrl(pool, "pool_mobile_bar")
+  const bestTime = bestTimeLabel(pool)
+  const inSeason = isInSeason(pool)
+  // Closed for the season: point the booking buttons at the reopening month instead
+  const reopening = reopeningStay(pool)
+  // Closed with no reopening date (a renovation): no booking buttons, just the hotel's own site
+  const shutNoDate = !reopening && isClosed(pool) ? closureFor(pool) : undefined
+  const closure = reopening ? closureFor(pool) : shutNoDate
+  const dates = reopening ? { checkin: reopening.checkin, checkout: reopening.checkout } : {}
+  const bookingUrl = getBookingUrl(pool, "pool_cta", dates)
+  const mobileBookingUrl = getBookingUrl(pool, "pool_mobile_bar", dates)
+  const reopenName = reopening ? monthName(reopening.month) : null
+  // Hedge projected dates, and name the year for anything past the coming season
+  const reopenPhrase = reopening
+    ? `${reopening.tentative ? "is expected to reopen" : "reopens"} in ${reopenName} ${reopening.year}`
+    : shutNoDate
+      ? "hasn't announced a reopening date yet"
+      : null
   const coords = poolCoordinates[pool.id]
 
   const jsonLd = {
@@ -158,7 +177,7 @@ export default async function PoolPage({ params }: Props) {
           <div className="grid lg:grid-cols-3 gap-10">
 
             {/* Left: editorial content */}
-            <div className="lg:col-span-2 space-y-10">
+            <div className="lg:col-span-2 space-y-10 min-w-0">
 
               {/* Location + quick stats */}
               <div className="flex flex-wrap items-center gap-4 pb-6 border-b border-border">
@@ -190,24 +209,41 @@ export default async function PoolPage({ params }: Props) {
                     Adults preferred
                   </div>
                 )}
+                {bestTime ? (
+                  <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                    <CalendarDays className="w-4 h-4" />
+                    <span>Best: {bestTime}</span>
+                    {inSeason ? (
+                      <span className="ml-1 rounded-full bg-chart-3/15 px-2 py-0.5 text-xs font-semibold text-chart-3">In season now</span>
+                    ) : null}
+                  </div>
+                ) : null}
               </div>
 
+              {/* Closed for the season (phones and tablets; the sidebar shows it on desktop) */}
+              {closure && reopenPhrase ? (
+                <p className="lg:hidden flex items-start gap-2 rounded-2xl border border-border bg-secondary/60 p-4 text-sm leading-relaxed text-foreground">
+                  <Moon className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+                  <span><span className="font-semibold">{closure.label}.</span> {pool.hotel} {reopenPhrase}{shutNoDate ? "." : ", and you can already look at rooms for then."}</span>
+                </p>
+              ) : null}
+
               {/* Book (phones and tablets; the sidebar handles desktop) */}
-              <a
+              {shutNoDate ? null : <a
                 href={mobileBookingUrl}
                 target="_blank"
                 rel={BOOKING_REL}
                 className="lg:hidden flex items-center gap-3 rounded-2xl bg-primary p-4 text-primary-foreground shadow-sm active:opacity-90"
               >
                 <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-semibold">Swim here yourself</span>
+                  <span className="block text-sm font-semibold">{reopenName ? "Plan ahead" : "Swim here yourself"}</span>
                   <span className="block text-xs opacity-85 truncate">Rooms at {pool.hotel}</span>
                 </span>
                 <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold text-foreground">
                   <CalendarCheck className="w-4 h-4 text-primary" aria-hidden="true" />
-                  Check dates
+                  {reopenName ? `Book for ${reopenName}` : "Check dates"}
                 </span>
-              </a>
+              </a>}
 
               {/* About */}
               <div>
@@ -336,19 +372,33 @@ export default async function PoolPage({ params }: Props) {
                       <span className="text-muted-foreground">Family friendly</span>
                       <span className="font-medium text-foreground">{pool.kidFriendly ? "Yes" : "Adults preferred"}</span>
                     </div>
+                    {bestTime ? (
+                      <div className="flex items-start justify-between gap-4">
+                        <span className="text-muted-foreground shrink-0">Best time</span>
+                        <span className="font-medium text-foreground text-right">{bestTime}</span>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
 
                 {/* CTA: booking first (it can earn), the hotel's own site second */}
                 <div className="space-y-3">
-                  <a href={bookingUrl} target="_blank" rel={BOOKING_REL} className="block">
-                    <Button className="w-full rounded-full gap-2" size="lg">
-                      <CalendarCheck className="w-4 h-4" />
-                      Check dates &amp; rates
-                    </Button>
-                  </a>
+                  {closure && reopenPhrase ? (
+                    <p className="flex items-start gap-2 rounded-xl border border-border bg-secondary/60 p-3 text-xs leading-relaxed text-foreground">
+                      <Moon className="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden="true" />
+                      <span><span className="font-semibold">{closure.label}.</span> {pool.hotel} {reopenPhrase}.</span>
+                    </p>
+                  ) : null}
+                  {shutNoDate ? null : (
+                    <a href={bookingUrl} target="_blank" rel={BOOKING_REL} className="block">
+                      <Button className="w-full rounded-full gap-2" size="lg">
+                        <CalendarCheck className="w-4 h-4" />
+                        {reopenName ? `Book for ${reopenName}` : <>Check dates &amp; rates</>}
+                      </Button>
+                    </a>
+                  )}
                   <a href={pool.websiteUrl} target="_blank" rel="noopener noreferrer" className="block">
-                    <Button variant="outline" className="w-full rounded-full gap-2" size="lg">
+                    <Button variant={shutNoDate ? "default" : "outline"} className="w-full rounded-full gap-2" size="lg">
                       <ExternalLink className="w-4 h-4" />
                       Visit official website
                     </Button>

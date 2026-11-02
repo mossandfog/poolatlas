@@ -152,12 +152,79 @@ export const siteStats = (() => {
 })()
 
 /**
+ * "Booking now": what readers should be booking this month, pointing at guides we already have.
+ * Keyed by month (0 = January). Each link must exist; keep two or three per month.
+ */
+export const bookingNow: Record<number, { label: string; href: string }[]> = {
+  0: [
+    { label: "Honeymoons", href: "/honeymoon" },
+    { label: "The Caribbean's dry season", href: "/blog/best-hotel-pools-caribbean" },
+    { label: "Spring in Bali", href: "/blog/best-hotel-pools-bali" },
+  ],
+  1: [
+    { label: "Honeymoons", href: "/honeymoon" },
+    { label: "Summer in Greece", href: "/blog/best-hotel-pools-greece" },
+    { label: "The Amalfi Coast", href: "/blog/best-hotel-pools-italy" },
+  ],
+  2: [
+    { label: "Summer in Greece", href: "/blog/best-hotel-pools-greece" },
+    { label: "Italy before it books up", href: "/blog/best-hotel-pools-italy" },
+    { label: "Mallorca and Ibiza", href: "/blog/best-hotel-pools-spain" },
+  ],
+  3: [
+    { label: "Summer in Greece", href: "/blog/best-hotel-pools-greece" },
+    { label: "Safari season", href: "/blog/best-hotel-pools-africa" },
+    { label: "Summer with kids", href: "/blog/best-pools-for-families" },
+  ],
+  4: [
+    { label: "Safari season", href: "/blog/best-hotel-pools-africa" },
+    { label: "Bali's dry season", href: "/blog/best-hotel-pools-bali" },
+    { label: "Summer with kids", href: "/blog/best-pools-for-families" },
+  ],
+  5: [
+    { label: "Safari season", href: "/blog/best-hotel-pools-africa" },
+    { label: "Late summer in Italy", href: "/blog/best-hotel-pools-italy" },
+    { label: "Honeymoons", href: "/honeymoon" },
+  ],
+  6: [
+    { label: "Fall in the Mediterranean", href: "/blog/best-hotel-pools-greece" },
+    { label: "Hawaii for the holidays", href: "/destinations/hawaii" },
+    { label: "Honeymoons", href: "/honeymoon" },
+  ],
+  7: [
+    { label: "Hawaii for the holidays", href: "/destinations/hawaii" },
+    { label: "Winter sun", href: "/blog/where-to-swim-this-winter" },
+    { label: "Christmas and New Year's", href: "/blog/christmas-new-years-at-the-pool" },
+  ],
+  8: [
+    { label: "Christmas and New Year's", href: "/blog/christmas-new-years-at-the-pool" },
+    { label: "Winter break with kids", href: "/blog/winter-break-family-pools" },
+    { label: "Winter sun", href: "/blog/where-to-swim-this-winter" },
+  ],
+  9: [
+    { label: "Christmas and New Year's", href: "/blog/christmas-new-years-at-the-pool" },
+    { label: "Winter break with kids", href: "/blog/winter-break-family-pools" },
+    { label: "Hawaii", href: "/destinations/hawaii" },
+  ],
+  10: [
+    { label: "Christmas and New Year's", href: "/blog/christmas-new-years-at-the-pool" },
+    { label: "Winter break with kids", href: "/blog/winter-break-family-pools" },
+    { label: "Honeymoons", href: "/honeymoon" },
+  ],
+  11: [
+    { label: "Honeymoons", href: "/honeymoon" },
+    { label: "Winter sun", href: "/blog/where-to-swim-this-winter" },
+    { label: "The Maldives' dry season", href: "/blog/best-hotel-pools-maldives" },
+  ],
+}
+
+/**
  * The line above the homepage headline. Point it at whatever is newest this season.
  * Set to null to hide it.
  */
 export const SEASON_NOTE: { label: string; href: string } | null = {
-  label: "New: the Hawaii guide, island by island",
-  href: "/destinations/hawaii",
+  label: "New: honeymoon pools, picked for two",
+  href: "/honeymoon",
 }
 
 /** When the rankings were last reviewed. Update this on each editorial pass. */

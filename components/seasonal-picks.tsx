@@ -1,86 +1,91 @@
 "use client"
 
-import { useState } from "react"
-import { Sun, Snowflake, Leaf, Flower } from "lucide-react"
+import { useMemo, useState } from "react"
 import { pools } from "@/lib/pool-data"
 import { PoolCard } from "@/components/pool-card"
-import type { Season } from "@/lib/editorial-calendar"
+import { swimmableNow, monthName } from "@/lib/seasons"
 
-const seasons = [
-  {
-    name: "Spring",
-    icon: Flower,
-    poolIds: [1, 4, 8],
-    description: "Perfect weather, fewer crowds"
-  },
-  {
-    name: "Summer",
-    icon: Sun,
-    poolIds: [1, 43, 22],
-    description: "Mediterranean peak, Ibiza sun, Africa dry season"
-  },
-  {
-    name: "Fall",
-    icon: Leaf,
-    poolIds: [5, 125, 117],
-    description: "Desert season opens and safari reaches its late dry season, when wildlife gathers at the water"
-  },
-  {
-    name: "Winter",
-    icon: Snowflake,
-    poolIds: [9, 10, 71],
-    description: "Geothermal water, heated indoor pools, and a roof that opens when the sun does"
-  }
-]
+const SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+const FIRST = 8
 
-export function SeasonalPicks({ initialSeason, year }: { initialSeason: Season; year: number }) {
-  const [activeSeason, setActiveSeason] = useState(
-    seasons.find(s => s.name === initialSeason) ?? seasons[0]
-  )
+// Where to swim, month by month. Built from lib/seasons.ts, so every pool is covered
+// and the list follows each pool's best months and any seasonal closures.
+export function SeasonalPicks({ initialMonth, year }: { initialMonth: number; year: number }) {
+  const [month, setMonth] = useState(initialMonth)
+  const [showAll, setShowAll] = useState(false)
 
-  const seasonPools = activeSeason.poolIds
-    .map(id => pools.find(p => p.id === id)!)
-    .filter(Boolean)
+  const inSeason = useMemo(() => swimmableNow(pools, month), [month])
+  const shown = showAll ? inSeason : inSeason.slice(0, FIRST)
+  const yearFor = month < initialMonth ? year + 1 : year
 
   return (
     <section id="seasonal" className="scroll-mt-20 py-16 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
-          <div>
-            <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold tracking-[-0.025em] text-foreground">
-              Pools for every season
-            </h2>
-            <p className="mt-2 text-muted-foreground">Showing {activeSeason.name.toLowerCase()} {year}. {activeSeason.description}.</p>
-          </div>
+        <div className="mb-8">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-semibold tracking-[-0.025em] text-foreground">
+            Where to swim, month by month
+          </h2>
+          <p className="mt-2 text-muted-foreground" aria-live="polite">
+            {inSeason.length} pools are at their best in {monthName(month)} {yearFor}, ranked. Outdoor pools only, and never a hotel
+            that&apos;s closed for the season.
+          </p>
         </div>
 
-        {/* Season tabs */}
-        <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
-          {seasons.map((season) => (
+        {/* Month chips */}
+        <div
+          role="group"
+          aria-label="Choose a month"
+          className="flex gap-2 mb-8 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {SHORT.map((label, i) => {
+            const m = i + 1
+            const active = m === month
+            return (
+              <button
+                key={label}
+                onClick={() => {
+                  setMonth(m)
+                  setShowAll(false)
+                }}
+                aria-pressed={active}
+                aria-label={m === initialMonth ? `${monthName(m)}, this month` : monthName(m)}
+                className={`relative shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  active ? "bg-foreground text-background" : "bg-secondary text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {label}
+                {m === initialMonth ? (
+                  <span
+                    aria-hidden="true"
+                    className={`absolute top-1 right-1.5 h-1.5 w-1.5 rounded-full ${active ? "bg-background" : "bg-primary"}`}
+                  />
+                ) : null}
+              </button>
+            )
+          })}
+        </div>
+
+        <div className="pa-surface grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          {shown.map((pool) => (
+            <PoolCard
+              key={pool.id}
+              pool={pool}
+              sizes="(min-width: 1024px) 22vw, (min-width: 768px) 30vw, 45vw"
+              booking="season_month"
+            />
+          ))}
+        </div>
+
+        {inSeason.length > FIRST && !showAll ? (
+          <div className="mt-8 text-center">
             <button
-              key={season.name}
-              onClick={() => setActiveSeason(season)}
-              aria-pressed={season.name === activeSeason.name}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
-                season.name === activeSeason.name
-                  ? 'bg-foreground text-background'
-                  : 'bg-secondary text-muted-foreground hover:text-foreground'
-              }`}
+              onClick={() => setShowAll(true)}
+              className="rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:border-foreground/40 hover:bg-secondary transition-colors"
             >
-              <season.icon className="w-4 h-4" />
-              {season.name}
+              Show all {inSeason.length} for {monthName(month)}
             </button>
-          ))}
-        </div>
-
-        {/* Pool recommendations for selected season */}
-        <div className="pa-surface grid sm:grid-cols-3 gap-6">
-          {seasonPools.map((pool) => (
-            <PoolCard key={pool.id} pool={pool} sizes="(min-width: 640px) 30vw, 100vw" />
-          ))}
-        </div>
-        
-
+          </div>
+        ) : null}
       </div>
     </section>
   )

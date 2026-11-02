@@ -29,13 +29,19 @@ export type Placement =
   | "honeymoon_card"
   | "honeymoon_area"
   | "honeymoon_map"
+  | "season_month"
+  | "booking_now"
 
 const label = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")
 
 type PoolLike = { id: number; slug: string; hotel: string; location: string; country: string }
 
 /** A link that opens booking for this exact hotel. */
-export function getBookingUrl(pool: PoolLike, placement: Placement = "pool_cta", opts: { adults?: number } = {}): string {
+export function getBookingUrl(
+  pool: PoolLike,
+  placement: Placement = "pool_cta",
+  opts: { adults?: number; checkin?: string; checkout?: string } = {},
+): string {
   const p = new URLSearchParams()
   p.set("aid", STAY22_AID)
   p.set("hotelname", pool.hotel)
@@ -46,6 +52,8 @@ export function getBookingUrl(pool: PoolLike, placement: Placement = "pool_cta",
     p.set("lng", String(c.lng))
   }
   if (opts.adults) p.set("adults", String(opts.adults))
+  if (opts.checkin) p.set("checkin", opts.checkin)
+  if (opts.checkout) p.set("checkout", opts.checkout)
   p.append("campaign", "poolatlas")
   p.append("campaign", `pa_${placement}`)
   p.append("campaign", `pool_${label(pool.slug)}`)

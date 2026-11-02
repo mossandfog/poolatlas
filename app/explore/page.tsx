@@ -65,7 +65,7 @@ export default function ExplorePage() {
 
         <WorldMap />
         <NearbyPools />
-        <SeasonalPicks initialSeason={edition.season} year={edition.year} />
+        <SeasonalPicks initialMonth={edition.month + 1} year={edition.year} />
         <PoolCategories />
         <PopularDestinations />
         <PoolSuperlatives />
