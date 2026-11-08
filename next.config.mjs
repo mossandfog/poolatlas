@@ -29,6 +29,8 @@ const nextConfig = {
       { source: '/for-hotels/como-laucala-island-20', destination: '/for-hotels/laucala-island-20', permanent: true },
       { source: '/pools/the-last-hotel-48', destination: '/pools/hyatt-centric-downtown-st-louis-48', permanent: true },
       { source: '/for-hotels/the-last-hotel-48', destination: '/for-hotels/hyatt-centric-downtown-st-louis-48', permanent: true },
+      // The media kit became the Advertise page (Nov 2026)
+      { source: '/media-kit', destination: '/advertise', permanent: true },
     ]
   },
 }

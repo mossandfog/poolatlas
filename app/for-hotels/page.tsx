@@ -176,6 +176,19 @@ export default function ForHotelsPage() {
         </div>
       </section>
 
+      {/* Advertising, kept separate from rankings */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-muted-foreground">
+            Want to go further than a badge? We offer hotel spotlights, partner stories and newsletter sponsorships, always labeled
+            and never tied to rankings.{" "}
+            <Link href="/advertise" className="font-medium text-primary hover:underline underline-offset-4 whitespace-nowrap">
+              Advertise with Pool Atlas &rarr;
+            </Link>
+          </p>
+        </div>
+      </section>
+
       <Footer />
     </main>
   )

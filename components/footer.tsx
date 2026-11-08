@@ -76,8 +76,7 @@ export function Footer() {
               <li><a href="/for-hotels" className="hover:text-primary transition-colors py-1 inline-block">For hotels</a></li>
               <li><a href="/badges" className="hover:text-primary transition-colors py-1 inline-block">Hotel badges</a></li>
               <li><a href="/press" className="hover:text-primary transition-colors py-1 inline-block">Press</a></li>
-              <li><a href="/media-kit" className="hover:text-primary transition-colors py-1 inline-block">Media kit</a></li>
-              <li><a href="mailto:hello@poolatlas.io" className="hover:text-primary transition-colors py-1 inline-block">Partnerships</a></li>
+              <li><a href="/advertise" className="hover:text-primary transition-colors py-1 inline-block">Advertise</a></li>
             </ul>
           </div>
         </div>
