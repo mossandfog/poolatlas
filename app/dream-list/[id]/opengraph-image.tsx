@@ -112,7 +112,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
                   <span style={{ color: 'white', fontSize: 14, fontWeight: 700 }}>#{pool.rank}</span>
                 </div>
                 <span style={{ color: 'white', fontSize: 22 }}>{pool.name}</span>
-                <span style={{ color: '#71717a', fontSize: 18 }}>— {pool.hotel}</span>
+                <span style={{ color: '#71717a', fontSize: 18 }}>{pool.hotel}</span>
               </div>
             ))}
             {totalPools > 4 && (

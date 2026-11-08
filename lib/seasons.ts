@@ -61,6 +61,7 @@ const SAFARI_SOUTH = r(5, 10) // Kruger, Namibia, Botswana dry season
 const EAST_AFRICA = r(6, 10)
 const DESERT_SW = [...r(4, 6), ...r(9, 10)] // Utah and Arizona: spring and fall
 const NE_US_SUMMER = r(6, 9)
+const MIAMI = r(11, 4) // dry season, outside hurricane season
 
 const seasons: Record<number, PoolSeason> = {
   1: { best: MED_SUMMER }, // Santorini
@@ -195,6 +196,9 @@ const seasons: Record<number, PoolSeason> = {
   132: { best: r(6, 10) },
   133: { best: ALL },
   134: { best: ALL },
+  135: { best: MIAMI },
+  136: { best: MIAMI },
+  137: { best: MIAMI },
 }
 
 // Closures, only from the hotel's own site or a reputable outlet.

@@ -206,7 +206,7 @@ export default function PressPage() {
                     {pullQuotes.length > 0 ? pullQuotes.map((item, idx) => (
                       <div key={idx} className="border-l-4 border-primary pl-4">
                         <p className="italic text-foreground mb-2">"{item.quote}"</p>
-                        <p className="text-sm text-muted-foreground">— {item.attribution}</p>
+                        <p className="text-sm text-muted-foreground">{item.attribution}</p>
                       </div>
                     )) : (
                       <div className="text-center py-8 text-muted-foreground">

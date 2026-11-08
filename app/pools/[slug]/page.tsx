@@ -325,7 +325,7 @@ export default async function PoolPage({ params }: Props) {
                   </div>
                 </div>
                 <PoolShareButton
-                  title={`${pool.name} at ${pool.hotel} — Ranked #${pool.rank} | Pool Atlas`}
+                  title={`${pool.name} at ${pool.hotel}, Ranked #${pool.rank} | Pool Atlas`}
                   url={`https://poolatlas.io/pools/${pool.slug}`}
                 />
               </div>

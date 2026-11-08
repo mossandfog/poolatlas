@@ -4,35 +4,62 @@ import { ArrowDown } from "lucide-react"
 import { PoolSearch } from "@/components/pool-search"
 import { pools } from "@/lib/pool-data"
 import { siteStats, RANKINGS_REVIEWED, SEASON_NOTE, type Edition } from "@/lib/editorial-calendar"
+import { HERO_FILM } from "@/lib/hero-film"
+import { HeroFilm } from "@/components/hero-film"
 
-// The cover: this month's Pool of the Month, shown at full strength beside the headline.
+// The cover: a short film from one of our ranked pools (lib/hero-film.ts) when one is set,
+// otherwise this month's Pool of the Month as a still.
 export function Hero({ edition }: { edition: Edition }) {
   const cover = pools.find(p => p.id === edition.featuredId) ?? pools[0]
+  const hf = HERO_FILM
+  const filmPool = hf ? pools.find(p => p.id === hf.poolId) : undefined
+  const film = hf && filmPool ? hf : null
 
   return (
     <section className="relative bg-background">
       <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:min-h-[min(86vh,860px)]">
         {/* Cover photo: first on mobile, bleeds off the right edge on desktop */}
         <figure className="relative lg:order-2 m-0">
-          <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:absolute lg:inset-x-0 lg:top-0 lg:bottom-14 overflow-hidden bg-muted pa-cover-in">
-            <Image
-              src={cover.image}
-              alt={`${cover.name} at ${cover.hotel}, ${cover.location}`}
-              fill
-              priority
-              sizes="(min-width: 1024px) 56vw, 100vw"
-              className="object-cover"
-            />
+          <div className={`relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:absolute lg:inset-x-0 lg:top-0 lg:bottom-14 overflow-hidden pa-cover-in ${film ? "" : "bg-muted"}`}>
+            {film && filmPool ? (
+              <HeroFilm film={film} alt={`Aerial view of the ${filmPool.name} at ${filmPool.hotel}, ${filmPool.location}`} />
+            ) : (
+              <Image
+                src={cover.image}
+                alt={`${cover.name} at ${cover.hotel}, ${cover.location}`}
+                fill
+                priority
+                sizes="(min-width: 1024px) 56vw, 100vw"
+                className="object-cover"
+              />
+            )}
           </div>
           <figcaption className="px-4 sm:px-6 lg:px-6 lg:absolute lg:inset-x-0 lg:bottom-0 lg:h-14 lg:flex lg:items-center">
-            <Link
-              href="#featured"
-              className="group mt-3 lg:mt-0 block text-sm leading-relaxed text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <span className="text-foreground font-medium">On the cover:</span>{" "}
-              {cover.name}, {cover.hotel}. Pool of the Month for {edition.monthName}.{" "}
-              <span className="text-primary whitespace-nowrap group-hover:underline underline-offset-4">Read why</span>
-            </Link>
+            {film && filmPool ? (
+              <p className="mt-3 lg:mt-0 text-sm leading-relaxed text-muted-foreground">
+                <Link href={`/pools/${filmPool.slug}`} className="group hover:text-foreground transition-colors">
+                  <span className="text-foreground font-medium">In motion:</span>{" "}
+                  {filmPool.hotel}, No. {filmPool.rank} in the world.{" "}
+                  <span className="text-primary whitespace-nowrap group-hover:underline underline-offset-4">See the pool</span>
+                </Link>
+                <span aria-hidden="true" className="mx-2 text-border">&middot;</span>
+                <span className="whitespace-nowrap">
+                  Film by{" "}
+                  <a href={film.creditUrl} target="_blank" rel="noopener" className="underline decoration-border underline-offset-4 hover:text-foreground">
+                    {film.credit}
+                  </a>
+                </span>
+              </p>
+            ) : (
+              <Link
+                href="#featured"
+                className="group mt-3 lg:mt-0 block text-sm leading-relaxed text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <span className="text-foreground font-medium">On the cover:</span>{" "}
+                {cover.name}, {cover.hotel}. Pool of the Month for {edition.monthName}.{" "}
+                <span className="text-primary whitespace-nowrap group-hover:underline underline-offset-4">Read why</span>
+              </Link>
+            )}
           </figcaption>
         </figure>
 

@@ -27,6 +27,11 @@
     "a.tile:hover .hotel{text-decoration:underline;text-decoration-color:#1aa3b0;text-underline-offset:3px}" +
     ".where{margin:2px 0 0;font-size:.82rem;line-height:1.35;color:rgba(53,48,24,.7)}" +
     ".closed{margin:4px 0 0;font-size:.75rem;color:#746b3e;font-style:italic}" +
+    "li{display:flex;flex-direction:column;min-width:0}" +
+    "a.book{margin-top:8px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 13px;border-radius:999px;background:#353018;color:#f8f6ec;font-size:.8rem;font-weight:600;letter-spacing:.01em;text-decoration:none;transition:background .2s}" +
+    "a.book:hover{background:#746b3e}" +
+    "a.book:after{content:'\u2192';color:#f5d63d}" +
+    ".note{margin:10px 0 0;font-size:.72rem;line-height:1.4;color:rgba(53,48,24,.6)}" +
     ".foot{margin:16px 0 0;padding-top:12px;border-top:1px solid rgba(53,48,24,.14);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between;font-size:.82rem;color:rgba(53,48,24,.72)}" +
     ".foot a{color:#353018;font-weight:600;text-decoration:underline;text-decoration-color:#1aa3b0;text-underline-offset:3px}" +
     "@media (max-width:420px){.card{padding:18px 16px 14px}.grid{gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}.grid li:nth-child(odd):last-child{grid-column:1/-1}.grid li:nth-child(odd):last-child .ph{aspect-ratio:2/1}}" +
@@ -61,7 +66,12 @@
           '<p class="hotel">' + esc(p.hotel) + "</p>" +
           '<p class="where">' + esc(p.location) + "</p>" +
           (p.closedNow ? '<p class="closed">Closed for the season</p>' : "") +
-          "</a></li>"
+          "</a>" +
+          (p.book
+            ? '<a class="book" href="' + esc(p.book) + '" target="_blank" rel="nofollow noopener" aria-label="' +
+              esc((p.bookLabel || "Check dates") + " at " + p.hotel) + '">' + esc(p.bookLabel || "Check dates") + "</a>"
+            : "") +
+          "</li>"
         )
       })
       .join("")
@@ -74,6 +84,9 @@
       '<ul class="grid">' + tiles + "</ul>" +
       '<div class="foot"><span>From Pool Atlas, our guide to the world’s best hotel pools.</span>' +
       '<a href="' + esc(data.more) + '" target="_blank" rel="noopener">See all the rankings</a></div>' +
+      (data.pools.some(function (p) { return p.book })
+        ? '<p class="note">Dates and prices come from our booking partner. We may earn a commission when you book, at no cost to you.</p>'
+        : "") +
       "</aside>"
   }
 

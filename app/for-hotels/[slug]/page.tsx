@@ -45,7 +45,7 @@ export default async function ForHotelsSlugPage({ params }: PageProps) {
   const badgeUrl = `${baseUrl}/api/badge/${pool.id}`
 
   const embedCode = `<!-- Pool Atlas Badge -->
-<a href="${poolUrl}" target="_blank" rel="noopener" title="${pool.hotel} — Ranked #${pool.rank} by Pool Atlas">
+<a href="${poolUrl}" target="_blank" rel="noopener" title="${pool.hotel}, Ranked #${pool.rank} by Pool Atlas">
   <img src="${badgeUrl}" alt="Ranked #${pool.rank} in the World · Pool Atlas" width="280" height="180" style="display:block;"/>
 </a>`
 
@@ -72,7 +72,7 @@ export default async function ForHotelsSlugPage({ params }: PageProps) {
               Congratulations, {pool.hotel}
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              You've been ranked <strong className="text-foreground">#{pool.rank} in the world</strong> for hotel pools by Pool Atlas — the definitive ranking of the world's finest swimming experiences.
+              You've been ranked <strong className="text-foreground">#{pool.rank} in the world</strong> for hotel pools by Pool Atlas, the definitive ranking of the world's finest swimming experiences.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default async function ForHotelsSlugPage({ params }: PageProps) {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`/api/badge/${pool.id}`}
-                  alt={`Pool Atlas badge — Ranked #${pool.rank}`}
+                  alt={`Pool Atlas badge: Ranked #${pool.rank}`}
                   width={280}
                   height={180}
                   className="rounded-lg shadow-lg"
@@ -104,7 +104,7 @@ export default async function ForHotelsSlugPage({ params }: PageProps) {
                 <h2 className="font-[family-name:var(--font-display)] text-lg font-semibold text-foreground">Embed on your website</h2>
               </div>
               <p className="text-sm text-muted-foreground">
-                Copy this snippet and paste it into your hotel website — pool page, press kit, or booking widget.
+                Copy this snippet and paste it into your hotel website: pool page, press kit, or booking widget.
               </p>
               <div className="relative">
                 <pre className="bg-secondary/80 rounded-xl p-4 text-xs text-foreground overflow-x-auto leading-relaxed font-mono whitespace-pre-wrap break-all">

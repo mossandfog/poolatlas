@@ -67,7 +67,7 @@ export default function ForHotelsPage() {
                 <Award className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-[family-name:var(--font-display)] font-semibold text-foreground mb-2">Embeddable badge</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1">A professionally designed badge showing your world ranking — ready to embed on your website, booking pages, and press kit.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">A professionally designed badge showing your world ranking, ready to embed on your website, booking pages, and press kit.</p>
               <a href="#find-hotel" className="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-4 hover:underline underline-offset-2">
                 Get your badge <ChevronRight className="w-3.5 h-3.5" />
               </a>
@@ -87,7 +87,7 @@ export default function ForHotelsPage() {
                 <Code2 className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-[family-name:var(--font-display)] font-semibold text-foreground mb-2">Third-party credibility</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1">Pool Atlas rankings are editorial and independent — no payment for placement. That makes the recognition genuinely meaningful to guests.</p>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">Pool Atlas rankings are editorial and independent, with no payment for placement. That makes the recognition genuinely meaningful to guests.</p>
               <Link href="/press" className="inline-flex items-center gap-1 text-sm font-semibold text-primary mt-4 hover:underline underline-offset-2">
                 Our press coverage <ChevronRight className="w-3.5 h-3.5" />
               </Link>
@@ -107,7 +107,7 @@ export default function ForHotelsPage() {
           </div>
 
           {/* Top 25 featured */}
-          <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold text-foreground mb-4">Top 25 — Featured</h3>
+          <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold text-foreground mb-4">Top 25: Featured</h3>
           <div className="grid sm:grid-cols-2 gap-3 mb-10">
             {top25.map((pool) => {
               const tier = getTierLabel(pool.rank)
@@ -168,7 +168,7 @@ export default function ForHotelsPage() {
             Don't see your property?
           </h2>
           <p className="text-muted-foreground mb-6">
-            We're constantly expanding the rankings. Submit your pool for editorial consideration — our team reviews every submission against our ranking criteria.
+            We're constantly expanding the rankings. Submit your pool for editorial consideration. Our team reviews every submission against our ranking criteria.
           </p>
           <a href="mailto:hello@poolatlas.io?subject=Pool%20Submission">
             <Button className="rounded-full px-8">Submit your pool</Button>

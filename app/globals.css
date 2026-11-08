@@ -138,6 +138,20 @@
 }
 .pa-headline-in { animation: pa-rise 700ms cubic-bezier(.2,.7,.2,1) both; }
 .pa-cover-in { animation: pa-reveal 1100ms cubic-bezier(.2,.7,.2,1) both; }
+
+/* Hero film: the footage dissolves into the page instead of sitting in a box.
+   Phones fade it out at the bottom; desktop feathers the left edge into the
+   headline column. A light wash of the page color keeps it in the seasonal palette. */
+.pa-film { -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); }
+.pa-film-media { filter: saturate(.9) contrast(1.03); }
+.pa-film::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: var(--background); opacity: .1; mix-blend-mode: soft-light; }
+@media (min-width: 1024px) {
+  .pa-film {
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 22%), linear-gradient(to top, transparent 0, #000 12%);
+    mask-image: linear-gradient(to right, transparent 0, #000 22%), linear-gradient(to top, transparent 0, #000 12%);
+    -webkit-mask-composite: source-in; mask-composite: intersect;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .pa-headline-in, .pa-cover-in { animation: none; }
 }

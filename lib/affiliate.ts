@@ -31,6 +31,8 @@ export type Placement =
   | "honeymoon_map"
   | "season_month"
   | "booking_now"
+  /** The Swim Here card embedded on The Window Seat */
+  | "tws_swim"
 
 const label = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")
 
@@ -40,7 +42,7 @@ type PoolLike = { id: number; slug: string; hotel: string; location: string; cou
 export function getBookingUrl(
   pool: PoolLike,
   placement: Placement = "pool_cta",
-  opts: { adults?: number; checkin?: string; checkout?: string } = {},
+  opts: { adults?: number; checkin?: string; checkout?: string; tag?: string } = {},
 ): string {
   const p = new URLSearchParams()
   p.set("aid", STAY22_AID)
@@ -57,6 +59,7 @@ export function getBookingUrl(
   p.append("campaign", "poolatlas")
   p.append("campaign", `pa_${placement}`)
   p.append("campaign", `pool_${label(pool.slug)}`)
+  if (opts.tag) p.append("campaign", label(opts.tag))
   return `https://www.stay22.com/allez/roam?${p.toString()}`
 }
 

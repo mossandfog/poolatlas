@@ -6,7 +6,8 @@
 import { NextRequest, NextResponse } from "next/server"
 import { pools, type Pool } from "@/lib/pool-data"
 import { poolCoordinates } from "@/lib/pool-coordinates"
-import { isClosed } from "@/lib/seasons"
+import { isClosed, reopeningStay, monthName } from "@/lib/seasons"
+import { getBookingUrl } from "@/lib/affiliate"
 import sizes from "@/lib/image-sizes.json"
 
 export const revalidate = 86400
@@ -71,6 +72,14 @@ export function GET(req: NextRequest) {
       url.searchParams.set("utm_source", "windowseat")
       url.searchParams.set("utm_medium", "embed")
       url.searchParams.set("utm_campaign", campaign)
+      // Stay22 booking link. Closed for the season: pre-fill the reopening dates.
+      // Closed with no reopening date (renovation): no booking link at all.
+      const closed = isClosed(p)
+      const reopen = closed ? reopeningStay(p) : null
+      const book =
+        closed && !reopen
+          ? null
+          : getBookingUrl(p, "tws_swim", { tag: campaign, checkin: reopen?.checkin, checkout: reopen?.checkout })
       return {
         id: p.id,
         rank: p.rank,
@@ -78,8 +87,10 @@ export function GET(req: NextRequest) {
         hotel: p.hotel,
         location: `${p.location}, ${p.country}`,
         image: photo(p.image),
-        closedNow: isClosed(p),
+        closedNow: closed,
         url: url.toString(),
+        book,
+        bookLabel: reopen ? `Book for ${monthName(reopen.month)}` : "Check dates",
       }
     })
 

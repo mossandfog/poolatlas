@@ -10,6 +10,8 @@ export interface BlogPost {
   featured: boolean
   /** Travelers to pre-fill on this post's booking links, e.g. 2 for couples */
   bookingAdults?: number
+  /** Pre-filled stay for event posts; the booking box drops it once the checkout date passes */
+  bookingDates?: { checkin: string; checkout: string; label: string }
   author: {
     name: string
     role: string
@@ -29,6 +31,58 @@ export const categories = [
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "art-basel-miami-beach-2026-hotel-pools",
+    title: "Art Basel Miami Beach 2026: Where to Swim Between the Booths",
+    excerpt: "Art Basel Miami Beach runs December 4 to 6, 2026. After a day on the convention center carpet, these are the three hotel pools we would book that week, all a short walk or ride from the fair.",
+    category: "City",
+    readTime: "5 min read",
+    image: "/images/pools/pool-faena-miami-beach.jpg",
+    publishedAt: "2026-11-08",
+    featured: false,
+    bookingAdults: 2,
+    bookingDates: { checkin: "2026-12-02", checkout: "2026-12-06", label: "Art Basel week, December 2 to 6" },
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "City Guides"
+    },
+    content: `
+Art Basel Miami Beach returns to the Miami Beach Convention Center from December 4 to 6, 2026, with VIP days on December 2 and 3. Anyone who has done the fair knows how it goes: miles of carpet, cold air, a thousand conversations, and that moment around four in the afternoon when you can't look at another painting.
+
+That is when a pool earns its keep. Twenty minutes in the water between the last booth and the first dinner resets the whole evening, and Miami Beach has some of the best hotel pools in the country within a short walk or ride of the fair.
+
+This week we added three of them to the Pool Atlas rankings. Each is a different answer to the same question: what do you want after a day of looking?
+
+## The Setai: three pools, three temperatures
+
+**[The Setai Miami Beach](/pools/the-setai-miami-beach-136)** is the closest of the three to the convention center, about a ten to fifteen minute walk east to Collins Avenue at 20th Street. Its three infinity-edge pools step toward the ocean between tall rows of palms, and each is kept at its own temperature. Condé Nast Traveler lists them at 75, 80 and 90 degrees, so you can take a brisk swim and finish with a long warm soak.
+
+The mood is hushed, the building is 1930s Asian Art Deco, and the crowd comes to swim rather than to be photographed. The pools are for hotel guests, which during fair week is exactly the point.
+
+## Faena: the pool that is already an installation
+
+**[Faena Hotel Miami Beach](/pools/faena-hotel-miami-beach-135)** is the one for people who want the art to keep going. Alan Faena rebuilt the 1940s Saxony Hotel with Baz Luhrmann and Catherine Martin, and the palm-fringed pool behind it is lined with candy-striped red-and-white umbrellas and cabanas, with pool butlers bringing fruit water and cleaning your sunglasses. Just past the deck, Damien Hirst's gilded woolly mammoth skeleton, *Gone But Not Forgotten*, stands in a glass case in front of the beach.
+
+It sits about a mile and a half up Collins, a short ride from the fair. If you're not staying, Faena rents beach loungers to non-guests, listed at $150 a day midweek and $250 on Fridays to Sundays, with oceanfront daybeds at $500. The hotel notes that prices can rise on busy weeks, and fair week is one of them.
+
+## 1 Hotel South Beach: the rooftop for a quiet hour
+
+**[1 Hotel South Beach](/pools/1-hotel-south-beach-137)** runs four pools on one oceanfront block, about a ten to fifteen minute walk from the convention center. The one to know is on the roof, 18 stories above the beach, kept for guests 21 and over and open to the whole Atlantic horizon. It's the calmest place on South Beach to watch the light go pink before a dinner reservation!
+
+Families and groups have the 30,000-square-foot Center Pool downstairs, with a hot tub the size of a pool, and the whole hotel leans on reclaimed wood and natural fabrics, so it feels more like a beach house than a scene.
+
+## Planning your Art Basel week
+
+- **Book early.** The fair fills Miami Beach, and rooms near the convention center are the first to go. If you're set on one of these three, book now and keep the plans flexible.
+- **Stay for the VIP days or the weekend.** The VIP days are December 2 and 3 and the public days run December 4 to 6. Our booking links below are already set to the full week, and you can change the dates on the next page.
+- **Plan the swim like a meeting.** Late afternoon, between the fair and dinner, is when the pools empty out and the light is best.
+- **December is a good month for it.** Early December falls in Miami's dry season, outside hurricane season, which is why all three pools show as in season on their pages now.
+
+---
+
+*See every pool we rank in the Americas → [Explore the rankings](/explore#destinations)*
+    `
+  },
+  {
     slug: "sustainable-hotel-pools-2026",
     title: "The Green Pool Revolution: How Luxury Hotels Are Rethinking Sustainability",
     excerpt: "From solar heating to natural filtration, the world's best hotels are proving that eco-conscious pools can be just as luxurious as traditional ones.",
@@ -44,7 +98,7 @@ export const blogPosts: BlogPost[] = [
     content: `
 # The Green Pool Revolution: How Luxury Hotels Are Rethinking Sustainability
 
-A swimming pool is, by design, an environmental paradox. Thousands of gallons of treated water, heated to comfortable temperatures, surrounded by energy-intensive pumps and filtration systems—all so we can float in blissful relaxation. It's not exactly a low-carbon activity.
+A swimming pool is, by design, an environmental paradox. Thousands of gallons of treated water, heated to comfortable temperatures, surrounded by energy-intensive pumps and filtration systems: all so we can float in blissful relaxation. It's not exactly a low-carbon activity.
 
 But something is shifting in the luxury hospitality industry. The world's most forward-thinking hotels are proving that exceptional pool experiences and environmental responsibility aren't mutually exclusive. In fact, some are discovering that sustainable pools can be *better* pools.
 
@@ -54,7 +108,7 @@ Here's what's happening at the leading edge of eco-conscious aquatics.
 
 Let's start with the elephant in the room: water.
 
-A typical hotel pool holds between 20,000 and 100,000 gallons. In water-stressed regions—which increasingly includes luxury destinations from California to Cape Town to the Maldives—that's a significant resource commitment.
+A typical hotel pool holds between 20,000 and 100,000 gallons. In water-stressed regions, which increasingly includes luxury destinations from California to Cape Town to the Maldives, that's a significant resource commitment.
 
 **What leading properties are doing:**
 
@@ -82,11 +136,11 @@ Heating and operating a pool is energy-intensive. A large resort pool can consum
 
 Solar pool heating isn't new, but it's reaching new levels of sophistication. Modern vacuum tube collectors can heat pool water even on cloudy days, and smart integration with property management systems optimizes performance.
 
-The Brando in French Polynesia—Marlon Brando's vision for a sustainable luxury resort—uses seawater air conditioning combined with solar thermal heating to achieve carbon-neutral pool operations. The pool temperature stays perfect year-round without burning a single fossil fuel.
+The Brando in French Polynesia, Marlon Brando's vision for a sustainable luxury resort, uses seawater air conditioning combined with solar thermal heating to achieve carbon-neutral pool operations. The pool temperature stays perfect year-round without burning a single fossil fuel.
 
 ### Heat Pump Technology
 
-Air-source heat pumps have improved dramatically, now achieving coefficients of performance above 6.0—meaning they produce six units of heating for every unit of electricity consumed. Properties in temperate climates are finding heat pumps more economical than traditional gas heating.
+Air-source heat pumps have improved dramatically, now achieving coefficients of performance above 6.0, meaning they produce six units of heating for every unit of electricity consumed. Properties in temperate climates are finding heat pumps more economical than traditional gas heating.
 
 ### Waste Heat Recovery
 
@@ -94,11 +148,11 @@ Some clever properties are capturing waste heat from their kitchens, data center
 
 ### Variable Speed Pumps
 
-Traditional pool pumps run at full speed constantly—massive energy waste. Variable speed pumps adjust output to actual need, reducing electricity consumption by 50-70% while maintaining water quality.
+Traditional pool pumps run at full speed constantly: massive energy waste. Variable speed pumps adjust output to actual need, reducing electricity consumption by 50-70% while maintaining water quality.
 
 ## Natural Filtration: The Bio-Pool Movement
 
-Perhaps the most exciting development in sustainable pools is the growing adoption of natural filtration—pools that use plants and biological processes instead of (or alongside) chemical treatment.
+Perhaps the most exciting development in sustainable pools is the growing adoption of natural filtration: pools that use plants and biological processes instead of (or alongside) chemical treatment.
 
 ### How Natural Pools Work
 
@@ -124,7 +178,7 @@ A natural swimming pool typically has two zones: a swimming area and a regenerat
 
 **Europe** leads in natural pool adoption, particularly in Austria, Germany, and Switzerland where public natural swimming ponds are common. Luxury properties like Stanglwirt in Austria feature stunning natural pools alongside traditional options.
 
-**Australia** is seeing rapid growth, with several high-end properties embracing the "billabong" aesthetic—natural pools that blend seamlessly into the landscape.
+**Australia** is seeing rapid growth, with several high-end properties embracing the "billabong" aesthetic: natural pools that blend seamlessly into the landscape.
 
 **North America** lags due to stricter health regulations, but private estates and some boutique properties are finding ways to incorporate natural filtration principles.
 
@@ -138,7 +192,7 @@ Sustainability extends beyond operations to how pools are built.
 
 ### Sustainable Concrete
 
-Traditional pool construction relies heavily on concrete—one of the most carbon-intensive building materials. Forward-thinking builders are using:
+Traditional pool construction relies heavily on concrete: one of the most carbon-intensive building materials. Forward-thinking builders are using:
 
 - Recycled aggregate
 - Supplementary cementitious materials (fly ash, slag)
@@ -156,7 +210,7 @@ The stone, tile, and decking materials around luxury pools can carry significant
 - Fair labor practices
 - End-of-life recyclability
 
-Local materials aren't just better for the environment—they often enhance the sense of place that makes a pool memorable.
+Local materials aren't just better for the environment: they often enhance the sense of place that makes a pool memorable.
 
 ### Longevity as Sustainability
 
@@ -168,11 +222,11 @@ Here's where it gets interesting: sustainable pools often provide *better* guest
 
 ### Water Quality
 
-Guests consistently rate saltwater and reduced-chemical pools higher than heavily chlorinated alternatives. Natural pools receive the highest satisfaction scores of all—though with smaller sample sizes.
+Guests consistently rate saltwater and reduced-chemical pools higher than heavily chlorinated alternatives. Natural pools receive the highest satisfaction scores of all, though with smaller sample sizes.
 
 ### Atmosphere
 
-A pool surrounded by native landscaping and natural filtration plantings feels more connected to place than one ringed by concrete. The biodiversity attracted by natural pools—dragonflies, birds, butterflies—adds experiential richness.
+A pool surrounded by native landscaping and natural filtration plantings feels more connected to place than one ringed by concrete. The biodiversity attracted by natural pools (dragonflies, birds, butterflies) adds experiential richness.
 
 ### Temperature Consistency
 
@@ -180,7 +234,7 @@ Solar-heated and heat-pump systems often provide more stable temperatures than g
 
 ### Story and Meaning
 
-Increasingly, guests want to feel good about their choices. A property that can articulate its sustainability story—and demonstrate it in tangible ways—creates an emotional connection that enhances the overall experience.
+Increasingly, guests want to feel good about their choices. A property that can articulate its sustainability story, and demonstrate it in tangible ways, creates an emotional connection that enhances the overall experience.
 
 ## What We're Watching
 
@@ -188,7 +242,7 @@ Based on our research and industry conversations, here are the sustainability tr
 
 ### Regenerative Pools
 
-Beyond "less bad," some properties are exploring pools that actively benefit their environments—creating habitat, managing stormwater, providing ecosystem services. The pool as environmental asset rather than liability.
+Beyond "less bad," some properties are exploring pools that actively benefit their environments: creating habitat, managing stormwater, providing ecosystem services. The pool as environmental asset rather than liability.
 
 ### Water-Positive Properties
 
@@ -200,7 +254,7 @@ As more hotel companies commit to science-based emissions targets, pools will fa
 
 ### Guest Participation
 
-Some properties are finding ways to involve guests in sustainability efforts—pool heating powered by gym equipment, conservation messaging, opt-in programs for reduced pool servicing in low-occupancy periods.
+Some properties are finding ways to involve guests in sustainability efforts: pool heating powered by gym equipment, conservation messaging, opt-in programs for reduced pool servicing in low-occupancy periods.
 
 ### Certification Standards
 
@@ -222,7 +276,7 @@ Properties demonstrating leadership in sustainable pool operations will be recog
 
 The luxury pool industry is at an inflection point. Water scarcity, energy costs, and guest expectations are all pushing toward more sustainable approaches. Properties that get ahead of this curve will find themselves with lower operating costs, differentiated guest experiences, and stronger brand positioning.
 
-The pools of 2030 will look different from the pools of today—not worse, but better. More thoughtfully integrated into their environments. More efficient in their operations. More attuned to the values of the guests who swim in them.
+The pools of 2030 will look different from the pools of today, not worse, but better. More thoughtfully integrated into their environments. More efficient in their operations. More attuned to the values of the guests who swim in them.
 
 That's a future worth swimming toward.
 
@@ -247,28 +301,28 @@ That's a future worth swimming toward.
     content: `
 # What Makes a World-Class Hotel Pool?
 
-After evaluating well over a hundred hotel pools in nearly 50 countries, we've developed a refined understanding of what separates a truly world-class pool from one that's simply pleasant. It's not just about size or views—though those matter. The difference lies in a constellation of factors that, when aligned, create an experience guests remember for years.
+After evaluating well over a hundred hotel pools in nearly 50 countries, we've developed a refined understanding of what separates a truly world-class pool from one that's simply pleasant. It's not just about size or views, though those matter. The difference lies in a constellation of factors that, when aligned, create an experience guests remember for years.
 
 Here's what we've learned.
 
 ## The Five Pillars of Pool Excellence
 
-Through thousands of hours of research, site visits, and guest reviews, we've identified five essential categories that define exceptional pools. A world-class pool excels in at least four of these areas—the true legends master all five.
+Through thousands of hours of research, site visits, and guest reviews, we've identified five essential categories that define exceptional pools. A world-class pool excels in at least four of these areas: the true legends master all five.
 
 ### 1. Setting and Integration
 
-The greatest pools don't fight their environment—they embrace it.
+The greatest pools don't fight their environment: they embrace it.
 
 **What we look for:**
 
 - **Contextual design**: Does the pool feel inevitable in its location? The best pools seem like they couldn't exist anywhere else.
 - **View optimization**: How thoughtfully has the sightline been considered? Is the view framed, or does it just happen to be there?
 - **Indoor-outdoor flow**: Does the pool connect gracefully to its surroundings, or does it feel like an afterthought?
-- **Sense of place**: Does swimming here feel like being in Bali, or Santorini, or the Arizona desert—or could it be anywhere?
+- **Sense of place**: Does swimming here feel like being in Bali, or Santorini, or the Arizona desert, or could it be anywhere?
 
 **Examples that nail it:**
 
-Amangiri's pool in Utah doesn't just sit in the desert—it wraps around ancient rock formations, making the landscape a participant in the experience. The Hanging Gardens of Bali cascades down a jungle ravine, each tier feeling discovered rather than constructed. Marina Bay Sands' infinity edge frames Singapore's skyline so precisely that the city becomes the pool's backdrop.
+Amangiri's pool in Utah doesn't just sit in the desert: it wraps around ancient rock formations, making the landscape a participant in the experience. The Hanging Gardens of Bali cascades down a jungle ravine, each tier feeling discovered rather than constructed. Marina Bay Sands' infinity edge frames Singapore's skyline so precisely that the city becomes the pool's backdrop.
 
 **Red flags:**
 
@@ -280,15 +334,15 @@ A world-class pool is a work of architecture, not just a hole filled with water.
 
 **What we evaluate:**
 
-- **Edge treatment**: Infinity edges, beach entries, traditional coping—each choice signals intentionality
-- **Material selection**: Stone, tile, glass, composite—quality materials age beautifully
+- **Edge treatment**: Infinity edges, beach entries, traditional coping, each choice signals intentionality
+- **Material selection**: Stone, tile, glass, composite, quality materials age beautifully
 - **Geometric precision**: Clean lines, consistent depths, thoughtful transitions
 - **Sculptural presence**: Does the pool contribute to the property's visual identity?
 - **Lighting design**: How the pool transforms from day to night
 
 **Design elements that elevate:**
 
-Vanishing edges that truly vanish (many don't—the water level is wrong, or the catch basin is visible). Integrated landscaping that softens hardscape without dropping debris. Underwater windows or transparent walls. Thoughtful tile patterns that add visual interest without overwhelming.
+Vanishing edges that truly vanish (many don't: the water level is wrong, or the catch basin is visible). Integrated landscaping that softens hardscape without dropping debris. Underwater windows or transparent walls. Thoughtful tile patterns that add visual interest without overwhelming.
 
 **What diminishes a pool:**
 
@@ -308,7 +362,7 @@ This is where many otherwise beautiful pools fail. Water quality is non-negotiab
 
 **The saltwater question:**
 
-We don't automatically prefer saltwater pools, but we note when properties have made the investment. Guest comfort in saltwater pools is measurably higher—less skin irritation, softer feel, no chemical smell. Properties that care about water quality increasingly choose salt.
+We don't automatically prefer saltwater pools, but we note when properties have made the investment. Guest comfort in saltwater pools is measurably higher: less skin irritation, softer feel, no chemical smell. Properties that care about water quality increasingly choose salt.
 
 **Testing protocol:**
 
@@ -316,7 +370,7 @@ We check water quality at multiple times of day. Early morning reveals how well 
 
 ### 4. Amenities and Service
 
-A pool is more than water—it's an experience ecosystem.
+A pool is more than water: it's an experience ecosystem.
 
 **Essential amenities:**
 
@@ -352,7 +406,7 @@ The intangible quality that makes a pool feel special.
 
 **The exclusivity balance:**
 
-We don't worship exclusivity for its own sake. A pool can be accessible and still feel special. But crowd control matters. The best properties find ways to maintain atmosphere even at high occupancy—multiple pool areas, reservation systems, strategic capacity limits.
+We don't worship exclusivity for its own sake. A pool can be accessible and still feel special. But crowd control matters. The best properties find ways to maintain atmosphere even at high occupancy: multiple pool areas, reservation systems, strategic capacity limits.
 
 **Atmosphere killers:**
 
@@ -370,7 +424,7 @@ We weight our evaluation criteria as follows:
 | Amenities & Service | 20% | Seating, shade, staff, F&B |
 | Atmosphere | 15% | Sound, crowd, programming |
 
-A pool scoring above 9.0 in our system demonstrates excellence across all categories. Above 9.5 indicates a pool that sets the standard for its category. Our current highest-rated pools hover around 9.8—perfection remains theoretical.
+A pool scoring above 9.0 in our system demonstrates excellence across all categories. Above 9.5 indicates a pool that sets the standard for its category. Our current highest-rated pools hover around 9.8: perfection remains theoretical.
 
 ## What Doesn't Matter (As Much As You'd Think)
 
@@ -392,7 +446,7 @@ After evaluating pools worldwide, we've noticed distinct regional strengths:
 
 **Middle East**: Leads in amenities and design ambition. Dubai and Abu Dhabi properties invest heavily in pool infrastructure, often with striking architectural results.
 
-**Mediterranean**: Masters atmosphere. Greek and Italian pools understand the rhythm of a pool day—morning calm, afternoon energy, sunset aperitivo.
+**Mediterranean**: Masters atmosphere. Greek and Italian pools understand the rhythm of a pool day: morning calm, afternoon energy, sunset aperitivo.
 
 **Americas**: Strongest in water quality and maintenance. US and Mexican luxury properties maintain consistently high standards for water clarity and chemical balance.
 
@@ -418,7 +472,7 @@ Pool Atlas exists because we believe swimming matters. A great pool day can tran
 
 We visit pools personally when possible. We analyze thousands of guest reviews for patterns. We talk to hotel managers, architects, and maintenance staff. We swim in cold mornings and hot afternoons. We take notes while others vacation.
 
-The result is rankings we stand behind—not sponsored content, not pay-to-play positioning, but honest assessment of which pools deserve your time and money.
+The result is rankings we stand behind, not sponsored content, not pay-to-play positioning, but honest assessment of which pools deserve your time and money.
 
 When we say a pool is world-class, we mean it has demonstrated excellence across the criteria that matter. When we flag concerns, we've seen evidence that warrants caution. Our methodology isn't perfect, but it's consistent, transparent, and always improving.
 
@@ -489,7 +543,7 @@ After surveying hundreds of travelers and reviewing thousands of pool reviews, c
 
 ## The Economics: Why Hotels Are Converting
 
-The shift to saltwater isn't just about guest comfort—the economics increasingly favor the switch.
+The shift to saltwater isn't just about guest comfort: the economics increasingly favor the switch.
 
 ### Initial Investment vs. Long-Term Savings
 
@@ -508,7 +562,7 @@ A mid-sized resort pool typically recoups the conversion investment within 2-3 y
 
 ### Maintenance Considerations
 
-Saltwater pools aren't maintenance-free—they just require different maintenance:
+Saltwater pools aren't maintenance-free: they just require different maintenance:
 
 - Salt cells need periodic cleaning and eventual replacement
 - pH tends to rise and requires more frequent adjustment
@@ -545,7 +599,7 @@ The saltwater shift isn't uniform worldwide.
 
 ### Leading Markets
 
-**Australia and New Zealand**: Over 80% of new pools are saltwater. The preference is cultural—Australians have embraced salt pools for decades.
+**Australia and New Zealand**: Over 80% of new pools are saltwater. The preference is cultural: Australians have embraced salt pools for decades.
 
 **Middle East**: High adoption in luxury segments, particularly in UAE and Saudi Arabia where the guest experience premium is valued.
 
@@ -628,11 +682,11 @@ When booking your next pool-centric trip, here's how to navigate the options:
 
 The industry trend toward saltwater is well-founded. The guest experience improvements are real and noticeable, the economics increasingly favor the switch, and the environmental profile is generally better.
 
-For travelers who prioritize their pool experience—and you're reading Pool Atlas, so we know you do—seeking out saltwater pools is worth the effort. The difference is subtle but meaningful, especially over a multi-day stay.
+For travelers who prioritize their pool experience (and you're reading Pool Atlas, so we know you do), seeking out saltwater pools is worth the effort. The difference is subtle but meaningful, especially over a multi-day stay.
 
 That said, a well-maintained traditional pool at an exceptional property still beats a poorly managed saltwater pool anywhere. The skill and attention of the pool management team matters more than the chlorination method.
 
-The future of hotel swimming is almost certainly saltwater, with increasing natural and mineral innovations on the horizon. We're excited to see where the next decade takes us—and we'll be there, taking notes from the pool deck.
+The future of hotel swimming is almost certainly saltwater, with increasing natural and mineral innovations on the horizon. We're excited to see where the next decade takes us, and we'll be there, taking notes from the pool deck.
 
 ---
 
@@ -1142,49 +1196,49 @@ If pool quality is a priority for your travels, Aman, Four Seasons, and One&Only
     content: `
 # The Best Hotel Pools in Greece
 
-Greece does not do things by halves. The light here is legendary for a reason — sharp, white, and relentless, it turns every surface into a statement and every pool into a mirror for the sky. This is a country where the sea is never far, where history sits at the surface of everything, and where the right hotel pool doesn't just offer a swim but a particular, irreplaceable view of the world.
+Greece does not do things by halves. The light here is legendary for a reason: sharp, white, and relentless, it turns every surface into a statement and every pool into a mirror for the sky. This is a country where the sea is never far, where history sits at the surface of everything, and where the right hotel pool doesn't just offer a swim but a particular, irreplaceable view of the world.
 
 We've ranked every major Greek pool on Pool Atlas. These are the ones that rise to the very top.
 
 ## Santorini: The Caldera Edge
 
-No destination on earth has produced more iconic pool photographs than Santorini, and the reason is simple: the caldera. The collapsed volcanic crater — now filled with the Aegean — creates a natural amphitheater of water and cliff, and the hotels that line its rim have spent decades learning how to make the most of it.
+No destination on earth has produced more iconic pool photographs than Santorini, and the reason is simple: the caldera. The collapsed volcanic crater, now filled with the Aegean, creates a natural amphitheater of water and cliff, and the hotels that line its rim have spent decades learning how to make the most of it.
 
-**[Grace Santorini](/pools/grace-santorini-1)** holds the top spot in our global rankings, and it earns it. The hotel's infinity pool is positioned at the very edge of the caldera, and the effect — a thin line of water appearing to spill directly into the sea 300 meters below — is as precise and calculated as a magic trick. The pool itself is long and lean, designed for a particular kind of lap swim with a view that makes focus impossible. Grace has fewer than 20 rooms, which means the pool is rarely crowded. The cocktail hour here, as the sun descends behind the Thirassia island and the caldera turns copper, is one of travel's genuinely unrepeatable experiences.
+**[Grace Santorini](/pools/grace-santorini-1)** holds the top spot in our global rankings, and it earns it. The hotel's infinity pool is positioned at the very edge of the caldera, and the effect, a thin line of water appearing to spill directly into the sea 300 meters below, is as precise and calculated as a magic trick. The pool itself is long and lean, designed for a particular kind of lap swim with a view that makes focus impossible. Grace has fewer than 20 rooms, which means the pool is rarely crowded. The cocktail hour here, as the sun descends behind the Thirassia island and the caldera turns copper, is one of travel's genuinely unrepeatable experiences.
 
-**[Erosantorini](/pools/erosantorini-84)** offers a different interpretation of the same landscape. The hotel's tiered pool configuration steps down the caldera cliff in three levels, each with progressively more dramatic exposure to the view. It's a more social property than Grace — the pool deck has energy — but the design intelligence is real. The tiers create natural privacy pockets within what is effectively an open, shared space.
+**[Erosantorini](/pools/erosantorini-84)** offers a different interpretation of the same landscape. The hotel's tiered pool configuration steps down the caldera cliff in three levels, each with progressively more dramatic exposure to the view. It's a more social property than Grace, the pool deck has energy, but the design intelligence is real. The tiers create natural privacy pockets within what is effectively an open, shared space.
 
-**[Andronis Boutique Hotel](/pools/andronis-boutique-hotel-27)** carves its pool directly into the volcanic rock of Oia, the village at Santorini's northern tip. The cave aesthetic — rough pumice walls, candlelit niches, water the color of the sky at noon — is genuinely distinctive. It feels less like a hotel pool and more like something the island itself produced. Oia catches the sunset from a slightly different angle than Fira and Imerovigli; the light here in the early evening is extraordinary.
+**[Andronis Boutique Hotel](/pools/andronis-boutique-hotel-27)** carves its pool directly into the volcanic rock of Oia, the village at Santorini's northern tip. The cave aesthetic (rough pumice walls, candlelit niches, water the color of the sky at noon) is genuinely distinctive. It feels less like a hotel pool and more like something the island itself produced. Oia catches the sunset from a slightly different angle than Fira and Imerovigli; the light here in the early evening is extraordinary.
 
 ## Mykonos: Cycladic Cool
 
-Mykonos has spent the last decade becoming the Mediterranean's most energetic luxury destination, and its pool scene has followed. The best properties here are not quiet — they are deliberately, gloriously not quiet — but they understand design.
+Mykonos has spent the last decade becoming the Mediterranean's most energetic luxury destination, and its pool scene has followed. The best properties here are not quiet (they are deliberately, gloriously not quiet) but they understand design.
 
-**[Cali Mykonos](/pools/cali-mykonos-61)** is the island's most architecturally considered pool hotel. The property perches above Agios Ioannis Bay with a pool terrace that commands sweeping views across to the island of Delos — the mythological birthplace of Apollo. The Cycladic white-on-white aesthetic is handled without cliché here: everything is considered, nothing is superfluous. For guests who want Mykonos energy without the full Super Paradise chaos, this is the move.
+**[Cali Mykonos](/pools/cali-mykonos-61)** is the island's most architecturally considered pool hotel. The property perches above Agios Ioannis Bay with a pool terrace that commands sweeping views across to the island of Delos: the mythological birthplace of Apollo. The Cycladic white-on-white aesthetic is handled without cliché here: everything is considered, nothing is superfluous. For guests who want Mykonos energy without the full Super Paradise chaos, this is the move.
 
 ## Crete: Scale and Privacy
 
 Where Santorini offers volcanic drama and Mykonos offers social energy, Crete offers something rarer in the Greek island context: space. The island is large enough to absorb visitors without showing it, and the best hotels here offer a sense of private possession that the smaller islands can't match.
 
-**[Daios Cove Luxury Resort](/pools/daios-cove-luxury-resort-52)** on the island's northeastern coast takes the private pool villa concept seriously. Each of the property's pool villas has its own plunge pool terraced into the hillside above the private bay, and the resort's main pool extends along the waterfront on a platform above the sea. It's a sprawling property — walk everywhere or take the resort's boat shuttle — and the scale works in its favor. This is a week-long holiday hotel, not a two-night stay.
+**[Daios Cove Luxury Resort](/pools/daios-cove-luxury-resort-52)** on the island's northeastern coast takes the private pool villa concept seriously. Each of the property's pool villas has its own plunge pool terraced into the hillside above the private bay, and the resort's main pool extends along the waterfront on a platform above the sea. It's a sprawling property, walk everywhere or take the resort's boat shuttle, and the scale works in its favor. This is a week-long holiday hotel, not a two-night stay.
 
 ## Athens: The Urban Surprise
 
 Most people don't think of Athens as a pool destination. They should.
 
-**[The Dolli at Athens](/pools/the-dolli-at-athens-59)** changes the conversation entirely. The rooftop pool sits directly across from the Acropolis, and swimming here — with the Parthenon framed in your sightline — is one of those travel experiences that doesn't feel quite real while you're having it. The hotel occupies a neoclassical building in the Syntagma district and the rooftop has been designed to maximize the view without obstruction. Go at dusk when the Acropolis is lit and the city spreads out below in every direction.
+**[The Dolli at Athens](/pools/the-dolli-at-athens-59)** changes the conversation entirely. The rooftop pool sits directly across from the Acropolis, and swimming here, with the Parthenon framed in your sightline, is one of those travel experiences that doesn't feel quite real while you're having it. The hotel occupies a neoclassical building in the Syntagma district and the rooftop has been designed to maximize the view without obstruction. Go at dusk when the Acropolis is lit and the city spreads out below in every direction.
 
 ## The Greek Difference
 
-What makes Greek pools distinct from their Mediterranean counterparts in Italy or Spain is the relationship with the sea itself. In Italy, the sea is backdrop. In Greece, it's everywhere — the horizon, the smell of the air, the source of the light. The best Greek hotel pools don't compete with that; they acknowledge it and point you toward it.
+What makes Greek pools distinct from their Mediterranean counterparts in Italy or Spain is the relationship with the sea itself. In Italy, the sea is backdrop. In Greece, it's everywhere: the horizon, the smell of the air, the source of the light. The best Greek hotel pools don't compete with that; they acknowledge it and point you toward it.
 
 ## Planning Your Greek Pool Trip
 
-**When to go:** Late May through June and September are the ideal windows — hot enough for swimming, thin enough in crowds to actually enjoy the pools without reservations for sun loungers. July and August are peak in every sense: peak heat, peak people, peak prices. If you're going in high summer, book well ahead and plan to swim early.
+**When to go:** Late May through June and September are the ideal windows, hot enough for swimming, thin enough in crowds to actually enjoy the pools without reservations for sun loungers. July and August are peak in every sense: peak heat, peak people, peak prices. If you're going in high summer, book well ahead and plan to swim early.
 
-**Santorini logistics:** The caldera-rim hotels in Oia and Imerovigli can only be reached on foot or by ATV on the clifftop paths — no cars. Most top hotels will arrange luggage porterage and donkey or cable car transfers from the port. Factor this into your planning, especially if you're arriving by ferry.
+**Santorini logistics:** The caldera-rim hotels in Oia and Imerovigli can only be reached on foot or by ATV on the clifftop paths, no cars. Most top hotels will arrange luggage porterage and donkey or cable car transfers from the port. Factor this into your planning, especially if you're arriving by ferry.
 
-**Island hopping and pools:** If you're combining islands, Santorini to Mykonos is the classic pairing — frequent ferry connections and a logical contrast in mood. Adding Crete extends the trip but rewards it significantly; the island is different enough in character to feel like a separate country.
+**Island hopping and pools:** If you're combining islands, Santorini to Mykonos is the classic pairing, frequent ferry connections and a logical contrast in mood. Adding Crete extends the trip but rewards it significantly; the island is different enough in character to feel like a separate country.
 
 **The room vs. pool question:** Many Greek island hotels sell "caldera view rooms" with private plunge pools at a premium. Whether it's worth it depends on how much of your day you'll actually spend there. If you plan to leave the hotel and explore, the shared pool is usually spectacular enough. If you want to spend two days barely moving, the private plunge pool changes everything.
 
@@ -1209,59 +1263,59 @@ Greece rewards the unhurried. Find a pool with the right view, order something c
     content: `
 # The Best Hotel Pools in Italy
 
-Italy has always understood the art of *dolce far niente* — the sweetness of doing nothing. And nowhere is that philosophy expressed more perfectly than at a great Italian hotel pool. This is a country where ancient villas open onto mirror-calm lakes, where hillside monasteries command the same views that have inspired painters for centuries, and where a sun lounger beside a limestone pool feels less like a luxury and more like a birthright.
+Italy has always understood the art of *dolce far niente*: the sweetness of doing nothing. And nowhere is that philosophy expressed more perfectly than at a great Italian hotel pool. This is a country where ancient villas open onto mirror-calm lakes, where hillside monasteries command the same views that have inspired painters for centuries, and where a sun lounger beside a limestone pool feels less like a luxury and more like a birthright.
 
-We've combed through Italy's finest hotels to bring you the pools that rise above — in every sense.
+We've combed through Italy's finest hotels to bring you the pools that rise above: in every sense.
 
 ## Lake Como: The Gold Standard
 
 When people think of Italian hotel pools, they're often thinking of Lake Como. The northern lake has a gravitational pull on the world's most discerning travelers, and the hotels here have risen to meet that expectation.
 
-**[Villa d'Este](/pools/villa-deste-13)** sets the benchmark. The floating pool barge moored in the hotel's private bay is among the most photographed in Europe — a saltwater pool on the lake itself, framed by mountains and cypress trees. The estate dates to 1568 and the pool has been the centerpiece of its pleasure gardens ever since. Stay in a garden-view room if you can; waking up to that view makes everything else feel inconsequential.
+**[Villa d'Este](/pools/villa-deste-13)** sets the benchmark. The floating pool barge moored in the hotel's private bay is among the most photographed in Europe: a saltwater pool on the lake itself, framed by mountains and cypress trees. The estate dates to 1568 and the pool has been the centerpiece of its pleasure gardens ever since. Stay in a garden-view room if you can; waking up to that view makes everything else feel inconsequential.
 
-Just up the road, **[Il Sereno](/pools/il-sereno-75)** takes a more contemporary approach. Designed by Patricia Urquiola, the hotel's pool sits at lake level with a glass wall separating it from the water, so swimmers appear to hover between pool and lake. It's architecturally extraordinary — a different mood from Villa d'Este's old-money grandeur, but equally compelling.
+Just up the road, **[Il Sereno](/pools/il-sereno-75)** takes a more contemporary approach. Designed by Patricia Urquiola, the hotel's pool sits at lake level with a glass wall separating it from the water, so swimmers appear to hover between pool and lake. It's architecturally extraordinary: a different mood from Villa d'Este's old-money grandeur, but equally compelling.
 
-For true old-world splendor, **[Grand Hotel Tremezzo](/pools/grand-hotel-tremezzo-51)** delivers. The hotel's 1913 lakefront pool — an open-air pool on a floating platform extending over the water — offers perhaps the most romantic swim in Italy. Book a private hour at sunset and bring someone you love.
+For true old-world splendor, **[Grand Hotel Tremezzo](/pools/grand-hotel-tremezzo-51)** delivers. The hotel's 1913 lakefront pool, an open-air pool on a floating platform extending over the water, offers perhaps the most romantic swim in Italy. Book a private hour at sunset and bring someone you love.
 
 ## Amalfi Coast: Edge-of-the-World Infinity
 
-The Amalfi Coast isn't subtle. Everything here is vertical — cliffs dropping to turquoise water, terraced lemon groves stacked against the sky, and hotel pools that seem to pour directly into the Mediterranean.
+The Amalfi Coast isn't subtle. Everything here is vertical: cliffs dropping to turquoise water, terraced lemon groves stacked against the sky, and hotel pools that seem to pour directly into the Mediterranean.
 
-**[Monastero Santa Rosa](/pools/monastero-santa-rosa-hotel-spa-6)** occupies a 17th-century convent perched above the sea between Positano and Amalfi. The infinity pool here is carved from the cliffside itself, and the view — a long sweep of the Sorrentine Peninsula — is simply staggering. The hotel limits pool access to keep things tranquil; go early morning and you'll often have it to yourself.
+**[Monastero Santa Rosa](/pools/monastero-santa-rosa-hotel-spa-6)** occupies a 17th-century convent perched above the sea between Positano and Amalfi. The infinity pool here is carved from the cliffside itself, and the view, a long sweep of the Sorrentine Peninsula, is simply staggering. The hotel limits pool access to keep things tranquil; go early morning and you'll often have it to yourself.
 
 **[Belmond Hotel Caruso](/pools/belmond-hotel-caruso-7)** in Ravello sits 1,000 feet above sea level, giving its pool a perspective that feels genuinely panoramic rather than just elevated. The views extend past Amalfi and Minori all the way to the horizon. On a clear day in July, it's hard to imagine a better place to exist.
 
-**[Le Sirenuse](/pools/le-sirenuse-105)** in Positano is smaller and more intimate, but the pool's position — above the town's famous cascade of pastel buildings, with Positano and the sea below — is incomparable. The hotel has been run by the Sersale family for over 70 years and it shows: the service here is warm in a way that chain hotels struggle to replicate.
+**[Le Sirenuse](/pools/le-sirenuse-105)** in Positano is smaller and more intimate, but the pool's position (above the town's famous cascade of pastel buildings, with Positano and the sea below) is incomparable. The hotel has been run by the Sersale family for over 70 years and it shows: the service here is warm in a way that chain hotels struggle to replicate.
 
 **[Hotel Santa Caterina](/pools/hotel-santa-caterina-65)** in Amalfi town itself takes a different approach. Instead of clinging to cliffs, the hotel descends through gardens to the sea, with a saltwater pool carved into the rocks just above the waterline. Swim here and the Tyrrhenian Sea is inches away.
 
 ## Tuscany: Rolling Hills and Stone Pools
 
-Tuscany's pool aesthetic is earthier than the coast — stone-edged pools overlooking vineyards and olive groves, where the surrounding landscape matters as much as the water itself.
+Tuscany's pool aesthetic is earthier than the coast: stone-edged pools overlooking vineyards and olive groves, where the surrounding landscape matters as much as the water itself.
 
-**[Castello di Vicarello](/pools/castello-di-vicarello-54)** is a 12th-century fortress converted into a six-suite hideaway in the Maremma. The pool sits within ancient stone walls with views across the undulating countryside — it feels genuinely private, genuinely historic. Fewer than 25 guests at full capacity. Reserve months ahead.
+**[Castello di Vicarello](/pools/castello-di-vicarello-54)** is a 12th-century fortress converted into a six-suite hideaway in the Maremma. The pool sits within ancient stone walls with views across the undulating countryside: it feels genuinely private, genuinely historic. Fewer than 25 guests at full capacity. Reserve months ahead.
 
-**[Borgo Pignano](/pools/borgo-pignano-83)** near Volterra takes the organic farm concept seriously — the estate produces its own wine, olive oil, and honey — and the pool fits this ethos. Surrounded by Tuscan farmland with the countryside stretching in every direction, it's less about visual drama and more about a deep sense of place.
+**[Borgo Pignano](/pools/borgo-pignano-83)** near Volterra takes the organic farm concept seriously (the estate produces its own wine, olive oil, and honey) and the pool fits this ethos. Surrounded by Tuscan farmland with the countryside stretching in every direction, it's less about visual drama and more about a deep sense of place.
 
 ## Umbria: The Quiet Alternative
 
 While Tuscany draws the crowds, neighboring Umbria remains under-visited, and for pool-seekers, that's a gift.
 
-**[Castello di Reschio](/pools/castello-di-reschio-58)** is the passion project of the Bolza family, who spent decades restoring a medieval hamlet in the Umbrian hills. The main pool is set within the castle's formal garden — cool, shaded, and unhurried. The estate also has a spa, riding stables, and an organic farm. It's the kind of place you check into for a week and consider extending indefinitely.
+**[Castello di Reschio](/pools/castello-di-reschio-58)** is the passion project of the Bolza family, who spent decades restoring a medieval hamlet in the Umbrian hills. The main pool is set within the castle's formal garden: cool, shaded, and unhurried. The estate also has a spa, riding stables, and an organic farm. It's the kind of place you check into for a week and consider extending indefinitely.
 
 ## Rome: A City Pool Worth Knowing
 
-Urban Rome isn't known for spectacular pools, but **[Rome Cavalieri](/pools/rome-cavalieri-a-waldorf-astoria-hotel-37)** earns its place on this list. Set on Monte Mario above the city, the hotel has three pools and the views over Rome — from St. Peter's to the Apennines — are genuine. It's a city hotel, yes, but the pool terrace feels like an escape.
+Urban Rome isn't known for spectacular pools, but **[Rome Cavalieri](/pools/rome-cavalieri-a-waldorf-astoria-hotel-37)** earns its place on this list. Set on Monte Mario above the city, the hotel has three pools and the views over Rome: from St. Peter's to the Apennines: are genuine. It's a city hotel, yes, but the pool terrace feels like an escape.
 
 ## Planning Your Italian Pool Trip
 
-**When to go:** Late May through June and September are ideal — temperatures are warm, crowds are thinner than peak summer, and the light is extraordinary. July and August are intense at coastal properties; book well in advance and plan to use the pool early morning or evening.
+**When to go:** Late May through June and September are ideal, temperatures are warm, crowds are thinner than peak summer, and the light is extraordinary. July and August are intense at coastal properties; book well in advance and plan to use the pool early morning or evening.
 
 **Getting the experience right:** Italy's best pool hotels are often booked months ahead, particularly for July and August. Many have minimum stay requirements in peak season. If a specific property matters to you, don't leave it until the last minute.
 
-**The Lake Como logistics:** The lake's fast boat service connects most villages in under 20 minutes, so staying at one property and exploring others is genuinely practical. The SS340 road can be brutally congested in summer — boats beat cars.
+**The Lake Como logistics:** The lake's fast boat service connects most villages in under 20 minutes, so staying at one property and exploring others is genuinely practical. The SS340 road can be brutally congested in summer: boats beat cars.
 
-Italy's pools aren't just amenities. They're part of a longer tradition of *villeggiatura* — the Italian art of the summer retreat. Find the right one and you'll understand why people return to the same Italian hotel for a decade running.
+Italy's pools aren't just amenities. They're part of a longer tradition of *villeggiatura*: the Italian art of the summer retreat. Find the right one and you'll understand why people return to the same Italian hotel for a decade running.
 
 *Explore all Italian pools ranked on Pool Atlas → [Browse by destination](/)*
     `
@@ -1269,7 +1323,7 @@ Italy's pools aren't just amenities. They're part of a longer tradition of *vill
   {
     slug: "best-hotel-pools-bali",
     title: "The Best Hotel Pools in Bali",
-    excerpt: "Bali has built its reputation on the hotel pool — from ancient rice terrace infinity edges to jungle-canopy plunges. Here are the ones worth planning a trip around.",
+    excerpt: "Bali has built its reputation on the hotel pool, from ancient rice terrace infinity edges to jungle-canopy plunges. Here are the ones worth planning a trip around.",
     category: "Destination",
     readTime: "9 min read",
     image: "/images/pools/pool-mandapa-villa-ubud.jpg",
@@ -1282,47 +1336,47 @@ Italy's pools aren't just amenities. They're part of a longer tradition of *vill
     content: `
 # The Best Hotel Pools in Bali
 
-There's a reason Bali's hotel pools appear on more mood boards than almost anywhere else on earth. It's not just the design — though the design is exceptional — it's the setting. The island's landscape does things that pool architects elsewhere can only simulate: real rice terraces, actual jungle canopy, genuine volcano views. The best Bali pools don't compete with nature. They borrow from it.
+There's a reason Bali's hotel pools appear on more mood boards than almost anywhere else on earth. It's not just the design, though the design is exceptional, it's the setting. The island's landscape does things that pool architects elsewhere can only simulate: real rice terraces, actual jungle canopy, genuine volcano views. The best Bali pools don't compete with nature. They borrow from it.
 
 ## East Bali: Terraced Grandeur
 
-**[Amankila](/pools/amankila-3)** remains the definitive Balinese pool experience. Ranked #3 in the world on Pool Atlas, the hotel's three-tiered infinity pools step down a coconut-palm hillside to a private beach club on the Lombok Strait. The composition — staggered blue rectangles against the hill, the sea stretching to the horizon — is so precisely conceived that photographs barely capture the scale of it. You need to stand at the top pool and look down.
+**[Amankila](/pools/amankila-3)** remains the definitive Balinese pool experience. Ranked #3 in the world on Pool Atlas, the hotel's three-tiered infinity pools step down a coconut-palm hillside to a private beach club on the Lombok Strait. The composition (staggered blue rectangles against the hill, the sea stretching to the horizon) is so precisely conceived that photographs barely capture the scale of it. You need to stand at the top pool and look down.
 
-The Aman experience is unhurried by design. No pool attendants hovering, no DJ sets, just the sound of water and the occasional bird. Book the Pool Suite if the budget allows — you'll have your own plunge pool alongside access to the main pools below.
+The Aman experience is unhurried by design. No pool attendants hovering, no DJ sets, just the sound of water and the occasional bird. Book the Pool Suite if the budget allows: you'll have your own plunge pool alongside access to the main pools below.
 
 ## Ubud: Jungle and Rice Fields
 
-Ubud's pool landscape is different from the coast — greener, more enclosed, with a different kind of drama. The jungle canopy creates shade and sound in equal measure.
+Ubud's pool landscape is different from the coast: greener, more enclosed, with a different kind of drama. The jungle canopy creates shade and sound in equal measure.
 
-**[Capella Ubud](/pools/capella-ubud-67)** takes the concept of blending architecture with landscape to its logical extreme. The camp — and it is a tented camp, in the original meaning — sits within a 22,000-square-meter valley. The main pool is suspended above the river gorge, offering views into the jungle below that feel genuinely wild. It's the most atmospheric pool on the island for guests who want nature rather than infinity-edge Instagram shots.
+**[Capella Ubud](/pools/capella-ubud-67)** takes the concept of blending architecture with landscape to its logical extreme. The camp (and it is a tented camp, in the original meaning) sits within a 22,000-square-meter valley. The main pool is suspended above the river gorge, offering views into the jungle below that feel genuinely wild. It's the most atmospheric pool on the island for guests who want nature rather than infinity-edge Instagram shots.
 
-**[Alila Ubud](/pools/alila-ubud-57)** takes the classic approach: a 25-meter pool at the edge of a rice terrace valley, with the forest dropping away below. The architecture is clean and contemporary, but it's the view that wins — a panoramic sweep of green that shifts color through the day from bright midday jade to deep dusk emerald.
+**[Alila Ubud](/pools/alila-ubud-57)** takes the classic approach: a 25-meter pool at the edge of a rice terrace valley, with the forest dropping away below. The architecture is clean and contemporary, but it's the view that wins: a panoramic sweep of green that shifts color through the day from bright midday jade to deep dusk emerald.
 
 **[Bisma Eight](/pools/bisma-eight-50)** is Ubud's best-value entry in this category. The infinity pool overlooks the Campuhan River valley and Mount Agung on a clear day, and the property is smaller and more intimate than the big-name resorts. Excellent for honeymooners who want seclusion without Aman prices.
 
 ## Seminyak and Uluwatu: Clifftop Drama
 
-The Bukit Peninsula, Bali's southernmost tip, offers a completely different pool experience — dramatic limestone cliffs above the Indian Ocean, with pools positioned to maximize the drop.
+The Bukit Peninsula, Bali's southernmost tip, offers a completely different pool experience: dramatic limestone cliffs above the Indian Ocean, with pools positioned to maximize the drop.
 
 **[Alila Villas Uluwatu](/pools/alila-villas-uluwatu-74)** may be the most architecturally significant hotel in Bali. Designed by WOHA Architects, the property cascades down the cliff face in a series of interconnected pools, gardens, and open pavilions. The main infinity pool appears to hang over the ocean. The design has won more awards than any other property on the island, and arriving here for the first time has a genuine wow factor.
 
-**[Chapung SeBali](/pools/chapung-sebali-resort-and-spa-66)** in the hills above Ubud offers a quieter alternative — a cliffside pool overlooking a deep tropical valley with Mount Agung in the background. Fewer guests know this property than its more famous neighbors, which is precisely what makes it special.
+**[Chapung SeBali](/pools/chapung-sebali-resort-and-spa-66)** in the hills above Ubud offers a quieter alternative: a cliffside pool overlooking a deep tropical valley with Mount Agung in the background. Fewer guests know this property than its more famous neighbors, which is precisely what makes it special.
 
 ## The Ritz-Carlton in Rice Fields
 
-**[Mandapa, A Ritz-Carlton Reserve](/pools/mandapa-a-ritz-carlton-reserve-31)** sits in an extraordinary position: within a 16-hectare rice field beside the Ayung River. The hotel's pools are integrated into this working landscape — swimming here, surrounded by active terraces tended by local farmers, is one of the most genuinely immersive experiences in Balinese luxury travel.
+**[Mandapa, A Ritz-Carlton Reserve](/pools/mandapa-a-ritz-carlton-reserve-31)** sits in an extraordinary position: within a 16-hectare rice field beside the Ayung River. The hotel's pools are integrated into this working landscape: swimming here, surrounded by active terraces tended by local farmers, is one of the most genuinely immersive experiences in Balinese luxury travel.
 
 The Ritz-Carlton Reserve category means fewer rooms and a higher ratio of staff to guests than a standard luxury hotel. The service shows.
 
 ## Bali's Pool Culture: What to Know
 
-**Private pools vs. shared pools:** Bali leads the world in private villa pools — even mid-range properties often include a private pool with each villa. If maximum privacy matters, look for a pool villa rather than a suite with shared pool access. The gap in price is often smaller than you'd expect.
+**Private pools vs. shared pools:** Bali leads the world in private villa pools, even mid-range properties often include a private pool with each villa. If maximum privacy matters, look for a pool villa rather than a suite with shared pool access. The gap in price is often smaller than you'd expect.
 
 **Best time to visit:** April through June and September through October are the sweet spots. The dry season (May–September) delivers reliable sunshine, but shoulder months before and after offer lower prices and fewer crowds. Ubud is cooler year-round than the coast; if you burn easily, the jungle properties offer more natural shade.
 
 **The Instagram question:** Bali's pools are among the most-photographed in the world. If you want your own peaceful morning swim without phone-in-pool strangers, ask reception about quieter hours. Many properties have informal early-morning windows (7–9am) before the day guests arrive.
 
-Bali has been a byword for luxury travel for three decades now, and the hotel pool scene has only deepened. New properties continue to raise the bar — but the classics earn their reputation every day.
+Bali has been a byword for luxury travel for three decades now, and the hotel pool scene has only deepened. New properties continue to raise the bar, but the classics earn their reputation every day.
 
 *Browse all Bali and Indonesia pools ranked on Pool Atlas → [See the rankings](/)*
     `
@@ -1330,7 +1384,7 @@ Bali has been a byword for luxury travel for three decades now, and the hotel po
   {
     slug: "best-hotel-pools-maldives",
     title: "The Best Hotel Pools in the Maldives (For Every Type of Traveler)",
-    excerpt: "The Maldives invented the overwater bungalow. But its hotel pools — infinity edges merging with lagoon, rooftop decks above the reef — deserve equal attention.",
+    excerpt: "The Maldives invented the overwater bungalow. But its hotel pools (infinity edges merging with lagoon, rooftop decks above the reef) deserve equal attention.",
     category: "Destination",
     readTime: "8 min read",
     image: "/images/pools/pool-huvafen-fushi.jpg",
@@ -1343,15 +1397,15 @@ Bali has been a byword for luxury travel for three decades now, and the hotel po
     content: `
 # The Best Hotel Pools in the Maldives
 
-At first glance, the Maldives doesn't need a hotel pool. The Indian Ocean is right there — warm, clear, and populated by more marine life than most aquariums. So why are the pools here among the most extraordinary on earth?
+At first glance, the Maldives doesn't need a hotel pool. The Indian Ocean is right there: warm, clear, and populated by more marine life than most aquariums. So why are the pools here among the most extraordinary on earth?
 
-Because the best Maldivian pools don't compete with the ocean. They frame it, float on it, or dissolve into it so completely that you're not sure where one ends and the other begins. They're not alternatives to swimming in the sea — they're a different kind of conversation with it.
+Because the best Maldivian pools don't compete with the ocean. They frame it, float on it, or dissolve into it so completely that you're not sure where one ends and the other begins. They're not alternatives to swimming in the sea: they're a different kind of conversation with it.
 
 ## For Honeymooners: Intimacy Above the Lagoon
 
-**[Huvafen Fushi](/pools/huvafen-fushi-12)** pioneered the underwater spa concept and has never stopped pushing boundaries. The island's pools sit at the edge of a house reef with extraordinary visibility — snorkel off the jetty and you're immediately in deep water with reef sharks and Napoleon wrasse. The pool provides a calmer counterpoint: heated, horizonless, facing west for the sunsets.
+**[Huvafen Fushi](/pools/huvafen-fushi-12)** pioneered the underwater spa concept and has never stopped pushing boundaries. The island's pools sit at the edge of a house reef with extraordinary visibility: snorkel off the jetty and you're immediately in deep water with reef sharks and Napoleon wrasse. The pool provides a calmer counterpoint: heated, horizonless, facing west for the sunsets.
 
-The property is best suited to couples. The architecture is restrained and modern — nothing fussy — and the spa is ranked among the best in the Indian Ocean.
+The property is best suited to couples. The architecture is restrained and modern, nothing fussy, and the spa is ranked among the best in the Indian Ocean.
 
 **[Joali](/pools/joali-81)** takes a different approach: the resort is built around an art collection that transforms it into something closer to a museum-resort hybrid. Local and international artists have contributed installations throughout the island, and the main pool area is framed by one of the property's most dramatic works. For guests who want culture alongside the turquoise water, Joali is unmatched in the Maldives.
 
@@ -1359,13 +1413,13 @@ The property is best suited to couples. The architecture is restrained and moder
 
 ## For the Full Experience: One&Only Reethi Rah
 
-**[One&Only Reethi Rah](/pools/one-only-reethi-rah-92)** occupies one of the largest islands in the North Malé Atoll — a 109-hectare landmass with six kilometers of beach. The main pool sits beside the restaurant and bar complex, looking out over the lagoon. But the property's real draw is scale: a boat, two speedboats, tennis courts, a gym, and more beach than you could cover in a week. The pool here is part of a broader resort ecosystem.
+**[One&Only Reethi Rah](/pools/one-only-reethi-rah-92)** occupies one of the largest islands in the North Malé Atoll: a 109-hectare landmass with six kilometers of beach. The main pool sits beside the restaurant and bar complex, looking out over the lagoon. But the property's real draw is scale: a boat, two speedboats, tennis courts, a gym, and more beach than you could cover in a week. The pool here is part of a broader resort ecosystem.
 
 Book the Water Pool Villa for the full experience: a private plunge pool that cantilevers over the lagoon, with glass panels below the waterline so you can watch the reef below. Breakfast is delivered by boat.
 
 ## The Practical Side of Maldives Pools
 
-**Seaplane vs. speedboat:** The most remote resorts require seaplane transfers — spectacular, but timed to daylight hours and weather-dependent. Speedboat resorts (closer to the capital, Malé) allow more flexibility and cost considerably less. Most pool-focused resorts are accessible by both; check transfer options before booking.
+**Seaplane vs. speedboat:** The most remote resorts require seaplane transfers, spectacular, but timed to daylight hours and weather-dependent. Speedboat resorts (closer to the capital, Malé) allow more flexibility and cost considerably less. Most pool-focused resorts are accessible by both; check transfer options before booking.
 
 **Water villa vs. beach villa:** Both categories can include private pools. Water villas tend to have better direct ocean access; beach villas often have more garden privacy. If you're choosing primarily for the pool experience, a beach pool villa at a property like Huvafen Fushi or Alila Kothaifaru gives you seclusion, shade, and beauty without the premium for overwater positioning.
 
@@ -1392,13 +1446,13 @@ The Maldives pool scene has matured significantly over the past decade. Where on
     content: `
 # The Best Hotel Pools in Thailand
 
-Thailand has been receiving luxury travelers for long enough to know exactly what they want — and the country's hotel pools reflect that understanding. They're varied in a way that matches Thailand's own geographic range: jungle pools in the north, beach-facing infinity edges in the south, island retreats with views that pin you in place. Here's where to swim.
+Thailand has been receiving luxury travelers for long enough to know exactly what they want, and the country's hotel pools reflect that understanding. They're varied in a way that matches Thailand's own geographic range: jungle pools in the north, beach-facing infinity edges in the south, island retreats with views that pin you in place. Here's where to swim.
 
 ## Chiang Mai: Northern Thailand's Cultural Capital
 
-Chiang Mai's pool scene is defined by a lush, tropical intimacy that's entirely different from the beach resorts of the south. Pools here are framed by jungle, rice fields, and — on a clear day — the mountains that run north into Myanmar.
+Chiang Mai's pool scene is defined by a lush, tropical intimacy that's entirely different from the beach resorts of the south. Pools here are framed by jungle, rice fields, and, on a clear day, the mountains that run north into Myanmar.
 
-**[Four Seasons Resort Chiang Mai](/pools/four-seasons-resort-chiang-mai-14)** occupies a working rice paddy estate in the Mae Rim Valley, 30 minutes north of the city. The main pool sits at the edge of the terraces, which are actively farmed by local families under the resort's Farmer Experience program. Watching water buffalo work the fields from a heated pool is a uniquely Thai luxury experience — a window into agricultural life that feels authentic rather than staged.
+**[Four Seasons Resort Chiang Mai](/pools/four-seasons-resort-chiang-mai-14)** occupies a working rice paddy estate in the Mae Rim Valley, 30 minutes north of the city. The main pool sits at the edge of the terraces, which are actively farmed by local families under the resort's Farmer Experience program. Watching water buffalo work the fields from a heated pool is a uniquely Thai luxury experience: a window into agricultural life that feels authentic rather than staged.
 
 **[137 Pillars Suites & Residences](/pools/137-pillars-suites-residences-30)** takes a different tack: a boutique heritage property in the heart of the city, with a rooftop pool offering views over Chiang Mai's old town and the temples below. Smaller and more urban than the Four Seasons, but exceptionally well-executed and significantly more affordable.
 
@@ -1406,37 +1460,37 @@ Chiang Mai's pool scene is defined by a lush, tropical intimacy that's entirely 
 
 Phuket's west coast commands the Andaman Sea, and the hotels that take full advantage of this orientation create some of the most dramatic pool-and-sea compositions in Southeast Asia.
 
-**[Amanpuri](/pools/amanpuri-78)** was Aman's first property, opened in 1988, and it still sets the standard for the Phuket luxury pool experience. Forty pavilions spread across a coconut grove above the sea, each with access to the main 25-meter pool, which faces the Andaman over a staircase of stepped terraces. The design is rooted in Thai temple architecture — clean sightlines, calm proportions, water as a meditative element rather than a social one. Nearly four decades on, it remains the best pool hotel in Phuket.
+**[Amanpuri](/pools/amanpuri-78)** was Aman's first property, opened in 1988, and it still sets the standard for the Phuket luxury pool experience. Forty pavilions spread across a coconut grove above the sea, each with access to the main 25-meter pool, which faces the Andaman over a staircase of stepped terraces. The design is rooted in Thai temple architecture: clean sightlines, calm proportions, water as a meditative element rather than a social one. Nearly four decades on, it remains the best pool hotel in Phuket.
 
 ## Koh Samui: Gulf of Thailand
 
 The Gulf side of southern Thailand gets less attention than Phuket but delivers equally spectacular water. Koh Samui's hills and headlands create natural platforms for elevated pool experiences.
 
-**[Four Seasons Resort Koh Samui](/pools/four-seasons-resort-koh-samui-77)** occupies a steep hillside above the Gulf. The pool pavilions are built into the gradient, so each villa's private pool appears to hang over the bay below. The resort's main pool mirrors the private ones — a long infinity edge pointing directly at Koh Phangan and the evening sky. Sunsets here rank among the best in Thailand.
+**[Four Seasons Resort Koh Samui](/pools/four-seasons-resort-koh-samui-77)** occupies a steep hillside above the Gulf. The pool pavilions are built into the gradient, so each villa's private pool appears to hang over the bay below. The resort's main pool mirrors the private ones: a long infinity edge pointing directly at Koh Phangan and the evening sky. Sunsets here rank among the best in Thailand.
 
 ## Koh Yao Noi: The Off-Grid Choice
 
-Between Phuket and Krabi, Koh Yao Noi is a small island that has largely resisted mass tourism development. The few luxury properties here benefit from genuine seclusion — and extraordinary views of Phang Nga Bay.
+Between Phuket and Krabi, Koh Yao Noi is a small island that has largely resisted mass tourism development. The few luxury properties here benefit from genuine seclusion, and extraordinary views of Phang Nga Bay.
 
-**[Six Senses Yao Noi](/pools/six-senses-yao-noi-72)** has perhaps the finest setting in all of Thai luxury hospitality. The resort climbs a hillside above the bay, and the main pool is positioned to frame Phang Nga's limestone karsts — those extraordinary rock formations that rise vertically from the water in shapes that look digitally enhanced but are entirely real. Swimming here with the karsts arrayed before you at golden hour is an experience that doesn't require any other justification for the trip.
+**[Six Senses Yao Noi](/pools/six-senses-yao-noi-72)** has perhaps the finest setting in all of Thai luxury hospitality. The resort climbs a hillside above the bay, and the main pool is positioned to frame Phang Nga's limestone karsts: those extraordinary rock formations that rise vertically from the water in shapes that look digitally enhanced but are entirely real. Swimming here with the karsts arrayed before you at golden hour is an experience that doesn't require any other justification for the trip.
 
 Six Senses properties emphasize sustainability and wellness throughout, so the pool experience here comes with the wider ethos: organic spa treatments, farm-to-table food, minimal single-use plastics. For environmentally-conscious luxury travelers, Six Senses Yao Noi represents the direction the industry needs to go.
 
 ## Hua Hin: The Wellness Destination
 
-Thailand's wellness resort scene centers on **[Chiva Som](/pools/chiva-som-94)** in Hua Hin, a two-hour drive south of Bangkok. The original Thai destination spa has been operating since 1995, and its pools form the backbone of the retreat experience — freshwater pools, saltwater pools, hydrotherapy pools, and a private beach pool. Guests come for multi-day programs combining spa treatments, nutrition counseling, and fitness sessions.
+Thailand's wellness resort scene centers on **[Chiva Som](/pools/chiva-som-94)** in Hua Hin, a two-hour drive south of Bangkok. The original Thai destination spa has been operating since 1995, and its pools form the backbone of the retreat experience: freshwater pools, saltwater pools, hydrotherapy pools, and a private beach pool. Guests come for multi-day programs combining spa treatments, nutrition counseling, and fitness sessions.
 
-The pool design here is less about Instagram drama and more about genuine therapeutic intent. Temperature-controlled water, mineral additions for skin health, landscaped privacy. It's a different kind of pool experience — quieter, more internal — and it has its passionate devotees.
+The pool design here is less about Instagram drama and more about genuine therapeutic intent. Temperature-controlled water, mineral additions for skin health, landscaped privacy. It's a different kind of pool experience (quieter, more internal) and it has its passionate devotees.
 
 ## Thailand Pool Planning
 
-**Getting around:** Thailand's pool destinations are spread widely. Chiang Mai is a two-hour flight from Bangkok; Phuket is a similar distance south. Island resorts require speedboat transfers after landing. Allow more time than you think you'll need — transfers on smaller islands can be weather-dependent.
+**Getting around:** Thailand's pool destinations are spread widely. Chiang Mai is a two-hour flight from Bangkok; Phuket is a similar distance south. Island resorts require speedboat transfers after landing. Allow more time than you think you'll need: transfers on smaller islands can be weather-dependent.
 
-**High season:** November through April covers the dry season for most of Thailand (the Gulf Coast and Koh Samui follow a different pattern, with their peak December through August). Book high-season hotels at major pool properties well in advance — the best villas and pool suites go early.
+**High season:** November through April covers the dry season for most of Thailand (the Gulf Coast and Koh Samui follow a different pattern, with their peak December through August). Book high-season hotels at major pool properties well in advance: the best villas and pool suites go early.
 
 **The private pool calculation:** Thailand's villa-and-pool-suite model means private pools are widely available at lower prices than in Europe or the Caribbean. At properties like 137 Pillars, a pool suite costs a fraction of what it would at a comparable European property. Build this into your planning: the upgrade from a standard room to a pool-access room is often worth the incremental cost.
 
-Thailand's pool culture is sophisticated enough now that any serious luxury traveler is spoiled for choice. The challenge isn't finding a great pool — it's choosing which one.
+Thailand's pool culture is sophisticated enough now that any serious luxury traveler is spoiled for choice. The challenge isn't finding a great pool: it's choosing which one.
 
 *See all Thailand pools ranked on Pool Atlas → [Browse the rankings](/)*
     `
@@ -1444,7 +1498,7 @@ Thailand's pool culture is sophisticated enough now that any serious luxury trav
   {
     slug: "best-hotel-pools-caribbean",
     title: "The Best Hotel Pools in the Caribbean",
-    excerpt: "The Caribbean invented the resort pool — but the best ones here go far beyond the expected. Private infinity edges, freshwater mountain plunges, and pools that blur into the sea.",
+    excerpt: "The Caribbean invented the resort pool, but the best ones here go far beyond the expected. Private infinity edges, freshwater mountain plunges, and pools that blur into the sea.",
     category: "Destination",
     readTime: "9 min read",
     image: "/images/pools/pool-cap-juluca-villa-anguilla.jpg",
@@ -1457,39 +1511,39 @@ Thailand's pool culture is sophisticated enough now that any serious luxury trav
     content: `
 # The Best Hotel Pools in the Caribbean
 
-The Caribbean invented the modern resort pool. Decades before infinity edges became design vocabulary and private plunge pools a standard expectation, the islands were developing the grammar of tropical luxury — turquoise water, white sun decks, rum punch at 11am. But the region has moved far beyond that original template. Today, the Caribbean's best hotel pools are architecturally ambitious, deliberately private, and in some cases genuinely unforgettable.
+The Caribbean invented the modern resort pool. Decades before infinity edges became design vocabulary and private plunge pools a standard expectation, the islands were developing the grammar of tropical luxury: turquoise water, white sun decks, rum punch at 11am. But the region has moved far beyond that original template. Today, the Caribbean's best hotel pools are architecturally ambitious, deliberately private, and in some cases genuinely unforgettable.
 
 ## Saint Lucia: The Piton Standard
 
-**Jade Mountain** set a benchmark when it opened that few Caribbean hotels have matched. Each of the hotel's 29 "sanctuaries" is an open-sided suite with its own private infinity pool positioned to face directly at the Pitons — Saint Lucia's extraordinary twin volcanic peaks. There is no fourth wall. The suite opens completely to the view, making the pool feel less like an amenity and more like a vantage point.
+**Jade Mountain** set a benchmark when it opened that few Caribbean hotels have matched. Each of the hotel's 29 "sanctuaries" is an open-sided suite with its own private infinity pool positioned to face directly at the Pitons: Saint Lucia's extraordinary twin volcanic peaks. There is no fourth wall. The suite opens completely to the view, making the pool feel less like an amenity and more like a vantage point.
 
-The pools here are large for a private suite — some are 15 feet long — and they're heated to a consistent 90°F. The design is the work of Nick Troubetzkoy, whose approach to merging architecture with landscape has made Jade Mountain one of the most awarded hotel designs in the Western Hemisphere.
+The pools here are large for a private suite, some are 15 feet long, and they're heated to a consistent 90°F. The design is the work of Nick Troubetzkoy, whose approach to merging architecture with landscape has made Jade Mountain one of the most awarded hotel designs in the Western Hemisphere.
 
-**[Boucan by Hotel Chocolat](/pools/boucan-by-hotel-chocolat-100)** in the hills above Soufrière takes a more intimate approach. The boutique property sits within an active cacao plantation, and the pool overlooks the working estate rather than the sea. It's a reminder that Saint Lucia's beauty extends beyond its coastline — this is one of the most atmospheric agricultural landscapes in the Caribbean.
+**[Boucan by Hotel Chocolat](/pools/boucan-by-hotel-chocolat-100)** in the hills above Soufrière takes a more intimate approach. The boutique property sits within an active cacao plantation, and the pool overlooks the working estate rather than the sea. It's a reminder that Saint Lucia's beauty extends beyond its coastline: this is one of the most atmospheric agricultural landscapes in the Caribbean.
 
 ## Anguilla: Understated Elegance
 
-Anguilla's beaches — wide, flat, white — are the finest in the Eastern Caribbean, and the island's hotels have built around them accordingly.
+Anguilla's beaches (wide, flat, white) are the finest in the Eastern Caribbean, and the island's hotels have built around them accordingly.
 
-**[Belmond Cap Juluca](/pools/belmond-cap-juluca-34)** commands Maundays Bay, one of the island's longest stretches of white sand. The hotel's Moorish-influenced architecture creates a series of pool courtyards that face both the beach and the bay — a design that provides privacy without sacrificing the view. The service here is among the most attentive in the Caribbean; the staff-to-guest ratio at Belmond properties is noticeably high.
+**[Belmond Cap Juluca](/pools/belmond-cap-juluca-34)** commands Maundays Bay, one of the island's longest stretches of white sand. The hotel's Moorish-influenced architecture creates a series of pool courtyards that face both the beach and the bay: a design that provides privacy without sacrificing the view. The service here is among the most attentive in the Caribbean; the staff-to-guest ratio at Belmond properties is noticeably high.
 
 ## Antigua: Secluded Coves
 
 Antigua's 365 beaches (one for every day of the year, as the island's tourism board will happily tell you) include some genuinely secluded coves that a handful of small hotels have built around.
 
-**[Hermitage Bay](/pools/hermitage-bay-26)** sits in a small bay on the island's west coast, accessible by a private road. The all-suite, all-inclusive property has a main pool at beach level and individual cottage plunge pools — a combination that gives guests both social space and privacy. The beach here is effectively private, which is increasingly rare in the Caribbean.
+**[Hermitage Bay](/pools/hermitage-bay-26)** sits in a small bay on the island's west coast, accessible by a private road. The all-suite, all-inclusive property has a main pool at beach level and individual cottage plunge pools: a combination that gives guests both social space and privacy. The beach here is effectively private, which is increasingly rare in the Caribbean.
 
 ## Dominica: The Nature Island
 
-Dominica's nickname — the Nature Island — signals what this mountainous volcanic island offers: genuine wilderness, hot springs, and an undeveloped interior that attracts a different kind of traveler.
+Dominica's nickname, the Nature Island, signals what this mountainous volcanic island offers: genuine wilderness, hot springs, and an undeveloped interior that attracts a different kind of traveler.
 
-**[Secret Bay](/pools/secret-bay-33)** builds on this identity. Each of the property's villas has its own infinity pool cantilevered above the sea, and the design integrates with the forest rather than clearing it. The effect is unusual — you're swimming in a pool but simultaneously enclosed by jungle. A freshwater swimming hole is accessible via a short trail from the property. For travelers who want genuine natural immersion alongside luxury amenities, Dominica and Secret Bay offer something genuinely different.
+**[Secret Bay](/pools/secret-bay-33)** builds on this identity. Each of the property's villas has its own infinity pool cantilevered above the sea, and the design integrates with the forest rather than clearing it. The effect is unusual: you're swimming in a pool but simultaneously enclosed by jungle. A freshwater swimming hole is accessible via a short trail from the property. For travelers who want genuine natural immersion alongside luxury amenities, Dominica and Secret Bay offer something genuinely different.
 
 ## Puerto Rico: The American Gateway
 
-Puerto Rico's geographic position — a U.S. territory, direct flights from the east coast, no passport required for American travelers — makes it one of the Caribbean's most accessible luxury destinations.
+Puerto Rico's geographic position: a U.S. territory, direct flights from the east coast, no passport required for American travelers: makes it one of the Caribbean's most accessible luxury destinations.
 
-**[Dorado Beach, A Ritz-Carlton Reserve](/pools/dorado-beach-a-ritz-carlton-reserve-28)** occupies the site of a former Rockefeller estate along the island's north coast. The complex includes four pools, with the main one set within the resort's beachfront garden. The property has a history that adds depth to the experience — the Su Casa restaurant, the original plantation house, the centuries-old trees — but the pools are the daily anchor of any stay here.
+**[Dorado Beach, A Ritz-Carlton Reserve](/pools/dorado-beach-a-ritz-carlton-reserve-28)** occupies the site of a former Rockefeller estate along the island's north coast. The complex includes four pools, with the main one set within the resort's beachfront garden. The property has a history that adds depth to the experience (the Su Casa restaurant, the original plantation house, the centuries-old trees) but the pools are the daily anchor of any stay here.
 
 ## The Caribbean Pool Calendar
 
@@ -1524,7 +1578,7 @@ Most hotel pools are fine. They're where you cool off between beach sessions and
 
 These are those pools.
 
-## Grace Hotel, Santorini — The One Everyone's Seen
+## Grace Hotel, Santorini: The One Everyone's Seen
 
 You've seen this pool in a photograph. The electric-blue rectangle suspended over the caldera, framed by white stone and the arc of the volcano rim, with the Aegean stretching to the horizon. It's the defining image of Greek luxury travel, and somehow it still delivers in person.
 
@@ -1532,19 +1586,19 @@ Grace Santorini sits at the quieter northern end of Imerovigli, which means your
 
 **Best time to swim:** 7–9am before other guests are up, or immediately after sunset when the evening cools and most people have left for dinner.
 
-**Worth knowing:** The pool is small — plan on a maximum of eight people at once feeling right. Request a sunbed the night before.
+**Worth knowing:** The pool is small, plan on a maximum of eight people at once feeling right. Request a sunbed the night before.
 
-## Soori Bali — Where Architecture Becomes Ritual
+## Soori Bali: Where Architecture Becomes Ritual
 
-Bali has many beautiful pools, but Soori is in a category of its own. The resort hugs a black-sand beach on Bali's west coast — a coastline most tourists never reach — and every one of its 48 villas has a private pool.
+Bali has many beautiful pools, but Soori is in a category of its own. The resort hugs a black-sand beach on Bali's west coast, a coastline most tourists never reach, and every one of its 48 villas has a private pool.
 
 The pools are made of dark volcanic stone and they're extraordinary. Long and narrow, designed for lap swimming, sitting flush with the level of the surrounding plinths so the water appears to float. The black stone turns the water a deep jade color in low light. At golden hour, when the surf pounds the beach and the sky goes vermillion, you're swimming in something that looks more like a painting than a pool.
 
-**Worth knowing:** The beach at Soori isn't swimmable — strong surf and undertow — which actually makes the pools more important and more appreciated.
+**Worth knowing:** The beach at Soori isn't swimmable, strong surf and undertow, which actually makes the pools more important and more appreciated.
 
-## Amangiri, Utah — Desert Swimming at the Edge of the World
+## Amangiri, Utah: Desert Swimming at the Edge of the World
 
-The American Southwest doesn't scream "swimming destination," which is exactly why Amangiri works. The resort is built around and into a massive rock formation in Canyon Point, Utah. The main pool wraps the rock — you literally swim around geology.
+The American Southwest doesn't scream "swimming destination," which is exactly why Amangiri works. The resort is built around and into a massive rock formation in Canyon Point, Utah. The main pool wraps the rock: you literally swim around geology.
 
 The water is heated to the exact temperature that makes you reluctant to get out, which is important because the desert air is often cool and the contrast is part of the experience. The surrounding mesa-and-canyon landscape is unlike anything in luxury travel. There's nothing else like it.
 
@@ -1552,23 +1606,23 @@ The water is heated to the exact temperature that makes you reluctant to get out
 
 **Worth knowing:** Book six to twelve months out. This property is perpetually full and the waiting list is real.
 
-## Jade Mountain, St. Lucia — The Room Is the Pool
+## Jade Mountain, St. Lucia: The Room Is the Pool
 
-Most hotels put the pool in a courtyard and put rooms around it. Jade Mountain inverts this logic. Every "sanctuary" here is an open-sided room — three walls, no fourth wall — with its own private infinity pool, positioned directly facing the twin Piton peaks.
+Most hotels put the pool in a courtyard and put rooms around it. Jade Mountain inverts this logic. Every "sanctuary" here is an open-sided room (three walls, no fourth wall) with its own private infinity pool, positioned directly facing the twin Piton peaks.
 
 You lie in bed and see the Pitons. You stand in your pool and see the Pitons. The pools range from large to enormous, all vanishing into the dense jungle valley below. There's no common pool. The room is the pool. The pool is the room.
 
 **Worth knowing:** This is one of the most architecturally distinctive properties in the Caribbean. Nick Troubetzkoy designed every room himself. The construction alone is worth studying.
 
-## Six Senses Laamu, Maldives — The Overwater Pool That Makes Sense
+## Six Senses Laamu, Maldives: The Overwater Pool That Makes Sense
 
-Overwater bungalows are a Maldives cliché, but Six Senses Laamu earns the format. The atoll is genuinely remote — a 45-minute seaplane flight from Male — and the house reef running alongside the water villas is among the most vibrant in the Maldives.
+Overwater bungalows are a Maldives cliché, but Six Senses Laamu earns the format. The atoll is genuinely remote, a 45-minute seaplane flight from Male, and the house reef running alongside the water villas is among the most vibrant in the Maldives.
 
-Your private pool sits directly above the lagoon on a cantilevered platform. The water at Laamu is a specific turquoise that changes throughout the day — almost white at noon, deep teal at dusk. You can look directly down from your pool into the coral below. Reef sharks cruise underneath at dawn.
+Your private pool sits directly above the lagoon on a cantilevered platform. The water at Laamu is a specific turquoise that changes throughout the day: almost white at noon, deep teal at dusk. You can look directly down from your pool into the coral below. Reef sharks cruise underneath at dawn.
 
 **Best time to swim:** Sunrise, when the reef fish are most active and the colors most extraordinary.
 
-## Marina Bay Sands, Singapore — The Icon That Earns It
+## Marina Bay Sands, Singapore: The Icon That Earns It
 
 Every pool list ends up here, and every pool list should. The rooftop infinity pool at Marina Bay Sands is 57 floors above Singapore, is the length of three and a half Olympic pools, and cantilevers 67 meters over the edge of the building. The engineering is astonishing. The views are genuinely world-class.
 
@@ -1576,11 +1630,11 @@ It's crowded. It's famous. It's worth it anyway.
 
 **Worth knowing:** The pool is for hotel guests only. The SkyPark Observation Deck is publicly accessible but pool access is strictly for registered guests. If you're visiting Singapore and don't stay here, you don't get in.
 
-## The Ritz-Carlton, Bali — Clifftop Layering
+## The Ritz-Carlton, Bali: Clifftop Layering
 
 Jimbaran Bay in Bali is better known for its seafood restaurants on the beach, but the Ritz-Carlton here takes the clifftop position and does something architecturally ambitious with it. The pools cascade in tiers down the cliff face toward the Indian Ocean, each level connected by water features and pathways, with the sea horizon visible from every level.
 
-It's not a single pool — it's a pool landscape. The effect is theatrical in the best way: you can see the surf break on the rocks far below, hear it, feel the sea spray when the wind shifts. Swimming becomes an immersive experience.
+It's not a single pool: it's a pool landscape. The effect is theatrical in the best way: you can see the surf break on the rocks far below, hear it, feel the sea spray when the wind shifts. Swimming becomes an immersive experience.
 
 ---
 
@@ -1603,17 +1657,17 @@ It's not a single pool — it's a pool landscape. The effect is theatrical in th
     content: `
 # Behind the Design: How Infinity Pools Are Built
 
-An infinity pool looks like a miracle — water that simply ends, dissolving into the view beyond. The illusion is so complete that first-time swimmers often hesitate at the edge, uncertain of where solid ends and empty begins.
+An infinity pool looks like a miracle: water that simply ends, dissolving into the view beyond. The illusion is so complete that first-time swimmers often hesitate at the edge, uncertain of where solid ends and empty begins.
 
 It's not magic. It's engineering. And the story of how these pools work is more fascinating than the Instagram photo suggests.
 
 ## The Optical Illusion, Explained
 
-An infinity pool — also called a negative edge, vanishing edge, or zero-edge pool — creates the appearance of water extending to the horizon by hiding the far edge of the pool below the water's surface.
+An infinity pool (also called a negative edge, vanishing edge, or zero-edge pool) creates the appearance of water extending to the horizon by hiding the far edge of the pool below the water's surface.
 
-The pool is designed so that the water level sits precisely at or slightly above the top of the "vanishing wall." Water flows continuously over this wall into a catch basin (a hidden secondary pool or trough below), where it's pumped back into the main pool. The water flow is constant. The edge is always wet. And from the right angle — which the architect has carefully calculated — you see nothing but water meeting sky.
+The pool is designed so that the water level sits precisely at or slightly above the top of the "vanishing wall." Water flows continuously over this wall into a catch basin (a hidden secondary pool or trough below), where it's pumped back into the main pool. The water flow is constant. The edge is always wet. And from the right angle, which the architect has carefully calculated, you see nothing but water meeting sky.
 
-The entire effect depends on a single critical measurement: the height of the vanishing wall relative to the water surface. Too high, and the wall is visible. Too low, and the flow is uncontrolled. Designers typically aim for the water level to sit 3-5 millimeters above the wall's lip — a margin smaller than your pinky fingernail, maintained consistently across the entire length of the edge.
+The entire effect depends on a single critical measurement: the height of the vanishing wall relative to the water surface. Too high, and the wall is visible. Too low, and the flow is uncontrolled. Designers typically aim for the water level to sit 3-5 millimeters above the wall's lip: a margin smaller than your pinky fingernail, maintained consistently across the entire length of the edge.
 
 ## The Engineering Behind "Simple"
 
@@ -1623,7 +1677,7 @@ That constant, even flow sounds straightforward. It isn't.
 
 For the overflow to be even across the entire vanishing edge, the top of the wall must be perfectly level. Not close to level. Level within fractions of a millimeter across potentially dozens of meters of pool edge.
 
-Any settling, subsidence, or construction imprecision shows up immediately as uneven flow — a trickle in one spot, a waterfall in another. High-end infinity pools are monitored continuously and edge heights are corrected periodically as the structure settles over time. Some premium installations include adjustable weir plates — thin stainless steel strips that can be fine-tuned after construction to maintain perfect levelness.
+Any settling, subsidence, or construction imprecision shows up immediately as uneven flow: a trickle in one spot, a waterfall in another. High-end infinity pools are monitored continuously and edge heights are corrected periodically as the structure settles over time. Some premium installations include adjustable weir plates: thin stainless steel strips that can be fine-tuned after construction to maintain perfect levelness.
 
 ### The Catch Basin
 
@@ -1631,13 +1685,13 @@ Every vanishing edge pool has a secondary body of water: the catch basin or bala
 
 The catch basin is typically hidden directly below or adjacent to the vanishing edge, invisible from the main viewing angle. At Marina Bay Sands, with its 375-foot-long pool, the catch basin is substantial engineering in its own right.
 
-Water is pumped from the catch basin back to the main pool continuously. The pumping system must be sized precisely — too slow and the main pool drops; too fast and it overflows onto the deck.
+Water is pumped from the catch basin back to the main pool continuously. The pumping system must be sized precisely: too slow and the main pool drops; too fast and it overflows onto the deck.
 
 ### Wind
 
 An often-overlooked challenge is wind. Wind creates surface ripples and pushes water toward or away from the vanishing edge unevenly. A strong crosswind on a long infinity edge will cause significantly more overflow on the windward side.
 
-Pool designers study prevailing wind patterns at each site and often orient the vanishing edge perpendicular to the dominant wind direction. Wind breaks — walls, landscaping, architectural features — are frequently integrated into the design, though they must be positioned carefully to avoid disrupting the view that makes the pool worth building.
+Pool designers study prevailing wind patterns at each site and often orient the vanishing edge perpendicular to the dominant wind direction. Wind breaks (walls, landscaping, architectural features) are frequently integrated into the design, though they must be positioned carefully to avoid disrupting the view that makes the pool worth building.
 
 ### Thermal Expansion
 
@@ -1649,15 +1703,15 @@ For heated pools in cold climates, thermal management adds another layer of comp
 
 The same pool design behaves differently depending on where it's built.
 
-**Clifftop pools** — like Grace Santorini or the Ritz-Carlton Bali — are the classic infinity configuration. The catch basin is built into the cliff structure below the vanishing edge. Construction requires careful structural integration with the geology, and access for maintenance can be challenging.
+**Clifftop pools**, like Grace Santorini or the Ritz-Carlton Bali, are the classic infinity configuration. The catch basin is built into the cliff structure below the vanishing edge. Construction requires careful structural integration with the geology, and access for maintenance can be challenging.
 
-**Rooftop pools** — like Marina Bay Sands or the 1 Hotel Brooklyn Bridge — add structural engineering requirements. The water weight is enormous (roughly 1,000 kilograms per cubic meter), and the building below must accommodate it. Waterproofing is critical — a rooftop pool leak can cause catastrophic damage to floors below.
+**Rooftop pools**, like Marina Bay Sands or the 1 Hotel Brooklyn Bridge, add structural engineering requirements. The water weight is enormous (roughly 1,000 kilograms per cubic meter), and the building below must accommodate it. Waterproofing is critical: a rooftop pool leak can cause catastrophic damage to floors below.
 
-**Overwater pools** — increasingly common in the Maldives and other tropical destinations — sit on platforms above lagoons. The structural engineering is marine-grade. Catch basins typically pump directly into filtration systems rather than into the ocean. Saltwater environments accelerate corrosion, so materials specifications are demanding.
+**Overwater pools**, increasingly common in the Maldives and other tropical destinations, sit on platforms above lagoons. The structural engineering is marine-grade. Catch basins typically pump directly into filtration systems rather than into the ocean. Saltwater environments accelerate corrosion, so materials specifications are demanding.
 
 ## What It Costs
 
-Building an infinity pool is expensive. A residential infinity pool in a good climate runs $80,000–$200,000 for a reasonably sized installation. High-end hotel infinity pools — large format, complex geometry, premium materials — frequently run $1–5 million before landscaping.
+Building an infinity pool is expensive. A residential infinity pool in a good climate runs $80,000–$200,000 for a reasonably sized installation. High-end hotel infinity pools (large format, complex geometry, premium materials) frequently run $1–5 million before landscaping.
 
 The cost drivers are:
 - **Precision construction**: The tolerances required for a perfect vanishing edge mean specialized contractors and extended installation time
@@ -1669,9 +1723,9 @@ The cost drivers are:
 
 One design choice that significantly affects the infinity pool experience: tile color.
 
-Dark tiles — deep blue, black, charcoal — make the water appear deeper and darker, creating a more dramatic vanishing effect. The water surface reflects the sky more purely because the pool bottom is not visible through it.
+Dark tiles (deep blue, black, charcoal) make the water appear deeper and darker, creating a more dramatic vanishing effect. The water surface reflects the sky more purely because the pool bottom is not visible through it.
 
-Light tiles — white, pale blue, turquoise — create clearer, more transparent water where you can see the bottom. The visual experience is more "Caribbean vacation" than "dramatic architectural infinity." Both are valid; they create different experiences.
+Light tiles (white, pale blue, turquoise) create clearer, more transparent water where you can see the bottom. The visual experience is more "Caribbean vacation" than "dramatic architectural infinity." Both are valid; they create different experiences.
 
 The best designers choose tile color based on the specific view the pool is meant to frame. A pool overlooking a blue ocean might use dark tiles to deepen the color contrast. A pool surrounded by green jungle might use tiles that create turquoise water that stands apart from the foliage.
 
@@ -1679,9 +1733,9 @@ The best designers choose tile color based on the specific view the pool is mean
 
 After analyzing hundreds of pools across Pool Atlas, patterns emerge in what separates the memorable from the merely photogenic:
 
-The best infinity pools have a **clear sightline** — nothing between the vanishing edge and the view it's meant to frame. Every architectural element, landscape decision, and detail of pool placement serves that view.
+The best infinity pools have a **clear sightline**: nothing between the vanishing edge and the view it's meant to frame. Every architectural element, landscape decision, and detail of pool placement serves that view.
 
-They're built with **precise orientation**. The sun path matters. The prime viewing time — sunset, sunrise, or full-day — is built into the pool's positioning, not an accident.
+They're built with **precise orientation**. The sun path matters. The prime viewing time (sunset, sunrise, or full-day) is built into the pool's positioning, not an accident.
 
 And they understand that **the pool is a frame, not the subject**. The greatest infinity pools are designed in service of something beyond themselves: a caldera, a mountain range, a cityscape, an ocean. The pool's job is to give you the best possible seat for that view.
 
@@ -1695,7 +1749,7 @@ When those elements align, you get the pools on Pool Atlas's world rankings. Whe
   {
     slug: "best-hotel-pools-africa",
     title: "The Best Hotel Pools in Africa",
-    excerpt: "From a pool overlooking an elephant watering hole in the Serengeti to cascading plunges in the Namibian desert and a heated infinity edge above six volcanoes in Rwanda — Africa has pools that exist nowhere else on earth.",
+    excerpt: "From a pool overlooking an elephant watering hole in the Serengeti to cascading plunges in the Namibian desert and a heated infinity edge above six volcanoes in Rwanda, Africa has pools that exist nowhere else on earth.",
     category: "Destination",
     readTime: "10 min read",
     image: "/images/pools/pool-four-seasons-serengeti.jpg",
@@ -1710,7 +1764,7 @@ When those elements align, you get the pools on Pool Atlas's world rankings. Whe
 
 There's a specific image that doesn't exist anywhere else in the world: you're floating in a heated infinity pool, a gin and tonic on the ledge beside you, watching a family of elephants work their way toward a watering hole a hundred meters away. The sun is an hour from setting and the Serengeti is turning gold.
 
-That image is real. It's the pool at the Four Seasons Safari Lodge in Tanzania, and it's ranked #22 on Pool Atlas. But it's one of more than a dozen African pools that deliver something genuinely impossible to replicate elsewhere — not just beautiful pools, but pools that exist in impossible contexts. A volcanic crater in Rwanda. An ancient salt pan in Botswana. A cliff edge above the Mediterranean in Morocco.
+That image is real. It's the pool at the Four Seasons Safari Lodge in Tanzania, and it's ranked #22 on Pool Atlas. But it's one of more than a dozen African pools that deliver something genuinely impossible to replicate elsewhere, not just beautiful pools, but pools that exist in impossible contexts. A volcanic crater in Rwanda. An ancient salt pan in Botswana. A cliff edge above the Mediterranean in Morocco.
 
 This is the Africa pool guide. It is nothing like any other pool guide you've read.
 
@@ -1718,69 +1772,69 @@ This is the Africa pool guide. It is nothing like any other pool guide you've re
 
 The concept that defines African luxury pool travel doesn't exist anywhere else: the pool as a front-row seat to wildlife. Several of the continent's finest lodges have oriented their pools not toward a view of the landscape in general, but toward specific wildlife corridors where the animals reliably pass.
 
-### Four Seasons Safari Lodge Serengeti — Tanzania
+### Four Seasons Safari Lodge Serengeti, Tanzania
 
 **[Ranked #22 on Pool Atlas](/pools/four-seasons-safari-lodge-serengeti-22)**
 
-The pool at the Four Seasons Serengeti does what it says: it looks down on a working animal watering hole. Not a decorative one, not a manmade feature — an actual watering point on the ancient migration routes of the Serengeti ecosystem. Elephants, cape buffalo, wildebeest, zebra, and smaller mammals come here regularly. Dawn and dusk are the most active times.
+The pool at the Four Seasons Serengeti does what it says: it looks down on a working animal watering hole. Not a decorative one, not a manmade feature: an actual watering point on the ancient migration routes of the Serengeti ecosystem. Elephants, cape buffalo, wildebeest, zebra, and smaller mammals come here regularly. Dawn and dusk are the most active times.
 
 The pool itself is a long infinity edge facing the watering hole, elevated enough that you can see across the bush to the animals approaching long before they arrive. The lodge is built within the central Serengeti, which means the Great Migration passes through the broader ecosystem seasonally.
 
 **Best time to visit:** July–October for the Great Migration crossing the Mara River. December–March for calving season in the southern Serengeti.
 
-### Singita Sweni Lodge — South Africa
+### Singita Sweni Lodge, South Africa
 
 **[Ranked #64 on Pool Atlas](/pools/singita-sweni-lodge-64)**
 
-Singita is arguably the finest safari brand in Africa, and Sweni — their most intimate lodge, just six suites on the banks of the Sweni River in Kruger National Park — shows why. Each suite has its own private infinity pool positioned directly above the river, where hippos and crocodiles cruise beneath you and leopards drink at night.
+Singita is arguably the finest safari brand in Africa, and Sweni (their most intimate lodge, just six suites on the banks of the Sweni River in Kruger National Park) shows why. Each suite has its own private infinity pool positioned directly above the river, where hippos and crocodiles cruise beneath you and leopards drink at night.
 
-The design is aggressively African in the best sense: natural materials, vivid color, a sense of place that feels like a very design-conscious billionaire's private camp. The pools are small and personal — this is not a place for pool parties. It's a place for floating quietly while a lion drinks fifty meters away.
+The design is aggressively African in the best sense: natural materials, vivid color, a sense of place that feels like a very design-conscious billionaire's private camp. The pools are small and personal: this is not a place for pool parties. It's a place for floating quietly while a lion drinks fifty meters away.
 
-### Royal Malewane — South Africa
+### Royal Malewane, South Africa
 
 **[Ranked #117 on Pool Atlas](/pools/royal-malewane-117)**
 
-In the Thornybush Game Reserve adjacent to Kruger, Royal Malewane has long been considered one of the most opulent addresses in African safari travel. The Africa House — a private eight-guest villa — has a spectacular shared pool overlooking the bush. Individual suite pools are private and intimate. The Big Five roam freely through the reserve, and the nocturnal sounds from a late-night swim are something you don't forget.
+In the Thornybush Game Reserve adjacent to Kruger, Royal Malewane has long been considered one of the most opulent addresses in African safari travel. The Africa House, a private eight-guest villa, has a spectacular shared pool overlooking the bush. Individual suite pools are private and intimate. The Big Five roam freely through the reserve, and the nocturnal sounds from a late-night swim are something you don't forget.
 
 ## Desert: The Namibian Plunge Pool Tradition
 
-Namibia does something interesting with pools: it makes them cold. In a desert where daytime temperatures routinely exceed 40°C, a chilled plunge pool isn't a luxury — it's a survival mechanism. The design tradition that has emerged is distinctive and perfectly calibrated to context.
+Namibia does something interesting with pools: it makes them cold. In a desert where daytime temperatures routinely exceed 40°C, a chilled plunge pool isn't a luxury: it's a survival mechanism. The design tradition that has emerged is distinctive and perfectly calibrated to context.
 
-### andBeyond Sossusvlei Desert Lodge — Namibia
+### andBeyond Sossusvlei Desert Lodge, Namibia
 
 **[Ranked #35 on Pool Atlas](/pools/andbeyond-sossusvlei-desert-lodge-35)**
 
 Sossusvlei is one of the most surreal landscapes on earth: ancient red dunes rising 300 meters above a dead white clay pan, in a desert so old that the dunes have been there for millions of years. AndBeyond's lodge here is built directly into the desert, with each villa featuring its own chilled plunge pool and a private "butler hatch" through which your attendant passes cold towels and ice cream without requiring you to move.
 
-The pools are deliberately cold — a counterpoint to the desert heat — and they face east toward the dunes and the mountains beyond. Watching the dunes shift color at sunset from the pool, from peach to deep red to purple, is one of the finest hour-long experiences in African travel.
+The pools are deliberately cold, a counterpoint to the desert heat, and they face east toward the dunes and the mountains beyond. Watching the dunes shift color at sunset from the pool, from peach to deep red to purple, is one of the finest hour-long experiences in African travel.
 
-### Omaanda by Zannier Hotels — Namibia
+### Omaanda by Zannier Hotels, Namibia
 
 **[Ranked #87 on Pool Atlas](/pools/omaanda-by-zannier-hotels-87)**
 
-While Sossusvlei offers red dune drama, Omaanda occupies a different Namibian landscape: the savannah near Windhoek, in a private nature reserve that looks out toward the Khomas Hochland mountain range. The infinity pool here is quieter and more contemplative — zebra and oryx wander through the reserve, the mountains turn blue in the late afternoon, and the soundscape is just wind and birdsong.
+While Sossusvlei offers red dune drama, Omaanda occupies a different Namibian landscape: the savannah near Windhoek, in a private nature reserve that looks out toward the Khomas Hochland mountain range. The infinity pool here is quieter and more contemplative: zebra and oryx wander through the reserve, the mountains turn blue in the late afternoon, and the soundscape is just wind and birdsong.
 
 The lodge's design draws from the circular forms of traditional Owambo architecture, making this one of the most culturally grounded pools on the continent.
 
 ## Crater and Volcano: East Africa's Dramatic Edges
 
-### Bisate Lodge — Rwanda
+### Bisate Lodge, Rwanda
 
 **[Ranked #116 on Pool Atlas](/pools/bisate-lodge-116)**
 
-This is the most extraordinary pool in Africa from a pure context standpoint. Bisate Lodge sits on the rim of an eroded volcanic cone in Rwanda's Volcanoes National Park, surrounded by Afro-alpine vegetation that looks more like the Andes than the Africa of postcards. Six volcanoes are visible from the pool on a clear day — including the Virunga massif, home to approximately half the world's remaining mountain gorillas.
+This is the most extraordinary pool in Africa from a pure context standpoint. Bisate Lodge sits on the rim of an eroded volcanic cone in Rwanda's Volcanoes National Park, surrounded by Afro-alpine vegetation that looks more like the Andes than the Africa of postcards. Six volcanoes are visible from the pool on a clear day, including the Virunga massif, home to approximately half the world's remaining mountain gorillas.
 
 The pool itself is small, heated, and positioned at the crater rim. Guests typically spend their mornings at 5am trekking into the forest to observe gorillas at close quarters, and their afternoons here, floating in heated water at 2,600 meters elevation with volcanoes on every horizon.
 
-It's one of the most unusual pool experiences on earth, and it's in Rwanda — a country most travelers don't think of when planning a pool holiday.
+It's one of the most unusual pool experiences on earth, and it's in Rwanda: a country most travelers don't think of when planning a pool holiday.
 
 ## Urban Africa: City Pools Worth Crossing a Continent For
 
-### The Silo Hotel — Cape Town, South Africa
+### The Silo Hotel, Cape Town, South Africa
 
 **[Ranked #38 on Pool Atlas](/pools/the-silo-hotel-38)**
 
-The Silo occupies the grain elevator above the Zeitz MOCAA museum in Cape Town's V&A Waterfront — a Heatherwick Studio transformation of industrial heritage into one of Africa's finest hotels. The rooftop pool is on the 11th floor, framed by the building's distinctive "bubble" windows, looking out over Table Mountain, the harbor, the ocean, and the city simultaneously.
+The Silo occupies the grain elevator above the Zeitz MOCAA museum in Cape Town's V&A Waterfront: a Heatherwick Studio transformation of industrial heritage into one of Africa's finest hotels. The rooftop pool is on the 11th floor, framed by the building's distinctive "bubble" windows, looking out over Table Mountain, the harbor, the ocean, and the city simultaneously.
 
 Cape Town from a rooftop pool is a specific visual experience: the flat-topped mountain in one direction, the Atlantic in another, the harbor cranes and the working port in between. The Silo gives you the best possible seat for all of it.
 
@@ -1788,19 +1842,19 @@ Cape Town from a rooftop pool is a specific visual experience: the flat-topped m
 
 ## The Oasis: Morocco's Garden Tradition
 
-### Mandarin Oriental Marrakech — Morocco
+### Mandarin Oriental Marrakech, Morocco
 
 **[Ranked #17 on Pool Atlas](/pools/mandarin-oriental-marrakech-17)**
 
-Morocco's pool tradition is rooted in the ancient riad — the inward-facing courtyard garden that provides shade and coolness within the city. The Mandarin Oriental Marrakech takes this principle and scales it up: 600 trees on a 20-hectare estate, a pool so large it's flanked by two additional ornamental ponds, all within 10 minutes of the Jemaa el-Fnaa.
+Morocco's pool tradition is rooted in the ancient riad: the inward-facing courtyard garden that provides shade and coolness within the city. The Mandarin Oriental Marrakech takes this principle and scales it up: 600 trees on a 20-hectare estate, a pool so large it's flanked by two additional ornamental ponds, all within 10 minutes of the Jemaa el-Fnaa.
 
-This is not a wild landscape or a wildlife experience — it's an oasis in the classical sense, and it's one of the most effective hotel pool experiences in North Africa. The combination of Moroccan garden design, the fragrance of orange blossom, and the distant sounds of the medina creates something that a beachside infinity pool simply cannot match.
+This is not a wild landscape or a wildlife experience: it's an oasis in the classical sense, and it's one of the most effective hotel pool experiences in North Africa. The combination of Moroccan garden design, the fragrance of orange blossom, and the distant sounds of the medina creates something that a beachside infinity pool simply cannot match.
 
-## Jack's Camp — Botswana
+## Jack's Camp, Botswana
 
 **[Ranked #36 on Pool Atlas](/pools/jacks-camp-36)**
 
-Jack's Camp sits at the edge of the Makgadikgadi salt pans — one of the largest salt flats on earth, a blinding white expanse that extends to every horizon during the dry season. During the wet season (November–April), the pans flood and become home to one of Africa's largest flamingo migrations. Either way, the landscape is otherworldly.
+Jack's Camp sits at the edge of the Makgadikgadi salt pans: one of the largest salt flats on earth, a blinding white expanse that extends to every horizon during the dry season. During the wet season (November–April), the pans flood and become home to one of Africa's largest flamingo migrations. Either way, the landscape is otherworldly.
 
 The camp itself is a 1940s expedition aesthetic made luxury: hand-painted canvas tents, Persian rugs, vintage cocktail equipment. Private plunge pools were added in 2020 to each tent, positioned to look out over the pans. Sitting in the plunge pool at sunset with the salt flat going pink and the call of zebra in the distance is a very specific and unforgettable experience.
 
@@ -1810,9 +1864,9 @@ Africa is a continent of wildly varied climates, and the "best time" question de
 
 **East Africa (Tanzania, Rwanda):** The long dry season, July–October, is the classic time for wildlife viewing and the most reliable weather. The pools are heated, so cool mornings aren't a deterrent. Avoid the long rains (April–May).
 
-**Southern Africa (South Africa, Botswana, Namibia):** May–September is the dry winter, when vegetation thins and wildlife concentrates around water — meaning more animals visible from those lodge pools. It's also cooler, so the heated pools are actively appreciated. Namibia's desert is intense year-round but the summer heat (Nov–Feb) is extreme.
+**Southern Africa (South Africa, Botswana, Namibia):** May–September is the dry winter, when vegetation thins and wildlife concentrates around water, meaning more animals visible from those lodge pools. It's also cooler, so the heated pools are actively appreciated. Namibia's desert is intense year-round but the summer heat (Nov–Feb) is extreme.
 
-**Morocco:** Spring (March–May) and autumn (September–November) are ideal — warm enough for the pool, cool enough to enjoy Marrakech's medina. Midsummer heat in Marrakech can exceed 40°C.
+**Morocco:** Spring (March–May) and autumn (September–November) are ideal, warm enough for the pool, cool enough to enjoy Marrakech's medina. Midsummer heat in Marrakech can exceed 40°C.
 
 ---
 
@@ -1822,7 +1876,7 @@ Africa is a continent of wildly varied climates, and the "best time" question de
   {
     slug: "best-hotel-pools-spain",
     title: "The Best Hotel Pools in Spain",
-    excerpt: "From Ibiza's clifftop cascade pools and Mallorca's mountain-framed infinity edges to a rooftop above Barcelona — Spain's pools are as varied as its landscapes, and from June through October they're among the best in Europe.",
+    excerpt: "From Ibiza's clifftop cascade pools and Mallorca's mountain-framed infinity edges to a rooftop above Barcelona, Spain's pools are as varied as its landscapes, and from June through October they're among the best in Europe.",
     category: "Destination",
     readTime: "9 min read",
     image: "/images/pools/pool-cap-rocat-spain.jpg",
@@ -1837,15 +1891,15 @@ Africa is a continent of wildly varied climates, and the "best time" question de
 
 Spanish summers are an exercise in finding shade and cold water, and the country handles this beautifully: a culture built around the siesta, the evening paseo, and the hotel pool as the center of the day rather than an afterthought to it.
 
-What makes Spanish pools distinctive — particularly in Ibiza and Mallorca, where the finest are concentrated — is the landscape they work with. Dramatic limestone cliffs, the deep blue of the Balearic Sea, terraced mountains that turn purple at dusk. The best pools here don't just face a view. They participate in it.
+What makes Spanish pools distinctive (particularly in Ibiza and Mallorca, where the finest are concentrated) is the landscape they work with. Dramatic limestone cliffs, the deep blue of the Balearic Sea, terraced mountains that turn purple at dusk. The best pools here don't just face a view. They participate in it.
 
 These are the pools that matter, whether you go in high summer or slip into the warm shoulder months of September and October.
 
 ## Ibiza: Beyond the Clubs
 
-Ibiza's reputation as a party island is accurate and also incomplete. The north and west of the island — away from the clubs of San Antonio and the jets at Dalt Vila — is one of the most dramatically beautiful coastal landscapes in the Mediterranean. Wild cliffs, hidden coves, pine forest running to the sea. The finest pool hotels here use this landscape rather than compete with it.
+Ibiza's reputation as a party island is accurate and also incomplete. The north and west of the island, away from the clubs of San Antonio and the jets at Dalt Vila, is one of the most dramatically beautiful coastal landscapes in the Mediterranean. Wild cliffs, hidden coves, pine forest running to the sea. The finest pool hotels here use this landscape rather than compete with it.
 
-### Hacienda Na Xamena — North Ibiza
+### Hacienda Na Xamena, North Ibiza
 
 **[Ranked #118 on Pool Atlas](/pools/hacienda-na-xamena-118)**
 
@@ -1855,59 +1909,59 @@ The hotel was built in the 1970s by a Catalan architect who fell in love with th
 
 **What to know:** The road to Na Xamena is winding and takes longer than the map suggests. Budget extra time. The pools are for hotel guests only. The spa, which is built into the cliff itself, is extraordinary.
 
-### Aguas de Ibiza Grand Luxe Hotel — Santa Eulalia
+### Aguas de Ibiza Grand Luxe Hotel, Santa Eulalia
 
 **[Ranked #43 on Pool Atlas](/pools/aguas-de-ibiza-grand-luxe-hotel-43)**
 
-At the quieter, more family-oriented eastern end of the island, Aguas de Ibiza takes a different approach: the rooftop infinity pool faces Santa Eulalia's working port and the sweep of the bay. The hotel is aggressively eco-conscious — certified carbon neutral, with a philosophy that filters through the design, the menu, and the pool experience.
+At the quieter, more family-oriented eastern end of the island, Aguas de Ibiza takes a different approach: the rooftop infinity pool faces Santa Eulalia's working port and the sweep of the bay. The hotel is aggressively eco-conscious: certified carbon neutral, with a philosophy that filters through the design, the menu, and the pool experience.
 
 The view from this pool is active and social rather than dramatic and isolating. Fishing boats coming in, the town spread across the hillside, the sea glittering toward the mainland. It's a different kind of Ibiza to Na Xamena, and a very good one.
 
-### Nobu Hotel Ibiza Bay — Talamanca Bay
+### Nobu Hotel Ibiza Bay, Talamanca Bay
 
 **[Ranked #56 on Pool Atlas](/pools/nobu-hotel-ibiza-bay-56)**
 
-On Talamanca Bay — the more sheltered, calmer water north of Ibiza Town — the Nobu Hotel is where the island's design-conscious crowd congregates. The pool is a social space: music plays, the bar does serious work, and the pool deck is as much about being seen as it is about swimming.
+On Talamanca Bay (the more sheltered, calmer water north of Ibiza Town) the Nobu Hotel is where the island's design-conscious crowd congregates. The pool is a social space: music plays, the bar does serious work, and the pool deck is as much about being seen as it is about swimming.
 
-The pool itself faces the bay with Ibiza Town's old walls visible in the distance. It's an exceptionally well-designed space — the Nobu aesthetic of Japanese-influenced minimalism applied to Mediterranean sun-worship — and the restaurant quality extends to the pool food and drink.
+The pool itself faces the bay with Ibiza Town's old walls visible in the distance. It's an exceptionally well-designed space, the Nobu aesthetic of Japanese-influenced minimalism applied to Mediterranean sun-worship, and the restaurant quality extends to the pool food and drink.
 
 ## Mallorca: The Mountain Island
 
-Mallorca has two distinct pool personalities: the resort coast (package holidays, large hotel pools, mass tourism) and the interior and northwest, where a completely different Mallorca operates — ancient olive trees, stone fincas, winding mountain roads, and some of the most beautiful small hotel pools in Spain.
+Mallorca has two distinct pool personalities: the resort coast (package holidays, large hotel pools, mass tourism) and the interior and northwest, where a completely different Mallorca operates, ancient olive trees, stone fincas, winding mountain roads, and some of the most beautiful small hotel pools in Spain.
 
-### Cap Rocat — Bay of Palma
+### Cap Rocat, Bay of Palma
 
 **[Ranked #62 on Pool Atlas](/pools/cap-rocat-62)**
 
 A former 19th-century military fortress on the cliffs above the Bay of Palma, converted into one of the most distinctive hotels in the Mediterranean. The battlements and lookout towers have become rooms and terraces; the ammunition vaults are now the restaurant. The pool sits within the fortifications with walls rising around it and the Bay of Palma extending to the horizon.
 
-Swimming in Cap Rocat feels like swimming in history — the stone walls are genuinely ancient, the views are genuinely dramatic, and the sense of having discovered something secret is genuinely earned. This is a harder-to-find address than the famous Mallorcan estates, which is part of its appeal.
+Swimming in Cap Rocat feels like swimming in history: the stone walls are genuinely ancient, the views are genuinely dramatic, and the sense of having discovered something secret is genuinely earned. This is a harder-to-find address than the famous Mallorcan estates, which is part of its appeal.
 
-### Belmond La Residencia — Deià
+### Belmond La Residencia, Deià
 
 **[Ranked #119 on Pool Atlas](/pools/belmond-la-residencia-119)**
 
-Deià is the village that Robert Graves chose to spend most of his life, drawn by what he described as the most beautiful place he had ever seen. Belmond La Residencia is built around two 16th-century manor houses on the hillside above the village, with the Serra de Tramuntana — a UNESCO World Heritage Site — rising directly behind it.
+Deià is the village that Robert Graves chose to spend most of his life, drawn by what he described as the most beautiful place he had ever seen. Belmond La Residencia is built around two 16th-century manor houses on the hillside above the village, with the Serra de Tramuntana, a UNESCO World Heritage Site, rising directly behind it.
 
-The pool here is not trying to be dramatic. It's surrounded by hundred-year-old olive trees, terraced gardens, and mountain views. Princess Diana swam here. Richard Branson has stayed. The appeal is not a vanishing edge or a rooftop perspective — it's a pool that feels like it belongs completely to its place, and a place that happens to be among the most beautiful in Spain.
+The pool here is not trying to be dramatic. It's surrounded by hundred-year-old olive trees, terraced gardens, and mountain views. Princess Diana swam here. Richard Branson has stayed. The appeal is not a vanishing edge or a rooftop perspective: it's a pool that feels like it belongs completely to its place, and a place that happens to be among the most beautiful in Spain.
 
 **Best time:** Late afternoon, when the mountains behind the hotel cast long shadows and the light on the valley below goes golden. Dinner at El Olivo afterwards.
 
-### Jumeirah Port Soller Hotel & Spa — Port Soller
+### Jumeirah Port Soller Hotel & Spa, Port Soller
 
 **[Ranked #120 on Pool Atlas](/pools/jumeirah-port-soller-hotel-spa-120)**
 
-Port Soller is Mallorca's most picturesque harbor — a near-perfect horseshoe bay backed by orange groves and the Tramuntana mountains, accessed from Palma by a spectacular mountain road and a vintage tram that runs down to the beach. The Jumeirah sits on the cliff above the bay with what may be the finest dual-aspect view in Mallorca: the mountains directly behind you, the bay and open Mediterranean in front.
+Port Soller is Mallorca's most picturesque harbor: a near-perfect horseshoe bay backed by orange groves and the Tramuntana mountains, accessed from Palma by a spectacular mountain road and a vintage tram that runs down to the beach. The Jumeirah sits on the cliff above the bay with what may be the finest dual-aspect view in Mallorca: the mountains directly behind you, the bay and open Mediterranean in front.
 
 The infinity pool is at the cliff edge, positioned so the water line vanishes into the sea horizon. On a clear day you can see Menorca. The tram threading through the orange trees below makes this one of the most cinematically beautiful pool settings in Spain.
 
 ## Beyond the Balearics
 
-### Hard Rock Hotel Tenerife — Canary Islands
+### Hard Rock Hotel Tenerife, Canary Islands
 
 **[Ranked #103 on Pool Atlas](/pools/hard-rock-hotel-tenerife-103)**
 
-The Canary Islands belong to Spain but sit off the coast of Morocco — geographically Africa, climatically perfect year-round. The Hard Rock Tenerife is adjacent to Siam Park, consistently voted the world's best water park, and its own pool complex is an entertainment destination in its own right: the Tower of Power waterslide, multiple pools, live music, and the energetic atmosphere of a resort built for maximum enjoyment.
+The Canary Islands belong to Spain but sit off the coast of Morocco: geographically Africa, climatically perfect year-round. The Hard Rock Tenerife is adjacent to Siam Park, consistently voted the world's best water park, and its own pool complex is an entertainment destination in its own right: the Tower of Power waterslide, multiple pools, live music, and the energetic atmosphere of a resort built for maximum enjoyment.
 
 This is not the quiet, contemplative pool experience of the other entries. It's the opposite: total commitment to fun. For families, or anyone who finds the reverent hush of a luxury infinity pool slightly exhausting, it's the best pool option in Spain.
 
@@ -1915,9 +1969,9 @@ This is not the quiet, contemplative pool experience of the other entries. It's 
 
 **Ibiza timing:** The pool hotels fill in July and August and it's genuinely hard to get a room without booking months ahead. June and September offer almost identical weather with significantly less competition. The shoulder months also mean slightly more reasonable rates and a less frantic energy.
 
-**Mallorca's northwest:** The mountain road from Palma to Sóller is dramatic, beautiful, and closed to coaches — which keeps the northwest comparatively uncommercialized. Rent a car. The drive is part of the experience.
+**Mallorca's northwest:** The mountain road from Palma to Sóller is dramatic, beautiful, and closed to coaches, which keeps the northwest comparatively uncommercialized. Rent a car. The drive is part of the experience.
 
-**Sun direction:** In Ibiza's north, pools generally face southwest for afternoon and evening sun. Cap Rocat and the Jumeirah face southeast — best morning light. Belmond La Residencia pools get afternoon mountain shadow early — arrive at noon for maximum sun time.
+**Sun direction:** In Ibiza's north, pools generally face southwest for afternoon and evening sun. Cap Rocat and the Jumeirah face southeast: best morning light. Belmond La Residencia pools get afternoon mountain shadow early: arrive at noon for maximum sun time.
 
 ---
 
@@ -1927,7 +1981,7 @@ This is not the quiet, contemplative pool experience of the other entries. It's 
   {
     slug: "pool-colors-materials-2026",
     title: "Dark Water Rising: The Pool Colors and Materials Defining Luxury in 2026",
-    excerpt: "White plaster is out. Charcoal, graphite, and deep obsidian are in. We explore the finish and material trends reshaping the world's most beautiful pools — and what they tell us about where luxury design is heading.",
+    excerpt: "White plaster is out. Charcoal, graphite, and deep obsidian are in. We explore the finish and material trends reshaping the world's most beautiful pools, and what they tell us about where luxury design is heading.",
     category: "Industry",
     readTime: "9 min read",
     image: "/images/pools/pool-le-sirenuse-positano.jpg",
@@ -1940,7 +1994,7 @@ This is not the quiet, contemplative pool experience of the other entries. It's 
     content: `
 # Dark Water Rising: The Pool Colors and Materials Defining Luxury in 2026
 
-There is a moment — you'll know it if you've experienced it — when you walk to the edge of a pool and realize the water is not the color you expected.
+There is a moment, you'll know it if you've experienced it, when you walk to the edge of a pool and realize the water is not the color you expected.
 
 Not the bright aquamarine of a holiday hotel. Not the milky Caribbean turquoise. Something darker. Something that makes the water look bottomless and alive, like you're peering into a lagoon that hasn't quite decided where it ends.
 
@@ -1948,9 +2002,9 @@ This is the defining pool aesthetic of 2026: dark, deliberate, and deeply theatr
 
 ## The Death of White Plaster
 
-For most of the 20th century, the default hotel pool was white. White plaster bottom, white tile trim, bright blue water that read cheerful and clean in a photograph. It worked. It still works — about as well as a white hotel room works. Which is to say: adequately, uninspiringly, forgettably.
+For most of the 20th century, the default hotel pool was white. White plaster bottom, white tile trim, bright blue water that read cheerful and clean in a photograph. It worked. It still works: about as well as a white hotel room works. Which is to say: adequately, uninspiringly, forgettably.
 
-White plaster reflects almost all visible light, producing that familiar turquoise shimmer. It's photogenic in bright sun, but it also reveals every scratch, every stain, and every chemical imbalance. It ages poorly, typically requiring resurfacing every seven to ten years, and it looks essentially the same everywhere in the world — which is the property designer's equivalent of a creative failure.
+White plaster reflects almost all visible light, producing that familiar turquoise shimmer. It's photogenic in bright sun, but it also reveals every scratch, every stain, and every chemical imbalance. It ages poorly, typically requiring resurfacing every seven to ten years, and it looks essentially the same everywhere in the world, which is the property designer's equivalent of a creative failure.
 
 The shift away from white has been building for years, but 2026 marks the moment it has become the clear preference of the world's most ambitious hospitality projects.
 
@@ -1958,23 +2012,23 @@ The shift away from white has been building for years, but 2026 marks the moment
 
 ## What Dark Finishes Actually Do to Water
 
-Before getting into the materials themselves, it's worth understanding the physics — because the effect of a dark pool finish isn't just aesthetic. It's optical.
+Before getting into the materials themselves, it's worth understanding the physics, because the effect of a dark pool finish isn't just aesthetic. It's optical.
 
 When light enters a body of water and hits a white or pale surface beneath, it bounces back toward the surface and scatters, creating the luminous turquoise effect we associate with traditional pools. The water appears lit from within.
 
-Dark finishes — charcoal plaster, black aggregate, deep blue pebble, gunmetal mosaic tile — absorb rather than reflect. The light that enters doesn't come back. The water appears to have no bottom. It reads as a different substance entirely: denser, cooler, more ambiguous.
+Dark finishes (charcoal plaster, black aggregate, deep blue pebble, gunmetal mosaic tile) absorb rather than reflect. The light that enters doesn't come back. The water appears to have no bottom. It reads as a different substance entirely: denser, cooler, more ambiguous.
 
 In daylight, this creates the mirror effect: the pool surface becomes a perfect reflection of sky, clouds, and landscape. At dusk and after dark, with underwater LED lighting playing against a dark surround, the result is genuinely otherworldly. The water seems to glow from within rather than above.
 
-There's also a thermal benefit. Dark surfaces absorb solar radiation, passively warming the water by several degrees — a meaningful efficiency gain for outdoor pools in temperate climates.
+There's also a thermal benefit. Dark surfaces absorb solar radiation, passively warming the water by several degrees: a meaningful efficiency gain for outdoor pools in temperate climates.
 
 ## The Materials Leading the Movement
 
 ### Dark Aggregate and Pebble Finishes
 
-The finish most associated with the current trend is exposed aggregate — a concrete base with natural stone pebbles, glass beads, or quartz crystals mixed in and polished to the surface. In dark colorways (midnight blue, charcoal, black river stone), pebble finishes produce water that appears to shift between deep green and deep blue depending on the light angle and time of day.
+The finish most associated with the current trend is exposed aggregate: a concrete base with natural stone pebbles, glass beads, or quartz crystals mixed in and polished to the surface. In dark colorways (midnight blue, charcoal, black river stone), pebble finishes produce water that appears to shift between deep green and deep blue depending on the light angle and time of day.
 
-Beyond aesthetics, the practical case for pebble finishes over standard plaster is compelling. They're significantly more durable — lifespan of fifteen to twenty-five years versus seven to ten for white plaster — and the texture provides natural slip resistance. The surface also hides the micro-scratches and surface variations that make aging plaster look shabby.
+Beyond aesthetics, the practical case for pebble finishes over standard plaster is compelling. They're significantly more durable, lifespan of fifteen to twenty-five years versus seven to ten for white plaster, and the texture provides natural slip resistance. The surface also hides the micro-scratches and surface variations that make aging plaster look shabby.
 
 [Amankila in Bali](/pools/amankila-3), with its legendary three-tier cascading pools overlooking the Lombok Strait, has long been an exemplar of the dark aggregate aesthetic. The pools appear to be carved from shadow, their surfaces catching the light differently across the day in a way that makes them endlessly watchable. This is not accidental; it is the entire point.
 
@@ -1982,11 +2036,11 @@ Beyond aesthetics, the practical case for pebble finishes over standard plaster 
 
 If aggregate is the workhorse material of the dark pool movement, mosaic tile is its jewel.
 
-Custom glass and stone mosaic has been used in pools for over a century — the Romans understood that small tile pieces, carefully chosen and laid, could transform a body of water into something ceremonial. What's changed in 2026 is the ambition: designers are now commissioning bespoke mosaic programs that treat the pool floor as a canvas, with gradations of color, hand-drawn patterns, and material combinations that take months to specify and install.
+Custom glass and stone mosaic has been used in pools for over a century: the Romans understood that small tile pieces, carefully chosen and laid, could transform a body of water into something ceremonial. What's changed in 2026 is the ambition: designers are now commissioning bespoke mosaic programs that treat the pool floor as a canvas, with gradations of color, hand-drawn patterns, and material combinations that take months to specify and install.
 
 The [St. Regis Lhasa](/pools/st-regis-lhasa-23) offers perhaps the most extraordinary contemporary example in Pool Atlas's rankings: the Golden Energy Pool, lined with thousands of individual gold-plated tiles, creates a therapeutic salt-water basin that transforms light into ceremony. Every swimmer becomes momentarily royal.
 
-[The Berkeley in London](/pools/the-berkeley-71) takes the mosaic tradition in the opposite direction — iridescent white and gold mosaic laid in a rooftop pool with a retractable roof, creating an effect that is more gallery installation than hotel amenity. At Pool Atlas, we've ranked it among the finest urban pools in the world, partly for this reason.
+[The Berkeley in London](/pools/the-berkeley-71) takes the mosaic tradition in the opposite direction: iridescent white and gold mosaic laid in a rooftop pool with a retractable roof, creating an effect that is more gallery installation than hotel amenity. At Pool Atlas, we've ranked it among the finest urban pools in the world, partly for this reason.
 
 The current generation of mosaic commissions is pushing further: gradient colorways that shift from obsidian at the deep end to midnight blue at the shallow; custom patterns inspired by local craft traditions (Moroccan zellige, Balinese batik, Provençal encaustic); glass bead mixes that sparkle rather than shine, creating a water surface that looks less like a swimming pool and more like a night sky reflected in a lake.
 
@@ -1994,9 +2048,9 @@ The current generation of mosaic commissions is pushing further: gradient colorw
 
 The revolution isn't confined to what's under the water. What surrounds the pool has undergone an equally dramatic rethink.
 
-The standard hotel pool deck was, for decades, sealed concrete or generic stone pavers. The trend now — particularly among properties with strong design identities — is toward large-format natural stone laid without grout lines: travertine, limestone, granite, and in volcanic destinations, locally sourced basalt or lava stone.
+The standard hotel pool deck was, for decades, sealed concrete or generic stone pavers. The trend now, particularly among properties with strong design identities, is toward large-format natural stone laid without grout lines: travertine, limestone, granite, and in volcanic destinations, locally sourced basalt or lava stone.
 
-The appeal is immediate. Natural stone reads as expensive and particular in a way that concrete never quite manages. It also ages beautifully, developing patina rather than degrading. And it anchors the pool to its place — travertine in a Tuscan pool, basalt in an Icelandic one, fossil limestone in a Jordanian riad — in a way that generic materials cannot.
+The appeal is immediate. Natural stone reads as expensive and particular in a way that concrete never quite manages. It also ages beautifully, developing patina rather than degrading. And it anchors the pool to its place (travertine in a Tuscan pool, basalt in an Icelandic one, fossil limestone in a Jordanian riad) in a way that generic materials cannot.
 
 [Borgo Pignano in Tuscany](/pools/borgo-pignano-83) demonstrates this principle at its most poetic: their infinity pool is carved directly from an ancient limestone quarry, making the material not a design choice but an archaeological discovery. The pool and its surroundings are made of the same stone, because they literally are.
 
@@ -2006,7 +2060,7 @@ In Portugal, [Albatroz Beach & Yacht Club](/pools/albatroz-beach-yacht-club-98) 
 
 Less expected, but increasingly visible at design-forward boutique properties: pools made from or edged with weathering steel, brushed stainless, or oxidized copper. These are not materials typically associated with water, and that dissonance is precisely the point.
 
-In Berlin, [Hotel Oderberger](/pools/hotel-oderberger-89) houses its grand pool within an 1898 bathhouse designed by Ludwig Hoffmann — the architect of the Pergamon Museum. The existing materials (vaulted brick, decorative ironwork, aged tile) have become the design, requiring nothing to be added and nothing to be changed. The pool is spectacular because someone decided to leave it alone.
+In Berlin, [Hotel Oderberger](/pools/hotel-oderberger-89) houses its grand pool within an 1898 bathhouse designed by Ludwig Hoffmann: the architect of the Pergamon Museum. The existing materials (vaulted brick, decorative ironwork, aged tile) have become the design, requiring nothing to be added and nothing to be changed. The pool is spectacular because someone decided to leave it alone.
 
 ## The Psychology Behind the Shift
 
@@ -2014,29 +2068,29 @@ What's driving the turn to darkness, heaviness, and material honesty in pool des
 
 **Instagram saturation.** A generation of aquamarine infinity pools photographed millions of times has normalized the image so thoroughly that it's become invisible. Properties seeking genuine visual differentiation can't achieve it with blue water and white tile. They need something that reads differently on a screen, which means something that reads differently in real life.
 
-**The wellness pivot.** Pools are no longer marketed primarily as recreational amenities. At the leading properties, they're positioned as therapeutic environments — places of sensory immersion and deliberate escape. Dark, contained water resonates with this framing in a way that bright, cheerful water doesn't. You don't enter a Japanese onsen expecting to feel playful. You enter expecting to feel changed.
+**The wellness pivot.** Pools are no longer marketed primarily as recreational amenities. At the leading properties, they're positioned as therapeutic environments: places of sensory immersion and deliberate escape. Dark, contained water resonates with this framing in a way that bright, cheerful water doesn't. You don't enter a Japanese onsen expecting to feel playful. You enter expecting to feel changed.
 
-**Material honesty as luxury.** The most significant shift in luxury goods over the past decade has been away from superficial glamour toward substance and provenance. The same values that make natural leather and handmade furniture feel more valuable than their synthetic equivalents now apply to pools. Guests who can afford anything increasingly choose materials with stories — the quarry, the craftsman, the centuries of use.
+**Material honesty as luxury.** The most significant shift in luxury goods over the past decade has been away from superficial glamour toward substance and provenance. The same values that make natural leather and handmade furniture feel more valuable than their synthetic equivalents now apply to pools. Guests who can afford anything increasingly choose materials with stories: the quarry, the craftsman, the centuries of use.
 
 ## Five Pools to Watch
 
 The following Pool Atlas rankings exemplify these trends at their highest expression:
 
-**[Grace Santorini](/pools/grace-santorini-1) (#1)** — The Caldera infinity pool sits in a dark volcanic landscape and uses its materials to rhyme with it. The pool's dark finish makes the Aegean horizon appear to extend directly into the water.
+**[Grace Santorini](/pools/grace-santorini-1) (#1)**: The Caldera infinity pool sits in a dark volcanic landscape and uses its materials to rhyme with it. The pool's dark finish makes the Aegean horizon appear to extend directly into the water.
 
-**[Alila Villas Uluwatu](/pools/alila-villas-uluwatu-74) (#74)** — The 50-meter clifftop pool on Bali's Bukit Peninsula uses a dark aggregate finish that transforms the Indian Ocean horizon into a single plane of deep blue.
+**[Alila Villas Uluwatu](/pools/alila-villas-uluwatu-74) (#74)**: The 50-meter clifftop pool on Bali's Bukit Peninsula uses a dark aggregate finish that transforms the Indian Ocean horizon into a single plane of deep blue.
 
-**[Cap Rocat Mallorca](/pools/cap-rocat-62) (#62)** — A former military fortress where the pools are carved from the fortification itself, in the same weathered sandstone as the walls. The material is the architecture; the architecture is the history.
+**[Cap Rocat Mallorca](/pools/cap-rocat-62) (#62)**: A former military fortress where the pools are carved from the fortification itself, in the same weathered sandstone as the walls. The material is the architecture; the architecture is the history.
 
-**[Amanruya](/pools/amanruya-53) (#53)** — On Bodrum's Göltürkbükü coast, the pools use dark stone finishes against bone-white architecture to create contrast that makes both elements more dramatic.
+**[Amanruya](/pools/amanruya-53) (#53)**: On Bodrum's Göltürkbükü coast, the pools use dark stone finishes against bone-white architecture to create contrast that makes both elements more dramatic.
 
-**[Albatroz Beach & Yacht Club](/pools/albatroz-beach-yacht-club-98) (#98)** — The volcanic rock pool in Madeira is perhaps the purest expression of the trend: material, geography, and water merged into something that couldn't exist anywhere else.
+**[Albatroz Beach & Yacht Club](/pools/albatroz-beach-yacht-club-98) (#98)**: The volcanic rock pool in Madeira is perhaps the purest expression of the trend: material, geography, and water merged into something that couldn't exist anywhere else.
 
 ## What Comes Next
 
 The current trend cycle in pool design has, historically, run about a decade. Dark finishes were rare in 2016; they're the dominant preference in 2026. What comes after?
 
-The early signals suggest a turn toward the biological: moss-edged natural pools, living stone walls fed by pool runoff, aquatic plant filtration systems that blur the line between swimming pool and pond. Properties in the Austrian Alps and the Swiss countryside are already building this way. The aesthetic is more demanding, the maintenance more complex, and the sensory experience — swimming among living plants in chemically minimal water — is fundamentally unlike anything that came before it.
+The early signals suggest a turn toward the biological: moss-edged natural pools, living stone walls fed by pool runoff, aquatic plant filtration systems that blur the line between swimming pool and pond. Properties in the Austrian Alps and the Swiss countryside are already building this way. The aesthetic is more demanding, the maintenance more complex, and the sensory experience, swimming among living plants in chemically minimal water, is fundamentally unlike anything that came before it.
 
 In ten years, we may look at the dark aggregate pool the way we now look at white plaster: accomplished, beautiful in its time, and quietly overtaken by something more alive.
 
@@ -2050,7 +2104,7 @@ For now, the dark pools are ascendant. They look extraordinary, they hold their 
   {
     slug: "hotel-pool-design-trends-2026",
     title: "What 82 Strangers Revealed About the Future of Hotel Pools",
-    excerpt: "A Reddit thread asking about the world's most extraordinary hotel pools attracted thousands of views and 82 responses — and the patterns that emerged say a great deal about where hotel pool design is heading.",
+    excerpt: "A Reddit thread asking about the world's most extraordinary hotel pools attracted thousands of views and 82 responses, and the patterns that emerged say a great deal about where hotel pool design is heading.",
     category: "Industry",
     readTime: "10 min read",
     image: "/images/pools/pool-banyan-tree-alula.jpg",
@@ -2065,15 +2119,15 @@ For now, the dark pools are ascendant. They look extraordinary, they hold their 
 
 In late July 2026, we posted a single question to Reddit: *What's the most extraordinary hotel pool you've ever swum in?*
 
-By the time the thread closed, it had attracted thousands of views and 82 responses from travellers spanning six continents — a level of engagement that surprised even us. Pools, it turns out, are deeply felt. People remember them the way they remember meals, or sunsets, or the specific quality of light in a place they'll carry with them for the rest of their lives.
+By the time the thread closed, it had attracted thousands of views and 82 responses from travellers spanning six continents: a level of engagement that surprised even us. Pools, it turns out, are deeply felt. People remember them the way they remember meals, or sunsets, or the specific quality of light in a place they'll carry with them for the rest of their lives.
 
-But beyond the nostalgia, something analytically interesting emerged from the thread: a surprisingly consistent pattern in what people found most remarkable. Almost nobody mentioned the size of the pool. Almost nobody mentioned the water temperature, the towel service, or the number of swim lanes. What they mentioned, again and again, was *specificity of place* — pools that could only exist in one location on earth, that felt designed for that particular ridge, that canyon, that rooftop.
+But beyond the nostalgia, something analytically interesting emerged from the thread: a surprisingly consistent pattern in what people found most remarkable. Almost nobody mentioned the size of the pool. Almost nobody mentioned the water temperature, the towel service, or the number of swim lanes. What they mentioned, again and again, was *specificity of place*: pools that could only exist in one location on earth, that felt designed for that particular ridge, that canyon, that rooftop.
 
 This is, it turns out, exactly where the hospitality industry's most ambitious designers are heading.
 
 ## The Investment Reality
 
-Before the trends, the numbers. Building a world-class hotel pool today — one that genuinely earns the *extraordinary* designation — costs between $2 million and $20 million, depending on location, engineering complexity, and level of finish. A rooftop infinity pool in a Tokyo skyscraper and a desert rock pool in Saudi Arabia occupy the same price tier but require entirely different engineering logic.
+Before the trends, the numbers. Building a world-class hotel pool today, one that genuinely earns the *extraordinary* designation, costs between $2 million and $20 million, depending on location, engineering complexity, and level of finish. A rooftop infinity pool in a Tokyo skyscraper and a desert rock pool in Saudi Arabia occupy the same price tier but require entirely different engineering logic.
 
 Hotel groups are investing in pools not primarily as amenities, but as *marketing assets*. Research from hospitality consultancies consistently shows that distinctive pools drive direct booking rates, social media reach, and average nightly rates at a disproportionate rate relative to their construction cost. The ROI calculation increasingly favors extraordinary over adequate.
 
@@ -2089,35 +2143,35 @@ What unites these pools is a design philosophy that refuses to impose. The lands
 
 This approach is expensive. It requires custom engineering, site-specific materials, and design briefs that often run for years before a shovel touches the ground. But the properties that invest in it produce experiences that guests carry with them for decades.
 
-The Banyan Tree AlUla, which we recently added to Pool Atlas's listings, exemplifies where this is heading. Its Rock Pool sits at the base of a 2,000-year-old Nabataean sandstone canyon in Saudi Arabia's AlUla region — a setting so specific to its geology that it couldn't be replicated elsewhere at any price. The investment to build it was significant; the impossibility of replication is, itself, the point.
+The Banyan Tree AlUla, which we recently added to Pool Atlas's listings, exemplifies where this is heading. Its Rock Pool sits at the base of a 2,000-year-old Nabataean sandstone canyon in Saudi Arabia's AlUla region: a setting so specific to its geology that it couldn't be replicated elsewhere at any price. The investment to build it was significant; the impossibility of replication is, itself, the point.
 
 ## Trend 2: The Rooftop Urban Arms Race
 
 The second pattern that emerged from our thread: cities. Specifically, city pools that turn the skyline into the amenity.
 
-The Park Hyatt Tokyo's Pool on the Park — now on Pool Atlas at #123 — has attracted devoted fans for more than two decades, ever since Sofia Coppola's camera lingered on its 47th-floor windows in *Lost in Translation*. Multiple respondents mentioned it unprompted. One described swimming there during a typhoon warning, watching waves of rain move across the city below, as one of the defining experiences of their travels.
+The Park Hyatt Tokyo's Pool on the Park, now on Pool Atlas at #123, has attracted devoted fans for more than two decades, ever since Sofia Coppola's camera lingered on its 47th-floor windows in *Lost in Translation*. Multiple respondents mentioned it unprompted. One described swimming there during a typhoon warning, watching waves of rain move across the city below, as one of the defining experiences of their travels.
 
-Bangkok, Singapore, Tokyo: the thread read like a rooftop atlas of urban Asia. And the pattern reflects investment reality — major hotel groups building in dense urban centres know that the pool is often the only way to offer the spatial generosity and natural beauty that luxury travellers expect when the surrounding streets offer neither.
+Bangkok, Singapore, Tokyo: the thread read like a rooftop atlas of urban Asia. And the pattern reflects investment reality: major hotel groups building in dense urban centres know that the pool is often the only way to offer the spatial generosity and natural beauty that luxury travellers expect when the surrounding streets offer neither.
 
-The engineering challenge of rooftop pools — cantilever loads, wind exposure, waterproofing above occupied floors — makes them among the most expensive pool types per square metre. The Okura Prestige Bangkok, which we added at #124, has maintained its rooftop pool at the standard that newer competitors struggle to match: quiet, Japanese in its restraint, with a view over the city that doesn't try to shout.
+The engineering challenge of rooftop pools (cantilever loads, wind exposure, waterproofing above occupied floors) makes them among the most expensive pool types per square metre. The Okura Prestige Bangkok, which we added at #124, has maintained its rooftop pool at the standard that newer competitors struggle to match: quiet, Japanese in its restraint, with a view over the city that doesn't try to shout.
 
 ## Trend 3: Desert and Extreme Environment Pools
 
 Perhaps the most telling signal from our thread: pools in arid, extreme, or unexpected environments generated some of the most passionate responses.
 
-Amangiri in Utah. Amanoi in Vietnam's Núi Chúa National Park. Banyan Tree AlUla in Saudi Arabia. These are not pools designed for convenience — they require guests to travel far, pay significantly, and often contend with heat, altitude, or remoteness that makes a cool plunge feel almost existentially necessary.
+Amangiri in Utah. Amanoi in Vietnam's Núi Chúa National Park. Banyan Tree AlUla in Saudi Arabia. These are not pools designed for convenience: they require guests to travel far, pay significantly, and often contend with heat, altitude, or remoteness that makes a cool plunge feel almost existentially necessary.
 
 The hospitality industry is noticing. Saudi Arabia's Vision 2030 tourism investment has produced a wave of luxury pool projects in desert environments that are setting new standards for what's architecturally possible in harsh climates. Water in these settings carries symbolic weight that no Maldives overwater villa can quite replicate: it represents relief, abundance, and the triumph of human ingenuity over inhospitable earth.
 
-Amanoi — which we added to Pool Atlas at #121 following the thread — is a masterclass in this approach. Set in a protected national park on Vietnam's least-visited coastline, its infinity pool faces a bay that fewer than 1,000 tourists see each year. Scarcity, it turns out, is a design material too.
+Amanoi, which we added to Pool Atlas at #121 following the thread, is a masterclass in this approach. Set in a protected national park on Vietnam's least-visited coastline, its infinity pool faces a bay that fewer than 1,000 tourists see each year. Scarcity, it turns out, is a design material too.
 
 ## Trend 4: The Architectural Statement Pool
 
 A distinct but related category: pools designed not to disappear into the landscape, but to *announce* themselves architecturally.
 
-The Reddit thread contained several mentions of The Joule Dallas and Marina Bay Sands — pools defined by their structural distinctiveness rather than their natural setting. These are pools you photograph from below as much as from within.
+The Reddit thread contained several mentions of The Joule Dallas and Marina Bay Sands: pools defined by their structural distinctiveness rather than their natural setting. These are pools you photograph from below as much as from within.
 
-What they share is an architectural confidence that treats the pool as a building component rather than an addition. At Marina Bay Sands, the infinity edge is part of the building's silhouette. At The Joule — now Pool Atlas #122 — the cantilevered glass-bottom pool is visible from the street to pedestrians who never set foot in the hotel. It's a pool that earns its place in the city's visual culture simply by existing.
+What they share is an architectural confidence that treats the pool as a building component rather than an addition. At Marina Bay Sands, the infinity edge is part of the building's silhouette. At The Joule, now Pool Atlas #122, the cantilevered glass-bottom pool is visible from the street to pedestrians who never set foot in the hotel. It's a pool that earns its place in the city's visual culture simply by existing.
 
 Architectural firms are increasingly being commissioned for pool design at the same time as the buildings that contain them, rather than as an afterthought. The result: pools that exist at the intersection of engineering, sculpture, and hospitality, and that generate earned media coverage years after they open.
 
@@ -2133,11 +2187,11 @@ The Reddit thread's language bore this out. People described these pools not as 
 
 ## What the Data Tells Us
 
-The pools that drew the most passionate responses in our thread — and generated tens of thousands of views from readers who had never swum in any of them — shared a quality that the hospitality industry's most experienced designers identify as increasingly central to their work: *irreplaceability*.
+The pools that drew the most passionate responses in our thread, and generated tens of thousands of views from readers who had never swum in any of them, shared a quality that the hospitality industry's most experienced designers identify as increasingly central to their work: *irreplaceability*.
 
 Not the largest, the highest, or the most technically sophisticated. The ones that could exist nowhere else on earth.
 
-The investment thesis that flows from this is straightforward, even if executing it is not: the pools worth building in 2026 are the ones that twenty years from now, someone will describe to a stranger on Reddit — with the specific, luminous detail of a memory they've carried since the day they swam there.
+The investment thesis that flows from this is straightforward, even if executing it is not: the pools worth building in 2026 are the ones that twenty years from now, someone will describe to a stranger on Reddit, with the specific, luminous detail of a memory they've carried since the day they swam there.
 
 Pool Atlas exists to document those places. We now list well over a hundred of them. Five came directly from the thread that sparked this piece.
 
@@ -2151,7 +2205,7 @@ If you know of others, we're listening.
   {
     slug: "infinity-pools-vs-lagoon-pools",
     title: "Two Ways to Build a Perfect Pool: The Infinity Edge and the Living Lagoon",
-    excerpt: "Hotel pool design has converged on two distinct philosophies — one about visual drama, one about immersive nature. Understanding the difference helps explain why some pools stay with you for decades.",
+    excerpt: "Hotel pool design has converged on two distinct philosophies, one about visual drama, one about immersive nature. Understanding the difference helps explain why some pools stay with you for decades.",
     category: "Guide",
     readTime: "9 min read",
     image: "/images/pools/pool-retreat-blue-lagoon.jpg",
@@ -2166,21 +2220,21 @@ If you know of others, we're listening.
 
 There is a question that good hotel pool designers spend years learning to answer: should the pool announce itself, or should it disappear?
 
-Two dominant philosophies have emerged in response. The infinity edge pool is built around visual drama — an edge engineered to vanish into a horizon, making the water appear continuous with whatever lies beyond it. The lagoon pool operates on an entirely different logic: organic edges, naturalistic depth, a relationship with the surrounding landscape that feels discovered rather than constructed.
+Two dominant philosophies have emerged in response. The infinity edge pool is built around visual drama: an edge engineered to vanish into a horizon, making the water appear continuous with whatever lies beyond it. The lagoon pool operates on an entirely different logic: organic edges, naturalistic depth, a relationship with the surrounding landscape that feels discovered rather than constructed.
 
-Both produce extraordinary experiences. But they do so through opposite means, and understanding the difference changes how you choose where to swim — and what you remember about it years later.
+Both produce extraordinary experiences. But they do so through opposite means, and understanding the difference changes how you choose where to swim, and what you remember about it years later.
 
 ## The Infinity Edge: Borrowed Horizon
 
-The concept is deceptively simple. By lowering one edge of the pool to the same level as the water surface, an infinity pool creates the optical illusion that the pool extends to the horizon. The water doesn't stop — it spills over into a catch basin and recirculates, but from the swimmer's perspective, it connects to whatever is beyond.
+The concept is deceptively simple. By lowering one edge of the pool to the same level as the water surface, an infinity pool creates the optical illusion that the pool extends to the horizon. The water doesn't stop: it spills over into a catch basin and recirculates, but from the swimmer's perspective, it connects to whatever is beyond.
 
 What makes this work is not the engineering (which is fairly straightforward) but the selection of the horizon itself. The best infinity pools choose their vanishing point with the same deliberateness that a portrait photographer chooses a background. The pool is the foreground; everything beyond is the subject.
 
-**[Grace Santorini](/pools/grace-santorini-1)** does this with the Caldera — the ancient volcanic crater that defines the island's silhouette. At the water's surface, the pool and the caldera appear to share a single plane. The effect is not that you're swimming in a pool overlooking the caldera; it's that you're swimming *in* the caldera.
+**[Grace Santorini](/pools/grace-santorini-1)** does this with the Caldera: the ancient volcanic crater that defines the island's silhouette. At the water's surface, the pool and the caldera appear to share a single plane. The effect is not that you're swimming in a pool overlooking the caldera; it's that you're swimming *in* the caldera.
 
-**[Belmond Hotel Caruso](/pools/belmond-hotel-caruso-7)** in Ravello applies the same logic to the Amalfi Coast. The pool sits at the edge of an 11th-century palace, and its vanishing edge spills toward a panorama of coastline that drops 300 meters to the sea. The horizon here is not ocean but air and geometry — terraced lemon groves, medieval villages, and the particular quality of Mediterranean light in the afternoon.
+**[Belmond Hotel Caruso](/pools/belmond-hotel-caruso-7)** in Ravello applies the same logic to the Amalfi Coast. The pool sits at the edge of an 11th-century palace, and its vanishing edge spills toward a panorama of coastline that drops 300 meters to the sea. The horizon here is not ocean but air and geometry: terraced lemon groves, medieval villages, and the particular quality of Mediterranean light in the afternoon.
 
-**[Alila Villas Uluwatu](/pools/alila-villas-uluwatu-74)** pushes the format to its physical limits: a 50-metre pool perched on the southernmost cliffs of Bali, 50 metres above the Indian Ocean. The swell is visible from the water. On the right day, the spray reaches the deck. This is an infinity pool that has chosen confrontation as its mode — not serenity.
+**[Alila Villas Uluwatu](/pools/alila-villas-uluwatu-74)** pushes the format to its physical limits: a 50-metre pool perched on the southernmost cliffs of Bali, 50 metres above the Indian Ocean. The swell is visible from the water. On the right day, the spray reaches the deck. This is an infinity pool that has chosen confrontation as its mode, not serenity.
 
 **[Hacienda Na Xamena](/pools/hacienda-na-xamena-118)** in Ibiza takes a different variation: not a single infinity edge but a cascade of pools descending down 180-metre cliffs, each one spilling into the next, ultimately disappearing into a private bay. It is less a pool than a water feature at landscape scale.
 
@@ -2196,21 +2250,21 @@ The key question to ask of any infinity pool: what has it borrowed the horizon f
 
 The lagoon-style pool operates from the opposite premise. Rather than directing the eye outward, it creates a self-contained world. Edges are irregular. Depths vary. The shape is determined by the environment it inhabits rather than by the view it frames.
 
-The archetype exists, quite literally, at **[The Retreat at Blue Lagoon](/pools/the-retreat-at-blue-lagoon-9)** in Iceland — a private geothermal lagoon fed by the same volcanic wellspring as the famous public pool nearby. The water is naturally opaque blue-grey from dissolved silica, warm year-round regardless of air temperature, and edged in raw lava rock. No engineer designed this aesthetic; the geology did. The Retreat built around it.
+The archetype exists, quite literally, at **[The Retreat at Blue Lagoon](/pools/the-retreat-at-blue-lagoon-9)** in Iceland: a private geothermal lagoon fed by the same volcanic wellspring as the famous public pool nearby. The water is naturally opaque blue-grey from dissolved silica, warm year-round regardless of air temperature, and edged in raw lava rock. No engineer designed this aesthetic; the geology did. The Retreat built around it.
 
 This is the essential logic of lagoon pool design: working with a pre-existing natural quality rather than imposing a designed quality onto a neutral space.
 
-**[Amankila](/pools/amankila-3)**'s three-tier infinity pool in Bali occupies an interesting position between both categories. Its cascading terraces reference the water palaces of traditional Balinese architecture — pools as ritual landscape rather than recreational amenity. The three levels descend toward the Lombok Strait, each with its own character and temperature. It reads as a lagoon system that happens to have infinity edges, which is perhaps the most sophisticated resolution of the two philosophies.
+**[Amankila](/pools/amankila-3)**'s three-tier infinity pool in Bali occupies an interesting position between both categories. Its cascading terraces reference the water palaces of traditional Balinese architecture: pools as ritual landscape rather than recreational amenity. The three levels descend toward the Lombok Strait, each with its own character and temperature. It reads as a lagoon system that happens to have infinity edges, which is perhaps the most sophisticated resolution of the two philosophies.
 
-**[Huvafen Fushi](/pools/huvafen-fushi-12)** in the Maldives takes the lagoon concept in a different direction. Its pool is positioned at the edge of the coral reef platform, and its water colour shifts with the depth of the ocean beyond — pale turquoise above sand, deepening to indigo where the reef drops. The pool does not have to pretend to be connected to the ocean; structurally, it nearly is.
+**[Huvafen Fushi](/pools/huvafen-fushi-12)** in the Maldives takes the lagoon concept in a different direction. Its pool is positioned at the edge of the coral reef platform, and its water colour shifts with the depth of the ocean beyond: pale turquoise above sand, deepening to indigo where the reef drops. The pool does not have to pretend to be connected to the ocean; structurally, it nearly is.
 
 **[Villa d'Este](/pools/villa-deste-13)** on Lake Como dispenses with the pretence altogether: its pool floats directly on the lake, a pontoon structure moored against the 16th-century hotel facade. Swimming in it, you are surrounded by lake water on all sides, separated by a few inches of fibreglass. The lagoon is not simulated; you are in it.
 
-**[Grand Hotel Tremezzo](/pools/grand-hotel-tremezzo-51)**, also on Lake Como, operates similarly — a floating pool platform with views directly to Bellagio across the water. It has been there since 1910, which makes it one of the oldest examples of lagoon-integrated hotel pool design in existence, predating the trend by about a century.
+**[Grand Hotel Tremezzo](/pools/grand-hotel-tremezzo-51)**, also on Lake Como, operates similarly: a floating pool platform with views directly to Bellagio across the water. It has been there since 1910, which makes it one of the oldest examples of lagoon-integrated hotel pool design in existence, predating the trend by about a century.
 
 ### What the Lagoon Pool Asks of You
 
-Lagoon pools tend to reward slower attention. The experience compounds over time — the slight variation in temperature as you move through different zones, the way the light changes the surface colour, the transition from shallow to deep. They are environments to inhabit rather than views to consume.
+Lagoon pools tend to reward slower attention. The experience compounds over time: the slight variation in temperature as you move through different zones, the way the light changes the surface colour, the transition from shallow to deep. They are environments to inhabit rather than views to consume.
 
 The design challenge is correspondingly harder. An infinity edge is a precise technical effect that can be specified and built. A lagoon that feels genuinely natural requires either an exceptional site or an exceptionally patient designer willing to spend years getting the organic geometry right.
 
@@ -2218,11 +2272,11 @@ The design challenge is correspondingly harder. An infinity edge is a precise te
 
 Both formats appear throughout Pool Atlas's rankings because both, at their best, produce unforgettable experiences. The distinction matters mainly when you're deciding what kind of experience you're looking for.
 
-If you want a moment — a photograph, a specific view at a specific time of day, the feeling of swimming on the edge of something — the infinity pools deliver. Grace Santorini at sunset. Alila Uluwatu during a swell. Amanoi at dawn before the bay fills with light.
+If you want a moment (a photograph, a specific view at a specific time of day, the feeling of swimming on the edge of something) the infinity pools deliver. Grace Santorini at sunset. Alila Uluwatu during a swell. Amanoi at dawn before the bay fills with light.
 
-If you want to sink into a place — to lose track of time, to feel absorbed by an environment rather than positioned in front of one — the lagoon pools are the better choice. Blue Lagoon in snow. Villa d'Este in June. Huvafen Fushi at the point where the reef meets the open ocean.
+If you want to sink into a place (to lose track of time, to feel absorbed by an environment rather than positioned in front of one) the lagoon pools are the better choice. Blue Lagoon in snow. Villa d'Este in June. Huvafen Fushi at the point where the reef meets the open ocean.
 
-The most interesting pools find ways to do both. Amankila's terraces let you move between the immersive and the panoramic. The best designers understand that these are not competing approaches but complementary ones — and that the richest pool experiences draw from both.
+The most interesting pools find ways to do both. Amankila's terraces let you move between the immersive and the panoramic. The best designers understand that these are not competing approaches but complementary ones, and that the richest pool experiences draw from both.
 
 Pool Atlas ranks both categories across more than a hundred properties worldwide. Whatever your preference, the list is a good place to start.
 

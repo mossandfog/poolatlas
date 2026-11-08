@@ -135,6 +135,9 @@ export const poolCoordinates: Record<number, { lat: number; lng: number }> = {
   132: { lat: -20.048, lng: 148.884 }, // InterContinental Hayman Island
   133: { lat: 20.687, lng: -156.441 }, // Grand Wailea
   134: { lat: 20.743, lng: -156.892 }, // Four Seasons Lanai
+  135: { lat: 25.8095, lng: -80.1226 }, // Faena Hotel Miami Beach
+  136: { lat: 25.7957, lng: -80.1281 }, // The Setai Miami Beach
+  137: { lat: 25.7991, lng: -80.1272 }, // 1 Hotel South Beach
 }
 
 // Calculate distance between two points using Haversine formula

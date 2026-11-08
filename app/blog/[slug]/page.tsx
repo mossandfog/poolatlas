@@ -35,6 +35,21 @@ function poolsInPost(content: string) {
   return found.slice(0, 12)
 }
 
+// Posts mention ranks by hand ("Ranked #22", "(#74)") next to a pool link. Rankings move,
+// so swap in each linked pool's live rank at render time instead of trusting the text.
+function withLiveRanks(content: string) {
+  const rankOf = (slug: string) => allPools.find((p) => p.slug === slug)?.rank
+  return content
+    .replace(/Ranked #\d+ on Pool Atlas\]\(\/pools\/([a-z0-9-]+)\)/g, (m, slug) => {
+      const r = rankOf(slug)
+      return r ? `Ranked #${r} on Pool Atlas](/pools/${slug})` : m
+    })
+    .replace(/\]\(\/pools\/([a-z0-9-]+)\) \(#\d+\)/g, (m, slug) => {
+      const r = rankOf(slug)
+      return r ? `](/pools/${slug}) (#${r})` : m
+    })
+}
+
 // Parse inline markdown: **bold**, *italic*, [text](url)
 function parseInline(text: string): React.ReactNode[] {
   const parts: React.ReactNode[] = []
@@ -202,7 +217,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             {/* Content */}
             <div className="prose prose-lg dark:prose-invert max-w-none mb-16">
-              {post.content.split('\n').map((paragraph, index) => {
+              {withLiveRanks(post.content).split('\n').map((paragraph, index) => {
                 const trimmed = paragraph.trim()
                 if (!trimmed) return null
                 
@@ -255,7 +270,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             {/* Book the pools this post talks about */}
-            <BookPoolsBox pools={poolsInPost(post.content)} adults={post.bookingAdults} />
+            <BookPoolsBox pools={poolsInPost(post.content)} adults={post.bookingAdults} dates={post.bookingDates} />
 
             {/* Newsletter CTA */}
             <NewsletterInline />

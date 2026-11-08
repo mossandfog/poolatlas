@@ -26,10 +26,10 @@ export default function MediaKitPage() {
   ]
 
   const audienceProfile = [
-    "28-55, design-conscious, well-travelled — overlapping closely with the Moss and Fog readership",
+    "28-55, design-conscious, well-travelled, overlapping closely with the Moss and Fog readership",
     "Household income skewing $150K+; regularly books 5-star stays internationally",
-    "Average session over 4 minutes — readers move through multiple listings per visit",
-    "Solo travellers, couples, small groups — nearly all in the high-value booking tier",
+    "Average session over 4 minutes, with readers move through multiple listings per visit",
+    "Solo travellers, couples, small groups, nearly all in the high-value booking tier",
     "Reads Condé Nast Traveler, T+L, Robb Report, and Monocle",
     "Active on Instagram; responds well to visual, place-driven content"
   ]
@@ -71,7 +71,7 @@ export default function MediaKitPage() {
       badge: "Founding Rate",
       features: [
         "Pool of the Month or Seasonal Feature",
-        "Full editorial treatment — story, photography, context",
+        "Full editorial treatment: story, photography, context",
         "Newsletter + site feature included",
         "Social amplification on Bluesky + Instagram",
         "Content lives on Pool Atlas permanently"
@@ -95,14 +95,14 @@ export default function MediaKitPage() {
       name: "Founding Partner Bundle",
       price: "$2,000",
       period: "per year · limited availability",
-      description: "The full package at founding rates, locked for a year. For hotels and brands who want to be part of Pool Atlas from the beginning — before rates reflect where the audience ends up.",
+      description: "The full package at founding rates, locked for a year. For hotels and brands who want to be part of Pool Atlas from the beginning, before rates reflect where the audience ends up.",
       includes: ["12× Newsletter features", "12mo Site Spotlight", "2× Editorial features", "Verified listing", "Founding recognition"],
       variant: "founding" as const
     }
   ]
 
   const steps = [
-    { title: "Get in touch", description: "Drop us a line at hello@poolatlas.io — tell us about your property or brand." },
+    { title: "Get in touch", description: "Drop us a line at hello@poolatlas.io and tell us about your property or brand." },
     { title: "Choose a package", description: "We'll suggest what makes sense for your goals. No pressure to go bigger than you want." },
     { title: "Submit assets", description: "Send over your logo, headline, image, and link. We handle the rest." },
     { title: "Go live & report", description: "Your campaign runs, you get a performance report, and we check in." }
@@ -132,7 +132,7 @@ export default function MediaKitPage() {
             Reach the travelers<br/>who choose hotels<br/>for their <span className="text-teal-400">pools.</span>
           </h1>
           <p className="text-white/65 max-w-xl mb-8 leading-relaxed">
-            Pool Atlas is the first site dedicated entirely to hotel pool rankings — built for the traveler who knows that the pool makes the trip. Our readers arrive with a destination in mind and a decision to make.
+            Pool Atlas is the first site dedicated entirely to hotel pool rankings, built for the traveler who knows that the pool makes the trip. Our readers arrive with a destination in mind and a decision to make.
           </p>
           
           <div className="flex items-center justify-between pt-5 border-t border-white/10">
@@ -144,7 +144,7 @@ export default function MediaKitPage() {
             </div>
             <div className="text-xs text-white/35 text-right hidden sm:block">
               <strong className="text-white/60">Built by the team behind</strong><br/>
-              Moss and Fog — one of the world's<br/>largest design & travel publications
+              Moss and Fog, one of the world's<br/>largest design & travel publications
             </div>
           </div>
         </div>
@@ -187,14 +187,14 @@ export default function MediaKitPage() {
             Every great pool deserves to be found.
           </h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed mb-8">
-            Pool Atlas started from a pretty simple observation: for a lot of travelers, the pool is the whole point. Not a bonus — the reason to book. But there was no good place to find the world's best ones. So we built it. We research, rank, and write about the most extraordinary hotel pools on earth, updated every quarter.
+            Pool Atlas started from a pretty simple observation: for a lot of travelers, the pool is the whole point. Not a bonus, but the reason to book. But there was no good place to find the world's best ones. So we built it. We research, rank, and write about the most extraordinary hotel pools on earth, updated every quarter.
           </p>
           
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { icon: "🏆", title: "Honest rankings", desc: "We pull from the publications people actually trust — Condé Nast Traveler, Travel + Leisure, Forbes — weight them carefully, and update every quarter." },
+              { icon: "🏆", title: "Honest rankings", desc: "We pull from the publications people actually trust (Condé Nast Traveler, Travel + Leisure, Forbes), weight them carefully, and update every quarter." },
               { icon: "🌍", title: "Genuine global scope", desc: "The world's best pools across nearly 50 countries and 6 continents, from Iceland's geothermal lagoons to Bali's three-tier infinity pools." },
-              { icon: "🎯", title: "Readers with a trip in mind", desc: "People don't stumble onto Pool Atlas. They come here when they're figuring out where to go next — and the pool is already a factor in the decision." },
+              { icon: "🎯", title: "Readers with a trip in mind", desc: "People don't stumble onto Pool Atlas. They come here when they're figuring out where to go next, and the pool is already a factor in the decision." },
               { icon: "✍️", title: "Original editorial", desc: "\"The Deep End\" features, Pool of the Month, Superlatives, and Seasonal Picks go beyond rankings to tell the stories behind the world's most remarkable pools." }
             ].map((item) => (
               <Card key={item.title} className="bg-muted/50">
@@ -217,7 +217,7 @@ export default function MediaKitPage() {
             People who book trips around the pool.
           </h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed mb-8">
-            Pool Atlas readers are the guests who request the swim-up suite, follow hotel pools on Instagram months before they travel, and will genuinely reconsider their destination for a better pool. They're not looking for deals — they're looking for the right place.
+            Pool Atlas readers are the guests who request the swim-up suite, follow hotel pools on Instagram months before they travel, and will genuinely reconsider their destination for a better pool. They're not looking for deals. They're looking for the right place.
           </p>
           
           <div className="grid lg:grid-cols-5 gap-6">
@@ -239,19 +239,19 @@ export default function MediaKitPage() {
               <Card>
                 <CardContent className="pt-6">
                   <div className="text-2xl font-bold text-primary">4 min+</div>
-                  <p className="text-sm text-muted-foreground">Average time on site — readers explore multiple pools per session</p>
+                  <p className="text-sm text-muted-foreground">Average time on site, with readers explore multiple pools per session</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="pt-6">
                   <div className="text-2xl font-bold text-primary">$150K+</div>
-                  <p className="text-sm text-muted-foreground">Estimated average household income — a premium travel-spending audience</p>
+                  <p className="text-sm text-muted-foreground">Estimated average household income, a premium travel-spending audience</p>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="pt-6">
                   <div className="text-2xl font-bold text-primary">Newsletter</div>
-                  <p className="text-sm text-muted-foreground">Monthly digest of new pool discoveries, seasonal picks, and editorial features — growing each month</p>
+                  <p className="text-sm text-muted-foreground">Monthly digest of new pool discoveries, seasonal picks, and editorial features, growing each month</p>
                 </CardContent>
               </Card>
             </div>
@@ -267,7 +267,7 @@ export default function MediaKitPage() {
             Straightforward pricing. No minimums.
           </h2>
           <p className="text-muted-foreground max-w-2xl leading-relaxed mb-8">
-            We're in our first year, so rates are set to make it easy to get started. <strong className="text-foreground">Anyone who comes on board now locks in these prices for 12 months</strong> — as our audience grows, so will the rates. No hidden fees, no long-term contracts.
+            We're in our first year, so rates are set to make it easy to get started. <strong className="text-foreground">Anyone who comes on board now locks in these prices for 12 months</strong>, as our audience grows, so will the rates. No hidden fees, no long-term contracts.
           </p>
           
           {/* Pricing Cards */}
@@ -347,7 +347,7 @@ export default function MediaKitPage() {
           <Card className="border-l-4 border-l-primary rounded-l-none">
             <CardContent className="pt-4 pb-4">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">A note on our approach:</strong> We keep our partnership roster intentionally small — a handful of brands per quarter, not a banner farm. What that means for you: full editorial attention, genuinely engaged readers, and placement that doesn't feel like an ad. Every package includes a performance report. If you want to see what's worked for past partners before committing, just ask.
+                <strong className="text-foreground">A note on our approach:</strong> We keep our partnership roster intentionally small: a handful of brands per quarter, not a banner farm. What that means for you: full editorial attention, genuinely engaged readers, and placement that doesn't feel like an ad. Every package includes a performance report. If you want to see what's worked for past partners before committing, just ask.
               </p>
             </CardContent>
           </Card>

@@ -45,7 +45,7 @@ export function NewsletterInline() {
             Get the best pools in your inbox
           </p>
           <p className="text-sm text-muted-foreground mb-4">
-            Monthly discoveries, new rankings, and destination guides — no noise.
+            Monthly discoveries, new rankings, and destination guides. No noise.
           </p>
           {submitted ? (
             <div className="flex items-center gap-2 text-primary text-sm font-medium">
