@@ -11,6 +11,8 @@ import { pools } from "@/lib/pool-data"
 import { getBookingUrl, getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
 import { poolCoordinates } from "@/lib/pool-coordinates"
 import { StaysMap } from "@/components/stays-map"
+import { GettingThere } from "@/components/getting-there"
+import { windowSeatGuidesForPool } from "@/lib/window-seat"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
@@ -294,6 +296,9 @@ export default async function PoolPage({ params }: Props) {
                   </div>
                 </div>
               )}
+
+              {/* Getting there, from The Window Seat */}
+              <GettingThere guides={windowSeatGuidesForPool(pool)} placement="pa_pool" />
 
               {/* Places to stay nearby */}
               {coords && (

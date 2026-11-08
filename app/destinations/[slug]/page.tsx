@@ -14,6 +14,8 @@ import { blogPosts } from "@/lib/blog-data"
 import { RANKINGS_REVIEWED } from "@/lib/editorial-calendar"
 import { getDestinationSearchUrl, getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
 import { StaysMap } from "@/components/stays-map"
+import { GettingThere } from "@/components/getting-there"
+import { windowSeatGuidesForPools } from "@/lib/window-seat"
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -158,6 +160,15 @@ export default async function DestinationPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* Getting there, from The Window Seat */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <GettingThere
+          guides={windowSeatGuidesForPools(ranked, ranked.some((p) => p.kidFriendly))}
+          placement="pa_destination"
+          place={d.name}
+        />
+      </div>
 
       {/* Where to stay */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
