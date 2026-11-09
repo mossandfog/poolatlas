@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import { useChat } from "@ai-sdk/react"
 import { DefaultChatTransport } from "ai"
-import { Search, Sparkles, X, Send, Loader2, MapPin, Heart, Users, Waves, Mountain, Building2, Sunrise, PalmtreeIcon } from "lucide-react"
+import { Search, X, Send, Loader2, MapPin, Heart, Users, Waves, Mountain, Building2, Sunrise, PalmtreeIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function PoolSearch() {
@@ -56,7 +56,7 @@ export function PoolSearch() {
   const quickCategories = [
     { icon: Heart, label: "Romantic", query: "Most romantic pools for couples" },
     { icon: Users, label: "Family", query: "Best pools for families with kids" },
-    { icon: Waves, label: "Infinity", query: "Stunning infinity pool recommendations" },
+    { icon: Waves, label: "Infinity", query: "The best infinity pools" },
     { icon: Building2, label: "Rooftop", query: "Best rooftop pools in the world" },
   ]
 
@@ -100,7 +100,7 @@ export function PoolSearch() {
         <div className={`flex items-center justify-center w-9 h-9 rounded-full transition-colors ${
           isFocused ? "bg-primary" : "bg-primary/10"
         }`}>
-          <Sparkles className={`w-4 h-4 ${isFocused ? "text-primary-foreground" : "text-primary"}`} />
+          <Search className={`w-4 h-4 ${isFocused ? "text-primary-foreground" : "text-primary"}`} aria-hidden="true" />
         </div>
         <input
           ref={inputRef}
@@ -116,10 +116,9 @@ export function PoolSearch() {
               setInputValue("")
             }
           }}
-          placeholder="Ask me anything about pools..."
+          placeholder="Search a place, a hotel or a kind of pool"
           className="flex-1 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none text-base"
         />
-        <Search className={`w-5 h-5 transition-colors ${isFocused ? "text-primary" : "text-muted-foreground"}`} />
       </div>
 
       {/* Styled Dropdown */}
@@ -191,11 +190,11 @@ export function PoolSearch() {
             <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-secondary/30">
               <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary">
-                  <Sparkles className="w-5 h-5 text-primary-foreground" />
+                  <Waves className="w-5 h-5 text-primary-foreground" aria-hidden="true" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">Pool Concierge</h3>
-                  <p className="text-xs text-muted-foreground">AI-powered pool recommendations</p>
+                  <p className="text-xs text-muted-foreground">Answers drawn from our rankings, written by AI</p>
                 </div>
               </div>
               <button 
@@ -211,7 +210,7 @@ export function PoolSearch() {
               {messages.length === 0 ? (
                 <div className="space-y-4">
                   <p className="text-muted-foreground text-center">
-                    Hi! I&apos;m your pool concierge. Ask me anything about the world&apos;s best hotel pools!
+                    Tell us where you&apos;re going or how you want to swim, and we&apos;ll point you to the pools that fit.
                   </p>
                   <div className="flex flex-wrap justify-center gap-2">
                     {suggestions.map((suggestion) => (
@@ -263,7 +262,7 @@ export function PoolSearch() {
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  placeholder="Ask about pools..."
+                  placeholder="Where, when, or what kind of pool?"
                   className="flex-1 px-4 py-3 bg-card border border-border rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-foreground placeholder:text-muted-foreground"
                   disabled={isLoading}
                 />

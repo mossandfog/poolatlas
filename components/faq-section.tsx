@@ -25,8 +25,8 @@ const faqs = [
     answer: "A pool is marked as kid-friendly if the hotel welcomes families, has appropriate safety features, and doesn't have adults-only policies. We also consider user reviews mentioning family experiences."
   },
   {
-    question: "What makes a pool 'world-class'?",
-    answer: "World-class pools typically feature exceptional design, stunning views or settings, high-quality amenities, excellent service, and consistent positive reviews. Recognition from major travel publications is also a key indicator."
+    question: "What makes a pool rank highly?",
+    answer: "We look at the design of the pool itself, its setting and view, how it feels to actually swim there, the service around it, and how guests and the travel press have rated it over time. A great pool needs more than a good photo."
   }
 ]
 

@@ -87,10 +87,7 @@ export default function BadgesPage() {
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
-              <Award className="w-4 h-4 text-primary" />
-              <span className="text-primary text-sm font-medium">For Hotels & Resorts</span>
-            </div>
+            <p className="flex items-center justify-center gap-2 mb-5 text-sm font-medium uppercase tracking-[0.14em] text-foreground/80"><span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-accent" />For Hotels &amp; Resorts</p>
             <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-foreground mb-4">
               Pool Atlas Badges
             </h1>

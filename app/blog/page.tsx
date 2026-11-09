@@ -51,7 +51,7 @@ export default function BlogPage() {
               The Deep End
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
-              We believe a great pool can transform a trip from good to unforgettable. That perfect moment when you slip into crystal-clear water with an impossible view stretching to the horizon - that's what we live for.
+              A great pool can make a whole trip. We write about the ones worth planning around: how they were built, when to go, and where to stay.
             </p>
             <p className="text-base text-muted-foreground max-w-xl mx-auto">
               No fluff. No filler. Just deep dives into destinations worth your next vacation.

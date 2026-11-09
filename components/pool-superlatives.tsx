@@ -75,7 +75,7 @@ const superlatives = [
     location: "Barra do Piraí, Brazil",
     stat: "49m",
     statLabel: "drop",
-    description: "The world's tallest operating water slide plunges 49 meters (164 feet) down at speeds exceeding 60 mph. Located in Brazil's stunning Aldeia das Águas water park, it's not for the faint of heart.",
+    description: "The world's tallest operating water slide plunges 49 meters (164 feet) down at speeds exceeding 60 mph. Located at Brazil's Aldeia das Águas water park, it's not for the faint of heart.",
     funFact: "The slide is so steep that riders experience brief moments of weightlessness during the descent.",
     websiteUrl: "https://youtu.be/dsCAUiBITQQ?si=LmmBN926ttQbMuXb"
   },

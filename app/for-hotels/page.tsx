@@ -29,10 +29,7 @@ export default function ForHotelsPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary/15 rounded-full mb-5">
-            <Award className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-primary">Hotel Resources</span>
-          </div>
+          <p className="flex items-center justify-center gap-2 mb-5 text-sm font-medium uppercase tracking-[0.14em] text-foreground/80"><span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-accent" />For Hotels</p>
           <h1 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl font-bold text-foreground mb-5 text-balance">
             Is your pool on the list?
           </h1>
@@ -108,7 +105,7 @@ export default function ForHotelsPage() {
 
           {/* Top 25 featured */}
           <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold text-foreground mb-4">Top 25: Featured</h3>
-          <div className="grid sm:grid-cols-2 gap-3 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
             {top25.map((pool) => {
               const tier = getTierLabel(pool.rank)
               return (
@@ -136,7 +133,7 @@ export default function ForHotelsPage() {
 
           {/* All other hotels — compact list */}
           <h3 className="font-[family-name:var(--font-display)] text-lg font-semibold text-foreground mb-4">All ranked hotels</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
             {pools
               .filter(p => p.rank > 25)
               .sort((a, b) => a.rank - b.rank)

@@ -1,19 +1,24 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, Inter } from 'next/font/google'
+import { Newsreader, Schibsted_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import { DreamListProvider } from '@/lib/dream-list-context'
 import { PoolTransitions } from '@/components/pool-transitions'
 import './globals.css'
 
-const spaceGrotesk = Space_Grotesk({ 
+// Headlines: Newsreader, an editorial serif with optical sizes (sharper at display sizes).
+// Text and interface: Schibsted Grotesk, a newspaper grotesque.
+const newsreader = Newsreader({
   subsets: ["latin"],
   variable: '--font-display',
-  weight: ['500', '600', '700']
+  axes: ['opsz'],
+  style: ['normal', 'italic'],
+  display: 'swap',
 });
-const inter = Inter({ 
+const schibsted = Schibsted_Grotesk({
   subsets: ["latin"],
-  variable: '--font-sans'
+  variable: '--font-sans',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -33,7 +38,7 @@ export const metadata: Metadata = {
     url: 'https://poolatlas.io',
     siteName: 'Pool Atlas',
     title: 'Pool Atlas | Best Hotel Swimming Pools Worldwide',
-    description: 'The definitive ranking of the world\'s most extraordinary hotel swimming pools. Pools in nearly 50 countries, checked against the world\'s leading travel publications.',
+    description: 'The world\'s best hotel pools, ranked by our editors and checked against the travel press. Infinity edges, rooftops, desert pools and lagoons in nearly 50 countries.',
     images: [
       {
         url: '/images/og-image.jpg',
@@ -46,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pool Atlas | Best Hotel Swimming Pools Worldwide',
-    description: 'The definitive ranking of the world\'s most extraordinary hotel swimming pools.',
+    description: 'The world\'s best hotel pools, ranked by our editors and checked against the travel press.',
     images: ['/images/og-image.jpg'],
   },
   
@@ -57,7 +62,7 @@ const jsonLd = {
   '@type': 'WebSite',
   name: 'Pool Atlas',
   url: 'https://poolatlas.io',
-  description: 'The definitive ranking of the world\'s most extraordinary hotel swimming pools.',
+  description: 'The world\'s best hotel pools, ranked by our editors and checked against the travel press.',
   publisher: {
     '@type': 'Organization',
     name: 'Pool Atlas',
@@ -106,7 +111,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className={`${spaceGrotesk.variable} ${inter.variable} font-sans antialiased`}>
+      <body className={`${newsreader.variable} ${schibsted.variable} font-sans antialiased`}>
         <DreamListProvider>
           {children}
           <PoolTransitions />

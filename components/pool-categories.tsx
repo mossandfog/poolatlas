@@ -22,7 +22,7 @@ const categories = [
   {
     id: "rooftop",
     name: "Rooftop Pools",
-    description: "City skylines and elevated views",
+    description: "City skylines from the top floor",
     icon: Building2,
     color: "bg-violet-500/10 text-violet-600 border-violet-500/20",
     activeColor: "bg-violet-500 text-white",
@@ -99,7 +99,7 @@ export function PoolCategories() {
             Browse by Pool Type
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Find your perfect pool experience by exploring our curated categories
+            Browse the rankings by the kind of pool you're after
           </p>
         </div>
 

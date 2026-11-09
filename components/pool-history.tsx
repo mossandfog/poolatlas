@@ -14,7 +14,7 @@ const historyTimeline = [
   {
     era: "1st Century BCE",
     title: "Roman Thermae",
-    description: "The Romans elevated swimming pools to an art form with their elaborate thermae (public baths). These architectural marvels featured heated pools (caldarium), warm rooms (tepidarium), and cold plunge pools (frigidarium), establishing the blueprint for modern spas.",
+    description: "The Romans turned bathing into an art form with their elaborate thermae (public baths). These architectural marvels featured heated pools (caldarium), warm rooms (tepidarium), and cold plunge pools (frigidarium), establishing the blueprint for modern spas.",
     image: "/images/history/ancient-roman-bath.jpg",
     fact: "Rome's Baths of Caracalla could accommodate 1,600 bathers"
   },
@@ -40,10 +40,7 @@ export function PoolHistory() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
-            <Clock className="w-4 h-4 text-primary" />
-            <span className="text-primary text-sm font-semibold">Through the Ages</span>
-          </div>
+          <p className="flex items-center justify-center gap-2 mb-5 text-sm font-medium uppercase tracking-[0.14em] text-foreground/80"><span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-accent" />Through the Ages</p>
           <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Dive Into the History of Swimming Pools
           </h2>

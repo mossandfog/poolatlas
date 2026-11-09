@@ -162,7 +162,7 @@ export default async function PoolPage({ params }: Props) {
               <Award className="w-5 h-5 text-primary" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-foreground">Are you the {pool.hotel} team?</p>
+              <p className="text-sm font-semibold text-foreground">Are you the {pool.hotel.replace(/^the\s+/i, "")} team?</p>
               <p className="text-xs text-muted-foreground mt-0.5">Claim your official Pool Atlas badge and embed it on your website or press kit.</p>
             </div>
             <Link href={`/for-hotels/${pool.slug}`} className="shrink-0 w-full sm:w-auto">

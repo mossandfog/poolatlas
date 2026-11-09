@@ -30,10 +30,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   
   return {
     title: `Dream List: ${poolCount} Amazing Pools | Pool Atlas`,
-    description: `Check out this curated list of ${poolCount} stunning hotel pools${destinations ? ` in ${destinations}` : ''}. Discover the world's best pools on Pool Atlas.`,
+    description: `A dream list of ${poolCount} hotel pools${destinations ? ` in ${destinations}` : ''}, made on Pool Atlas.`,
     openGraph: {
       title: `Dream List: ${poolCount} Amazing Pools`,
-      description: `Check out this curated list of ${poolCount} stunning hotel pools. Discover the world's best pools on Pool Atlas.`,
+      description: `A dream list of ${poolCount} hotel pools, made on Pool Atlas.`,
     }
   }
 }
@@ -93,10 +93,7 @@ export default async function SharedDreamListPage({ params }: { params: Promise<
 
           {/* Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-rose-500/10 to-pink-500/10 border border-rose-500/20 rounded-full mb-4">
-              <Heart className="w-4 h-4 text-rose-500 fill-rose-500" />
-              <span className="text-rose-600 dark:text-rose-400 text-sm font-medium">Shared Dream List</span>
-            </div>
+            <p className="flex items-center justify-center gap-2 mb-5 text-sm font-medium uppercase tracking-[0.14em] text-foreground/80"><span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-accent" />A shared dream list</p>
             
             <h1 className="font-[family-name:var(--font-display)] text-3xl sm:text-4xl font-bold text-foreground mb-4">
               {orderedPools.length} Dream {orderedPools.length === 1 ? 'Pool' : 'Pools'}
@@ -104,8 +101,8 @@ export default async function SharedDreamListPage({ params }: { params: Promise<
             
             <p className="text-muted-foreground max-w-xl mx-auto mb-6">
               {countries.length === 1 
-                ? `A curated selection of stunning pools in ${countries[0]}.`
-                : `A curated selection spanning ${countries.length} countries across ${regions.length} ${regions.length === 1 ? 'region' : 'regions'}.`
+                ? `Pools in ${countries[0]}, saved for a future trip.`
+                : `Pools in ${countries.length} countries, saved for future trips.`
               }
             </p>
 

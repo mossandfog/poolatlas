@@ -1041,7 +1041,7 @@ There's a tension in travel writing between sharing discoveries and preserving t
 
 When booking a hotel, the pool can make or break the experience. But with thousands of properties worldwide, how do you know which brands consistently deliver exceptional aquatic experiences? After years of research and hundreds of pool visits, clear patterns emerge. Some hotel brands have made pools a cornerstone of their identity, while others treat them as an afterthought.
 
-Here's our definitive guide to the hotel brands that take pools seriously.
+Here are the hotel brands that take pools seriously.
 
 ## The Luxury Tier: Pools as Art
 

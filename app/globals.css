@@ -77,8 +77,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
-  --font-display: 'Space Grotesk', 'Space Grotesk Fallback', system-ui, sans-serif;
+  --font-sans: 'Schibsted Grotesk', 'Schibsted Grotesk Fallback', system-ui, sans-serif;
+  --font-display: 'Newsreader', 'Newsreader Fallback', Georgia, serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -285,3 +285,10 @@ html[data-season="summer"]:not(.dark) {
   --secondary: oklch(0.957 0.026 88);
   --muted: oklch(0.96 0.014 90);
 }
+
+/* Type: Newsreader headlines (--font-display) with Schibsted Grotesk text (--font-sans).
+   A serif reads best a step lighter and less tightly tracked than the old grotesque,
+   so headline weights and tracking are eased here once instead of in every component. */
+[class*="--font-display"] { font-optical-sizing: auto; }
+[class*="--font-display"].font-bold, [class*="--font-display"].font-semibold { font-weight: 500; }
+[class*="--font-display"][class*="tracking-"] { letter-spacing: -0.012em; }

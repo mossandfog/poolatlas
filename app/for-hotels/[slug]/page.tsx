@@ -72,7 +72,7 @@ export default async function ForHotelsSlugPage({ params }: PageProps) {
               Congratulations, {pool.hotel}
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              You've been ranked <strong className="text-foreground">#{pool.rank} in the world</strong> for hotel pools by Pool Atlas, the definitive ranking of the world's finest swimming experiences.
+              You've been ranked <strong className="text-foreground">#{pool.rank} in the world</strong> for hotel pools by Pool Atlas, where our editors rank the world's best hotel pools.
             </p>
           </div>
 

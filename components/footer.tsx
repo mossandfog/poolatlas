@@ -28,7 +28,7 @@ export function Footer() {
               />
             </a>
             <p className="text-sm text-muted-foreground max-w-sm mb-4">
-              The definitive guide to the world's most extraordinary hotel swimming pools. We research, rank, and share the best aquatic experiences on the planet.
+              The world's best hotel pools, ranked by our editors and checked against the travel press. Part of Moss &amp; Fog Media.
             </p>
             <div className="flex items-center gap-3">
               <a 

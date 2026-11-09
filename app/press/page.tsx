@@ -80,7 +80,7 @@ const pressReleases = [
   {
     date: "June 2026",
     title: "Pool Atlas Summer 2026 Update: Six New Openings Added to Rankings",
-    excerpt: "The world's highest infinity pool, an underground lap pool in Paris, and four more landmark openings join the definitive rankings."
+    excerpt: "The world's highest infinity pool, an underground lap pool in Paris, and four more landmark openings join the rankings."
   },
   {
     date: "January 2026",
@@ -94,7 +94,7 @@ const pullQuotes: { quote: string; attribution: string }[] = []
 const factSheet = {
   founded: "2024",
   headquarters: "Portland, Oregon",
-  mission: "To help travelers discover the world's most exceptional hotel swimming pools through data-driven rankings and expert curation.",
+  mission: "To help travelers find the hotel pool worth the trip, with rankings our editors stand behind.",
   methodology: "Rankings are determined by aggregating reviews from major travel platforms, expert assessments from leading publications, guest satisfaction scores, and unique pool features.",
   coverage: "The world's best pools across nearly 50 countries on 6 continents"
 }
@@ -116,10 +116,7 @@ export default function PressPage() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
-              <FileText className="w-4 h-4 text-primary" />
-              <span className="text-primary text-sm font-medium">Press & Media</span>
-            </div>
+            <p className="flex items-center justify-center gap-2 mb-5 text-sm font-medium uppercase tracking-[0.14em] text-foreground/80"><span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-accent" />Press &amp; Media</p>
             <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-bold text-foreground mb-4">
               Press Kit
             </h1>
@@ -228,11 +225,10 @@ export default function PressPage() {
                 <CardContent>
                   <div className="p-4 bg-muted/30 rounded-lg border border-border">
                     <p className="text-foreground leading-relaxed">
-                      <strong>Pool Atlas</strong> is the definitive guide to the world's most extraordinary hotel swimming pools,
-                      providing comprehensive rankings based on aggregated guest reviews,
-                      on-site research, and proprietary evaluation criteria covering pool design, views,
-                      exclusivity, and overall experience. Founded in 2024 in Portland, Oregon, Pool Atlas helps travelers
-                      discover extraordinary aquatic experiences at hotels and resorts in nearly 50 countries.
+                      <strong>Pool Atlas</strong> ranks the world's best hotel swimming pools. Our editors choose every pool,
+                      check it against the travel press and the hotel's own information, and rank it on design, setting
+                      and what it's like to swim there. Founded in 2024 in Portland, Oregon, and part of Moss &amp; Fog Media,
+                      Pool Atlas covers hotels and resorts in nearly 50 countries.
                       For more information, visit <span className="text-primary">poolatlas.io</span>.
                     </p>
                   </div>

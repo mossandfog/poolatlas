@@ -82,7 +82,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
             }}
           >
             {countries.length === 1 
-              ? `Stunning pools in ${countries[0]}`
+              ? `Pools in ${countries[0]}`
               : `Spanning ${countries.length} countries`
             }
           </p>

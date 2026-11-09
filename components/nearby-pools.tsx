@@ -97,7 +97,7 @@ export function NearbyPools() {
                     Find Amazing Pools Near You
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Discover the world's best hotel pools closest to your location
+                    The ranked pools closest to where you are
                   </p>
                   <Button onClick={findNearbyPools} className="gap-2">
                     <MapPin className="w-4 h-4" />

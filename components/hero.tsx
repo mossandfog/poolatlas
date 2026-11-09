@@ -77,7 +77,7 @@ export function Hero({ edition }: { edition: Edition }) {
             )}
           </p>
           <h1 className="pa-headline-in font-[family-name:var(--font-display)] font-semibold text-foreground text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] tracking-[-0.035em] text-balance max-w-[12ch]">
-            The world&apos;s best hotel pools, ranked.
+            The world’s best hotel pools, ranked.
           </h1>
 
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-[34rem] text-pretty">

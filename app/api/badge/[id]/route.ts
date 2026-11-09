@@ -46,10 +46,10 @@ function generateBadgeSVG(rank: number, hotelName: string): string {
   <path d="M 79 30.5 Q 82 28 85 30.5 Q 88 33 91 30.5" stroke="white" stroke-width="1.3" fill="none" opacity="0.95"/>
 
   <!-- POOL ATLAS wordmark -->
-  <text x="155" y="31" text-anchor="middle" fill="${color}" font-family="Space Grotesk, system-ui, sans-serif" font-size="10" font-weight="700" letter-spacing="4" opacity="0.9">POOL ATLAS</text>
+  <text x="155" y="31" text-anchor="middle" fill="${color}" font-family="Newsreader, Georgia, serif" font-size="10" font-weight="700" letter-spacing="4" opacity="0.9">POOL ATLAS</text>
 
   <!-- Subtitle -->
-  <text x="140" y="47" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="8.5" letter-spacing="2.5" opacity="0.45">WORLD RANKINGS</text>
+  <text x="140" y="47" text-anchor="middle" fill="white" font-family="Newsreader, Georgia, serif" font-size="8.5" letter-spacing="2.5" opacity="0.45">WORLD RANKINGS</text>
 
   <!-- Divider -->
   <line x1="60" y1="54" x2="220" y2="54" stroke="white" stroke-width="0.5" opacity="0.12"/>
@@ -59,18 +59,18 @@ function generateBadgeSVG(rank: number, hotelName: string): string {
   <path d="M 125 65.5 Q 132.5 61 140 65.5 Q 147.5 70 155 65.5" stroke="${color}" stroke-width="1.3" fill="none" opacity="0.45"/>
 
   <!-- Rank number (large, center) -->
-  <text x="140" y="108" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="50" font-weight="700" filter="url(#glow)" opacity="0.95">${rankText}</text>
+  <text x="140" y="108" text-anchor="middle" fill="white" font-family="Newsreader, Georgia, serif" font-size="50" font-weight="700" filter="url(#glow)" opacity="0.95">${rankText}</text>
 
   <!-- "HOTEL POOL RANKING" -->
-  <text x="140" y="127" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="9" letter-spacing="1.5" opacity="0.5">HOTEL POOL RANKING</text>
+  <text x="140" y="127" text-anchor="middle" fill="white" font-family="Newsreader, Georgia, serif" font-size="9" letter-spacing="1.5" opacity="0.5">HOTEL POOL RANKING</text>
 
   <!-- Tier pill -->
   <rect x="96" y="136" width="88" height="20" rx="10" fill="${glow}"/>
   <rect x="96" y="136" width="88" height="20" rx="10" fill="none" stroke="${color}" stroke-width="0.8" stroke-opacity="0.5"/>
-  <text x="140" y="150" text-anchor="middle" fill="${color}" font-family="Space Grotesk, system-ui, sans-serif" font-size="9" font-weight="700" letter-spacing="2">${label}</text>
+  <text x="140" y="150" text-anchor="middle" fill="${color}" font-family="Newsreader, Georgia, serif" font-size="9" font-weight="700" letter-spacing="2">${label}</text>
 
   <!-- Hotel name (small, bottom) -->
-  <text x="140" y="170" text-anchor="middle" fill="white" font-family="Space Grotesk, system-ui, sans-serif" font-size="7.5" opacity="0.55" letter-spacing="0.5">${display}</text>
+  <text x="140" y="170" text-anchor="middle" fill="white" font-family="Newsreader, Georgia, serif" font-size="7.5" opacity="0.55" letter-spacing="0.5">${display}</text>
 </svg>`
 }
 

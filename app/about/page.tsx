@@ -10,7 +10,7 @@ import { FAQSection } from "@/components/faq-section"
 
 export const metadata: Metadata = {
   title: "About Us | Pool Atlas",
-  description: "Learn about Pool Atlas - the definitive guide to the world's best hotel swimming pools.",
+  description: "Learn about Pool Atlas, our editors' ranking of the world's best hotel swimming pools.",
 }
 
 export default function AboutPage() {
@@ -48,7 +48,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-foreground mb-4">Why We Built This</h2>
           <p className="text-muted-foreground mb-4">
-            Every hotel claims a &quot;stunning pool.&quot; We got tired of the marketing fluff. Pool Atlas ranks the world's best pools in nearly 50 countries, checked against guest reviews and the travel press. No pay-to-play. Just honest rankings.
+            Every hotel says its pool is the best. We wanted a list we could actually trust. Pool Atlas ranks the world's best pools in nearly 50 countries, checked against guest reviews and the travel press. No pay-to-play. Just honest rankings.
           </p>
         </div>
       </section>
