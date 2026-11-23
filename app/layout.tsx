@@ -97,7 +97,7 @@ export default function RootLayout({
         {/* Season tint: sets data-season on <html> before paint, from Pacific time, so the palette turns with the editorial calendar and never goes stale */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var m=+new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',month:'numeric'}).format(new Date())-1;document.documentElement.dataset.season=m>=2&&m<=4?'spring':m>=5&&m<=7?'summer':m>=8&&m<=10?'fall':'winter'}catch(e){}`,
+            __html: `try{var m=+new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',month:'numeric'}).format(new Date())-1;document.documentElement.dataset.season=m>=2&&m<=4?'spring':m>=5&&m<=7?'summer':m>=8&&m<=9?'fall':'winter'}catch(e){}`,
           }}
         />
         <script

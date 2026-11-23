@@ -11,6 +11,7 @@ import { pools } from "@/lib/pool-data"
 import { getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
 import { bookingFor } from "@/lib/booking"
 import { SwimCalendar } from "@/components/swim-calendar"
+import { PoolPass } from "@/components/pool-pass"
 import { poolCoordinates } from "@/lib/pool-coordinates"
 import { StaysMap } from "@/components/stays-map"
 import { GettingThere } from "@/components/getting-there"
@@ -261,6 +262,9 @@ export default async function PoolPage({ params }: Props) {
                   {pool.description}
                 </p>
               </div>
+
+              {/* Pool Pass: the quickest yes, with dates already filled in */}
+              <PoolPass pool={pool} placement="pool_pass" />
 
               {/* When to swim: every month is a door to rooms for that month */}
               <SwimCalendar pool={pool} />

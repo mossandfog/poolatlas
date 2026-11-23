@@ -12,6 +12,16 @@ export interface BlogPost {
   bookingAdults?: number
   /** Pre-filled stay for event posts; the booking box drops it once the checkout date passes */
   bookingDates?: { checkin: string; checkout: string; label: string }
+  /** Search title and description, when they should differ from the headline and excerpt */
+  seoTitle?: string
+  seoDescription?: string
+  keywords?: string[]
+  /** Last real update (deal posts get refreshed); shown on the post and used as dateModified */
+  updatedAt?: string
+  /** Questions answered at the end of the post, also published as FAQPage structured data */
+  faq?: { q: string; a: string }[]
+  /** Skip the automatic "Stay at the pools in this story" box (posts whose deal cards already book each hotel) */
+  hideBookingBox?: boolean
   author: {
     name: string
     role: string
@@ -30,6 +40,128 @@ export const categories = [
 ] as const
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "black-friday-hotel-deals-2026",
+    title: "Black Friday Hotel Deals 2026: The Best Sales at Resorts With Amazing Pools",
+    seoTitle: "Black Friday Hotel Deals 2026: Best Resort Sales With Amazing Pools",
+    seoDescription: "The best Black Friday and Cyber Monday 2026 hotel deals at resorts with great pools, from One&Only Palmilla to Grand Wailea. Every sale checked and dated.",
+    keywords: [
+      "Black Friday hotel deals 2026",
+      "Cyber Monday hotel deals 2026",
+      "Black Friday resort deals",
+      "Travel Tuesday 2026",
+      "luxury hotel sales",
+      "resorts with the best pools",
+      "One&Only Palmilla Black Friday",
+      "Hyatt Cyber Sale 2026",
+      "Marriott Cyber Week 2026",
+      "Fairmont Black Friday 2026",
+      "Hilton sale 2026",
+      "Las Vegas Black Friday hotel deals",
+    ],
+    excerpt: "The hotel sales worth booking this Black Friday and Cyber Monday, picked for the pool. Every offer checked against the hotel's own page or current trade reports, with the date you need to book by.",
+    category: "Guide",
+    readTime: "8 min read",
+    image: "/images/pools/pool-alila-villas-uluwatu-main.jpg",
+    publishedAt: "2026-11-23",
+    updatedAt: "2026-11-23",
+    featured: false,
+    hideBookingBox: true,
+    author: {
+      name: "Pool Atlas Editorial",
+      role: "Travel Deals"
+    },
+    faq: [
+      {
+        q: "When are Black Friday, Cyber Monday and Travel Tuesday in 2026?",
+        a: "Black Friday is Friday, November 27, 2026. Cyber Monday is November 30 and Travel Tuesday is December 1. Many hotel sales open earlier in November and run into the first or second week of December.",
+      },
+      {
+        q: "Are Black Friday hotel deals actually cheaper?",
+        a: "Often, but not always. Brand sales usually take 20 to 30 percent off the flexible rate, and many sale rates are prepaid and non-refundable. Compare the sale rate with the hotel's regular member rate and a few booking sites for the same dates before you pay.",
+      },
+      {
+        q: "Can I book a Black Friday deal for next summer?",
+        a: "Sometimes. Fairmont Mayakoba's sale runs to December 2027 and MGM's to October 2027, while Marriott's ends in early May and Hyatt's and Hilton's in April 2027. Check the stay window on each deal before you book.",
+      },
+      {
+        q: "Do Four Seasons, Aman and Rosewood have Black Friday sales?",
+        a: "Rarely in public. Rosewood's 2026 sale ran November 3 to 10 and was only bookable through Rosewood Elite travel advisors. Four Seasons and Aman tend to add extras like resort credit through advisors rather than cutting prices.",
+      },
+      {
+        q: "Do I need to join a loyalty program to get the sale price?",
+        a: "For the biggest discounts, yes. Hyatt, Hilton and Marriott give their best sale rates to members, and joining is free. Marriott's top discount also requires booking in its app.",
+      },
+    ],
+    content: `
+# Black Friday Hotel Deals 2026: The Best Sales at Resorts With Amazing Pools
+
+Black Friday is Friday, November 27 this year, with Cyber Monday on November 30 and Travel Tuesday on December 1. For a few weeks around them, hotels run the biggest sales of their year, and some of the best are at resorts with pools we already rank among the world's best.
+
+We read through the season's hotel sales and kept the ones worth your time: a great pool, a real discount, and a stay window long enough to use. Each deal below shows when to book, when you can stay, and the fine print, checked on November 22 against the hotel's own offer page or, where the brand page wasn't live yet, against current trade reports. Each one also has a link to compare rates, because a sale is only a deal if it beats what you'd otherwise pay.
+
+## The Short List
+
+- **Best pool on sale:** One&Only Palmilla in Los Cabos, up to 30% off plus a nightly resort credit, book by December 3.
+- **Best for families:** Grand Wailea on Maui, nine pools and seven waterslides, in the Hilton sale through December 22.
+- **Longest stay window:** Fairmont Mayakoba on the Riviera Maya, 30% off for stays through December 2027.
+- **Most time to decide:** Hyatt's Cyber Sale, open until December 8.
+
+## Mexico and the Caribbean
+
+Winter sun is what most people are shopping for this week, and Mexico has the deepest sales.
+
+{{deal:palmilla-bf26}}
+
+{{deal:fairmont-mayakoba-bf26}}
+
+{{deal:hard-rock-cabo-bf26}}
+
+{{deal:marriott-dorado-bf26}}
+
+## Hawaii
+
+Hawaii rarely discounts in winter, so a brand-wide sale is the moment to book. The Hilton sale covers our favorite family pool on the islands.
+
+{{deal:hilton-grand-wailea-bf26}}
+
+## Worth the Long Flight
+
+If you're planning a big trip for early 2027, these two sales cover pools we'd cross an ocean for.
+
+{{deal:hyatt-uluwatu-bf26}}
+
+{{deal:hayman-bf26}}
+
+## Closer to Home
+
+{{deal:hamilton-princess-bf26}}
+
+{{deal:mgm-mandalay-bf26}}
+
+## Next Summer in Europe
+
+Black Friday is a good time to lock in a summer in the Mediterranean, before rates climb in spring.
+
+{{deal:domes-bf26}}
+
+## What Isn't on Sale
+
+Some of the hotels we rank highest don't do Black Friday in public. Rosewood's sale ran November 3 to 10 and was only bookable through Rosewood Elite travel advisors, so it has already closed. Four Seasons and Aman rarely cut their rates; at those, the holiday extras tend to come as resort credit when you book through a travel advisor. If one of them is on your list, an advisor is the way in.
+
+## How to Tell a Real Deal
+
+A percentage off is only as good as the rate it comes off. Before you book any of these:
+
+1. **Price the same dates without the sale.** Check the hotel's regular member rate and a booking site or two. Our Compare rates links do this in one step.
+2. **Read the cancellation terms.** Many sale rates are prepaid and non-refundable. If your plans might move, a slightly higher flexible rate can be the better buy.
+3. **Check the stay window and blackout dates.** A sale that ends in April is no help for a July trip, and holiday weeks are often excluded.
+4. **Join the loyalty program first.** Hyatt, Hilton and Marriott save their best discounts for members, and joining is free.
+5. **Book the pool, not just the price.** A cheaper room at a resort with a great pool beats a bargain at one without, which is the whole reason we made this list!
+
+We'll keep this page updated through Travel Tuesday as sales open and close. For more places to swim this winter, see our guides to [Mexico](/destinations/mexico), [the Caribbean](/destinations/caribbean), [Hawaii](/destinations/hawaii) and [Miami Beach](/destinations/miami-beach), or browse [where to swim this winter](/blog/where-to-swim-this-winter).
+`
+  },
   {
     slug: "art-basel-miami-beach-2026-hotel-pools",
     title: "Art Basel Miami Beach 2026: Where to Swim Between the Booths",
@@ -2627,6 +2759,7 @@ If you want one great pool and a city around it, go to Halekulani. If you want w
     image: "/images/pools/pool-one-only-palmilla-los-cabos.jpg",
     publishedAt: "2026-10-26",
     featured: false,
+    bookingDates: { checkin: "2026-11-26", checkout: "2026-11-29", label: "Thanksgiving weekend" },
     author: {
       name: "Pool Atlas Editorial",
       role: "Travel Planning"
@@ -2688,7 +2821,10 @@ For a longer winter trip, our guide to [where to swim this winter](/blog/where-t
 ---
 
 *Find a pool for the long weekend → [Explore the rankings](/#rankings)*
-    `
+    
+
+More places to swim this winter: our guides to [Hawaii](/destinations/hawaii), [Mexico](/destinations/mexico), [the Caribbean](/destinations/caribbean) and [Miami Beach](/destinations/miami-beach), and this year's [Black Friday hotel deals](/blog/black-friday-hotel-deals-2026).
+`
   },
   {
     slug: "christmas-new-years-at-the-pool",
@@ -2699,6 +2835,7 @@ For a longer winter trip, our guide to [where to swim this winter](/blog/where-t
     image: "/images/pools/pool-amanyara-turks-caicos.jpg",
     publishedAt: "2026-10-26",
     featured: false,
+    bookingDates: { checkin: "2026-12-29", checkout: "2027-01-02", label: "New Year's" },
     author: {
       name: "Pool Atlas Editorial",
       role: "Travel Planning"
@@ -2754,7 +2891,10 @@ And if you're traveling with kids over the break, we've rounded up the [best fam
 ---
 
 *Find your holiday pool → [Explore the rankings](/#rankings)*
-    `
+    
+
+More places to swim this winter: our guides to [Hawaii](/destinations/hawaii), [Mexico](/destinations/mexico), [the Caribbean](/destinations/caribbean) and [Miami Beach](/destinations/miami-beach), and this year's [Black Friday hotel deals](/blog/black-friday-hotel-deals-2026).
+`
   },
   {
     slug: "winter-break-family-pools",
@@ -2765,6 +2905,7 @@ And if you're traveling with kids over the break, we've rounded up the [best fam
     image: "/images/pools/pool-grand-wailea-maui.jpg",
     publishedAt: "2026-10-26",
     featured: false,
+    bookingDates: { checkin: "2026-12-26", checkout: "2027-01-02", label: "winter break" },
     author: {
       name: "Pool Atlas Editorial",
       role: "Family Travel"
@@ -2830,7 +2971,10 @@ For more ideas year-round, see our guide to the [best pools for families](/blog/
 ---
 
 *Filter the rankings for pools that are good for kids → [Explore the rankings](/#rankings)*
-    `
+    
+
+More places to swim this winter: our guides to [Hawaii](/destinations/hawaii), [Mexico](/destinations/mexico), [the Caribbean](/destinations/caribbean) and [Miami Beach](/destinations/miami-beach), and this year's [Black Friday hotel deals](/blog/black-friday-hotel-deals-2026).
+`
   },
   {
     slug: "best-hotel-pools-for-honeymoons",

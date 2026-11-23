@@ -11,6 +11,8 @@ import { ShareButtons } from "@/components/share-buttons"
 import { AdBanner } from "@/components/ad-unit"
 import { NewsletterInline } from "@/components/newsletter-inline"
 import { BookPoolsBox } from "@/components/book-pools-box"
+import { DealCard } from "@/components/deal-card"
+import { BOOKING_REL } from "@/lib/affiliate"
 import { pools as allPools } from "@/lib/pool-data"
 import { swimmableNow } from "@/lib/seasons"
 
@@ -104,7 +106,14 @@ function parseInline(text: string): React.ReactNode[] {
     if (m.index > last) parts.push(text.slice(last, m.index))
     if (m[1] && m[2]) {
       // Link
-      parts.push(<Link key={key++} href={m[2]} className="text-primary underline underline-offset-2 hover:text-primary/80 transition-colors">{m[1]}</Link>)
+      const cls = "text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
+      if (/^https?:\/\//.test(m[2])) {
+        // Outbound: new tab; booking links carry the booking rel
+        const rel = /stay22\.com/.test(m[2]) ? BOOKING_REL : "noopener"
+        parts.push(<a key={key++} href={m[2]} target="_blank" rel={rel} className={cls}>{m[1]}</a>)
+      } else {
+        parts.push(<Link key={key++} href={m[2]} className={cls}>{m[1]}</Link>)
+      }
     } else if (m[3]) {
       // Bold
       parts.push(<strong key={key++} className="text-foreground font-semibold">{parseInline(m[3])}</strong>)
@@ -143,14 +152,17 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     : `https://poolatlas.io${post.image}`
 
   return {
-    title: `${post.title} | The Deep End`,
-    description: post.excerpt,
+    title: post.seoTitle ?? `${post.title} | The Deep End`,
+    description: post.seoDescription ?? post.excerpt,
+    keywords: post.keywords,
+    alternates: { canonical: `https://poolatlas.io/blog/${post.slug}` },
     openGraph: {
       type: "article",
       url: `https://poolatlas.io/blog/${post.slug}`,
       title: post.title,
       description: post.excerpt,
       publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt ?? post.publishedAt,
       images: [{ url: imageUrl, width: 1200, height: 630, alt: post.title }],
       siteName: "Pool Atlas",
     },
@@ -185,7 +197,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     description: post.excerpt,
     image: `https://poolatlas.io${post.image}`,
     datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
     url: `https://poolatlas.io/blog/${post.slug}`,
     author: {
       "@type": "Person",
@@ -208,12 +220,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
   }
 
+  const faqJsonLd = post.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      }
+    : null
+
   return (
     <main className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      {faqJsonLd ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      ) : null}
       <Header />
 
       <article className="pt-24 pb-16">
@@ -257,6 +280,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <span>{post.readTime}</span>
                 </div>
                 <span>{new Date(post.publishedAt).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                {post.updatedAt && post.updatedAt !== post.publishedAt ? (
+                  <span>Updated {new Date(post.updatedAt).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric' })}</span>
+                ) : null}
               </div>
             </header>
 
@@ -270,8 +296,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 if (trimmed.startsWith('# ')) {
                   return <h1 key={index} className="font-[family-name:var(--font-display)] text-3xl font-bold mt-10 mb-4">{trimmed.slice(2)}</h1>
                 }
+                // Deal card: {{deal:id}}
+                const dealMatch = trimmed.match(/^\{\{deal:([a-z0-9-]+)\}\}$/)
+                if (dealMatch) {
+                  return <DealCard key={index} id={dealMatch[1]} tag={post.slug} />
+                }
                 if (trimmed.startsWith('## ')) {
-                  return <h2 key={index} className="font-[family-name:var(--font-display)] text-2xl font-bold mt-8 mb-3">{trimmed.slice(3)}</h2>
+                  const text = trimmed.slice(3)
+                  const anchor = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+                  return <h2 key={index} id={anchor} className="scroll-mt-28 font-[family-name:var(--font-display)] text-2xl font-bold mt-8 mb-3">{text}</h2>
                 }
                 if (trimmed.startsWith('### ')) {
                   return <h3 key={index} className="font-[family-name:var(--font-display)] text-xl font-semibold mt-6 mb-2">{trimmed.slice(4)}</h3>
@@ -314,8 +347,26 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               })}
             </div>
 
+            {/* Questions (also published as FAQPage structured data) */}
+            {post.faq?.length ? (
+              <section aria-labelledby="faq" className="mb-16">
+                <h2 id="faq" className="font-[family-name:var(--font-display)] text-2xl font-bold mb-4">Questions, answered</h2>
+                <div className="divide-y divide-border border-y border-border">
+                  {post.faq.map((f) => (
+                    <details key={f.q} className="group py-4">
+                      <summary className="cursor-pointer list-none font-semibold text-foreground flex justify-between gap-4">
+                        {f.q}
+                        <span aria-hidden="true" className="text-primary transition-transform group-open:rotate-45">+</span>
+                      </summary>
+                      <p className="mt-2 text-foreground/80 leading-relaxed">{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
             {/* Book the pools this post talks about */}
-            {(() => {
+            {post.hideBookingBox ? null : (() => {
               const inPost = poolsInPost(content)
               if (inPost.length >= 3) {
                 return <BookPoolsBox pools={inPost} adults={post.bookingAdults} dates={post.bookingDates} />

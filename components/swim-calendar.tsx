@@ -1,18 +1,17 @@
-import { CalendarCheck } from "lucide-react"
 import type { Pool } from "@/lib/pool-data"
 import { BOOKING_REL } from "@/lib/affiliate"
-import { bookingClosed, bookingForMonth, bookingThisWeekend, shortDate } from "@/lib/booking"
+import { bookingClosed, bookingForMonth } from "@/lib/booking"
 import { currentMonth, isClosed, monthName, seasonFor } from "@/lib/seasons"
 
 // "When to swim": the next twelve months as tiles. Best months are filled, closed months are
 // struck through, and every open month links to rooms for a long weekend that month.
-// The reader picks a month here instead of a date range on a booking site.
+// The reader picks a month here instead of a date range on a booking site. The quick
+// "this weekend" offer lives on the Pool Pass just above, so it isn't repeated here.
 export function SwimCalendar({ pool }: { pool: Pool }) {
   const season = seasonFor(pool)
   if (!season || bookingClosed(pool)) return null
   const now = currentMonth()
   const months = Array.from({ length: 12 }, (_, i) => ((now - 1 + i) % 12) + 1)
-  const weekend = bookingThisWeekend(pool, "pool_weekend")
   const yearRound = season.best.length === 12
   const thisYear = Number(new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", year: "numeric" }).format(new Date()))
 
@@ -27,19 +26,6 @@ export function SwimCalendar({ pool }: { pool: Pool }) {
             {yearRound ? "Good all year. " : null}Pick a month to see rooms for a long weekend then.
           </p>
         </div>
-        {weekend?.stay ? (
-          <a
-            href={weekend.href}
-            target="_blank"
-            rel={BOOKING_REL}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
-            <CalendarCheck className="h-4 w-4" aria-hidden="true" />
-            <span>
-              This weekend <span className="font-normal opacity-85">· {shortDate(weekend.stay.checkin)}</span>
-            </span>
-          </a>
-        ) : null}
       </div>
 
       <ol className="mt-5 grid grid-cols-4 gap-2 sm:grid-cols-6">

@@ -114,11 +114,21 @@ function zonedNow(date: Date = new Date()) {
 
 export type Season = "Spring" | "Summer" | "Fall" | "Winter"
 
+/**
+ * Editorial seasons (month is 0-based). Winter runs November to February, because that's when
+ * readers plan and book winter trips, and it keeps the year it started in: "Winter 2026" lasts
+ * from November 2026 through February 2027. Keep in step with the palette script in app/layout.tsx.
+ */
 export function seasonForMonth(month: number): Season {
   if (month >= 2 && month <= 4) return "Spring"
   if (month >= 5 && month <= 7) return "Summer"
-  if (month >= 8 && month <= 10) return "Fall"
+  if (month >= 8 && month <= 9) return "Fall"
   return "Winter"
+}
+
+/** The year a season is labeled with: January and February belong to the winter that began the year before */
+export function seasonYear(month: number, year: number): number {
+  return month <= 1 ? year - 1 : year
 }
 
 export function getCurrentEdition(date: Date = new Date()) {
@@ -131,6 +141,7 @@ export function getCurrentEdition(date: Date = new Date()) {
     monthName: MONTH_NAMES[month],
     label: `${MONTH_NAMES[month]} ${year}`,
     season: seasonForMonth(month),
+    seasonYear: seasonYear(month, year),
     featuredId: find(plan.featuredId) ? plan.featuredId : pools[0].id,
     featuredWhy: plan.featuredWhy,
     pickIds: plan.pickIds.filter(id => find(id)),
@@ -219,13 +230,21 @@ export const bookingNow: Record<number, { label: string; href: string }[]> = {
 }
 
 /**
- * The line above the homepage headline. Point it at whatever is newest this season.
- * Set to null to hide it.
+ * The line above the homepage headline, next to the season. Each note shows until its `until`
+ * date (Pacific, inclusive); the first one still current wins, and the last is the fallback.
+ * Add a dated note in front for anything timely.
  */
-export const SEASON_NOTE: { label: string; href: string } | null = {
-  label: "New: honeymoon pools, picked for two",
-  href: "/honeymoon",
+const SEASON_NOTES: { label: string; href: string; until?: string }[] = [
+  { label: "Black Friday pool deals, checked and dated", href: "/blog/black-friday-hotel-deals-2026", until: "2026-12-08" },
+  { label: "Holiday pool trips you can still book", href: "/blog/christmas-new-years-at-the-pool", until: "2026-12-31" },
+  { label: "New: honeymoon pools, picked for two", href: "/honeymoon" },
+]
+
+export function getSeasonNote(date: Date = new Date()): { label: string; href: string } | null {
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles" }).format(date)
+  const note = SEASON_NOTES.find((n) => !n.until || today <= n.until)
+  return note ? { label: note.label, href: note.href } : null
 }
 
 /** When the rankings were last reviewed. Update this on each editorial pass. */
-export const RANKINGS_REVIEWED = "October 2026"
+export const RANKINGS_REVIEWED = "November 2026"

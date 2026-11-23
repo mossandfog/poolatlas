@@ -40,6 +40,10 @@ export type Placement =
   /** Pool page: the month-by-month swim calendar and the "this weekend" chip */
   | "pool_month"
   | "pool_weekend"
+  /** Pool page: the Pool Pass ticket */
+  | "pool_pass"
+  /** Blog deal cards (Black Friday and other sales) */
+  | "blog_deal"
 
 const label = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")
 
@@ -66,6 +70,30 @@ export function getBookingUrl(
   p.append("campaign", "poolatlas")
   p.append("campaign", `pa_${placement}`)
   p.append("campaign", `pool_${label(pool.slug)}`)
+  if (opts.tag) p.append("campaign", label(opts.tag))
+  return `https://www.stay22.com/allez/roam?${p.toString()}`
+}
+
+/** A link that opens booking for a hotel that isn't in our rankings (deal posts, guides). */
+export function getHotelBookingUrl(
+  hotel: { name: string; address: string; lat?: number; lng?: number },
+  placement: Placement,
+  opts: { tag?: string; checkin?: string; checkout?: string; adults?: number } = {},
+): string {
+  const p = new URLSearchParams()
+  p.set("aid", STAY22_AID)
+  p.set("hotelname", hotel.name)
+  p.set("address", hotel.address)
+  if (hotel.lat != null && hotel.lng != null) {
+    p.set("lat", String(hotel.lat))
+    p.set("lng", String(hotel.lng))
+  }
+  if (opts.adults) p.set("adults", String(opts.adults))
+  if (opts.checkin) p.set("checkin", opts.checkin)
+  if (opts.checkout) p.set("checkout", opts.checkout)
+  p.append("campaign", "poolatlas")
+  p.append("campaign", `pa_${placement}`)
+  p.append("campaign", `hotel_${label(hotel.name)}`)
   if (opts.tag) p.append("campaign", label(opts.tag))
   return `https://www.stay22.com/allez/roam?${p.toString()}`
 }

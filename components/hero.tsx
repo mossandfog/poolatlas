@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowDown } from "lucide-react"
 import { PoolSearch } from "@/components/pool-search"
 import { pools } from "@/lib/pool-data"
-import { siteStats, RANKINGS_REVIEWED, SEASON_NOTE, type Edition } from "@/lib/editorial-calendar"
+import { siteStats, RANKINGS_REVIEWED, getSeasonNote, type Edition } from "@/lib/editorial-calendar"
 import { HERO_FILM } from "@/lib/hero-film"
 import { HeroFilm } from "@/components/hero-film"
 
@@ -11,6 +11,7 @@ import { HeroFilm } from "@/components/hero-film"
 // otherwise this month's Pool of the Month as a still.
 export function Hero({ edition }: { edition: Edition }) {
   const cover = pools.find(p => p.id === edition.featuredId) ?? pools[0]
+  const seasonNote = getSeasonNote()
   const hf = HERO_FILM
   const filmPool = hf ? pools.find(p => p.id === hf.poolId) : undefined
   const film = hf && filmPool ? hf : null
@@ -68,11 +69,11 @@ export function Hero({ edition }: { edition: Edition }) {
           <p className="pa-headline-in mb-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
             <span className="inline-flex items-center gap-2 font-medium uppercase tracking-[0.14em] text-foreground/80">
               <span aria-hidden="true" className="h-0.5 w-6 rounded-full bg-accent" />
-              {edition.season} {edition.year}
+              {edition.season} {edition.seasonYear}
             </span>
-            {SEASON_NOTE && (
-              <Link href={SEASON_NOTE.href} className="text-muted-foreground hover:text-foreground underline-offset-4 hover:underline transition-colors">
-                {SEASON_NOTE.label} &rarr;
+            {seasonNote && (
+              <Link href={seasonNote.href} className="text-muted-foreground hover:text-foreground underline-offset-4 hover:underline transition-colors">
+                {seasonNote.label} &rarr;
               </Link>
             )}
           </p>
