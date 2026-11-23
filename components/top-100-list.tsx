@@ -3,11 +3,14 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Star, Baby, Award, ChevronDown, ChevronUp, ExternalLink } from "lucide-react"
+import { Star, Baby, Award, ChevronDown, ChevronUp, ExternalLink, CalendarCheck } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { pools, regions, countries, continents, features as allFeatures } from "@/lib/pool-data"
 import { RANKINGS_REVIEWED } from "@/lib/editorial-calendar"
+import { BOOKING_REL } from "@/lib/affiliate"
+import { bookingFor } from "@/lib/booking"
+import { isInSeason } from "@/lib/seasons"
 import {
   Select,
   SelectContent,
@@ -116,7 +119,10 @@ export function Top100List() {
 
         {/* List */}
         <ol className="pa-surface bg-card rounded-2xl border border-border divide-y divide-border overflow-clip">
-          {displayedPools.map((pool) => (
+          {displayedPools.map((pool) => {
+            const link = bookingFor(pool, "home_rankings")
+            const inSeason = isInSeason(pool)
+            return (
             <li
               key={pool.id}
               data-pool-card
@@ -160,10 +166,34 @@ export function Top100List() {
                     )}
                   </Link>
                   <p className="text-sm text-muted-foreground truncate">{pool.hotel}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5 truncate">{pool.location}, {pool.country}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5 truncate">
+                    {inSeason ? (
+                      <span className="mr-1.5 inline-flex items-center gap-1 font-semibold text-chart-3">
+                        <span className="h-1.5 w-1.5 rounded-full bg-chart-3" aria-hidden="true" />
+                        In season
+                        <span className="font-normal text-muted-foreground" aria-hidden="true">·</span>
+                      </span>
+                    ) : null}
+                    {pool.location}, {pool.country}
+                  </p>
                 </div>
 
-                <div className="flex items-center gap-1 shrink-0 tabular-nums">
+                {link ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel={BOOKING_REL}
+                    onClick={(e) => e.stopPropagation()}
+                    title={`${link.label} at ${pool.hotel}`}
+                    aria-label={`${link.label} at ${pool.hotel}`}
+                    className="shrink-0 inline-flex h-9 w-9 sm:h-auto sm:w-auto items-center justify-center gap-1.5 rounded-full border border-primary/30 text-primary sm:px-3.5 sm:py-1.5 text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+                  >
+                    <CalendarCheck className="w-4 h-4" aria-hidden="true" />
+                    <span className="hidden sm:inline">{link.label}</span>
+                  </a>
+                ) : null}
+
+                <div className="hidden sm:flex items-center gap-1 shrink-0 tabular-nums">
                   <Star className="w-4 h-4 fill-accent text-accent" aria-hidden="true" />
                   <span className="font-semibold text-foreground">{pool.rating.toFixed(1)}</span>
                 </div>
@@ -181,6 +211,11 @@ export function Top100List() {
                 <div className="px-4 sm:pl-[10.75rem] sm:pr-5 pb-5 pt-0">
                   <div className="pt-4 grid sm:grid-cols-2 gap-4">
                     <div>
+                      <p className="sm:hidden mb-2 flex items-center gap-1 text-sm tabular-nums">
+                        <Star className="w-4 h-4 fill-accent text-accent" aria-hidden="true" />
+                        <span className="font-semibold text-foreground">{pool.rating.toFixed(1)}</span>
+                        <span className="text-muted-foreground">editors' score</span>
+                      </p>
                       <p className="text-sm text-foreground/80 leading-relaxed">
                         {pool.description}
                       </p>
@@ -219,11 +254,19 @@ export function Top100List() {
 
                       {/* Links */}
                       <div className="pt-3 border-t border-border space-y-2">
+                        {link ? (
+                          <a href={link.href} target="_blank" rel={BOOKING_REL} className="block">
+                            <Button variant="default" size="sm" className="w-full rounded-full gap-1.5">
+                              <CalendarCheck className="w-3.5 h-3.5" />
+                              {link.label === "Check dates" ? "Check dates & rates" : link.label}
+                            </Button>
+                          </a>
+                        ) : null}
                         <Link
                           href={`/pools/${pool.slug}`}
                           className="block"
                         >
-                          <Button variant="default" size="sm" className="w-full rounded-full gap-1.5">
+                          <Button variant="outline" size="sm" className="w-full rounded-full gap-1.5">
                             See the pool
                           </Button>
                         </Link>
@@ -233,7 +276,7 @@ export function Top100List() {
                           rel="noopener noreferrer"
                           className="block"
                         >
-                          <Button variant="outline" size="sm" className="w-full rounded-full gap-1.5">
+                          <Button variant="ghost" size="sm" className="w-full rounded-full gap-1.5 text-muted-foreground">
                             <ExternalLink className="w-3.5 h-3.5" />
                             Visit the hotel
                           </Button>
@@ -244,8 +287,10 @@ export function Top100List() {
                 </div>
               )}
             </li>
-          ))}
+            )
+          })}
         </ol>
+        <p className="mt-3 text-xs text-muted-foreground">Booking links open with dates in each pool's best season. We may earn a commission when you book, at no cost to you.</p>
 
         {/* Explore More Button */}
         {hasMorePools && !showAll && (

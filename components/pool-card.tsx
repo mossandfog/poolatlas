@@ -3,7 +3,9 @@ import Link from "next/link"
 import { Star, CalendarCheck } from "lucide-react"
 import type { Pool } from "@/lib/pool-data"
 import { DiamondButton } from "@/components/diamond-button"
-import { getBookingUrl, BOOKING_REL, type Placement } from "@/lib/affiliate"
+import { BOOKING_REL, type Placement } from "@/lib/affiliate"
+import { bookingFor, bookingForMonth } from "@/lib/booking"
+import { currentMonth } from "@/lib/seasons"
 
 interface PoolCardProps {
   pool: Pool
@@ -13,10 +15,13 @@ interface PoolCardProps {
   booking?: Placement
   /** Travelers to pre-fill on the booking site, e.g. 2 for couples */
   adults?: number
+  /** Open the booking link on a stay in this month (the month picker). Otherwise the pool's next best month. */
+  month?: number
 }
 
 // A photograph first, then the facts. The whole card opens the pool's page.
-export function PoolCard({ pool, sizes = "(min-width: 1024px) 20vw, (min-width: 640px) 45vw, 80vw", booking, adults }: PoolCardProps) {
+export function PoolCard({ pool, sizes = "(min-width: 1024px) 20vw, (min-width: 640px) 45vw, 80vw", booking, adults, month }: PoolCardProps) {
+  const link = booking ? (month && month !== currentMonth() ? bookingForMonth(pool, month, booking, { adults }) : bookingFor(pool, booking, { adults })) : null
   return (
     <article className="group relative">
       <Link
@@ -52,15 +57,15 @@ export function PoolCard({ pool, sizes = "(min-width: 1024px) 20vw, (min-width: 
         </div>
       </Link>
 
-      {booking ? (
+      {link ? (
         <a
-          href={getBookingUrl(pool, booking, { adults })}
+          href={link.href}
           target="_blank"
           rel={BOOKING_REL}
           className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80 underline-offset-4 hover:underline"
         >
           <CalendarCheck className="w-3.5 h-3.5" aria-hidden="true" />
-          Check dates
+          {link.label}
         </a>
       ) : null}
 

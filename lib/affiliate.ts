@@ -33,6 +33,13 @@ export type Placement =
   | "booking_now"
   /** The Swim Here card embedded on The Window Seat */
   | "tws_swim"
+  /** Homepage: Pool of the Month ticket, this month's picks, the rankings list */
+  | "home_featured"
+  | "home_picks"
+  | "home_rankings"
+  /** Pool page: the month-by-month swim calendar and the "this weekend" chip */
+  | "pool_month"
+  | "pool_weekend"
 
 const label = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "")
 

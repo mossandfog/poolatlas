@@ -138,6 +138,9 @@ export const poolCoordinates: Record<number, { lat: number; lng: number }> = {
   135: { lat: 25.8095, lng: -80.1226 }, // Faena Hotel Miami Beach
   136: { lat: 25.7957, lng: -80.1281 }, // The Setai Miami Beach
   137: { lat: 25.7991, lng: -80.1272 }, // 1 Hotel South Beach
+  138: { lat: 25.8748, lng: -80.1215 }, // Four Seasons Hotel at The Surf Club
+  139: { lat: 25.8186, lng: -80.1222 }, // Fontainebleau Miami Beach
+  140: { lat: 22.9832, lng: -109.7826 }, // Las Ventanas al Paraiso
 }
 
 // Calculate distance between two points using Haversine formula

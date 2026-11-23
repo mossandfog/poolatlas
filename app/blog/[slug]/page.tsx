@@ -12,6 +12,49 @@ import { AdBanner } from "@/components/ad-unit"
 import { NewsletterInline } from "@/components/newsletter-inline"
 import { BookPoolsBox } from "@/components/book-pools-box"
 import { pools as allPools } from "@/lib/pool-data"
+import { swimmableNow } from "@/lib/seasons"
+
+// The in-season fallback box changes with the month, so rebuild posts daily (like pool pages)
+export const revalidate = 86400
+
+// Link the first plain-text mention of every ranked hotel to its pool page. Readers get the
+// pool page one tap away, search gets the internal link, and the booking box below picks the
+// pool up automatically. Headings and text already inside a link are left alone.
+const linkTargets = [...allPools]
+  .filter((p) => p.hotel.length > 7)
+  .sort((a, b) => b.hotel.length - a.hotel.length)
+function linkHotelMentions(content: string) {
+  const lines = content.split("\n")
+  for (const pool of linkTargets) {
+    if (content.includes(`(/pools/${pool.slug})`)) continue
+    const name = pool.hotel
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i]
+      if (/^\s*(#|\||>|!\[)/.test(line)) continue
+      const linked = [...line.matchAll(/\[[^\]]*\]\([^)]*\)/g)].map((m) => [m.index!, m.index! + m[0].length])
+      let at = line.indexOf(name)
+      while (at !== -1) {
+        const end = at + name.length
+        const inLink = linked.some(([a, b]) => at >= a && at < b)
+        const wordEdge = !/[A-Za-z0-9]/.test(line[end] ?? "") && !/[A-Za-z0-9]/.test(line[at - 1] ?? "")
+        if (!inLink && wordEdge) break
+        at = line.indexOf(name, at + 1)
+      }
+      if (at === -1) continue
+      lines[i] = `${line.slice(0, at)}[${name}](/pools/${pool.slug})${line.slice(at + name.length)}`
+      content = lines.join("\n")
+      break
+    }
+  }
+  return lines.join("\n")
+}
+
+// Posts that mention no ranked pools still offer a few to book: the best pools in season this month.
+// Home pool-care posts are about the reader's own pool, so they get none.
+function inSeasonPicks(category: string, exclude: Set<number>, n: number) {
+  if (category === "Pool Care") return []
+  return swimmableNow(allPools).filter((p) => !exclude.has(p.id)).slice(0, n)
+}
 
 // Pools a post links to (/pools/slug), in reading order, for the booking box
 function poolsInPost(content: string) {
@@ -128,6 +171,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
+  const content = linkHotelMentions(post.content)
+
   // Get related posts (prefer same category, excluding current)
   const sameCategoryPosts = blogPosts.filter(p => p.slug !== slug && p.category === post.category)
   const otherPosts = blogPosts.filter(p => p.slug !== slug && p.category !== post.category)
@@ -217,7 +262,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             {/* Content */}
             <div className="prose prose-lg dark:prose-invert max-w-none mb-16">
-              {withLiveRanks(post.content).split('\n').map((paragraph, index) => {
+              {withLiveRanks(content).split('\n').map((paragraph, index) => {
                 const trimmed = paragraph.trim()
                 if (!trimmed) return null
                 
@@ -270,7 +315,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             {/* Book the pools this post talks about */}
-            <BookPoolsBox pools={poolsInPost(post.content)} adults={post.bookingAdults} dates={post.bookingDates} />
+            {(() => {
+              const inPost = poolsInPost(content)
+              if (inPost.length >= 3) {
+                return <BookPoolsBox pools={inPost} adults={post.bookingAdults} dates={post.bookingDates} />
+              }
+              const picks = inSeasonPicks(post.category, new Set(inPost.map((p) => p.id)), 5 - inPost.length)
+              return (
+                <BookPoolsBox
+                  pools={[...inPost, ...picks]}
+                  title={inPost.length ? "Stay at the pools in this story" : "Pools in season right now"}
+                  adults={post.bookingAdults}
+                  dates={post.bookingDates}
+                />
+              )
+            })()}
 
             {/* Newsletter CTA */}
             <NewsletterInline />

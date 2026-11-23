@@ -72,6 +72,7 @@ export function SeasonalPicks({ initialMonth, year }: { initialMonth: number; ye
               pool={pool}
               sizes="(min-width: 1024px) 22vw, (min-width: 768px) 30vw, 45vw"
               booking="season_month"
+              month={month}
             />
           ))}
         </div>

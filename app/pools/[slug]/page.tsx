@@ -8,7 +8,9 @@ import {
 } from "lucide-react"
 import { bestTimeLabel, isInSeason, isClosed, closureFor, reopeningStay, monthName } from "@/lib/seasons"
 import { pools } from "@/lib/pool-data"
-import { getBookingUrl, getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
+import { getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
+import { bookingFor } from "@/lib/booking"
+import { SwimCalendar } from "@/components/swim-calendar"
 import { poolCoordinates } from "@/lib/pool-coordinates"
 import { StaysMap } from "@/components/stays-map"
 import { GettingThere } from "@/components/getting-there"
@@ -63,9 +65,12 @@ export default async function PoolPage({ params }: Props) {
   // Closed with no reopening date (a renovation): no booking buttons, just the hotel's own site
   const shutNoDate = !reopening && isClosed(pool) ? closureFor(pool) : undefined
   const closure = reopening ? closureFor(pool) : shutNoDate
-  const dates = reopening ? { checkin: reopening.checkin, checkout: reopening.checkout } : {}
-  const bookingUrl = getBookingUrl(pool, "pool_cta", dates)
-  const mobileBookingUrl = getBookingUrl(pool, "pool_mobile_bar", dates)
+  // Out of season but open: the buttons open on the pool's next best month ("Check June dates")
+  const cta = bookingFor(pool, "pool_cta")
+  const mobileCta = bookingFor(pool, "pool_mobile_bar")
+  const bookingUrl = cta?.href ?? pool.websiteUrl
+  const mobileBookingUrl = mobileCta?.href ?? pool.websiteUrl
+  const ctaLabel = cta && cta.kind === "season" ? cta.label : null
   const reopenName = reopening ? monthName(reopening.month) : null
   // Hedge projected dates, and name the year for anything past the coming season
   const reopenPhrase = reopening
@@ -243,7 +248,7 @@ export default async function PoolPage({ params }: Props) {
                 </span>
                 <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-background px-4 py-2 text-sm font-semibold text-foreground">
                   <CalendarCheck className="w-4 h-4 text-primary" aria-hidden="true" />
-                  {reopenName ? `Book for ${reopenName}` : "Check dates"}
+                  {reopenName ? `Book for ${reopenName}` : ctaLabel ?? "Check dates"}
                 </span>
               </a>}
 
@@ -256,6 +261,9 @@ export default async function PoolPage({ params }: Props) {
                   {pool.description}
                 </p>
               </div>
+
+              {/* When to swim: every month is a door to rooms for that month */}
+              <SwimCalendar pool={pool} />
 
               {/* Features */}
               <div>
@@ -398,7 +406,7 @@ export default async function PoolPage({ params }: Props) {
                     <a href={bookingUrl} target="_blank" rel={BOOKING_REL} className="block">
                       <Button className="w-full rounded-full gap-2" size="lg">
                         <CalendarCheck className="w-4 h-4" />
-                        {reopenName ? `Book for ${reopenName}` : <>Check dates &amp; rates</>}
+                        {reopenName ? `Book for ${reopenName}` : ctaLabel ?? <>Check dates &amp; rates</>}
                       </Button>
                     </a>
                   )}

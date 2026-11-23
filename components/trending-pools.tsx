@@ -31,7 +31,7 @@ export function TrendingPools({ edition }: { edition: Edition }) {
         <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-px-4 px-4 pb-2 sm:px-6 lg:px-8 lg:grid lg:grid-cols-5 lg:gap-6 lg:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {picks.map((pool) => (
             <div key={pool.id} className="w-[72%] shrink-0 snap-start sm:w-[40%] lg:w-auto">
-              <PoolCard pool={pool} />
+              <PoolCard pool={pool} booking="home_picks" />
             </div>
           ))}
         </div>

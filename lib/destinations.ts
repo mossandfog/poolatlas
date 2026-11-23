@@ -11,6 +11,8 @@ export interface DestinationChapter {
   intro: string
   /** Pools in this chapter, by id, in reading order */
   poolIds: number[]
+  /** Where the "Find stays" link searches. Defaults to "<chapter>, <destination>". */
+  place?: string
 }
 
 export interface Destination {
@@ -32,6 +34,8 @@ export interface Destination {
   whenToGo?: { label: string; text: string }[]
   /** Related Deep End posts, by slug */
   relatedPosts?: string[]
+  /** Where the stays map centers. Defaults to the name; null hides the map (guides that span several countries). */
+  mapPlace?: string | null
   /** Featured guides get the big card on Explore */
   featured?: boolean
 }
@@ -157,6 +161,285 @@ export const destinations: Destination[] = [
     ],
     match: (p) => /Lake Como|Cernobbio|Como$/.test(p.location),
     relatedPosts: ["best-hotel-pools-italy"],
+  },
+  {
+    slug: "miami-beach",
+    name: "Miami Beach",
+    tagline: "Art Deco, cabana rows and the Atlantic",
+    title: "The Best Hotel Pools in Miami Beach | Pool Atlas",
+    description:
+      "Miami Beach's best hotel pools, from the 1930 Surf Club's Cabana Row to Faena's candy-striped deck and the Setai's three heated infinity pools, ranked by Pool Atlas.",
+    intro: [
+      "Miami Beach invented the American resort pool as a stage, and the best ones still play the part. A 1930 beach club with its original cabana row, a Lapidus landmark from the Rat Pack years, three infinity pools at three different temperatures, and a rooftop 18 floors over South Beach.",
+      "We've ranked five pools along Collins Avenue, from South Beach up to Surfside. Most sit right on the sand, so the pool and the Atlantic are one decision, not two.",
+    ],
+    image: "/images/pools/pool-four-seasons-surf-club.jpg",
+    match: (p) => /Miami Beach/.test(p.location),
+    mapPlace: "Miami Beach, Florida",
+    chapters: [
+      {
+        name: "South Beach",
+        intro: "The Art Deco district and the busiest stretch of sand. Pools here are a retreat from the scene on Ocean Drive, or the scene itself, depending on the deck.",
+        poolIds: [136, 137],
+        place: "South Beach, Miami Beach, Florida",
+      },
+      {
+        name: "Mid-Beach",
+        intro: "North of the Collins Canal the hotels get bigger and the beach gets calmer. This is where Miami Beach's 1950s grandeur lives, and where the art crowd stays.",
+        poolIds: [135, 139],
+        place: "Mid-Beach, Miami Beach, Florida",
+      },
+      {
+        name: "Surfside",
+        intro: "A quiet small town just north of the city line, with a wide beach and the most exclusive address on the strip.",
+        poolIds: [138],
+        place: "Surfside, Florida",
+      },
+    ],
+    whenToGo: [
+      { label: "November to April", text: "Dry, sunny and in the high 70s. The season that built Miami Beach, and the reason the pools fill up." },
+      { label: "Art Basel week", text: "Early December. Every room on the beach books out months ahead, so plan by late summer." },
+      { label: "June to November", text: "Hot, humid and hurricane season. Rates drop sharply; watch the forecast and book flexible." },
+    ],
+    relatedPosts: ["art-basel-miami-beach-2026-hotel-pools", "where-to-swim-this-winter"],
+  },
+  {
+    slug: "mexico",
+    name: "Mexico",
+    tagline: "Desert edges in Cabo, jungle lagoons on the Riviera Maya",
+    title: "The Best Hotel Pools in Mexico | Pool Atlas",
+    description:
+      "Mexico's best hotel pools in Los Cabos and on the Riviera Maya: infinity edges over the Sea of Cortez and resort pools on the Caribbean, ranked by Pool Atlas.",
+    intro: [
+      "Mexico gives you two very different pool trips. In Los Cabos, at the tip of Baja, the desert runs straight into the Sea of Cortez, and most of the beaches are too rough to swim, so the pool does the work and the infinity edge is the point. On the Riviera Maya, the Caribbean side, the water is calm and turquoise and the resorts are built among mangroves and cenotes.",
+    ],
+    image: "/images/pools/pool-las-ventanas-al-paraiso.jpg",
+    match: (p) => p.country === "Mexico",
+    mapPlace: null,
+    chapters: [
+      {
+        name: "Los Cabos",
+        intro: "The Tourist Corridor between San José del Cabo and Cabo San Lucas is lined with resorts facing the Sea of Cortez. Direct flights from most of the US make it the easiest winter sun on the West Coast.",
+        poolIds: [140, 130, 46],
+        place: "Los Cabos, Baja California Sur, Mexico",
+      },
+      {
+        name: "Riviera Maya",
+        intro: "South of Cancún, from Puerto Morelos down toward Tulum. Calm Caribbean water, Mayan ruins and freshwater cenotes in the jungle behind the beach.",
+        poolIds: [32],
+        place: "Riviera Maya, Quintana Roo, Mexico",
+      },
+    ],
+    whenToGo: [
+      { label: "Los Cabos: November to May", text: "Dry and warm, with gray whales offshore from roughly December to April." },
+      { label: "Riviera Maya: December to April", text: "The dry season. Sargassum seaweed can reach the beaches from spring into summer, one more reason the pool matters." },
+      { label: "Summer and fall", text: "Hot, humid and hurricane season on both coasts, with the lowest rates of the year." },
+    ],
+  },
+  {
+    slug: "amalfi-coast",
+    name: "Amalfi Coast",
+    tagline: "Cliff-hung pools above the Tyrrhenian",
+    title: "The Best Hotel Pools on the Amalfi Coast | Pool Atlas",
+    description:
+      "The Amalfi Coast's best hotel pools in Ravello, Positano, Amalfi and Conca dei Marini, from Belmond Caruso's floating edge to a 17th-century monastery's terraces, ranked by Pool Atlas.",
+    intro: [
+      "The Amalfi Coast is a cliff with towns stuck to it, and there is very little beach to go around. That is why its hotel pools are some of the most famous in the world: carved into terraces, cantilevered off old monasteries and villas, and hung hundreds of feet over the sea.",
+      "Most hotels here close for winter, so the season is short and the good rooms go early. Book for June or September and you get warm water without August's crowds.",
+    ],
+    match: (p) => [6, 7, 65, 105].includes(p.id),
+    mapPlace: "Amalfi Coast, Italy",
+    whenToGo: [
+      { label: "May and June", text: "Long days, warm sun and the lemon groves in leaf. The sea is still cool, which is when a heated pool earns its keep." },
+      { label: "July and August", text: "Peak season, peak prices, and the coast road at a crawl. Stay put and swim." },
+      { label: "September and October", text: "The sea is at its warmest and the crowds thin out. Most hotels close from November to March or April." },
+    ],
+    relatedPosts: ["best-hotel-pools-italy", "best-hotel-pools-for-honeymoons"],
+  },
+  {
+    slug: "mallorca-ibiza",
+    name: "Mallorca & Ibiza",
+    tagline: "Fortress walls, orange groves and Ibiza sunsets",
+    title: "The Best Hotel Pools in Mallorca and Ibiza | Pool Atlas",
+    description:
+      "The Balearic Islands' best hotel pools, from a fortress above the Bay of Palma to Deià's mountain village and Ibiza's cliffs, ranked by Pool Atlas.",
+    intro: [
+      "Spain's Balearic Islands are close neighbors with completely different moods. Mallorca is mountains, stone villages and old fortresses; Ibiza is coves, pine forest and the best sunsets in the Mediterranean, once you get away from the clubs.",
+      "We've ranked six pools across the two islands. Many hotels here are seasonal, opening around April and closing in late October.",
+    ],
+    image: "/images/pools/pool-cap-rocat-mallorca.jpg",
+    match: (p) => [62, 119, 120, 43, 56, 118].includes(p.id),
+    mapPlace: null,
+    chapters: [
+      {
+        name: "Mallorca",
+        intro: "The bigger island, with the Tramuntana mountains along its northwest coast and Palma's cathedral on the bay. Rent a car; the mountain roads are half the trip.",
+        poolIds: [62, 119, 120],
+        place: "Mallorca, Spain",
+      },
+      {
+        name: "Ibiza",
+        intro: "Smaller and wilder than its reputation. The north of the island, around San Miguel and Portinatx, is quiet, green and made for long lunches.",
+        poolIds: [43, 56, 118],
+        place: "Ibiza, Spain",
+      },
+    ],
+    whenToGo: [
+      { label: "May and June", text: "Warm, green and calm before the summer rush. Almond and orange blossom are done, the beaches aren't full yet." },
+      { label: "July and August", text: "Hot and busy, especially on Ibiza. Pool days become the plan." },
+      { label: "September", text: "The sweet spot: the sea is warm, the light is golden and the season winds down by late October." },
+    ],
+    relatedPosts: ["best-hotel-pools-spain"],
+  },
+  {
+    slug: "caribbean",
+    name: "The Caribbean",
+    tagline: "Clifftop edges and reef-blue water, island by island",
+    title: "The Best Hotel Pools in the Caribbean | Pool Atlas",
+    description:
+      "The Caribbean's best hotel pools on Turks and Caicos, Anguilla, Antigua, Dominica, Saint Lucia and Puerto Rico, ranked by Pool Atlas.",
+    intro: [
+      "Every Caribbean island has a beach. What sets the best hotels apart is where they put the pool: on a cliff over Grace Bay, under the Pitons, in a rainforest by a river mouth, or right on the reef line so the pool and the sea read as one color.",
+      "We've ranked seven pools across six islands. The season runs December to April, and the winter holidays book out first.",
+    ],
+    match: (p) => [18, 128, 34, 26, 33, 100, 28].includes(p.id),
+    mapPlace: null,
+    chapters: [
+      {
+        name: "Turks and Caicos",
+        intro: "Providenciales has the famous beach, Grace Bay, and some of the clearest water in the Caribbean. Short flights from the East Coast.",
+        poolIds: [18, 128],
+        place: "Providenciales, Turks and Caicos",
+      },
+      {
+        name: "Anguilla",
+        intro: "Flat, quiet and ringed with white sand. No cruise ships, no high-rises, and some of the best beaches in the region.",
+        poolIds: [34],
+        place: "Anguilla",
+      },
+      {
+        name: "Antigua",
+        intro: "An island said to have a beach for every day of the year, with sheltered bays on the calm west coast.",
+        poolIds: [26],
+        place: "Antigua",
+      },
+      {
+        name: "Dominica",
+        intro: "The nature island: rainforest, hot springs and black sand. Come for the drama, not the long flat beaches.",
+        poolIds: [33],
+        place: "Portsmouth, Dominica",
+      },
+      {
+        name: "Saint Lucia",
+        intro: "Volcanic and steep, with the twin Pitons rising out of the sea near Soufrière.",
+        poolIds: [100],
+        place: "Soufrière, Saint Lucia",
+      },
+      {
+        name: "Puerto Rico",
+        intro: "No passport needed from the US, and Dorado's beaches are under an hour from San Juan.",
+        poolIds: [28],
+        place: "Dorado, Puerto Rico",
+      },
+    ],
+    whenToGo: [
+      { label: "December to April", text: "Dry season: sunny, breezy and in the low 80s. The peak, so book the holidays early." },
+      { label: "May and June", text: "Still lovely and noticeably cheaper, before the rains and the storms." },
+      { label: "June to November", text: "Hurricane season, peaking August to October. Some resorts close for a few weeks in the fall." },
+    ],
+    relatedPosts: ["best-hotel-pools-caribbean", "christmas-new-years-at-the-pool"],
+  },
+  {
+    slug: "thailand",
+    name: "Thailand",
+    tagline: "Rooftops in Bangkok, limestone bays in the south",
+    title: "The Best Hotel Pools in Thailand | Pool Atlas",
+    description:
+      "Thailand's best hotel pools in Bangkok, Chiang Mai, Phuket, Phang Nga Bay, Koh Samui and Hua Hin, ranked by Pool Atlas.",
+    intro: [
+      "Thailand does every kind of hotel pool and does it at a price the rest of the world can't match. Rooftop pools over Bangkok, rice-paddy views in the north, and infinity edges over limestone islands in the Andaman Sea.",
+      "Two coasts with two monsoons mean there is a good beach somewhere in Thailand most months of the year. Here is where to swim, and when.",
+    ],
+    match: (p) => p.country === "Thailand",
+    mapPlace: null,
+    chapters: [
+      {
+        name: "Bangkok",
+        intro: "The capital is hot and humid all year, which makes a rooftop pool the best room in the hotel.",
+        poolIds: [30, 124],
+        place: "Bangkok, Thailand",
+      },
+      {
+        name: "Chiang Mai",
+        intro: "The cooler, greener north, with temples, night markets and mountains on every side.",
+        poolIds: [14],
+        place: "Chiang Mai, Thailand",
+      },
+      {
+        name: "The Andaman Coast",
+        intro: "Phuket and Phang Nga Bay, on the west coast: limestone karsts rising out of the sea. Best from November to April.",
+        poolIds: [78, 72],
+        place: "Phuket, Thailand",
+      },
+      {
+        name: "The Gulf of Thailand",
+        intro: "Koh Samui and the coast south of Bangkok. The Gulf keeps its own calendar, and Samui is often at its best when the Andaman side is rainy.",
+        poolIds: [77, 94, 42],
+        place: "Koh Samui, Thailand",
+      },
+    ],
+    whenToGo: [
+      { label: "November to March", text: "The cool, dry season across most of the country, and the best time for Bangkok, the north and the Andaman coast." },
+      { label: "January to August", text: "Koh Samui's long dry spell. Its rainy months are October and November." },
+      { label: "April and May", text: "The hottest months, right before the southwest monsoon. Pool weather, if you can take the heat." },
+    ],
+    relatedPosts: ["best-hotel-pools-thailand"],
+  },
+  {
+    slug: "safari",
+    name: "Safari Lodges",
+    tagline: "Plunge pools with elephants at the waterhole",
+    title: "The Best Safari Lodge Pools in Africa | Pool Atlas",
+    description:
+      "The best safari lodge pools in Africa, in the Serengeti, Kruger, Botswana's salt pans and Namibia's desert, ranked by Pool Atlas.",
+    intro: [
+      "On safari the pool is where you spend the middle of the day, when the animals sleep in the shade and so should you. The best lodges point their pools at a waterhole or a river, so the game drive never really stops.",
+      "We've ranked six lodges in four countries. Most safari seasons follow the dry months, when the bush thins and the animals gather near water.",
+    ],
+    match: (p) => [22, 64, 117, 36, 35, 87].includes(p.id),
+    mapPlace: null,
+    chapters: [
+      {
+        name: "Tanzania",
+        intro: "The Serengeti, home of the Great Migration. The herds move through the year, so ask your lodge where they will be for your dates.",
+        poolIds: [22],
+        place: "Serengeti National Park, Tanzania",
+      },
+      {
+        name: "South Africa",
+        intro: "Kruger and the private reserves on its western edge: an easy hop from Johannesburg, and very good for the Big Five.",
+        poolIds: [64, 117],
+        place: "Kruger National Park, South Africa",
+      },
+      {
+        name: "Botswana",
+        intro: "The Makgadikgadi salt pans: flat, white and enormous, with meerkats and zebra migrations in place of the usual safari script.",
+        poolIds: [36],
+        place: "Makgadikgadi Pans, Botswana",
+      },
+      {
+        name: "Namibia",
+        intro: "Red dunes at Sossusvlei and open savannah to the north. Desert air, huge skies and some of the best stargazing on earth.",
+        poolIds: [35, 87],
+        place: "Sossusvlei, Namibia",
+      },
+    ],
+    whenToGo: [
+      { label: "June to October", text: "The dry season across southern and East Africa: the best game viewing, cool mornings and warm afternoons at the pool." },
+      { label: "November to March", text: "Green season. Lush, cheaper and full of newborn animals, with afternoon storms." },
+      { label: "Pack for the cold", text: "Desert and highland mornings can be near freezing in July, even when the pool is warm by noon." },
+    ],
+    relatedPosts: ["best-hotel-pools-africa"],
   },
 ]
 

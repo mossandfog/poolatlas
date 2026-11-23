@@ -130,7 +130,7 @@ export default async function DestinationPage({ params }: Props) {
                   </h2>
                   <p className="mt-3 text-muted-foreground leading-relaxed max-w-md">{c.intro}</p>
                   <a
-                    href={getDestinationSearchUrl(`${c.name}, ${d.name}`, "dest_chapter")}
+                    href={getDestinationSearchUrl(c.place ?? `${c.name}, ${d.name}`, "dest_chapter")}
                     target="_blank"
                     rel={BOOKING_REL}
                     className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary/30 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/10 transition-colors"
@@ -171,13 +171,15 @@ export default async function DestinationPage({ params }: Props) {
       </div>
 
       {/* Where to stay */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <StaysMap
-          src={getStaysMapSrc({ address: d.name }, { placement: "dest_map", tag: `dest_${d.slug}`, venue: d.name })}
-          title={`Where to stay in ${d.name}`}
-          intro={`Every pool above belongs to a hotel you can book. For more choice and every budget, the map shows what's open across ${d.name} for your dates.`}
-        />
-      </div>
+      {d.mapPlace !== null && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+          <StaysMap
+            src={getStaysMapSrc({ address: d.mapPlace ?? d.name }, { placement: "dest_map", tag: `dest_${d.slug}`, venue: d.name })}
+            title={`Where to stay in ${d.name}`}
+            intro={`Every pool above belongs to a hotel you can book. For more choice and every budget, the map shows what's open across ${d.name} for your dates.`}
+          />
+        </div>
+      )}
 
       {/* Related reading */}
       {related.length > 0 && (

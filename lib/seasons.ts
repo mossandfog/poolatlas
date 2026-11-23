@@ -199,6 +199,9 @@ const seasons: Record<number, PoolSeason> = {
   135: { best: MIAMI },
   136: { best: MIAMI },
   137: { best: MIAMI },
+  138: { best: MIAMI },
+  139: { best: MIAMI },
+  140: { best: r(11, 5) }, // Cabo, whale season
 }
 
 // Closures, only from the hotel's own site or a reputable outlet.
