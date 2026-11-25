@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer"
 export const metadata = {
   title: "Terms of Service | Pool Atlas",
   description: "Pool Atlas terms of service - the rules and guidelines for using our website.",
+  alternates: { canonical: "/terms" },
 }
 
 export default function TermsPage() {

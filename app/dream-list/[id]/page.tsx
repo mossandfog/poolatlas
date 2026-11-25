@@ -30,6 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   
   return {
     title: `Dream List: ${poolCount} Amazing Pools | Pool Atlas`,
+    // Readers' own shared lists: fine to share, not pages for search
+    robots: { index: false, follow: true },
     description: `A dream list of ${poolCount} hotel pools${destinations ? ` in ${destinations}` : ''}, made on Pool Atlas.`,
     openGraph: {
       title: `Dream List: ${poolCount} Amazing Pools`,

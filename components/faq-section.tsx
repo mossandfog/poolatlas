@@ -6,11 +6,11 @@ import { ChevronDown, HelpCircle } from "lucide-react"
 const faqs = [
   {
     question: "How are pools ranked on Pool Atlas?",
-    answer: "Our rankings are based on aggregated data from multiple authoritative travel publications including Conde Nast Traveler, Travel + Leisure, TripAdvisor, and expert reviews. We analyze factors like guest ratings, review count, awards received, unique features, and editorial mentions to create our comprehensive rankings."
+    answer: "Pool Atlas is an editors' ranking. We judge each pool on its setting, its design, the swim itself and the service around it, and we weigh what guests and the travel press have said about it over time. Every listing is checked against the hotel's own information and outlets like Condé Nast Traveler, Travel + Leisure and Forbes Travel Guide. Nobody can pay to be ranked."
   },
   {
     question: "How often are the rankings updated?",
-    answer: "We update our rankings monthly, incorporating new reviews, awards, and notable hotel openings from the world's leading travel publications. New pools are added as they earn recognition, so the list is always evolving."
+    answer: "We review the rankings every season, add pools as they open or earn their place, and recheck closures and reopening dates through the year. Each pool page shows the months it's at its best."
   },
   {
     question: "Can I submit a pool to be considered for ranking?",
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "How do you determine if a pool is kid-friendly?",
-    answer: "A pool is marked as kid-friendly if the hotel welcomes families, has appropriate safety features, and doesn't have adults-only policies. We also consider user reviews mentioning family experiences."
+    answer: "A pool is marked as kid-friendly if the hotel welcomes families, has appropriate safety features, and doesn't have adults-only policies."
   },
   {
     question: "What makes a pool rank highly?",

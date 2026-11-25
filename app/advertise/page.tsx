@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "Advertise with Pool Atlas",
     description: "Sponsorships for hotels, tourism boards and travel brands. Our rankings are never for sale.",
     url: "https://poolatlas.io/advertise",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
 }
 

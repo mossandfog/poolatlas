@@ -95,7 +95,7 @@ const factSheet = {
   founded: "2024",
   headquarters: "Portland, Oregon",
   mission: "To help travelers find the hotel pool worth the trip, with rankings our editors stand behind.",
-  methodology: "Rankings are determined by aggregating reviews from major travel platforms, expert assessments from leading publications, guest satisfaction scores, and unique pool features.",
+  methodology: "An editors' ranking. Each pool is judged on its setting, design, the swim itself and the service around it, and every listing is checked against the hotel's own information and the travel press.",
   coverage: "The world's best pools across nearly 50 countries on 6 continents"
 }
 

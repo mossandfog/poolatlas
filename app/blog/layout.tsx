@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "The Deep End: Hotel Pool Guides and Stories | Pool Atlas",
   description:
     "Destination guides, holiday planning and the stories behind the world's best hotel pools, from the Pool Atlas editors.",
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog", types: { "application/rss+xml": [{ url: "/feed.xml", title: "The Deep End by Pool Atlas" }] } },
 }
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {

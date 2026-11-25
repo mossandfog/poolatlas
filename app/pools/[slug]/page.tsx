@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { bestTimeLabel, isInSeason, isClosed, closureFor, reopeningStay, monthName } from "@/lib/seasons"
 import { pools } from "@/lib/pool-data"
+import { destinations } from "@/lib/destinations"
 import { getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
 import { bookingFor } from "@/lib/booking"
 import { SwimCalendar } from "@/components/swim-calendar"
@@ -42,6 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${pool.name} at ${pool.hotel} | Pool Atlas`,
     description: pool.description,
+    alternates: { canonical: `/pools/${pool.slug}` },
     openGraph: {
       title: `${pool.name} at ${pool.hotel}`,
       description: pool.description,
@@ -91,17 +93,22 @@ export default async function PoolPage({ params }: Props) {
       addressLocality: pool.location,
       addressCountry: pool.country,
     },
-    ...(pool.reviewCount
-      ? {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: pool.rating,
-            ratingCount: pool.reviewCount,
-            bestRating: 10,
-          },
-        }
-      : {}),
+    // No aggregateRating: our score is an editors' score, not ratings we collected,
+    // and Google only allows ratings a site gathers itself.
     url: pool.websiteUrl,
+  }
+  // Home > destination guide (when one covers this pool) or Explore > this pool
+  const guide = destinations.find((d) => d.match(pool))
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Pool Atlas", item: "https://poolatlas.io" },
+      guide
+        ? { "@type": "ListItem", position: 2, name: guide.name, item: `https://poolatlas.io/destinations/${guide.slug}` }
+        : { "@type": "ListItem", position: 2, name: "Explore", item: "https://poolatlas.io/explore" },
+      { "@type": "ListItem", position: 3, name: pool.hotel, item: `https://poolatlas.io/pools/${pool.slug}` },
+    ],
   }
 
   return (
@@ -109,6 +116,10 @@ export default async function PoolPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <Header />
 
@@ -200,12 +211,6 @@ export default async function PoolPage({ params }: Props) {
                   <span className="font-bold text-foreground">{pool.rating}</span>
                   <span className="text-muted-foreground text-sm">/ 10</span>
                 </div>
-                {pool.reviewCount ? (
-                  <div className="flex items-center gap-1.5 text-muted-foreground">
-                    <Users className="w-4 h-4" />
-                    <span className="text-sm">{pool.reviewCount.toLocaleString()} reviews</span>
-                  </div>
-                ) : null}
                 {pool.kidFriendly ? (
                   <div className="flex items-center gap-1.5 text-sm font-medium text-chart-3">
                     <Baby className="w-4 h-4" />
@@ -359,9 +364,7 @@ export default async function PoolPage({ params }: Props) {
                     <span className="text-muted-foreground">/ 10</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    {pool.reviewCount
-                      ? <>Based on {pool.reviewCount.toLocaleString()} expert &amp; traveler reviews</>
-                      : <>Pool Atlas editors&apos; score</>}
+                    Pool Atlas editors&apos; score
                   </p>
                 </div>
 

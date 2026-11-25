@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer"
 export const metadata = {
   title: "Privacy Policy | Pool Atlas",
   description: "Pool Atlas privacy policy - how we collect, use, and protect your information.",
+  alternates: { canonical: "/privacy" },
 }
 
 export default function PrivacyPage() {

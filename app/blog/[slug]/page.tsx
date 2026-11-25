@@ -155,7 +155,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     title: post.seoTitle ?? `${post.title} | The Deep End`,
     description: post.seoDescription ?? post.excerpt,
     keywords: post.keywords,
-    alternates: { canonical: `https://poolatlas.io/blog/${post.slug}` },
+    alternates: { canonical: `https://poolatlas.io/blog/${post.slug}`, types: { "application/rss+xml": [{ url: "/feed.xml", title: "The Deep End by Pool Atlas" }] } },
     openGraph: {
       type: "article",
       url: `https://poolatlas.io/blog/${post.slug}`,
@@ -294,7 +294,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 
                 // Handle headers
                 if (trimmed.startsWith('# ')) {
-                  return <h1 key={index} className="font-[family-name:var(--font-display)] text-3xl font-bold mt-10 mb-4">{trimmed.slice(2)}</h1>
+                  // The page header already carries the headline as the one h1; most posts
+                  // repeat it as their first line, so skip that and demote any other "# " to h2
+                  const text = trimmed.slice(2).trim()
+                  if (post.title.startsWith(text)) return null
+                  return <h2 key={index} className="font-[family-name:var(--font-display)] text-3xl font-bold mt-10 mb-4">{text}</h2>
                 }
                 // Deal card: {{deal:id}}
                 const dealMatch = trimmed.match(/^\{\{deal:([a-z0-9-]+)\}\}$/)

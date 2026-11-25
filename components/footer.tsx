@@ -110,6 +110,7 @@ export function Footer() {
             <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a>
             <a href="/sitemap.xml" className="hover:text-primary transition-colors">Sitemap</a>
+            <a href="/feed.xml" className="hover:text-primary transition-colors">RSS</a>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { FeaturedPool } from "@/components/featured-pool"
@@ -9,6 +10,8 @@ import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { AdBanner } from "@/components/ad-unit"
 import { getCurrentEdition } from "@/lib/editorial-calendar"
+
+export const metadata: Metadata = { alternates: { canonical: "/" } }
 
 // Re-render hourly so the monthly cover and picks flip on their own without a deploy
 export const revalidate = 3600

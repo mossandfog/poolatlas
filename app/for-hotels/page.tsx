@@ -10,6 +10,7 @@ import { pools } from "@/lib/pool-data"
 export const metadata = {
   title: "For Hotels | Pool Atlas",
   description: "Is your hotel pool ranked on Pool Atlas? Claim your badge, embed it on your website, and share the recognition with your guests.",
+  alternates: { canonical: "/for-hotels" },
 }
 
 function getTierLabel(rank: number) {

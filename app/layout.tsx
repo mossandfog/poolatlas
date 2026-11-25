@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     'websitelaunches-verification': 'd88d50454f7b69ceb9a4a741c6c2f1ef',
   },
   metadataBase: new URL('https://poolatlas.io'),
+  alternates: { types: { 'application/rss+xml': [{ url: '/feed.xml', title: 'The Deep End by Pool Atlas' }] } },
   keywords: ['hotel pools', 'luxury pools', 'infinity pools', 'best hotel swimming pools', 'travel', 'resorts'],
   authors: [{ name: 'Pool Atlas' }],
   creator: 'Pool Atlas',

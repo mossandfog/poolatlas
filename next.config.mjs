@@ -31,6 +31,10 @@ const nextConfig = {
       { source: '/for-hotels/the-last-hotel-48', destination: '/for-hotels/hyatt-centric-downtown-st-louis-48', permanent: true },
       // The media kit became the Advertise page (Nov 2026)
       { source: '/media-kit', destination: '/advertise', permanent: true },
+      // People type these; the rankings live on the homepage
+      { source: '/rankings', destination: '/#rankings', permanent: true },
+      { source: '/top-100', destination: '/#rankings', permanent: true },
+      { source: '/methodology', destination: '/about#how-we-rank', permanent: true },
     ]
   },
 }

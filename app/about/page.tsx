@@ -11,6 +11,7 @@ import { FAQSection } from "@/components/faq-section"
 export const metadata: Metadata = {
   title: "About Us | Pool Atlas",
   description: "Learn about Pool Atlas, our editors' ranking of the world's best hotel swimming pools.",
+  alternates: { canonical: "/about" },
 }
 
 export default function AboutPage() {
@@ -48,7 +49,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-foreground mb-4">Why We Built This</h2>
           <p className="text-muted-foreground mb-4">
-            Every hotel says its pool is the best. We wanted a list we could actually trust. Pool Atlas ranks the world's best pools in nearly 50 countries, checked against guest reviews and the travel press. No pay-to-play. Just honest rankings.
+            Every hotel says its pool is the best. We wanted a list we could actually trust. Pool Atlas is an editors' ranking of the best hotel pools in nearly 50 countries. We check every listing against the hotel's own information and the travel press, and we recheck seasons and closures through the year. Nobody pays to be on it, ever!
           </p>
         </div>
       </section>
@@ -66,7 +67,7 @@ export default function AboutPage() {
             <div className="bg-card border border-border rounded-xl p-5">
               <Eye className="w-8 h-8 text-primary mb-3" />
               <h3 className="font-semibold text-foreground mb-1">Transparent</h3>
-              <p className="text-muted-foreground text-sm">Our methodology is published openly.</p>
+              <p className="text-muted-foreground text-sm">We show how we rank, right on this page.</p>
             </div>
             <div className="bg-card border border-border rounded-xl p-5">
               <Heart className="w-8 h-8 text-primary mb-3" />
@@ -84,24 +85,24 @@ export default function AboutPage() {
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-foreground mb-4">How We Rank</h2>
             <div className="space-y-2 mb-6">
               {[
-                { label: "Setting & Integration", weight: "25%" },
-                { label: "Design & Architecture", weight: "20%" },
-                { label: "Water Quality", weight: "20%" },
-                { label: "Amenities & Service", weight: "20%" },
-                { label: "Atmosphere", weight: "15%" },
+                { label: "Setting and view", weight: "Where the water meets the place" },
+                { label: "Design and architecture", weight: "Shape, materials, how it was built" },
+                { label: "The swim itself", weight: "Size, temperature, room to actually swim" },
+                { label: "Service and atmosphere", weight: "Loungers, shade, crowds, staff" },
+                { label: "Reputation over time", weight: "What guests and the travel press keep saying" },
               ].map((item) => (
-                <div key={item.label} className="flex items-center justify-between text-sm">
+                <div key={item.label} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0.5 sm:gap-4 text-sm">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-primary" />
                     <span className="text-foreground">{item.label}</span>
                   </div>
-                  <span className="text-muted-foreground">{item.weight}</span>
+                  <span className="text-muted-foreground pl-6 sm:pl-0 sm:text-right">{item.weight}</span>
                 </div>
               ))}
             </div>
             <Link href="/blog/what-makes-world-class-hotel-pool">
               <Button size="sm" className="rounded-full">
-                Full Methodology <ArrowRight className="w-4 h-4 ml-1" />
+                What makes a world-class pool <ArrowRight className="w-4 h-4 ml-1" />
               </Button>
             </Link>
           </div>
@@ -111,9 +112,9 @@ export default function AboutPage() {
       {/* Sources - Inline */}
       <section className="py-8 px-4 sm:px-6 lg:px-8 bg-secondary/30">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm text-muted-foreground mb-2">Data aggregated from</p>
+          <p className="text-sm text-muted-foreground mb-2">Every listing is checked against</p>
           <p className="text-sm font-medium text-foreground">
-            Travel + Leisure · Condé Nast Traveler · TripAdvisor · Google Reviews · Forbes Travel Guide
+            The hotel&apos;s own site · Travel + Leisure · Condé Nast Traveler · Forbes Travel Guide · guest reviews
           </p>
         </div>
       </section>

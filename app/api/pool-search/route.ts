@@ -103,7 +103,6 @@ Always provide specific pool recommendations with their rank, rating, and why th
               hotel: p.hotel,
               location: `${p.location}, ${p.country}`,
               rating: p.rating,
-              reviewCount: p.reviewCount,
               features: p.features,
               kidFriendly: p.kidFriendly,
               description: p.description,

@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: `Claim Your Badge | ${pool.hotel} | Pool Atlas`,
     description: `${pool.hotel} is ranked #${pool.rank} in the world for hotel pools by Pool Atlas. Embed your badge and share the recognition.`,
+    alternates: { canonical: `/for-hotels/${pool.slug}` },
   }
 }
 
