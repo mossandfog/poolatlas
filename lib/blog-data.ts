@@ -64,7 +64,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     image: "/images/pools/pool-alila-villas-uluwatu-main.jpg",
     publishedAt: "2026-11-23",
-    updatedAt: "2026-11-23",
+    updatedAt: "2026-11-24",
     featured: false,
     hideBookingBox: true,
     author: {
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
 
 Black Friday is Friday, November 27 this year, with Cyber Monday on November 30 and Travel Tuesday on December 1. For a few weeks around them, hotels run the biggest sales of their year, and some of the best are at resorts with pools we already rank among the world's best.
 
-We read through the season's hotel sales and kept the ones worth your time: a great pool, a real discount, and a stay window long enough to use. Each deal below shows when to book, when you can stay, and the fine print, checked on November 22 against the hotel's own offer page or, where the brand page wasn't live yet, against current trade reports. Each one also has a link to compare rates, because a sale is only a deal if it beats what you'd otherwise pay.
+We read through the season's hotel sales and kept the ones worth your time: a great pool, a real discount, and a stay window long enough to use. Each deal below shows when to book, when you can stay, and the fine print, last checked on November 24 against the hotel's own offer page or, where the brand page wasn't live yet, against current trade reports. Each one also has a link to compare rates, because a sale is only a deal if it beats what you'd otherwise pay.
 
 ## The Short List
 
@@ -106,6 +106,9 @@ We read through the season's hotel sales and kept the ones worth your time: a gr
 - **Best for families:** Grand Wailea on Maui, nine pools and seven waterslides, in the Hilton sale through December 22.
 - **Longest stay window:** Fairmont Mayakoba on the Riviera Maya, 30% off for stays through December 2027.
 - **Most time to decide:** Hyatt's Cyber Sale, open until December 8.
+- **Closing first:** Hard Rock Los Cabos, up to 55% off all-inclusive, book by November 27.
+
+**Update, November 24:** Marriott's Cyber Week sale is now open, with 25% off in the Bonvoy app until Travel Tuesday. Hard Rock's sale closes this Friday, so if Los Cabos is on your list, that's the one to book first!
 
 ## Mexico and the Caribbean
 

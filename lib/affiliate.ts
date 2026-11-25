@@ -33,6 +33,8 @@ export type Placement =
   | "booking_now"
   /** The Swim Here card embedded on The Window Seat */
   | "tws_swim"
+  /** Swim Here card embedded on Moss & Fog posts */
+  | "mf_swim"
   /** Homepage: Pool of the Month ticket, this month's picks, the rankings list */
   | "home_featured"
   | "home_picks"

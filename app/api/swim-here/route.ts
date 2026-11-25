@@ -2,7 +2,8 @@
 // GET /api/swim-here?pools=54,83,37         a hand-picked set, shown in rank order
 // GET /api/swim-here?near=43.3,11.3&km=250  the ranked pools nearest a point
 // GET /api/swim-here?country=Indonesia      the ranked pools in a country
-// Optional: n (1 to 6, default 3), campaign (added to the links as utm_campaign).
+// Optional: n (1 to 6, default 3), campaign (added to the links as utm_campaign),
+// source (the embedding site: windowseat or mossandfog; sets utm_source and the booking placement).
 import { NextRequest, NextResponse } from "next/server"
 import { pools, type Pool } from "@/lib/pool-data"
 import { poolCoordinates } from "@/lib/pool-coordinates"
@@ -42,6 +43,8 @@ export function GET(req: NextRequest) {
   const q = req.nextUrl.searchParams
   const n = Math.min(6, Math.max(1, Number(q.get("n")) || 3))
   const campaign = (q.get("campaign") || "swim_here").replace(/[^a-z0-9_]/gi, "").slice(0, 60)
+  const source = q.get("source") === "mossandfog" ? "mossandfog" : "windowseat"
+  const placement = source === "mossandfog" ? "mf_swim" : "tws_swim"
 
   let list: Pool[] = []
   const ids = q.get("pools")
@@ -69,7 +72,7 @@ export function GET(req: NextRequest) {
     .slice(0, n)
     .map((p) => {
       const url = new URL(`${SITE}/pools/${p.slug}`)
-      url.searchParams.set("utm_source", "windowseat")
+      url.searchParams.set("utm_source", source)
       url.searchParams.set("utm_medium", "embed")
       url.searchParams.set("utm_campaign", campaign)
       // Stay22 booking link. Closed for the season: pre-fill the reopening dates.
@@ -79,7 +82,7 @@ export function GET(req: NextRequest) {
       const book =
         closed && !reopen
           ? null
-          : getBookingUrl(p, "tws_swim", { tag: campaign, checkin: reopen?.checkin, checkout: reopen?.checkout })
+          : getBookingUrl(p, placement, { tag: campaign, checkin: reopen?.checkin, checkout: reopen?.checkout })
       return {
         id: p.id,
         rank: p.rank,
@@ -94,5 +97,5 @@ export function GET(req: NextRequest) {
       }
     })
 
-  return NextResponse.json({ pools: out, more: `${SITE}/?utm_source=windowseat&utm_medium=embed&utm_campaign=${campaign}` }, { headers: CORS })
+  return NextResponse.json({ pools: out, more: `${SITE}/?utm_source=${source}&utm_medium=embed&utm_campaign=${campaign}` }, { headers: CORS })
 }
