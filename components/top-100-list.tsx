@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { pools, regions, countries, continents, features as allFeatures } from "@/lib/pool-data"
 import { RANKINGS_REVIEWED } from "@/lib/editorial-calendar"
+import { EditedBy } from "@/components/edited-by"
 import { BOOKING_REL } from "@/lib/affiliate"
 import { bookingFor } from "@/lib/booking"
 import { isInSeason } from "@/lib/seasons"
@@ -55,7 +56,7 @@ export function Top100List() {
               The rankings
             </h2>
             <p className="mt-2 text-muted-foreground max-w-xl">
-              Every pool, ranked against the travel press and guest reviews. Reviewed {RANKINGS_REVIEWED}.
+              Every pool, ranked against the travel press and guest reviews. Reviewed {RANKINGS_REVIEWED}. <EditedBy />.
             </p>
           </div>
           <Link href="/about#how-we-rank" className="text-sm font-medium text-primary hover:underline underline-offset-4">

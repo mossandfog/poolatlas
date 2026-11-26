@@ -9,6 +9,7 @@ import {
 import { bestTimeLabel, isInSeason, isClosed, closureFor, reopeningStay, monthName } from "@/lib/seasons"
 import { pools } from "@/lib/pool-data"
 import { destinations } from "@/lib/destinations"
+import { EditedBy } from "@/components/edited-by"
 import { getStaysMapSrc, BOOKING_REL } from "@/lib/affiliate"
 import { bookingFor } from "@/lib/booking"
 import { SwimCalendar } from "@/components/swim-calendar"
@@ -366,6 +367,7 @@ export default async function PoolPage({ params }: Props) {
                   <p className="text-sm text-muted-foreground">
                     Pool Atlas editors&apos; score
                   </p>
+                  <EditedBy className="block mt-1 text-xs text-muted-foreground" />
                 </div>
 
                 {/* Quick facts */}

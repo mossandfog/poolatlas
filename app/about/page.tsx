@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FAQSection } from "@/components/faq-section"
+import { EDITOR, editorLd } from "@/lib/editor"
 
 export const metadata: Metadata = {
   title: "About Us | Pool Atlas",
@@ -44,13 +45,53 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
       </div>
 
-      {/* Story - Condensed */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-foreground mb-4">Why We Built This</h2>
-          <p className="text-muted-foreground mb-4">
-            Every hotel says its pool is the best. We wanted a list we could actually trust. Pool Atlas is an editors' ranking of the best hotel pools in nearly 50 countries. We check every listing against the hotel's own information and the travel press, and we recheck seasons and closures through the year. Nobody pays to be on it, ever!
-          </p>
+      {/* A note from the editor */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            url: "https://poolatlas.io/about",
+            mainEntity: { "@type": "Organization", name: "Pool Atlas", url: "https://poolatlas.io", founder: editorLd },
+          }),
+        }}
+      />
+      <section id="editor" className="scroll-mt-24 py-14 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary mb-4">A note from the editor</p>
+          <div className="space-y-5 text-lg leading-relaxed text-foreground/90">
+            <p className="font-[family-name:var(--font-display)] text-2xl sm:text-[1.7rem] leading-snug text-foreground">
+              I was standing chest deep in a pool in Mexico, with the water at the exact temperature of the air and
+              nothing between me and the horizon but a line of palms. I remember thinking two things at once. First,
+              this is about as good as it gets. Second, is it, though?
+            </p>
+            <p>
+              Somewhere out there was a pool carved into a desert cliff. Another hanging off a rooftop over Tokyo.
+              Another sitting on a reef in the middle of the ocean. I wanted to see them all, or at least know where
+              they were. So I started a list. That list became Pool Atlas!
+            </p>
+            <p>
+              I&apos;ve spent my career as a designer, and I still look at a pool the way I&apos;d look at a building or a
+              chair. Where it sits, how it was made, what it feels like to actually swim in it. Those are the things we
+              rank on here. Nobody pays to be on the list, and we recheck seasons, closures and facts through the year
+              so you aren&apos;t planning a trip around a pool that&apos;s drained for the winter.
+            </p>
+            <p>
+              If you&apos;ve been chest deep in one that belongs here,{" "}
+              <a href="mailto:hello@poolatlas.io" className="text-primary underline underline-offset-2">tell me</a>. Some of
+              the best pools on this list came from readers who couldn&apos;t stop talking about one.
+            </p>
+          </div>
+          <div className="mt-8 pt-6 border-t border-border">
+            <p className="font-[family-name:var(--font-display)] text-xl text-foreground">{EDITOR.name}</p>
+            <p className="text-sm text-muted-foreground">
+              {EDITOR.role}, Pool Atlas ·{" "}
+              <a href={EDITOR.site} className="hover:text-primary underline-offset-2 hover:underline" rel="me">
+                benvanderveen.com
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 

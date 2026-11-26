@@ -1,3 +1,5 @@
+import { EditedBy } from "@/components/edited-by"
+import { editorLd } from "@/lib/editor"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -199,12 +201,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     datePublished: post.publishedAt,
     dateModified: post.updatedAt ?? post.publishedAt,
     url: `https://poolatlas.io/blog/${post.slug}`,
-    author: {
-      "@type": "Person",
-      name: post.author.name,
-      jobTitle: post.author.role,
-      url: "https://poolatlas.io/about",
-    },
+    // "Pool Atlas Editorial" is the desk, not a person
+    author:
+      post.author.name === "Pool Atlas Editorial"
+        ? { "@type": "Organization", name: "Pool Atlas Editorial", url: "https://poolatlas.io/about" }
+        : { "@type": "Person", name: post.author.name, jobTitle: post.author.role, url: "https://poolatlas.io/about" },
+    editor: editorLd,
     publisher: {
       "@type": "Organization",
       name: "Pool Atlas",
@@ -270,10 +272,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.excerpt}
               </p>
               <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground pb-6 border-b border-border">
-                <div className="flex items-center gap-1.5">
+                <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
                   <User className="w-4 h-4" />
-                  <span className="font-medium text-foreground">{post.author.name}</span>
-                  <span className="text-muted-foreground">- {post.author.role}</span>
+                  <span className="font-medium text-foreground whitespace-nowrap">{post.author.name}</span>
+                  <span className="text-muted-foreground whitespace-nowrap">- {post.author.role}</span>
+                  <span aria-hidden>·</span>
+                  <EditedBy className="whitespace-nowrap" />
                 </div>
                 <div className="flex items-center gap-1">
                   <Clock className="w-4 h-4" />
